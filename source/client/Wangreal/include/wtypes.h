@@ -167,6 +167,16 @@ inline WRect::WRect(float x, float y, float width, float height)
 	this->h = height;
 }
 
+inline WRect WRect::operator+(WPoint& point) const
+{
+	return WRect(x + point.x, y + point.y, w, h);
+}
+
+inline WRect WRect::operator-(WPoint& point) const
+{
+	return WRect(x - point.x, y - point.y, w, h);
+}
+
 template <class Width, class Height>
 inline WRect::WRect(const WPoint& pt, Width width, Height height)
 {
@@ -174,6 +184,13 @@ inline WRect::WRect(const WPoint& pt, Width width, Height height)
 	y = pt.y;
 	w = (float)width;
 	h = (float)height;
+}
+
+inline bool WRect::IsInRect(float x, float y)
+{
+	if (x >= this->x && this->x + w >= x && y >= this->y && this->y + h >= y)
+		return true;
+	return false;
 }
 
 inline bool WRect::IsInRect(const WPoint& point)

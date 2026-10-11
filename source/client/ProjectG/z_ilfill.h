@@ -23,7 +23,7 @@
 		{ \
 			int v; \
 			ILFILLFN(0) \
-			void g() { ILFILL64 v += 1; v += 1; } \
+			void g() { ILFILL16 v += 1; v += 1; v += 1; v += 1; } \
 		}; \
 	}
 
@@ -45,7 +45,7 @@
 		struct Pad \
 		{ \
 			int v; \
-			void g() { ILFILL64 ILFILL16 ILFILL16 v += 1; v += 1; v += 1; } \
+			void g() { ILFILL16 ILFILL16 ILFILL16 ILFILL4 ILFILL4 v += 1; v += 1; } \
 		}; \
 	}
 
@@ -76,7 +76,7 @@
 		{ \
 			int v; \
 			ILFILLFN(0) ILFILLFN(1) ILFILLFN(2) ILFILLFN(3) \
-			void g() { ILFILL16 ILFILL16 ILFILL16 ILFILL4 ILFILL4 ILFILL4 v += 1; } \
+			void g() { ILFILL64 ILFILL4 ILFILL4 ILFILL4 v += 1; } \
 		}; \
 	}
 
@@ -116,10 +116,8 @@
 		struct Pad \
 		{ \
 			int v; \
-			ILFILLFN10(1) \
-			void g() { ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 \
-				ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 \
-				ILFILL64 ILFILL64 v += 1; v += 1; v += 1; v += 1; v += 1; v += 1; v += 1; } \
+			ILFILLFN(10) ILFILLFN(11) ILFILLFN(12) ILFILLFN(13) ILFILLFN(14) ILFILLFN(15) ILFILLFN(16) \
+			void g() { ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL16 ILFILL16 ILFILL16 ILFILL16 ILFILL16 ILFILL16 ILFILL16 ILFILL16 ILFILL16 v += 1; v += 1; v += 1; v += 1; v += 1; v += 1; v += 1; } \
 		}; \
 	}
 
@@ -159,7 +157,7 @@
 		{ \
 			int v; \
 			ILFILLFN(0) ILFILLFN(1) ILFILLFN(2) ILFILLFN(3) \
-			void g() { ILFILL16 ILFILL16 v += 1; v += 1; v += 1; ILFILL64 ILFILL64 ILFILL64 ILFILL16 ILFILL4 ILFILL4 ILFILL4 v += 1; v += 1; v += 1; } \
+			void g() { ILFILL256 ILFILL16 ILFILL16 ILFILL4 ILFILL4 ILFILL4 } \
 		}; \
 	}
 
@@ -177,7 +175,7 @@
 		struct Pad \
 		{ \
 			int v; \
-			void g() { ILFILL64 ILFILL64 ILFILL16 ILFILL16 ILFILL16 v += 1; ILFILL64 ILFILL64 ILFILL64 ILFILL16 ILFILL16 ILFILL16 ILFILL4 ILFILL4 v += 1; v += 1; } \
+			void g() { ILFILL256 ILFILL64 ILFILL64 ILFILL64 ILFILL4 ILFILL4 v += 1; } \
 		}; \
 	}
 

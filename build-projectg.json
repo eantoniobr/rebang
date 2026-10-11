@@ -465,7 +465,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/post_recivedlg.obj",
+    {
+      "path": "source/client/ProjectG/post_recivedlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/post_senddlg.obj",
     "source/client/ProjectG/transferableitem.obj",
     "source/client/ProjectG/offlinetradedlg.obj",

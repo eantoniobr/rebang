@@ -8,6 +8,8 @@
 #include "frtooltip.h"
 #include "soundmanager.h"
 
+FRESH_TU_ILFILL
+
 extern WView* g_view;
 
 typedef std::list<FrWnd*> FRWNDLIST;

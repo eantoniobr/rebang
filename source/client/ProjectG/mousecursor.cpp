@@ -17,13 +17,6 @@ bool IsMyTurn(bool check);
 int float2int(float value);
 extern "C" float __fastcall floorf(float value);
 
-inline bool WRect::IsInRect(float x, float y)
-{
-	if (x >= this->x && this->x + w >= x && y >= this->y && this->y + h >= y)
-		return true;
-	return false;
-}
-
 class CRealMyRoomTask
 {
 public:

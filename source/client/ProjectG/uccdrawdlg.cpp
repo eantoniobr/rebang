@@ -144,11 +144,6 @@ void FrUccDrawDlg::Init()
 		10);
 }
 
-inline WRect WRect::operator-(WPoint& point) const
-{
-	return WRect(x - point.x, y - point.y, w, h);
-}
-
 BEGIN_FRESH_MSGMAP(FrUccDrawDlg, FrForm)
 ON_FRESH_VI("ucccanvas", FRCMD_INIT, FrUccDrawDlg::OnUccCanvasInit)
 ON_FRESH_VI("undo_btn", FRCMD_INIT, FrUccDrawDlg::OnUndoBtnInit)

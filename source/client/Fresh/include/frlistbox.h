@@ -13,9 +13,13 @@ struct FrInputState;
 
 struct FrListItem
 {
-	FrListItem();
-	~FrListItem();
-	void AddNoRBtnIdx(int idx);
+	FrListItem()
+		: pData(NULL), underCursor(false), selected(false)
+	{
+		noRBtnIdxList.clear();
+	}
+	~FrListItem() { noRBtnIdxList.clear(); }
+	void AddNoRBtnIdx(int idx) { noRBtnIdxList.push_back(idx); }
 
 	void* pData;
 	WPoint pos;
@@ -24,6 +28,22 @@ struct FrListItem
 	int no;
 	int idx;
 	std::list<int> noRBtnIdxList;
+};
+
+class FrListBoxGreater
+{
+public:
+	FrListBoxGreater(bool (*compare)(const void*, const void*))
+		: m_compare(compare)
+	{
+	}
+	bool operator()(FrListItem* const& left, FrListItem* const& right) const
+	{
+		return m_compare(left->pData, right->pData);
+	}
+
+private:
+	bool (*m_compare)(const void*, const void*);
 };
 
 class FrListBox : public FrWnd

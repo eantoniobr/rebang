@@ -8,33 +8,6 @@
 #include "chatmsg.h"
 #include "commonutil.h"
 
-// HACK: workaround to preserve emission order
-inline FrListItem::FrListItem()
-	: pData(NULL), underCursor(false), selected(false)
-{
-	noRBtnIdxList.clear();
-}
-inline FrListItem::~FrListItem()
-{
-	noRBtnIdxList.clear();
-}
-
-class FrListBoxGreater
-{
-public:
-	FrListBoxGreater(bool (*compare)(const void*, const void*))
-		: m_compare(compare)
-	{
-	}
-	bool operator()(FrListItem* const& left, FrListItem* const& right) const
-	{
-		return m_compare(left->pData, right->pData);
-	}
-
-private:
-	bool (*m_compare)(const void*, const void*);
-};
-
 IObject* FrListBoxMakeInstance()
 {
 	return new FrListBox;

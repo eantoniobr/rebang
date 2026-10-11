@@ -84,11 +84,6 @@ inline void CSharedDoc::SetInviteMode(int mode)
 	m_inviteMode = mode;
 }
 
-inline WRect WRect::operator+(WPoint& point) const
-{
-	return WRect(x + point.x, y + point.y, w, h);
-}
-
 int float2int(float f);
 
 class ILoginInfo;

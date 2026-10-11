@@ -9,6 +9,8 @@
 #include "frelement.h"
 #include "soundmanager.h"
 
+FRESH_TU_ILFILL
+
 extern WView* g_view;
 
 bool FrForm::ms_bHasTail = true;
