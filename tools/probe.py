@@ -286,12 +286,12 @@ def print_report(report: Report, key: str | None) -> None:
                     "      " + line for line in imgcmp.disassembly(r.ours, r.theirs)
                 )
             )
-    for line in report.order[:10]:
+    for line in report.order[: int(os.environ.get("PROBE_LIMIT", 10))]:
         print(f"  ORDER {line}")
-    for c in report.missing[:20]:
+    for c in report.missing[: int(os.environ.get("PROBE_LIMIT", 20))]:
         label = ", ".join(names.names_at(c.section, c.offset)) or c.placeholder
         print(f"  MISSING {c} {label[:110]}")
-    for name in report.extra[:20]:
+    for name in report.extra[: int(os.environ.get("PROBE_LIMIT", 20))]:
         print(f"  EXTRA {name[:110]}")
 
 
