@@ -59,6 +59,8 @@ enum eMode
 
 class CUccBase
 {
+	friend class FrUccDrawDlg;
+
 public:
 	CUccBase();
 	virtual ~CUccBase();

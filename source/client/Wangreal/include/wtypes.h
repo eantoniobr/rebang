@@ -135,6 +135,7 @@ public:
 		h = rect.h;
 	}
 	WRect operator+(WPoint& point) const;
+	WRect operator-(WPoint& point) const;
 	float Right() const { return w + x; }
 	float Bottom() const { return h + y; }
 	int operator!=(WRect& rect) const
@@ -150,6 +151,9 @@ public:
 		w = size.w;
 		h = size.h;
 	}
+	template <class Width, class Height>
+	WRect(const WPoint& pt, Width width, Height height);
+
 	WPoint TopLeft() const { return WPoint(x, y); }
 	WSize Size() const { return WSize(w, h); }
 };
@@ -161,6 +165,15 @@ inline WRect::WRect(float x, float y, float width, float height)
 	this->y = y;
 	this->w = width;
 	this->h = height;
+}
+
+template <class Width, class Height>
+inline WRect::WRect(const WPoint& pt, Width width, Height height)
+{
+	x = pt.x;
+	y = pt.y;
+	w = (float)width;
+	h = (float)height;
 }
 
 inline bool WRect::IsInRect(const WPoint& point)

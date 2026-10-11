@@ -158,3 +158,15 @@ const char* GetUccItemName(sItemInfo* item);
 sItemInfo* GetMyItemInfo(unsigned long typeId, const char* uccIndex,
 	unsigned short seq);
 bool IsSameClothes(IFF_STRUCT::sPart* first, IFF_STRUCT::sPart* second);
+
+void GetResizedImage(const Bitmap* source, const Bitmap* mask, Bitmap* dest,
+	int width, int height);
+
+const char* GetUccTempFoler();
+std::string GenerateTextureFullPath(int side, unsigned long typeId,
+	const char* uccIndex);
+std::string GenerateIconFilename(unsigned long typeId, const char* uccIndex);
+std::string GetMaskFilename(const char* filename);
+bool ZipUccClothes(Bitmap* front, Bitmap* back, Bitmap* icon,
+	const char* filename);
+void Convert32to24(Bitmap* source, Bitmap* dest, const Bitmap* mask);

@@ -116,8 +116,10 @@
 		struct Pad \
 		{ \
 			int v; \
-			ILFILLFN10(1) ILFILLFN10(2) ILFILLFN(0) ILFILLFN(1) \
-			void g() { ILFILL64 ILFILL16 ILFILL4 v += 1; v += 1; v += 1; v += 1; v += 1; } \
+			ILFILLFN10(1) \
+			void g() { ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 \
+				ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 ILFILL256 \
+				ILFILL64 ILFILL64 v += 1; v += 1; v += 1; v += 1; v += 1; v += 1; v += 1; } \
 		}; \
 	}
 

@@ -6,6 +6,7 @@
 class cFile;
 class WResourceManager;
 
+void G_CreateDirectory(const char* path);
 char* __cdecl MakeStr(const char* format, ...);
 unsigned long ModifyColor(unsigned long color, float bright);
 float Random(float min, float max, int seed = -1);

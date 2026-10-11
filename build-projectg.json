@@ -415,7 +415,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/uccdrawdlg.obj",
+    {
+      "path": "source/client/ProjectG/uccdrawdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/ucceditbrushdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
