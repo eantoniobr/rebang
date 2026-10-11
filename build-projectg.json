@@ -455,7 +455,11 @@
     "source/client/ProjectG/ccardbook.obj",
     "source/client/ProjectG/itemstorage.obj",
     "source/client/ProjectG/cardremove.obj",
-    "source/client/ProjectG/carddlg.obj",
+    {
+      "path": "source/client/ProjectG/carddlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/cardsystem.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
