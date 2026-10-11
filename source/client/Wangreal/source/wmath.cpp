@@ -278,6 +278,8 @@ void WMatrix::Rotate(const WVector& rotation)
 
 void __cdecl InitMath()
 {
+	// HACK: symbol ordering workaround...
+	Abs(0.0f);
 }
 
 float __cdecl CalcDeltaAngle(const WVector& v1, const WVector& v2)

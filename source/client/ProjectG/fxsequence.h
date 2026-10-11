@@ -19,7 +19,9 @@ public:
 	unsigned char m_unused0[0x20];
 	std::map<CFxSpray*, CFxSpray*> m_spray;
 	WMatrix* m_attachMat[4];
-	unsigned char m_unused3c[0x10c8];
+	unsigned char m_unused3c[0x1094];
+	WMatrix m_rot;
+	unsigned char m_unused1100[4];
 	bool m_bActive;
 	WVector m_pos;
 	WVector m_vel;

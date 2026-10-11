@@ -959,19 +959,3 @@ int CMouseCursor::GameCheck()
 	m_area = AREA_NORMAL;
 	return UNSELECT;
 }
-
-inline bool IsMyTurn(bool check)
-{
-	if (Doc()->m_gameMode == 0)
-	{
-		if (NET()->IsConnected(WNetworkSystem::NET_GAME))
-		{
-			if ((Doc()->m_myInfo.info.dwIdentity >> 1) & 1)
-				return check;
-			return PLAYER(GOLFDOC()->m_currentPlayer)->oid == MyGuid(false);
-		}
-	}
-	else if (Doc()->m_gameMode == 5)
-		return PLAYER(GOLFDOC()->m_currentPlayer)->oid == MyGuid(false);
-	return true;
-}

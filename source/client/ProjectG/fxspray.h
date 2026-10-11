@@ -12,6 +12,7 @@ class CFxSpray
 {
 public:
 	WVector& Pos() { return m_pos; }
+	WVector& Vel() { return m_vel; }
 	void SetWind(const WVector& wind);
 	void SetLight(const LightSet& light);
 
@@ -19,4 +20,6 @@ public:
 	bool m_bActive;
 	unsigned char m_unused110d[0x2b];
 	WVector m_pos;
+	WVector m_bgPos;
+	WVector m_vel;
 };

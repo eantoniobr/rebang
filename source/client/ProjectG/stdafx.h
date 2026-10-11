@@ -14,15 +14,19 @@
 #include <atlapp.h>
 extern WTL::CAppModule _Module;
 #include <atlwin.h>
-#include <atlmisc.h>
-#include <atldlgs.h>
 #include <atlframe.h>
 #include <atlctrls.h>
 #include <atlctrlw.h>
 #include <atlctrlx.h>
+#include "z_ilfill.h"
+ILFILLX1
+#include <atlmisc.h>
+#include <atldlgs.h>
+ILFILLX1B
 
 #include <math.h>
 #include <stdexcept>
+ILFILLX2
 #include "wmath.h"
 #include "gamath.h"
 #include "wutil.h"
@@ -43,6 +47,8 @@ extern WTL::CAppModule _Module;
 #include "wreg.h"
 #include "bitmap.h"
 #include "wavi.h"
+#include "wpuppet.h"
+#include "wview.h"
 #include "wflag.h"
 #include "wangrealapp.h"
 #include "westpak.h"
@@ -54,9 +60,7 @@ extern WTL::CAppModule _Module;
 ILFILL0
 #include "objectfactory.h"
 #include "background.h"
-#include "wview.h"
 #include "w3danispr.h"
-#include "wpuppet.h"
 #include "woverlay.h"
 #include "singleton.h"
 
@@ -68,7 +72,6 @@ ILFILL0
 
 #include "basicdebug.h"
 #include "commonutil.h"
-#include "slicestr.h"
 
 #include "tinyxml.h"
 
@@ -77,35 +80,41 @@ ILFILL0
 #include "packet.h"
 #include "titles_client.h"
 #include "clientsocket.h"
-#include "frbutton.h"
+#include "chatmsg.h"
+// HACK: originally in chatmsg.h, but shifts the frwndmanager unit too much
+inline void CChatMsg::Toggle(bool toggle)
+{
+	m_bToggle = toggle;
+}
 #include "frwndinl.h"
+#include "frbutton.h"
 #include "frgaugebar.h"
 #include "frlistbox.h"
 #include "frstatic.h"
 #include "frgraphicinterface.h"
-#include "fredit.h"
 #include "frarea.h"
-#include "fresh.h"
 #include "wfont.h"
 #include "ucclibrary.h"
 #include "hackingmanager.h"
 #include "frwndmanager.h"
-// HACK: should be inline with class definition, but symbol ordering is tricky
-inline FrDesktop* Fresh::GetDesktop() const
-{
-	return manager->GetDesktop();
-}
 #include "inputmanager.h"
 #include "ccrc32.h"
 // HACK
 template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
-#include "taskmanager.h"
 #include "tooltip.h"
 #include "z_ilfill.h"
 ILFILL1
 #include "frframe.h"
 #include "fremoticon.h"
 #include "frviewer.h"
+#include "fredit.h"
+#include "fresh.h"
+#include "mainframe.h"
+// HACK: should be inline with class definition, but symbol ordering is tricky
+inline FrDesktop* Fresh::GetDesktop() const
+{
+	return manager->GetDesktop();
+}
 #include "tweaker.h"
 #include "networksystem.h"
 #include "networkmonitor.h"
@@ -113,9 +122,9 @@ ILFILL1
 #include "gdtextbox.h"
 #include "gdbitmapbox.h"
 #include "gdvoiceitem.h"
-#include "voiceitem.h"
 #include "../../shared/globalgamedefine.h"
 #include "../../shared/globalnetworkdefine.h"
+#include "taskmanager.h"
 #include "actor.h"
 #include "taskmain.h"
 #include "nodecontainer.h"
@@ -124,8 +133,8 @@ ILFILL1
 
 // HACK: workaround for unsolved symbol ordering problems
 template void std::vector<WVector>::reserve(unsigned int);
+template float Min<float>(float, float);
 #include "shareddoc.h"
 #include "uccmanager.h"
 #include "frtext.h"
-#include "mainframe.h"
 #include "wtemplate.h"

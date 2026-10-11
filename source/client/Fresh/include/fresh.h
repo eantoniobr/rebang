@@ -27,6 +27,8 @@ public:
 	FrDesktop* GetDesktop() const;
 	FrWndManager* GetManager() const { return manager; }
 
+	void Toggle(bool b) { show = b; }
+
 private:
 	FrElementDoc document;
 	FrWndManager* manager;

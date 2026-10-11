@@ -36,7 +36,7 @@ void CGolfBall::Reset(WVector pos)
 	m_pos = pos;
 	m_expected[0].pos = pos;
 
-	float* rot = &m_curveRot;
+	float* rot = &m_rot.x;
 
 	m_vel.Reset();
 	rot[0] = rot[1] = 0.0f;

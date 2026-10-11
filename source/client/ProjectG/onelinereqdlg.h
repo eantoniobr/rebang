@@ -29,6 +29,7 @@ class FrOnelineReqDlg : public FrForm
 	virtual ~FrOnelineReqDlg();
 
 	void SetLanguage(bool english);
+	const char* GetInputString() { return m_pChatInput->GetLine(1, false); }
 
 protected:
 	void OnExplainInit(int param);

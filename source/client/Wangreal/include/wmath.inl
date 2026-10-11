@@ -140,6 +140,41 @@ inline WMatrix operator*(const WMatrix& left, const WMatrix& right)
 	return m;
 }
 
+#ifndef WANGREAL_DEVICE
+inline WMatrix RotMat(float angle, char direct)
+{
+	WMatrix m;
+	m.Reset();
+
+	float c = cosf(angle);
+	float s = sinf(angle);
+
+	switch (direct)
+	{
+	case 0:
+		m.yy = c;
+		m.zy = -s;
+		m.yz = s;
+		m.zz = c;
+		break;
+	default:
+		m.xx = c;
+		m.zx = s;
+		m.xz = -s;
+		m.zz = c;
+		break;
+	case 2:
+		m.xx = c;
+		m.yx = s;
+		m.xy = -s;
+		m.yy = c;
+		break;
+	}
+
+	return m;
+}
+#endif
+
 inline WVector RotVec(const WVector& vector, const WMatrix& matrix)
 {
 	return WVector(vector.x * matrix.xx + vector.y * matrix.xy +
@@ -173,6 +208,13 @@ inline void WMatrix::operator*=(float scalar)
 	ya *= scalar;
 	za *= scalar;
 }
+
+#ifndef WANGREAL_DEVICE
+inline void WMatrix::operator*=(const WMatrix& right)
+{
+	*this = *this * right;
+}
+#endif
 
 inline WMatrix WMatrix::operator~() const
 {
@@ -243,13 +285,11 @@ inline WMatrix4::WMatrix4(float p0, float p1, float p2, float p3, float p4,
 	p[15] = p15;
 }
 
-#ifdef WANGREAL_DEVICE
 inline void WMatrix::Reset()
 {
 	xx = yy = zz = 1.0f;
 	yx = zx = xy = zy = xz = yz = xm = ym = zm = 0.0f;
 }
-#endif
 
 inline WMatrix4& WMatrix4::operator=(const WMatrix4& other)
 {

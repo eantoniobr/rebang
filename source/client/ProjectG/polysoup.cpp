@@ -13,6 +13,7 @@
 #include "contentsdoc.h"
 #include "wind.h"
 #include "mathconsts.h"
+#include "slicestr.h"
 
 extern "C" __declspec(dllimport) int __cdecl mkdir(const char*);
 
@@ -364,7 +365,7 @@ static bool IsSilviaCannonArea(const WPolySoup::sArea* area)
 
 	slice.Get("*fx", "%s %f %f %f", name, &value[0], &value[1], &value[2]);
 
-	if (strcmpi(name, "silviacannon.seq") == 0)
+	if (strcmpi(name, K2L_Compatibility("silviacannon.seq")) == 0)
 		return true;
 
 	return false;

@@ -6,6 +6,42 @@
 
 #include <list>
 #include <math.h>
+// HACK!
+namespace
+{
+	struct Pad
+	{
+		int v;
+		void g()
+		{
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+			v += 1;
+		}
+	};
+}
 #include "../../Wangreal/include/wtypes.h"
 #include <string>
 #include "../../Wangreal/include/bitmap.h"

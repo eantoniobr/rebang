@@ -142,6 +142,7 @@ public:
 	bool IsCamMode() { return m_camMode; }
 	void SetMode(int mode) { m_mode = mode; }
 	void SetItemWindow(bool itemWindow) { m_itemWindow = itemWindow; }
+	void Enable(int area, bool enable) { m_bArea[area] = enable; }
 	void SetTerrainToolTip(bool tooltip) { m_bTerrainTooltip = tooltip; }
 
 private:

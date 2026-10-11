@@ -238,8 +238,9 @@ protected:
 public:
 	WRect m_dlgRect;
 
-protected:
 	WRect m_alarmRect;
+
+protected:
 	std::map<unsigned long, sUserInfoTime> m_userInfoTimeMap;
 	std::list<MSNServerInfo> m_serverList;
 	FrMessengerDlg* m_pMessengerDlg;

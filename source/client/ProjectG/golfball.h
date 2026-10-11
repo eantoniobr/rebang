@@ -31,8 +31,7 @@ public:
 	{
 		WVector pos;
 		WVector vel;
-		float curveRot;
-		float spinRot;
+		WVector2D rot;
 		char sound[64];
 		unsigned char event;
 		unsigned char effect;
@@ -68,8 +67,7 @@ public:
 	eBallState m_state;
 	unsigned char m_unused1c[12];
 	int m_meshIndex;
-	float m_curveRot;
-	float m_spinRot;
+	WVector2D m_rot;
 	float m_initCurve;
 	float m_initSpin;
 	float m_curve;

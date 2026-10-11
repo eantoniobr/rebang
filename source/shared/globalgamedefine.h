@@ -1560,6 +1560,19 @@ struct CUTIN_ANI_STYPEINFO
 	}
 };
 
+static bool IsNoEffectPrize(int type)
+{
+	switch (type)
+	{
+	case 3:
+	case 4:
+	case 5:
+		return true;
+	}
+
+	return false;
+}
+
 enum GIMMICK_ITEM_TYPE
 {
 	GIMMICK_ITEM_ANY = -1,

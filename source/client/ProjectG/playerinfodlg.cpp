@@ -13,26 +13,6 @@ ON_FRESH_VI("character", FRCMD_INIT, FrPlayerInfoDlg::OnCharInfoInit)
 ON_FRESH_VI("caddie", FRCMD_INIT, FrPlayerInfoDlg::OnCadInfoInit)
 END_FRESH_MSGMAP()
 
-inline unsigned char MyIndex()
-{
-	bool bGM = (Doc()->m_myInfo.info.dwIdentity >> 1) & 1;
-	if (bGM)
-	{
-		switch (Doc()->m_golfGame.gameType)
-		{
-		case 4:
-		case 5:
-		case 6:
-		case 9:
-		case 10:
-			return Doc()->GetIndex(Doc()->m_myInfo.info.dwGalleryGuid);
-		default:
-			return GOLFDOC()->m_currentPlayer;
-		}
-	}
-	return Doc()->GetIndex(Doc()->m_myInfo.info.dwGuid);
-}
-
 FrPlayerInfoDlg::FrPlayerInfoDlg()
 {
 }

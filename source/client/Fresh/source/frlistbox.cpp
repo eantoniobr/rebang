@@ -9,10 +9,6 @@
 #include "commonutil.h"
 
 // HACK: workaround to preserve emission order
-inline float FrWnd::GetAlpha() const
-{
-	return m_wndAlpha;
-}
 inline FrListItem::FrListItem()
 	: pData(NULL), underCursor(false), selected(false)
 {

@@ -240,7 +240,6 @@ public:
 	bool CanUseRookieChannelMap(unsigned int course);
 	__int64 RemainOwnCash(unsigned long provider, __int64 cookie);
 
-	char* GetFileName() { return m_fileName; }
 	const std::list<sItemInfo>& GetConstMyItemList() { return m_myItemList; }
 	eReplayModeType GetPlayingMode() { return m_playingMode; }
 
@@ -499,7 +498,7 @@ public:
 	short m_guildScore[2];
 	unsigned long m_guildRoundScore[2];
 	unsigned long m_unused47bc;
-	unsigned long m_teamPang[2];
+	__int64 m_myGamePang;
 	unsigned long m_unused47c8;
 	unsigned long m_unused47cc;
 	unsigned char m_unused47d0;
@@ -628,11 +627,14 @@ public:
 	bool m_bWearHalloweenItem;
 	void SetReplayState(int state) { m_replayState = state; }
 	int GetReplayState() { return m_replayState; }
+	char* GetFileName() { return m_fileName; }
+	int GetReplayPlayType() { return m_replayPlayType; }
+	void SetReplayPlayType(int type) { m_replayPlayType = type; }
 	int m_replayState;
 	int m_replayPlayType;
 	eReplayModeType m_playingMode;
 	char m_fileName[32];
-	unsigned long m_replayPosition;
+	float m_replayPosition;
 	unsigned long m_replayDuration;
 	unsigned long m_replayTick;
 	int m_replayShotIndex;
@@ -658,6 +660,8 @@ public:
 	std::map<unsigned char, sMapStatistics> m_pastMapStat[4];
 	std::map<std::string, std::list<std::string> > m_visGroupMap;
 	bool m_goStopMode;
+	void SetGoStopMode(bool bMode) { m_goStopMode = bMode; }
+	bool GetGoStopMode() { return m_goStopMode; }
 	void SetAppGiftDownloadState(eAppGiftDownloadState state)
 	{
 		m_appGiftDownloadState = state;
@@ -679,10 +683,12 @@ public:
 int OnlinePlay();
 bool SetCurMap(unsigned char map);
 unsigned char GetCurMap();
+bool IsCurMapSnow();
 
 ILFILL3
 
 #include "golftask.h"
+#include "voiceitem.h"
 class CContentsDoc;
 // HACK!
 typedef char CONTENTSDOC_SINGLETON_SIZE[sizeof(WSingleton<CContentsDoc>)];

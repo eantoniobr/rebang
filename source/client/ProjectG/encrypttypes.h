@@ -116,3 +116,18 @@ private:
 	unsigned short m_key16;
 	unsigned char m_key8;
 };
+
+// In-place setter for WCrypticValue<int>. Line records seem to suggest this was a macro.
+#define CRYPTIC_SET_INT(var, value) \
+	{ \
+		unsigned char* p = (unsigned char*)&(var); \
+		*(unsigned long*)p = \
+			~(unsigned long)(value) ^ *(unsigned long*)(p + 8); \
+		void* address = p; \
+		unsigned char i = 0; \
+		while (i < 4) \
+		{ \
+			p[i + 4] = ((unsigned char*)&address)[i] ^ p[i]; \
+			i++; \
+		} \
+	}

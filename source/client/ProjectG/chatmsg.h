@@ -12,15 +12,17 @@ public:
 	CChatMsg();
 	virtual ~CChatMsg();
 	void Reset();
+	void ClearHistory();
+	void ReplaceBackupUiAlpha();
 	unsigned long ConvertToUIColor(unsigned long color);
 	void AddChatMsg(const std::string& msg, unsigned long color, bool b1,
 		bool b2);
 	void SetActive(bool active, bool b2, bool b3);
+	void Close(bool b1, bool b2);
 	void SetChatText(const char* text, bool b);
 	void Process(float deltaTime);
 	void ProcessMacro(const float deltaTime);
 	const char* MakeShortID(const char* id, float width);
-	bool IsActive() const { return m_bActive; }
 	void GetChatText(std::string& front, std::string& comp, std::string& end);
 	int GetCurCaretPos() { return m_iCurByte; }
 	void ResetCurCaretPos()
@@ -33,11 +35,13 @@ public:
 	bool IsOpened() { return m_iState == 3; }
 	bool IsClosed() { return m_iState == 0; }
 	bool IsOpenning() { return m_iState == 2 || m_iState == 1; }
+	int GetConsolKeyCode() const { return m_iConsolCode; }
+	bool IsActive() const { return m_bActive; }
+	WFont* GetMaskedFont() const { return m_pMaskedFont; }
 	void EnableCaretMove(bool enable) { m_bCaretMove = enable; }
 	void SetBufLen(int len) { m_nMaxBytes = len; }
 	void SetBufWidth(float width) { m_fMaxWidth = width; }
-	int GetConsolKeyCode() const { return m_iConsolCode; }
-	WFont* GetMaskedFont() const { return m_pMaskedFont; }
+	void Toggle(bool toggle);
 
 protected:
 	void OnMoveRight();

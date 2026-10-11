@@ -55,12 +55,16 @@ public:
 		const char* name, unsigned long flag, Waabb* aabb);
 	void DeleteElement(const char* name);
 	void SetVisible(const char* name, bool bVisible);
+	void SetLOD(bool bEnable, bool bRebuild);
 	void Load();
 	void SetWeather(unsigned char weather, bool force);
 	void SetLobbyWeather(bool enable);
+	void UpdateFog(bool bCourse);
 	void UpdateFog(const char* mapName);
 	void SetPuppet(const char* name, WPuppet* puppet);
+	WPuppet* GetPuppet(const char* name);
 	void ReleaseElement();
+	void UpdateWind();
 };
 
 class CWavelet

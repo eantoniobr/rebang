@@ -102,6 +102,35 @@ inline unsigned char LastMap(bool bAll)
 	return s_courseOrder[i];
 }
 
+inline sPlayerData* PLAYER(unsigned char index);
+inline unsigned long MyGuid(bool bGallery);
+
+inline bool IsMyTurn(bool bCheck)
+{
+	switch (Doc()->m_gameMode)
+	{
+	case 5:
+		return PLAYER(GOLFDOC()->m_currentPlayer)->oid == MyGuid(false);
+
+	case 0:
+		if (WNetworkSystem::Instance()->IsConnected(WNetworkSystem::NET_GAME))
+		{
+			if (GalleryMode())
+				return bCheck;
+
+			return PLAYER(GOLFDOC()->m_currentPlayer)->oid == MyGuid(false);
+		}
+		break;
+	}
+
+	return true;
+}
+
+inline bool IsOthersTurn(bool bCheck)
+{
+	return !IsMyTurn(bCheck);
+}
+
 inline const char* GetCurMapName()
 {
 	if (Doc()->m_golfGame.pCourse)
@@ -110,7 +139,17 @@ inline const char* GetCurMapName()
 	return NULL;
 }
 
+inline IFF_STRUCT::sCourse* GetCurMapProp()
+{
+	return Doc()->m_golfGame.pCourse;
+}
+
 inline const char* GetGameTypeName(unsigned char gameType);
+
+inline unsigned char GetGameType()
+{
+	return Doc()->m_golfGame.gameType;
+}
 
 inline void SetGameType(unsigned char gameType)
 {
@@ -149,6 +188,16 @@ inline void SetHoles(unsigned char holes)
 	Doc()->m_golfGame.holes = holes;
 }
 
+inline unsigned char GetStartHole()
+{
+	return Doc()->m_holeOrder[0];
+}
+
+inline unsigned char GetEndHole()
+{
+	return Doc()->m_holeOrder[GetHoles() - 1];
+}
+
 inline void SetWeather(unsigned char weather)
 {
 	Doc()->m_golfGame.weather = weather;
@@ -162,6 +211,11 @@ inline unsigned char GetHoleIndex(unsigned char hole)
 			return i + 1;
 	}
 	return 19;
+}
+
+inline unsigned char GetWeather()
+{
+	return Doc()->m_golfGame.weather;
 }
 
 inline unsigned long GetShotTimeLimit()
@@ -199,9 +253,29 @@ inline CGolfDoc* GOLFDOC()
 	return Doc()->m_pGolfDoc;
 }
 
+inline WVector GetTeeShotPos()
+{
+	return GOLFDOC()->m_pHoleData[GOLFDOC()->m_currentHole - 1].tee;
+}
+
 inline WVector GetHoleCupPos()
 {
-	return GOLFDOC()->m_pHoleData[GOLFDOC()->m_currentHole - 1].pin;
+	return GOLFDOC()->GetHoleData().pin;
+}
+
+inline unsigned char& UIAlpha()
+{
+	return GOLFDOC()->m_uiAlpha;
+}
+
+inline sBar& Bar()
+{
+	return GOLFDOC()->m_bar;
+}
+
+inline sCameraData& GameCamera()
+{
+	return GOLFDOC()->m_cameraData;
 }
 
 inline unsigned char CSharedDoc::GetIndex(unsigned long uid)
@@ -227,10 +301,25 @@ inline unsigned char CSharedDoc::GetIndex(unsigned long uid)
 	return 0xff;
 }
 
+inline void SetGameOver(bool bGameOver)
+{
+	Doc()->m_bGameOver = bGameOver;
+}
+
+inline bool IsGameOver()
+{
+	return Doc()->m_bGameOver;
+}
+
 // HACK: stands in for an unknown PCH inline that deletes a std::string
 inline void DeleteString(std::string* p)
 {
 	std::auto_ptr<std::string> holder(p);
+}
+
+inline unsigned long GetGameTimeLimit()
+{
+	return Doc()->m_golfGame.gameTimeLimit;
 }
 
 inline unsigned long MyGuid(bool bGallery)
@@ -289,6 +378,33 @@ inline char* MyNick()
 	return Doc()->m_myInfo.info.sNick;
 }
 
+inline unsigned char MyIndex()
+{
+	if (GalleryMode())
+	{
+		switch (Doc()->m_golfGame.gameType)
+		{
+		case GAME_TYPE_30S:
+		case GAME_TYPE_30S_TEAM:
+		case GAME_TYPE_GUILD_MATCH:
+		case GAME_TYPE_APPROACH:
+		case GAME_TYPE_NEW_APPROACH:
+			return Doc()->GetIndex(Doc()->m_myInfo.info.dwGalleryGuid);
+		default:
+			return GOLFDOC()->m_currentPlayer;
+		}
+	}
+	return Doc()->GetIndex(Doc()->m_myInfo.info.dwGuid);
+}
+
+inline int IsObserver(unsigned long identity)
+{
+	if (identity == 0xffffffff)
+		identity = Doc()->m_myInfo.info.dwIdentity;
+
+	return (identity & 0xe) == 0xe;
+}
+
 inline __int64 MyPang()
 {
 	return Doc()->m_myInfo.stat.i64Pang;
@@ -301,10 +417,7 @@ inline __int64 MyCookie()
 
 inline int GalleryMode()
 {
-	bool bGM = (Doc()->m_myInfo.info.dwIdentity >> 1) & 1;
-	if (bGM)
-		return TRUE;
-	return FALSE;
+	return (bool)((Doc()->m_myInfo.info.dwIdentity >> 1) & 1);
 }
 
 inline bool IsAngelWing(unsigned long typeId)

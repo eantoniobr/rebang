@@ -52,7 +52,11 @@
     },
     "source/client/ProjectG/taskmain.obj",
     "source/client/ProjectG/golfdoc.obj",
-    "source/client/ProjectG/golfrule.obj",
+    {
+      "path": "source/client/ProjectG/golfrule.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/golftask.obj",
     {
       "path": "source/client/ProjectG/golfrule30battle.cpp",

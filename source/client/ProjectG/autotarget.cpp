@@ -91,7 +91,7 @@ WVector CAutoTarget::GetPoint(const char* club)
 				SolveEquation((unsigned char)i, range) + GolfBall().m_pos;
 			WVector directions[2];
 			directions[0] = point - GolfBall().m_pos;
-			WVector target = GetHoleCupPos();
+			const WVector& target = GetHoleCupPos();
 			directions[1] = target - GolfBall().m_pos;
 			if (directions[0].x * directions[1].x +
 					directions[0].z * directions[1].z >

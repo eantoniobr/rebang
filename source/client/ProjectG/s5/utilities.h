@@ -31,5 +31,10 @@ namespace S5
 		int Base64Encode(char* pSrc, int nLength, char* pDst);
 		int Base64Decode(char* pSrc, unsigned char* pDst, int nLength);
 		unsigned long GetServerProperty();
+		int GetHoleinCoinCount(int count, int type);
+		void SendCutInPacket(unsigned long uid, short type,
+			unsigned long gameMode, unsigned long charTid);
 	}
+
+	bool ISCutinItem(unsigned long typeId);
 }

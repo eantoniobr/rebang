@@ -128,8 +128,8 @@ public:
 	WFlags m_nFlags;
 
 	const WFlags& GetStyle() const { return m_dwStyle; }
-	float GetAlpha() const;
-	void SetAlpha(float alpha);
+	float GetAlpha() const { return m_wndAlpha; }
+	void SetAlpha(float alpha) { m_wndAlpha = alpha; }
 	float GetAlpha2() const;
 	void SetAlpha2(float alpha);
 	void SetAlpha2ToChild(float a);
@@ -139,7 +139,7 @@ public:
 	bool IsVisible() const { return m_dwStyle.GetFlag(FWS_VISIBLE); }
 	void SetKeyEvent(bool enable) { m_dwStyle.Turn(FWS_KEYEVENT, enable); }
 	void SetTopmost(bool topmost);
-	void SetFixed(bool fixed);
+	void SetFixed(bool fixed) { m_dwStyle.Turn(FWS_FIXED, fixed); }
 	bool IsFixed() { return m_dwStyle.GetFlag(FWS_FIXED); }
 	void UseDblClick(bool use) { m_dwStyle.Turn(FWS_NODBLCLICK, !use); }
 	void EnableHover(bool enable, float time);
@@ -153,7 +153,7 @@ public:
 	bool IsViewFocused() const;
 	bool IsTopFocus() const;
 	bool SetKeyFocus(bool resetPrevImeData);
-	bool HasKeyFocus();
+	bool HasKeyFocus() { return m_nFlags.GetFlag(FWF_KEYFOCUS); }
 	bool ResetKeyFocus();
 	void FindNextTopFocus(bool bForce);
 	bool SetCapture();
@@ -164,7 +164,7 @@ public:
 	void MoveCursor(const char* name);
 	void SetPushSound(const char* name_const);
 	bool PlayPushSound();
-	FrScrollBar* GetScrollBar();
+	FrScrollBar* GetScrollBar() { return m_pScrBar; }
 	void SetWheelFocus();
 
 protected:

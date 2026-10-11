@@ -174,4 +174,32 @@ struct sCardStack
 	unsigned char unknownD;
 };
 
+struct sBonusBall
+{
+	int color;
+	unsigned long typeId;
+	unsigned long id;
+	int count;
+	unsigned char category;
+	unsigned char timeType;
+	unsigned short time;
+};
+
+struct sShotProtocol
+{
+	float maxClick;
+	float minClick;
+	float curve;
+	float spin;
+	unsigned char accuracy;
+	unsigned long speical;
+	unsigned long frame;
+	float angle;
+	unsigned long shotTime;
+	float center;
+	unsigned char clubIndex;
+	float randomPower;
+	float randomAngle;
+};
+
 #pragma pack(pop)

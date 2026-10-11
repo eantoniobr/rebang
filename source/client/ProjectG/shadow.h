@@ -8,6 +8,8 @@ public:
 	virtual ~CShadowManager();
 
 	void UpdateLight(const char* lightName, LightSet& light);
+	void Enable(bool bEnable);
+	void SetActive(bool bActive);
 
 protected:
 	bool m_bEnable;

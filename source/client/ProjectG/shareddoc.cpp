@@ -1,4 +1,5 @@
 #include "minatl.h"
+ILFILLTU_SHAREDDOC0
 #include "exhibition.h"
 #include "contentsdoc.h"
 #include "cardsystem.h"
@@ -11,7 +12,6 @@
 #include "../../shared/token.h"
 #include "club.h"
 #include "../../shared/s5/sharedutilities.h"
-static float BAR_LENGTH = BAR_END - BAR_START;
 #include "standinginline.h"
 #include "mathconsts.h"
 
@@ -220,8 +220,7 @@ void CSharedDoc::ClearCommonVars()
 	m_pangRate = 1.0f;
 	m_expRate = 100;
 	m_offlinePlay = 0;
-	m_teamPang[0] = 0;
-	m_teamPang[1] = 0;
+	m_myGamePang = 0;
 	m_newRecordState = 0xff;
 	m_pcBang = 0;
 	m_roomSetupStage = 0;

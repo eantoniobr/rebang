@@ -16,6 +16,8 @@ struct Attacher
 };
 
 struct defines_t;
+class CFxControl;
+class CGolfBall;
 
 // TODO: incomplete
 class CPvsFxBox : public CFxBox
@@ -55,6 +57,15 @@ public:
 	void UpdateExtWind(WVector wind);
 	bool FindSequence(CFxSequence* sequence);
 	bool GetOutput(WVector& out, unsigned char& value);
+	CFxControl* FindControl(int handle);
+	int MakePowerSpin(CGolfBall& ball);
+	int MakeBoosterWarp(CGolfBall& ball, unsigned char type);
+	int MakeShotImpact(CGolfBall& ball);
+	int MakeClubImpact(CGolfBall& ball, unsigned long typeId);
+	int MakeTomahawk(const CGolfBall& ball, bool bPower);
+	int MakeCobra(const CGolfBall& ball);
+	int MakeSpike(const CGolfBall& ball, bool bPower);
+	int MakePowerShot2(CGolfBall& ball);
 	void SetPvsFxBoxGroundHeight(float maxHeight, float minHeight)
 	{
 		m_pvsFxBox.SetGroundHeightArea(maxHeight, minHeight);
