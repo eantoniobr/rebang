@@ -323,6 +323,5 @@ protected:
 
 struct sGameOptionInfo
 {
-	char macro[8][64];
-	char reserved[64];
+	char macro[9][64];
 };

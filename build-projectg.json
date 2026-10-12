@@ -765,7 +765,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/optiondlg.obj",
+    {
+      "path": "source/client/ProjectG/optiondlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/playerinfodlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
