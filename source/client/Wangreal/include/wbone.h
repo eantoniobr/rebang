@@ -304,6 +304,7 @@ public:
 	int GetID() { return m_id; }
 	char* GetBoneMotionName() { return m_motion_bone_name; }
 	WVector& GetPivot() { return m_basicMat.pivot; }
+	WMatrix& GetLocalMatrix() { return m_localMat; }
 	WMatrix& GetBasicMatrix() { return m_basicMat; }
 	WMatrix& GetMatrix() { return m_matrix; }
 	void ToggleSelfIllum()
