@@ -183,31 +183,6 @@ void FrFormBar::OnInitBtnOK(int param)
 	m_btn.first = pBtn;
 }
 
-void FrFormBar::OnDownBtnOK()
-{
-	FrForm::Close(FrOK, true);
-}
-
-void FrFormBar::OnInitBtnNO(int param)
-{
-	FrButton* pBtn = DYNAMIC_CAST(FrButton, param);
-	if (pBtn == NULL)
-		return;
-
-	pBtn->SetVisible(false);
-	m_btn.second = pBtn;
-}
-
-void FrFormBar::OnDownBtnNO()
-{
-	FrForm::Close(FrNO, true);
-}
-
-void FrFormBar::OnInitGaugeArea(int param)
-{
-	m_pGaugeArea = DYNAMIC_CAST(FrArea, param);
-}
-
 void FrFormBar::OnDrawGaugeArea()
 {
 	FrGraphicInterface* pDevice = g_pFresh->GetManager()->GetGDI();
@@ -239,6 +214,31 @@ void FrFormBar::OnDrawGaugeArea()
 	pDevice->DrawTexture(m_pGaugeImg, rect, 0xffffffff, false);
 
 	pDevice->DrawTexture(m_pFrameImg, m_frameRect, 0xffffffff, false);
+}
+
+void FrFormBar::OnDownBtnOK()
+{
+	FrForm::Close(FrOK, true);
+}
+
+void FrFormBar::OnInitBtnNO(int param)
+{
+	FrButton* pBtn = DYNAMIC_CAST(FrButton, param);
+	if (pBtn == NULL)
+		return;
+
+	pBtn->SetVisible(false);
+	m_btn.second = pBtn;
+}
+
+void FrFormBar::OnDownBtnNO()
+{
+	FrForm::Close(FrNO, true);
+}
+
+void FrFormBar::OnInitGaugeArea(int param)
+{
+	m_pGaugeArea = DYNAMIC_CAST(FrArea, param);
 }
 
 void FrFormBar::EnableButton(bool bEnable)

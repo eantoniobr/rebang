@@ -1681,74 +1681,6 @@ void WPolySoup::SetRenderMode(int mode)
 	m_baseModel->pet->SetRenderMode(mode);
 }
 
-void WPolySoup::MakeStatistics()
-{
-	mkdir("statistics");
-	FILE* fp = fopen(MakeStr("statistics/%s_%02d_stat.txt", GetCurMapName(),
-						 GOLFDOC()->m_currentHole),
-		"wt");
-	if (!fp)
-		return;
-
-	int total = 0;
-	int maxFace = 0;
-	int minFace = 1000;
-	int count[11];
-	memset(count, 0, sizeof(count));
-
-	for (int i = 0; i < m_modelNum; i++)
-	{
-		sModel* model = m_model[i];
-		int faceNum = model->pet->m_faceNum;
-		int index = faceNum / 100;
-		if (index > 10)
-			index = 10;
-		count[index]++;
-
-		total += model->pet->m_faceNum;
-		maxFace = Max(model->pet->m_faceNum, maxFace);
-		minFace = Min(faceNum, minFace);
-	}
-
-	fprintf(fp,
-		"*[%s_%02d]\xc0\xc7 \xbf\xc0\xba\xea\xc1\xa7\xc6\xae \xb8\xde\xbd\xac \xba\xd0\xc6\xf7\xb5\xb5\n\n",
-		GetCurMapName(), GOLFDOC()->m_currentHole);
-
-	for (int i = 0; i < 11; i++)
-	{
-		if (i == 10)
-			fprintf(fp, "%3d~    : ", 1000);
-		else
-			fprintf(fp, "%3d~%3d : ", i * 100, i * 100 + 100);
-
-		for (int j = count[i]; j > 0; j--)
-			fprintf(fp, "*");
-
-		fprintf(fp, "(%d)\n", count[i]);
-	}
-
-	int average = total / GetModelNum();
-	int sum = 0;
-	for (int i = 0; i < m_modelNum; i++)
-	{
-		int faceNum = m_model[i]->pet->m_faceNum;
-		sum += faceNum * faceNum;
-	}
-	int variance = (sum - m_modelNum * average * average) / (m_modelNum - 1);
-
-	fprintf(fp, "\n\xc7\xd5\xb0\xe8   : %d(%d)\n",
-		m_baseModel->pet->m_faceNum + total, m_modelNum);
-	fprintf(fp, "\xc6\xf2\xb1\xd5\xb0\xaa : %d\n", average);
-	fprintf(fp, "\xc3\xd6\xbc\xd2\xb0\xaa : %d\n", minFace);
-	fprintf(fp, "\xc3\xd6\xb4\xeb\xb0\xaa : %d\n", maxFace);
-	fprintf(fp, "\xc7\xa5\xc1\xd8\xc6\xed\xc2\xf7 : %.0f\n",
-		sqrt((double)variance));
-	fprintf(fp, "\xc5\xd8\xbd\xba\xc3\xc4\xb0\xb9\xbc\xf6 : %d\n",
-		m_header.textureNum);
-
-	fclose(fp);
-}
-
 static float Interpolate(float a, float b, float c, float u, float v)
 {
 	return (b - a) * u + (c - a) * v + a;
@@ -1823,6 +1755,74 @@ static void Barycentric(float* u, float* v, const WVector* p, const WVector* a,
 		(d[2].y * d[1].x - d[2].x * d[1].y);
 	*v = (d[1].x * d[0].y - d[1].y * d[0].x) /
 		(d[2].y * d[1].x - d[2].x * d[1].y);
+}
+
+void WPolySoup::MakeStatistics()
+{
+	mkdir("statistics");
+	FILE* fp = fopen(MakeStr("statistics/%s_%02d_stat.txt", GetCurMapName(),
+						 GOLFDOC()->m_currentHole),
+		"wt");
+	if (!fp)
+		return;
+
+	int total = 0;
+	int maxFace = 0;
+	int minFace = 1000;
+	int count[11];
+	memset(count, 0, sizeof(count));
+
+	for (int i = 0; i < m_modelNum; i++)
+	{
+		sModel* model = m_model[i];
+		int faceNum = model->pet->m_faceNum;
+		int index = faceNum / 100;
+		if (index > 10)
+			index = 10;
+		count[index]++;
+
+		total += model->pet->m_faceNum;
+		maxFace = Max(model->pet->m_faceNum, maxFace);
+		minFace = Min(faceNum, minFace);
+	}
+
+	fprintf(fp,
+		"*[%s_%02d]\xc0\xc7 \xbf\xc0\xba\xea\xc1\xa7\xc6\xae \xb8\xde\xbd\xac \xba\xd0\xc6\xf7\xb5\xb5\n\n",
+		GetCurMapName(), GOLFDOC()->m_currentHole);
+
+	for (int i = 0; i < 11; i++)
+	{
+		if (i == 10)
+			fprintf(fp, "%3d~    : ", 1000);
+		else
+			fprintf(fp, "%3d~%3d : ", i * 100, i * 100 + 100);
+
+		for (int j = count[i]; j > 0; j--)
+			fprintf(fp, "*");
+
+		fprintf(fp, "(%d)\n", count[i]);
+	}
+
+	int average = total / GetModelNum();
+	int sum = 0;
+	for (int i = 0; i < m_modelNum; i++)
+	{
+		int faceNum = m_model[i]->pet->m_faceNum;
+		sum += faceNum * faceNum;
+	}
+	int variance = (sum - m_modelNum * average * average) / (m_modelNum - 1);
+
+	fprintf(fp, "\n\xc7\xd5\xb0\xe8   : %d(%d)\n",
+		m_baseModel->pet->m_faceNum + total, m_modelNum);
+	fprintf(fp, "\xc6\xf2\xb1\xd5\xb0\xaa : %d\n", average);
+	fprintf(fp, "\xc3\xd6\xbc\xd2\xb0\xaa : %d\n", minFace);
+	fprintf(fp, "\xc3\xd6\xb4\xeb\xb0\xaa : %d\n", maxFace);
+	fprintf(fp, "\xc7\xa5\xc1\xd8\xc6\xed\xc2\xf7 : %.0f\n",
+		sqrt((double)variance));
+	fprintf(fp, "\xc5\xd8\xbd\xba\xc3\xc4\xb0\xb9\xbc\xf6 : %d\n",
+		m_header.textureNum);
+
+	fclose(fp);
 }
 
 bool WPolySoup::LoadShadowmapInfo()

@@ -88,7 +88,6 @@ inline void CChatMsg::Toggle(bool toggle)
 }
 #include "frwndinl.h"
 #include "frbutton.h"
-#include "frgaugebar.h"
 #include "frlistbox.h"
 #include "frstatic.h"
 #include "frgraphicinterface.h"
@@ -105,6 +104,8 @@ inline void CChatMsg::Toggle(bool toggle)
 // HACK
 template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
 #include "tooltip.h"
+#include "frform.h"
+#include "frgaugebar.h"
 #include "z_ilfill.h"
 ILFILL1
 #include "fremoticon.h"
