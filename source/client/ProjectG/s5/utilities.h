@@ -1,5 +1,7 @@
 #pragma once
 
+class WRect;
+
 namespace S5
 {
 	namespace UTIL
@@ -27,6 +29,9 @@ namespace S5
 			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 			-1, -1, -1, -1, -1, -1, -1 };
+
+		bool CalculateUVPos(WRect& rect, int imageWidth, int imageHeight,
+			float cellWidth, float cellHeight, int index);
 
 		int Base64Encode(char* pSrc, int nLength, char* pDst);
 		int Base64Decode(char* pSrc, unsigned char* pDst, int nLength);

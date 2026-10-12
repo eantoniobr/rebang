@@ -538,7 +538,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/s5/demonlanddlg.obj",
+    {
+      "path": "source/client/ProjectG/s5/demonlanddlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/demonlanddoc.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
