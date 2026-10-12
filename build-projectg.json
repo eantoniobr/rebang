@@ -488,7 +488,11 @@
     },
     "source/client/ProjectG/itembuffactor.obj",
     "source/client/ProjectG/ghostdocument.obj",
-    "source/client/ProjectG/ghostgamedlg.obj",
+    {
+      "path": "source/client/ProjectG/ghostgamedlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/ghosthandler.obj",
     "source/client/ProjectG/ghostmain.obj",
     "source/client/ProjectG/ghostmanager.obj",

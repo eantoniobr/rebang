@@ -73,7 +73,7 @@ private:
 		int index = 0;
 		std::vector<GAMEBONUS>::iterator it = m_vecBonus.begin();
 		for (; it != m_vecBonus.end(); ++it, ++index)
-			if (iBonusPoint <= it->point)
+			if (iBonusPoint <= (*it).point)
 				break;
 
 		return index;
