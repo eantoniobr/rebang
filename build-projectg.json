@@ -725,7 +725,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/bongdarishopdlg.obj",
+    {
+      "path": "source/client/ProjectG/bongdarishopdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/cardboxdlg.obj",
     {
       "path": "source/client/ProjectG/emoticondlg.cpp",

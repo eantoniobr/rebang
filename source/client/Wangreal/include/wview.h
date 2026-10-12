@@ -67,7 +67,14 @@ public:
 	bool SetFogEnable(bool);
 	void SetFogState(float, float, unsigned long);
 	void SetViewport(float, float);
-	WVector2D GetScreenCenter() const;
+	WVector2D GetScreenCenter() const
+	{
+		return WVector2D(m_center_x, m_center_y);
+	}
+	void SetScreenCenter(const WVector2D& center)
+	{
+		SetScreenCenter(center.x, center.y);
+	}
 	void SetFOV(float);
 	void DrawLine2D(const _WPOINT&, const _WPOINT&, unsigned long, int);
 	void DrawLine2D(const _WPOINT&, const _WPOINT&, unsigned long,
@@ -149,7 +156,7 @@ public:
 	float GetRatio() const { return SCREEN_YS / SCREEN_XS; }
 	float GetClipNearValue() const { return clip_near; }
 	float GetClipFarValue() const { return clip_far; }
-	float GetFOV() const;
+	float GetFOV() const { return FOV * (SCREEN_YS / SCREEN_XS) * (4.f / 3.f); }
 	__forceinline WVideoDev* GetVideoDevice() const
 	{
 		return GetResrcManager()->video;

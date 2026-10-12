@@ -74,11 +74,6 @@ inline int WisZero(const float& f, float epsilon = g_EPSILON)
 	return Wabs(f) < epsilon;
 }
 
-inline float WView::GetFOV() const
-{
-	return (SCREEN_YS / SCREEN_XS) * FOV * (4.0f / 3.0f);
-}
-
 ILFILLTU_GOLFRULE3
 
 const char* g_bgmPutting[] = {

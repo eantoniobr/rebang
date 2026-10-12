@@ -1,14 +1,14 @@
 #pragma once
 
+#include "frform.h"
 #include <list>
 #include <vector>
-
+#include "noticeimage.h"
 #include "../../shared/globalnetworkdefine.h"
 
 class CExhibition;
-class FrTextButton;
 class CSimpleUI;
-#include "noticeimage.h"
+class FrTextButton;
 
 class FrBongdariShopDlg : public FrForm
 {
@@ -34,7 +34,7 @@ class FrBongdariShopDlg : public FrForm
 		WVector pos;
 		float scale;
 		int bounceCount;
-		bool bMoving;
+		unsigned char state;
 		float rotSpeed;
 	};
 
@@ -163,7 +163,6 @@ protected:
 
 	DECLARE_FRESH_MSGMAP()
 
-protected:
 public:
 	void SetUsingBonusBall(bool bUsing) { m_bUsingBonusBall = bUsing; }
 };
@@ -301,7 +300,6 @@ protected:
 
 	DECLARE_FRESH_MSGMAP()
 
-protected:
 public:
 	unsigned long GetMoveLayoutTid() { return m_moveLayoutTid; }
 };
