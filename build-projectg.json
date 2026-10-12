@@ -780,7 +780,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/recycledlg.obj",
+    {
+      "path": "source/client/ProjectG/recycledlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/recycletable.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
