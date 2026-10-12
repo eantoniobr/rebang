@@ -795,7 +795,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/scratchdlg.obj",
+    {
+      "path": "source/client/ProjectG/scratchdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/setitemdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
