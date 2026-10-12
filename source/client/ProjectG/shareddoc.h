@@ -353,6 +353,7 @@ public:
 	unsigned long GetMyDisconPangPenalty();
 	void LoadVisGroup(const char* filename);
 	void SetTradeMode(unsigned char mode) { m_tradeMode = mode; }
+	unsigned char GetTradeMode() { return m_tradeMode; }
 	void SetFileName(char* const filename);
 	void ReplaySavFileCheck();
 	std::list<std::string>* GetVisGroup(const char* name);

@@ -476,7 +476,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/transferableitem.obj",
-    "source/client/ProjectG/offlinetradedlg.obj",
+    {
+      "path": "source/client/ProjectG/offlinetradedlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/standinginline.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
