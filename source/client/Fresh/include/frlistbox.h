@@ -88,6 +88,13 @@ public:
 	void DelItem(FrListItem* item);
 	ITEM_LIST::iterator _DelItem(ITEM_LIST::iterator it);
 	void ClearItem();
+	template <class T>
+	void OrderItem(T function)
+	{
+		for (ITEM_LIST::iterator it = m_itemList.begin();
+			it != m_itemList.end(); ++it)
+			function((*it)->pData);
+	}
 	void SortItem(bool (*compare)(const void*, const void*));
 	void RecalcTopBottom();
 	void EnableScrollBar(bool enable);

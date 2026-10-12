@@ -1638,7 +1638,11 @@
     },
     "source/client/ProjectG/guildauthcontroller.obj",
     "source/client/ProjectG/guildformcontroller.obj",
-    "source/client/ProjectG/ingameguildlobbydlg.obj",
+    {
+      "path": "source/client/ProjectG/ingameguildlobbydlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/ingameguildmyroomdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
