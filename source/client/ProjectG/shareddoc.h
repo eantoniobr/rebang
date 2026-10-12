@@ -332,6 +332,10 @@ public:
 	void ClearListTradeItem() { m_listTradeItem.clear(); }
 	std::list<sTradeItem>* GetListTradeItem() { return &m_listTradeItem; }
 	int GetSizeTradeItem() { return (int)m_listTradeItem.size(); }
+	unsigned long GetTradeUID() { return m_tradeUID; }
+	const char* GetTradeTitle() { return m_tradeTitle.c_str(); }
+	int GetCountVisitor() { return m_countVisitor; }
+	__int64 GetTradeIncome() { return m_tradeIncome; }
 	void ClearListStallItem() { m_listStallItem.clear(); }
 	std::list<sStall>* GetListStallItem() { return &m_listStallItem; }
 	void AddListStallItem(sStall item) { m_listStallItem.push_back(item); }
