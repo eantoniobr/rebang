@@ -96,6 +96,9 @@ inline void CChatMsg::Toggle(bool toggle)
 #include "wfont.h"
 #include "ucclibrary.h"
 #include "hackingmanager.h"
+#include "frframe.h"
+#include "frscrollbar.h"
+#include "frcombobox.h"
 #include "frwndmanager.h"
 #include "inputmanager.h"
 #include "ccrc32.h"
@@ -104,7 +107,6 @@ template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
 #include "tooltip.h"
 #include "z_ilfill.h"
 ILFILL1
-#include "frframe.h"
 #include "fremoticon.h"
 #include "frviewer.h"
 #include "fredit.h"

@@ -549,7 +549,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/treasure.obj",
-    "source/client/ProjectG/treasuredlg.obj",
+    {
+      "path": "source/client/ProjectG/treasuredlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/shotpreview.obj",
     "source/client/ProjectG/shotreview.obj",
     "source/client/ProjectG/guildactor.obj",

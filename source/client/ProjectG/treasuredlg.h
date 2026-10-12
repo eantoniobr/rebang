@@ -315,7 +315,16 @@ public:
 		bool bItem;
 		int state;
 
-		sTGift() { Reset(); }
+		sTGift()
+			: index(-1),
+			  frame(0.f),
+			  typeId(0),
+			  quantity(0),
+			  bMine(false),
+			  bItem(false),
+			  state(0)
+		{
+		}
 		void Reset()
 		{
 			index = -1;
@@ -353,8 +362,8 @@ public:
 	const Bitmap* m_pMsgBmp;
 	const Bitmap* m_pBoxFrameBmp;
 	const Bitmap* m_pBoxBmp[4];
-	eSeqProc m_reserveSeq;
 	eSeqProc m_nextSeq;
+	eSeqProc m_reserveSeq;
 	eSeqProc m_curSeq;
 	unsigned char m_boxType;
 	int m_unknown58;
