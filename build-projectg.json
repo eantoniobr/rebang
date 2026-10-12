@@ -1628,7 +1628,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/playerdlg.obj",
+    {
+      "path": "source/client/ProjectG/playerdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/rankingdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

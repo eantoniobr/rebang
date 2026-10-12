@@ -9,7 +9,6 @@
 #include "frform.h"
 class CExhibition;
 class CPartTidList;
-class FrPlayerDlg;
 class FrPlayerEmptyDlg;
 enum eLvlType;
 enum PANGYA_ITEM_GROUP;
@@ -73,13 +72,13 @@ private:
 			for (int i = 0; i < n; ++i)
 				++it;
 
-			return it->second.typeId;
+			return it->second.tid;
 		}
 		else
 		{
 			typename T::iterator it = m.find(guid);
 			if (it != m.end())
-				return it->second.typeId;
+				return it->second.tid;
 		}
 		return 0;
 	}
