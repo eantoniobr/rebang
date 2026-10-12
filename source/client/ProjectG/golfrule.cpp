@@ -19,7 +19,7 @@ ILFILLTU_GOLFRULE
 #include "clientsetting.h"
 #include "slicestr.h"
 #include "onelineboard.h"
-#include "rankingdlg.h"
+#include "rankinginfo.h"
 #include "shufflebonus.h"
 #include "messengerdlg.h"
 #include "../../shared/encryption.h"

@@ -31,7 +31,7 @@ class FrMailBoxDlg;
 #include "browser.h"
 #include "projectg.h"
 #include "familymain.h"
-#include "rankingdlg.h"
+#include "rankinginfo.h"
 #include "logindlg.h"
 #include "detailedroominfodlg.h"
 #include "scoredlg.h"

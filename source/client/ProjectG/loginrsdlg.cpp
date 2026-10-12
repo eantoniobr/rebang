@@ -1,7 +1,7 @@
 #include "minatl.h"
 #include "loginrsdlg.h"
 #include "frbutton.h"
-#include "rankingdlg.h"
+#include "rankinginfo.h"
 #include "user_info.h"
 #include "mathconsts.h"
 

@@ -14,7 +14,7 @@
 #include "effectmanager.h"
 #include "buddymanager.h"
 #include "netresourcemanager.h"
-#include "rankingdlg.h"
+#include "rankinginfo.h"
 #include "onelineboard.h"
 #include "messengerdlg.h"
 #include "gmtoolkit.h"
