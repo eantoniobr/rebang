@@ -38,6 +38,8 @@ namespace S5
 		int IsExistExpiredRentalItem(const std::list<sItemInfo>& items);
 	}
 
+	bool ISCutinItem(unsigned long typeId);
+
 	__int64 ExchangeOwnCashToCookie(__int64 cash, __int64 cookie, int rate);
 	__int64 ExchangeOwnCookieToCash(__int64 cookie, int rate);
 

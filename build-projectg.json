@@ -1320,7 +1320,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/checkoutdlg.obj",
+    {
+      "path": "source/client/ProjectG/checkoutdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/compounddlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
