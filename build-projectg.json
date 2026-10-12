@@ -1504,7 +1504,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/bingoeventdlg.obj",
+    {
+      "path": "source/client/ProjectG/bingoeventdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/christamseventdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

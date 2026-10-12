@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frform.h"
+#include "wflag.h"
 #include <vector>
 #include <map>
 
@@ -12,18 +13,21 @@ class FrBingoGiftDlg;
 class CBingoPoint
 {
 public:
+	enum
+	{
+		PROPERTY_OVER = 1,
+		PROPERTY_AIMED = 2,
+	};
+
 	CBingoPoint(int number);
 	~CBingoPoint();
 
 	void SetPointNumber(int number) { m_pointNumber = number; }
 	int GetPointNumber() const { return m_pointNumber; }
 
-	void EnableProperty(int property) { m_property |= property; }
-	void DisableProperty(int property) { m_property &= ~property; }
-	bool IsProperty(int property)
-	{
-		return (m_property & property) ? true : false;
-	}
+	void EnableProperty(int property) { m_property.Enable(property); }
+	void DisableProperty(int property) { m_property.Disable(property); }
+	bool IsProperty(int property) { return m_property.GetFlag(property); }
 
 	void DrawPoint(FrGraphicInterface* gdi, const Bitmap** const bitmap,
 		const WRect& rect, float x, float y);
@@ -34,7 +38,7 @@ public:
 private:
 	int m_pointNumber;
 	bool m_bEnable;
-	int m_property;
+	WFlags m_property;
 };
 
 class CBingoLine
