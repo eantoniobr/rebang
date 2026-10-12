@@ -402,11 +402,16 @@ public:
 	{
 		return m_forceNicknameChange;
 	}
-	void SetFriendGameSvrUID(unsigned long uid);
+	void SetFriendGameSvrUID(unsigned long uid) { m_friendGameSvrUID = uid; }
 	unsigned long GetFriendGameSvrUID();
-	void SetInviteMode(int mode);
-	int IsInviteMode();
+	void SetInviteMode(int mode) { m_inviteMode = mode; }
+	int IsInviteMode() { return m_inviteMode; }
 	void SetGoWithModeStart(int uid) { m_goWithFriendUID = uid; }
+	void SetGoWithModeEnd()
+	{
+		m_goWithMode = 0;
+		m_goWithFriendUID = -1;
+	}
 	void SetGoWithMode(int mode) { m_goWithMode = mode; }
 
 protected:

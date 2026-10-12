@@ -79,11 +79,6 @@ inline int Abs(int value)
 	return value > 0 ? value : -value;
 }
 
-inline void CSharedDoc::SetInviteMode(int mode)
-{
-	m_inviteMode = mode;
-}
-
 int float2int(float f);
 
 class ILoginInfo;

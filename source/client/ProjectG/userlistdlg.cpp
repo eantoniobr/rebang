@@ -11,21 +11,9 @@
 #include "packet.h"
 #include "../../shared/localize.h"
 
-inline void CSharedDoc::SetFriendGameSvrUID(unsigned long uid)
-{
-	m_friendGameSvrUID = uid;
-}
 inline unsigned long CSharedDoc::GetFriendGameSvrUID()
 {
 	return m_friendGameSvrUID;
-}
-inline void CSharedDoc::SetInviteMode(int mode)
-{
-	m_inviteMode = mode;
-}
-inline int CSharedDoc::IsInviteMode()
-{
-	return m_inviteMode;
 }
 
 extern Fresh* g_pFresh;

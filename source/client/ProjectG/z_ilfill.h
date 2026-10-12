@@ -45,7 +45,7 @@
 		struct Pad \
 		{ \
 			int v; \
-			void g() { ILFILL64 ILFILL64 ILFILL16 ILFILL16 ILFILL4 v += 1; v += 1; } \
+			void g() { ILFILL64 ILFILL64 ILFILL16 ILFILL16 ILFILL16 ILFILL4 v += 1; v += 1; v += 1; } \
 		}; \
 	}
 
@@ -139,7 +139,7 @@
 		{ \
 			int v; \
 			ILFILLFN(0) ILFILLFN(1) \
-			void g() { ILFILL64 ILFILL16 ILFILL16 ILFILL16 ILFILL4 } \
+			void g() { ILFILL64 ILFILL16 ILFILL4 ILFILL4 v += 1; v += 1; v += 1; } \
 		}; \
 	}
 
@@ -190,12 +190,4 @@
 		}; \
 	}
 
-// HACK! The number of inline functions in a PCH impacts scheduling ties in c2. This is knbown to impact:
-// - projectg SaveScreenShot
-// - WPolySoup::MakeStatistics
-// These can be removed as we fill in unknown inlines in our headers...
-inline void ILCOUNT0(){}
-inline void ILCOUNT1(){}
-inline void ILCOUNT2(){}
-inline void ILCOUNT3(){}
 // clang-format on

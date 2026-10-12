@@ -825,7 +825,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/messengerdlg.obj",
+    {
+      "path": "source/client/ProjectG/messengerdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/messengeroptdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

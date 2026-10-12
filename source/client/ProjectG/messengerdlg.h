@@ -54,7 +54,7 @@ struct sChatSlot
 		bAlarm = false;
 
 		tempChat = "";
-		rect = WRect(0, 0, 0, 0);
+		memset(&rect, 0, sizeof(rect));
 		chatList.clear();
 	}
 };
@@ -67,7 +67,6 @@ public:
 	friend IObject* FrMessengerDlgMakeInstance();
 
 	FrMessengerDlg();
-	virtual ~FrMessengerDlg();
 
 	virtual bool Close(bool bResult);
 
@@ -183,11 +182,11 @@ struct MSNServerInfo : public sGameServerInfo
 class CMessengerInfo : public WSingleton<CMessengerInfo>, public FrCmdTarget
 {
 	friend class MSNUnit;
+	friend class FrMessengerDlg;
 	friend class FrMessengerChatDlg;
 
 public:
 	CMessengerInfo();
-	virtual ~CMessengerInfo();
 
 	FrMessengerDlg* GetMessengerDlg() { return m_pMessengerDlg; }
 
@@ -254,9 +253,12 @@ protected:
 	int m_curServerIndex;
 	MSN::eStatusType m_myStatus;
 	int m_popupIndex;
-	bool m_bFriendOnExpand;
-	bool m_bFriendOffExpand;
-	bool m_bUnknown96;
+	struct GroupExpansion
+	{
+		bool friendOnline;
+		bool friendOffline;
+		bool unknown;
+	} m_groupExpansion;
 	std::list<unsigned long> m_focusList;
 	NewsReader* m_pNewsReader;
 	FrGuildNoticeDlg* m_pGuildNoticeDlg;
