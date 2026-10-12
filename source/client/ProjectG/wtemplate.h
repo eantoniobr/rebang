@@ -228,7 +228,7 @@ struct _FindItem
 	template <class T>
 	bool operator()(const T& t) const
 	{
-		return m_typeId == t.typeId && m_id == t.id;
+		return m_typeId == t.tid && m_id == t.guid;
 	}
 
 	unsigned long m_typeId;

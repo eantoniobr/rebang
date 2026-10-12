@@ -775,7 +775,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/privatetradedlg.obj",
+    {
+      "path": "source/client/ProjectG/privatetradedlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/recycledlg.obj",
     {
       "path": "source/client/ProjectG/recycletable.cpp",

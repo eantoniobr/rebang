@@ -45,7 +45,7 @@
 		struct Pad \
 		{ \
 			int v; \
-			void g() { ILFILL64 ILFILL16 ILFILL16 ILFILL16 ILFILL4 ILFILL4 v += 1; v += 1; } \
+			void g() { ILFILL64 ILFILL64 ILFILL4 ILFILL4 v += 1; v += 1; } \
 		}; \
 	}
 
@@ -205,8 +205,4 @@ inline void ILCOUNT7(){}
 inline void ILCOUNT8(){}
 inline void ILCOUNT9(){}
 inline void ILCOUNT10(){}
-inline void ILCOUNT11(){}
-inline void ILCOUNT12(){}
-inline void ILCOUNT13(){}
-inline void ILCOUNT14(){}
 // clang-format on

@@ -140,3 +140,6 @@ template float Min<float>(float, float);
 #include "uccmanager.h"
 #include "frtext.h"
 #include "wtemplate.h"
+
+// HACK: the PCH seems to instantiate these somewhere - it hasn't been recovered yet
+template std::string::iterator std::string::iterator::operator+(int) const;
