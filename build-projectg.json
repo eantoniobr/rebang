@@ -1355,7 +1355,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/giftdlg.obj",
+    {
+      "path": "source/client/ProjectG/giftdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/helpdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
