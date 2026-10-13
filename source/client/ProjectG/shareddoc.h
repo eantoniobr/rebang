@@ -227,6 +227,7 @@ public:
 	std::string GetLoginAuthKey();
 	int IsControlServerService(int service);
 	void ClearUserInfoTimeMap(unsigned long uid);
+	unsigned long GetFlagBlock() { return m_myInfo.info.dwFlagBlock; }
 	short GetBsUsableTimes() { return m_myInfo.info.iBongdariShopUsableTimes; }
 	short GetBsUsableBonusTimes()
 	{
@@ -236,6 +237,8 @@ public:
 	{
 		return m_myInfo.info.iBongdariShopRemainedBonus;
 	}
+	int GetTimeBlock() { return m_myInfo.info.iTimeBlock; }
+
 	void HaveAngelWing(bool bHave) { m_bHaveAngelWing = bHave; }
 	void SetIndex(unsigned long uid);
 	unsigned char GetIndex(unsigned long guid);

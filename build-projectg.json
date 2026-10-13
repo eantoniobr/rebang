@@ -1544,7 +1544,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/serverdlg.obj",
+    {
+      "path": "source/client/ProjectG/serverdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/tikimagicboxdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

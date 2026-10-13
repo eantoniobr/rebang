@@ -39,6 +39,7 @@ namespace S5
 		int GetHoleinCoinCount(int count, int type);
 		void SendCutInPacket(unsigned long uid, short type,
 			unsigned long gameMode, unsigned long charTid);
+		void SetServerProperty(unsigned long property);
 	}
 
 	bool ISCutinItem(unsigned long typeId);

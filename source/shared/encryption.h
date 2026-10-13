@@ -4,7 +4,7 @@
 #define ENCRYPTION_KEY_LEN (sizeof(ENCRYPTION_KEY) - 1)
 
 template <typename T>
-static unsigned int Decrypt(T* src, unsigned int srclen)
+static unsigned int __stdcall Decrypt(T* src, unsigned int srclen)
 {
 	unsigned char* data = (unsigned char*)src;
 
