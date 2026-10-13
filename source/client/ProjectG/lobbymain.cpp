@@ -11784,7 +11784,7 @@ void CLobbyMain::OnGameRoom_RoomUserDClick()
 
 void CLobbyMain::OnGameRoom_TitleInit(int param)
 {
-	m_pTitle = FR_DYNAMIC_CAST(FrEdit, param);
+	m_pTitle = DYNAMIC_CAST(FrEdit, param);
 	HandleMsg(MsgObject(this, 16, 0, 0, 0, 0, 0));
 
 	Doc()->SortAllMyItemList();
@@ -11814,14 +11814,14 @@ void CLobbyMain::OnGameRoom_EventOwnerDraw(int param)
 
 void CLobbyMain::OnGameRoom_MapBgInit(int param)
 {
-	m_pMapBg = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pMapBg = DYNAMIC_CAST(FrViewer, param);
 	if (m_pMapBg)
 		m_pMapBg->SetMouseEvent(false);
 }
 
 void CLobbyMain::OnGameRoom_MapGaugeInit(int param)
 {
-	m_pMapGauge = FR_DYNAMIC_CAST(FrGaugeBarImage, param);
+	m_pMapGauge = DYNAMIC_CAST(FrGaugeBarImage, param);
 	if (m_pMapGauge)
 	{
 		m_pMapGauge->SetRange(0, 300, 0);
@@ -12037,7 +12037,7 @@ void CLobbyMain::OpenGameExtResQuitForm()
 
 void CLobbyMain::OnGameRoom_CharInit(int param)
 {
-	m_pChar = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pChar = DYNAMIC_CAST(FrViewer, param);
 }
 
 void CLobbyMain::OnGameRoom_CharDown()
@@ -12098,7 +12098,7 @@ void CLobbyMain::OnGameRoom_CharOwnerDraw(int param)
 
 void CLobbyMain::OnGameRoom_CaddieInit(int param)
 {
-	m_pCaddie = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pCaddie = DYNAMIC_CAST(FrViewer, param);
 }
 
 void CLobbyMain::OnGameRoom_CaddieDown()
@@ -12181,7 +12181,7 @@ void CLobbyMain::OnGameRoom_CaddieOwnerDraw(int param)
 
 void CLobbyMain::OnGameRoom_ClubInit(int param)
 {
-	m_pClub = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pClub = DYNAMIC_CAST(FrViewer, param);
 }
 
 void CLobbyMain::OnGameRoom_ClubDown()
@@ -12245,7 +12245,7 @@ void CLobbyMain::OnGameRoom_ClubOwnerDraw(int param)
 
 void CLobbyMain::OnGameRoom_AztecInit(int param)
 {
-	m_pAztec = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pAztec = DYNAMIC_CAST(FrViewer, param);
 }
 
 void CLobbyMain::OnGameRoom_AztecDown()
@@ -12359,7 +12359,7 @@ void CLobbyMain::OnGameRoom_AztecOwnerDraw(int param)
 
 void CLobbyMain::OnGameRoom_MascotInit(int param)
 {
-	m_pMascot = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pMascot = DYNAMIC_CAST(FrViewer, param);
 }
 
 void CLobbyMain::OnGameRoom_MascotDown()
@@ -12423,7 +12423,7 @@ void CLobbyMain::OnGameRoom_MascotOwnerDraw(int param)
 
 void CLobbyMain::OnGameRoom_EquipItemInit(int param)
 {
-	m_pEquipItem = FR_DYNAMIC_CAST(FrViewer, param);
+	m_pEquipItem = DYNAMIC_CAST(FrViewer, param);
 }
 void CLobbyMain::OnGameRoom_EquipItemDown()
 {

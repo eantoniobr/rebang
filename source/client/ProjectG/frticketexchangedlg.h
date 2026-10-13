@@ -3,13 +3,6 @@
 #include "frform.h"
 #include <map>
 
-class FrTicketExchangeDescDlg;
-// HACK
-#define FR_DYNAMIC_CAST(T, p) \
-	((__rtti_obj = (void*)(p)) \
-			? (T*)((IObject*)__rtti_obj)->DynamicCast(&T::m_RTTI) \
-			: (T*)NULL)
-
 class TicketInfo : public WSingleton<TicketInfo>
 {
 public:
@@ -78,7 +71,7 @@ public:
 	FrButton* get_Button(int obj)
 	{
 		if (m_pButton == NULL)
-			m_pButton = FR_DYNAMIC_CAST(FrButton, obj);
+			m_pButton = DYNAMIC_CAST(FrButton, obj);
 
 		return m_pButton;
 	}
@@ -89,7 +82,7 @@ public:
 			return NULL;
 
 		if (m_pEdit[index] == NULL)
-			m_pEdit[index] = FR_DYNAMIC_CAST(FrEdit, obj);
+			m_pEdit[index] = DYNAMIC_CAST(FrEdit, obj);
 
 		return m_pEdit[index];
 	}
@@ -101,7 +94,7 @@ public:
 			pViewer = m_pFrameViewer;
 
 		if (pViewer == NULL)
-			pViewer = FR_DYNAMIC_CAST(FrViewer, obj);
+			pViewer = DYNAMIC_CAST(FrViewer, obj);
 
 		if (bFrame)
 			m_pFrameViewer = pViewer;
@@ -205,9 +198,5 @@ private:
 	FrTicketExchangeDescDlg* m_pDescDlg;
 	FrViewer* m_pNumber[4];
 
-	static sFRESH_ENTRY _MsgEntries[];
-
-protected:
-	static sFRESH_MSGMAP _MsgMap;
-	virtual const sFRESH_MSGMAP* GetMessageMap() const;
+	DECLARE_FRESH_MSGMAP()
 };
