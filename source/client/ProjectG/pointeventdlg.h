@@ -1,35 +1,38 @@
 #pragma once
 
 #include "frform.h"
-class FrPointEventDescDlg;
-class FrPointEventNoticeDlg;
 
 class CCommodityItem
 {
 public:
 	enum eItemType
 	{
+		TYPE_NULL,
+		TYPE_PANG,
+		TYPE_COOKIE,
+		TYPE_ITEM,
+		TYPE_VOTE,
+		TYPE_CONTRIBUTION,
 	};
 
 	CCommodityItem();
-	CCommodityItem(const CCommodityItem& rhs);
-	CCommodityItem(unsigned long typeID, unsigned long value,
-		eItemType itemType);
+	CCommodityItem(const CCommodityItem& item);
+	CCommodityItem(unsigned long id, unsigned long value, eItemType type);
 	virtual ~CCommodityItem() { }
 
-	void SetTypeID(unsigned long typeID);
+	void SetTypeID(unsigned long id);
 	void SetValue(unsigned long value);
-	void SetItemType(eItemType itemType);
+	void SetItemType(eItemType type);
 	unsigned long GetTypeID() const;
 	unsigned long GetValue() const;
 	eItemType GetItemType() const;
 
-	const CCommodityItem& operator=(const CCommodityItem& rhs);
+	const CCommodityItem& operator=(const CCommodityItem& item);
 
 protected:
-	eItemType m_itemType;
-	unsigned long m_typeID;
-	unsigned long m_value;
+	eItemType m_ItemType;
+	unsigned long m_dwTid;
+	unsigned long m_dwValue;
 };
 
 class CCommodity
@@ -38,7 +41,7 @@ public:
 	static const int MAX_ITEM_COUNT = 4;
 
 	CCommodity();
-	CCommodity(const CCommodity& rhs);
+	CCommodity(const CCommodity& commodity);
 	CCommodity(const CCommodityItem& item, unsigned short cost);
 	virtual ~CCommodity() { }
 
@@ -46,14 +49,14 @@ public:
 	unsigned short GetCommodityItemCount() const;
 	unsigned short GetCommodityCost() const;
 	bool InsertCommodityItem(const CCommodityItem& item);
-	const CCommodityItem& GetCommodityItem(unsigned short index) const;
+	const CCommodityItem& GetCommodityItem(unsigned short idxItem) const;
 
-	const CCommodity& operator=(const CCommodity& rhs);
+	const CCommodity& operator=(const CCommodity& commodity);
 
 protected:
-	CCommodityItem m_item[MAX_ITEM_COUNT];
-	unsigned short m_itemCount;
-	unsigned short m_cost;
+	CCommodityItem m_Item[MAX_ITEM_COUNT];
+	unsigned short m_usCurItemCount;
+	unsigned short m_usCost;
 };
 
 class CCommodityTable
@@ -64,12 +67,12 @@ public:
 	CCommodityTable();
 	virtual ~CCommodityTable() { }
 
-	const CCommodity& GetCommodity(unsigned short index) const;
+	const CCommodity& GetCommodity(unsigned short idxCommodity) const;
 
 protected:
 	bool InitializeTable();
 
-	CCommodity m_commodity[MAX_COMMODITY_COUNT];
+	CCommodity m_Commodity[MAX_COMMODITY_COUNT];
 };
 
 class CCommodityStatusManager

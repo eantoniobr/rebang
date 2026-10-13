@@ -1613,7 +1613,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/pointeventdlg.obj",
+    {
+      "path": "source/client/ProjectG/pointeventdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/valentineeventdlg.obj",
     {
       "path": "source/client/ProjectG/worldtoureventdlg.cpp",
