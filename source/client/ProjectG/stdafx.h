@@ -88,6 +88,7 @@ inline void CChatMsg::Toggle(bool toggle)
 }
 #include "frwndinl.h"
 #include "frbutton.h"
+#include "frtabbutton.h"
 #include "frlistbox.h"
 #include "frstatic.h"
 #include "frgraphicinterface.h"

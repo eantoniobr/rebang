@@ -22,7 +22,7 @@
 		struct Pad \
 		{ \
 			int v; \
-			void f0() { ILFILL64 ILFILL64 ILFILL16 ILFILL4 ILFILL4 ILFILL4 ILFILL4 ILFILL4 v += 1; v += 1; } \
+			void f0() { ILFILL64 ILFILL64 ILFILL4 ILFILL4 ILFILL4 v += 1; v += 1; v += 1; } \
 			void g() { ILFILL4 ILFILL4 } \
 		}; \
 	}
@@ -138,8 +138,7 @@
 		struct Pad \
 		{ \
 			int v; \
-			ILFILLFN(0) ILFILLFN(1) \
-			void g() { ILFILL64 ILFILL16 ILFILL4 ILFILL4 v += 1; v += 1; v += 1; } \
+			void g() { ILFILL256 ILFILL256 ILFILL64 ILFILL16 ILFILL16 v += 1; v += 1; v += 1; } \
 		}; \
 	}
 
