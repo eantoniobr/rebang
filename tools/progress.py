@@ -297,24 +297,14 @@ def escape(text: str) -> str:
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def nice_ceiling(value: float) -> float:
-    for step in (1, 2.5, 5, 10, 25, 50, 100):
-        if value <= step:
-            return float(step)
-    return 100.0
-
-
 def render_graph(rows: list[dict[str, str]]) -> str:
     top, right, bottom, left = MARGIN
     plot_w, plot_h = WIDTH - left - right, HEIGHT - top - bottom
     times = [datetime.fromisoformat(row["date"]).timestamp() for row in rows]
     total = int(rows[-1]["total_size"])
-    data_span = max(times[-1] - times[0], 1.0)
-    now = datetime.now(tz=datetime.fromisoformat(rows[-1]["date"]).tzinfo).timestamp()
-    pad = min(max(now - times[-1], 0.08 * data_span), 0.25 * data_span)
-    end = times[-1] + pad
+    end = times[-1]
     span = max(end - times[0], 1.0)
-    ceiling = nice_ceiling(100.0 * int(rows[-1]["size"]) / total)
+    ceiling = 100.0
 
     def x_of(time: float) -> float:
         return left + plot_w * (time - times[0]) / span
