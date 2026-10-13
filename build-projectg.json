@@ -1406,7 +1406,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/changeroominfodlg.obj",
+    {
+      "path": "source/client/ProjectG/changeroominfodlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/createnickdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

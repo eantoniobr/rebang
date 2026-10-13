@@ -2,8 +2,15 @@
 
 #include "frform.h"
 
+enum eHoleType
+{
+	FRONT_HOLE,
+	BACK_HOLE,
+	START_RANDOM,
+	ALL_RANDOM
+};
+
 class FrTabButton;
-enum eHoleType;
 class FrTreasureCourse;
 
 static const char* s_gameTypeTitle[16] = {

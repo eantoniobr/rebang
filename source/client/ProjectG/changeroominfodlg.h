@@ -80,28 +80,10 @@ protected:
 	int m_hole;
 	int m_course;
 	unsigned char m_holeType;
-	unsigned long m_gameTime;
-	unsigned long m_shotTime;
+	int m_gameTime;
+	int m_shotTime;
 	float m_btnDelay;
 	sRoomInfo m_roomInfo;
 
 	DECLARE_FRESH_MSGMAP()
 };
-
-namespace
-{
-	struct _invalidPwd
-	{
-		bool bInvalid;
-
-		_invalidPwd()
-			: bInvalid(false)
-		{
-		}
-		void operator()(char c)
-		{
-			if (c == ' ')
-				bInvalid = true;
-		}
-	};
-}
