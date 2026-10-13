@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frform.h"
+
 class FrValEventDlg : public FrForm
 {
 	DECLARE_OBJECT(FrValEventDlg)
@@ -73,11 +74,7 @@ protected:
 private:
 	void CheckButtonClick();
 
-	static sFRESH_ENTRY _MsgEntries[];
-
-protected:
-	static sFRESH_MSGMAP _MsgMap;
-	virtual const sFRESH_MSGMAP* GetMessageMap() const;
+	DECLARE_FRESH_MSGMAP()
 };
 
 class NtValentineEventDlg : public FrForm
@@ -136,11 +133,7 @@ protected:
 private:
 	void UpdateCombinerState();
 
-	static sFRESH_ENTRY _MsgEntries[];
-
-protected:
-	static sFRESH_MSGMAP _MsgMap;
-	virtual const sFRESH_MSGMAP* GetMessageMap() const;
+	DECLARE_FRESH_MSGMAP()
 };
 
 class ntHolesEventDlg : public FrForm
