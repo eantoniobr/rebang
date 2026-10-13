@@ -2,11 +2,11 @@
 
 #include "frform.h"
 
-class CSimpleUI;
 #include <string>
 #include <vector>
 #include <stdlib.h>
 
+class CSimpleUI;
 class CGDTextBox;
 class CGDBitmapBox;
 class FrBirthdayEventHelpDlg;
@@ -21,12 +21,14 @@ struct MissionData
 		value = 0;
 	}
 };
+
 struct BoardInfo
 {
 	WRect boardRect;
 	WRect numberRect;
 	const Bitmap* pNumberBmp;
 };
+
 class FrBirthdayEventDlg : public FrForm
 {
 	DECLARE_OBJECT(FrBirthdayEventDlg)
@@ -83,11 +85,7 @@ private:
 	WRect m_dateRect;
 	WRect m_clickRect;
 
-	static sFRESH_ENTRY _MsgEntries[];
-
-protected:
-	static sFRESH_MSGMAP _MsgMap;
-	virtual const sFRESH_MSGMAP* GetMessageMap() const;
+	DECLARE_FRESH_MSGMAP()
 };
 
 class FrBirthdayEventHelpDlg : public FrForm

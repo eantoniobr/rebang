@@ -1632,7 +1632,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/birthdayeventdlg.obj",
+    {
+      "path": "source/client/ProjectG/birthdayeventdlg.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/luciabirthdayevent.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
