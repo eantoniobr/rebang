@@ -372,7 +372,7 @@ def render_graph(rows: list[dict[str, str]]) -> str:
         if index and index != len(times) - 1:
             continue
         label = datetime.fromisoformat(rows[index]["date"]).strftime("%Y-%m-%d")
-        anchor = "start" if index == 0 else "middle"
+        anchor = "start" if index == 0 else "end"
         out.append(
             f'<text x="{x_of(time):.1f}" y="{top + plot_h + 18}"'
             f' text-anchor="{anchor}">{label}</text>'
