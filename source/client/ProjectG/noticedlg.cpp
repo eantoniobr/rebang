@@ -212,7 +212,8 @@ void FrNoticeDlg::OnViewBtnDown()
 		it != m_images[m_curIndex].bnList.end(); ++it)
 	{
 		WPoint pos(m_pViewer->GetRect().x, m_pViewer->GetRect().y);
-		WRect rect(pos.x + (*it).x, pos.y + (*it).y, (*it).w, (*it).h);
+		WRect rect(pos.x + (*it).rect.x, pos.y + (*it).rect.y, (*it).rect.w,
+			(*it).rect.h);
 		if (rect.IsInRect(point))
 		{
 			m_typeId = (*it).typeId;

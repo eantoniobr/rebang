@@ -287,7 +287,11 @@
     },
     "source/client/ProjectG/particle.obj",
     "source/client/ProjectG/privatetrade.obj",
-    "source/client/ProjectG/scoreboard.obj",
+    {
+      "path": "source/client/ProjectG/scoreboard.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/searcher.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

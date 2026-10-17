@@ -136,6 +136,7 @@ public:
 	}
 	WRect operator+(WPoint& point) const;
 	WRect operator-(WPoint& point) const;
+	WRect operator+(WRect& rect) const;
 	float Right() const { return w + x; }
 	float Bottom() const { return h + y; }
 	int operator!=(WRect& rect) const
@@ -175,6 +176,20 @@ inline WRect WRect::operator+(WPoint& point) const
 inline WRect WRect::operator-(WPoint& point) const
 {
 	return WRect(x - point.x, y - point.y, w, h);
+}
+
+template <>
+inline WRect::WRect(const WPoint& pt, float width, float height)
+{
+	x = pt.x;
+	y = pt.y;
+	w = width;
+	h = height;
+}
+
+inline WRect WRect::operator+(WRect& rect) const
+{
+	return WRect(x + rect.x, y + rect.y, w + rect.w, h + rect.h);
 }
 
 template <class Width, class Height>

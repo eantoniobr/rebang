@@ -95,15 +95,18 @@ inline void CChatMsg::Toggle(bool toggle)
 #include "z_ilfill.h"
 ILFILL1
 #include "frwndinl.h"
-#include "frarea.h"
+ILFILLF1
 #include "frframe.h"
 #include "frbutton.h"
 #include "frstatic.h"
 #include "frscrollbar.h"
 #include "fredit.h"
 #include "frform.h"
-#include "frcombobox.h"
+#include "frdesktop.h"
+ILFILLF2
 #include "frlistbox.h"
+#include "frcombobox.h"
+#include "frarea.h"
 #include "frwndmanager.h"
 #include "inputmanager.h"
 #include "tweaker.h"

@@ -10,10 +10,7 @@ struct sNoticeImage
 		sBn() { }
 
 		int typeId;
-		float x;
-		float y;
-		float w;
-		float h;
+		WRect rect;
 	};
 
 	sNoticeImage() { name[0] = 0; }

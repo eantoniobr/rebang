@@ -1,4 +1,3 @@
-ILFILLTU_REALMYROOMMAINUI0
 #include "s5/utilities.h"
 #include "mathconsts.h"
 #include "clientsetting.h"

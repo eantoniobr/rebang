@@ -44,8 +44,8 @@ void LoadNoticeImageFile(const char* filename,
 				sNoticeImage::sBn bn;
 				bSpace = true;
 
-				sscanf(token.c_str(), "%d %f %f %f %f", &bn.typeId, &bn.x,
-					&bn.y, &bn.w, &bn.h);
+				sscanf(token.c_str(), "%d %f %f %f %f", &bn.typeId, &bn.rect.x,
+					&bn.rect.y, &bn.rect.w, &bn.rect.h);
 				info.bnList.push_back(bn);
 			}
 			else if (*p == '\r')

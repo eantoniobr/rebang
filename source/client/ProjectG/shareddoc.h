@@ -17,7 +17,6 @@ typedef std::auto_ptr<std::string>::element_type AUTOSTRING_ELEM;
 #include "polysoup.h"
 #include "golfdoc.h"
 #include "z_ilfill.h"
-ILFILL2A
 ILFILL2
 #include "../../shared/localize.h"
 #include "hatmanager.h"

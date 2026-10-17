@@ -2667,8 +2667,8 @@ void FrBongdarishopNoticeDlg::OnNoticeViewerBnUp()
 			it != m_notice[m_index].bnList.end(); ++it)
 		{
 			WPoint rect(GetRect().x, GetRect().y);
-			WRect buttonRect(rect.x + (*it).x, rect.y + (*it).y, (*it).w,
-				(*it).h);
+			WRect buttonRect(rect.x + (*it).rect.x, rect.y + (*it).rect.y,
+				(*it).rect.w, (*it).rect.h);
 			if (buttonRect.IsInRect(mouse))
 			{
 				m_moveLayoutTid = (*it).typeId;

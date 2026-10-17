@@ -1,3 +1,4 @@
+#include "minatl.h"
 #include "messengerdlg.h"
 #include "messengerchatdlg.h"
 #include "buddymanager.h"
@@ -20,7 +21,6 @@
 #include "inputmanager.h"
 #include "chatmsg.h"
 #include "netresourcemanager.h"
-#include "minatl.h"
 
 typedef std::list<sChatSlot> ChatSlotList;
 typedef std::list<unsigned long> MessengerFocusList;
