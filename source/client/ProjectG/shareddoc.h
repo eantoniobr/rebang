@@ -18,7 +18,6 @@ typedef std::auto_ptr<std::string>::element_type AUTOSTRING_ELEM;
 #include "golfdoc.h"
 #include "z_ilfill.h"
 ILFILL2A
-#include "../../shared/classdefine.h"
 ILFILL2
 #include "../../shared/localize.h"
 #include "hatmanager.h"

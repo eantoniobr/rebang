@@ -61,4 +61,5 @@ FixNamespaceComments: false
 
 SortIncludes: Never
 SortUsingDeclarations: Never
+OneLineFormatOffRegex: '^(// NOFORMAT$)'
 ...

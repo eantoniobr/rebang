@@ -80,38 +80,38 @@ ILFILL0
 #include "packet.h"
 #include "titles_client.h"
 #include "clientsocket.h"
+#include "../../shared/classdefine.h"
 #include "chatmsg.h"
 // HACK: originally in chatmsg.h, but shifts the frwndmanager unit too much
 inline void CChatMsg::Toggle(bool toggle)
 {
 	m_bToggle = toggle;
 }
-#include "frwndinl.h"
-#include "frbutton.h"
-#include "frtabbutton.h"
-#include "frlistbox.h"
-#include "frstatic.h"
+#include "frelement.h"
 #include "frgraphicinterface.h"
-#include "frarea.h"
 #include "wfont.h"
 #include "ucclibrary.h"
 #include "hackingmanager.h"
+#include "z_ilfill.h"
+ILFILL1
+#include "frwndinl.h"
+#include "frarea.h"
 #include "frframe.h"
+#include "frbutton.h"
+#include "frstatic.h"
 #include "frscrollbar.h"
+#include "fredit.h"
+#include "frform.h"
 #include "frcombobox.h"
+#include "frlistbox.h"
 #include "frwndmanager.h"
 #include "inputmanager.h"
+#include "tweaker.h"
+#include "networksystem.h"
+#include "networkmonitor.h"
 #include "ccrc32.h"
 // HACK
 template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
-#include "tooltip.h"
-#include "frform.h"
-#include "frgaugebar.h"
-#include "z_ilfill.h"
-ILFILL1
-#include "fremoticon.h"
-#include "frviewer.h"
-#include "fredit.h"
 #include "fresh.h"
 #include "mainframe.h"
 // HACK: should be inline with class definition, but symbol ordering is tricky
@@ -119,15 +119,17 @@ inline FrDesktop* Fresh::GetDesktop() const
 {
 	return manager->GetDesktop();
 }
-#include "tweaker.h"
-#include "networksystem.h"
-#include "networkmonitor.h"
 #include "projectg.h"
+#include "frtabbutton.h"
+#include "tooltip.h"
+#include "frgaugebar.h"
+#include "fremoticon.h"
+#include "frviewer.h"
+#include "../../shared/globalgamedefine.h"
+#include "../../shared/globalnetworkdefine.h"
 #include "gdtextbox.h"
 #include "gdbitmapbox.h"
 #include "gdvoiceitem.h"
-#include "../../shared/globalgamedefine.h"
-#include "../../shared/globalnetworkdefine.h"
 #include "taskmanager.h"
 #include "actor.h"
 #include "taskmain.h"

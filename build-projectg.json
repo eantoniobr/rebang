@@ -450,7 +450,11 @@
     "source/client/ProjectG/realmyroom_avatar.obj",
     "source/client/ProjectG/realmyroomdata.obj",
     "source/client/ProjectG/realmyroommain.obj",
-    "source/client/ProjectG/realmyroommainui.obj",
+    {
+      "path": "source/client/ProjectG/realmyroommainui.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/realmyroomtask.obj",
     "source/client/ProjectG/ccardbook.obj",
     "source/client/ProjectG/itemstorage.obj",

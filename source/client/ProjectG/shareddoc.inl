@@ -440,6 +440,21 @@ inline bool IsAngelWing(unsigned long typeId)
 	return false;
 }
 
+inline bool IsMannerPlayer()
+{
+	unsigned long gameCount = Doc()->m_myInfo.stat.dwGameCount;
+	if (gameCount < 1)
+		gameCount = 1;
+
+	float rate = (float)Doc()->m_myInfo.stat.dwNoMannerGameCount /
+		(float)gameCount * 100.0f;
+
+	if (rate < 3.0f)
+		return true;
+
+	return false;
+}
+
 inline unsigned char GetCurRoomMapType()
 {
 	return Doc()->m_roomInfo.mapType;

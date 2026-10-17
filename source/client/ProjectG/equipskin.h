@@ -1,0 +1,20 @@
+#pragma once
+
+enum eEquipSkin
+{
+	EQUIP_SKIN_WINDOW_BASE,
+	EQUIP_SKIN_WINDOW_FRAME,
+	EQUIP_SKIN_WINDOW_STICKER,
+	EQUIP_SKIN_SLOT_BASE,
+	EQUIP_SKIN_SLOT_FACE,
+	EQUIP_SKIN_TITLE,
+	MAX_EQUIP_SKIN_NUM
+};
+
+namespace S5
+{
+	namespace UTIL
+	{
+		int GetEquipSkinIndex(eEquipSkin& index, unsigned long typeId);
+	}
+}

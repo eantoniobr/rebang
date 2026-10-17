@@ -1174,22 +1174,7 @@ struct sMailIncludeItem
 	unsigned long reserved30;
 	unsigned char reserved34;
 
-	sMailIncludeItem()
-	{
-		dwIDX = 0xffffffff;
-		dwTID = 0xffffffff;
-
-		iCount = 0;
-		iTimeCount = 0;
-		soCom[0] = soCom[1] = soCom[2] = soCom[3] = soCom[4] = 0;
-		CharacterSlotNum = 0;
-		CaddieSlotNum = 0;
-		dwSetTID = 0xffffffff;
-		iSetItemCount = 0;
-		memset(csUCCIndex, 0, sizeof(csUCCIndex));
-		reserved30 = 0;
-		reserved34 = 0;
-	}
+	sMailIncludeItem();
 };
 #pragma pack(pop)
 
@@ -1767,3 +1752,20 @@ struct sRealMyRoomAuthority
 	char password[100];
 };
 #pragma pack(pop)
+
+inline sMailIncludeItem::sMailIncludeItem()
+{
+	dwIDX = 0xffffffff;
+	dwTID = 0xffffffff;
+
+	iCount = 0;
+	iTimeCount = 0;
+	soCom[0] = soCom[1] = soCom[2] = soCom[3] = soCom[4] = 0;
+	CharacterSlotNum = 0;
+	CaddieSlotNum = 0;
+	dwSetTID = 0xffffffff;
+	iSetItemCount = 0;
+	memset(csUCCIndex, 0, sizeof(csUCCIndex));
+	reserved30 = 0;
+	reserved34 = 0;
+}

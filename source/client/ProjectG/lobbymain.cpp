@@ -15253,3 +15253,5 @@ void CLobbyMain::OnToppage_TopIcon6Up()
 	CloseAllDialogs();
 	CIconManager::Instance()->OnButtonDown(5);
 }
+
+ILFILLTU_LOBBYMAIN
