@@ -1,22 +1,39 @@
 #pragma once
 
 #include <memory>
+#include <deque>
+#include <queue>
+#include "actor.h"
 #include "work.h"
 #include "anotherhand.h"
 #include "frcmdtarget.h"
 
 class IActor;
-class MsgObject;
-
-class CTaskDoc;
+class CBackGround;
 class Fresh;
 class FrForm;
 class FrGaugeBar;
 class WReceivedPacket;
 struct sActor;
 
+class CTaskDoc : public IObject
+{
+	friend class CTaskManager;
+
+public:
+	CTaskDoc();
+	virtual ~CTaskDoc();
+
+	CTask* GetTask() const;
+
+protected:
+	CTask* m_pTask;
+};
+
 class CTask : public IObject, public CHandOwner, public FrCmdTarget
 {
+	friend class CTaskManager;
+
 public:
 	static const WRTTI m_RTTI;
 	virtual const WRTTI* GetRTTI() const { return &m_RTTI; }
@@ -52,7 +69,7 @@ public:
 	virtual int OnPacket(WReceivedPacket& packet) { return 0; }
 	virtual void OnInitFinished() { }
 
-	bool IsInited() { return (m_taskFlag & 2) ? true : false; }
+	bool IsInited() { return m_taskFlag.GetFlag(2); }
 	void SetPause(bool bPause) { m_bPause = bPause; }
 	bool IsRecieveWhisper() { return m_bRecieveWhisper; }
 	void SetWhisper(bool bWhisper) { m_bRecieveWhisper = bWhisper; }
@@ -73,6 +90,12 @@ protected:
 	int OnPacketCommon(WReceivedPacket& packet);
 	void SetTip(bool bTip) { m_bTip = bTip; }
 
+private:
+	int _RemoveWareHouseItem(unsigned long uid, IActor* pActor, int count);
+	int _RemoveWareHouseItem(unsigned long uid, const char* actorName,
+		int count);
+	void _ReFreshMyRoomGift(bool bRefresh, std::string name);
+
 protected:
 	static IActor* ms_pDummyActor;
 	bool m_bSyncLoad;
@@ -87,44 +110,107 @@ protected:
 	FrForm* m_pTipForm;
 	FrGaugeBar* m_pProgressGauge;
 	CAnotherHand m_anotherHand;
-	unsigned long m_taskFlag;
+	WFlags m_taskFlag;
 	bool m_bRecieveWhisper;
 	bool m_bPause;
 	float m_netSyncTime;
 };
 
+struct sLoadParam
+{
+	WList<sActor*>* pActorList;
+	int actorNum;
+	int loadedNum;
+	bool bInitialized;
+	bool bLoaded;
+};
+
+extern sLoadParam g_LoadParam;
+
 class CTaskManager : public WSingleton<CTaskManager>
 {
 public:
+	struct sPostMsg
+	{
+		std::string target;
+		MsgObject msg;
+	};
+
 	CTaskManager();
 	virtual ~CTaskManager();
 
-	int PostMsg(const IActor* sender, const char* target, int message,
-		int param1, int param2, int param3, unsigned long time);
-
-	void CreateTask(const char* task, const char* doc, bool preserve);
+	void CreateTask(const char* task, const char* doc, bool bPreserve);
+	void ChangeTask(const char* task, const char* doc, bool bPreserve);
+	void ClearTask();
 	void PreProcess();
 	void ProcessTask(float delta);
 	void DisplayTask() const;
-	bool IsTaskChanging() { return m_bChangeTask; }
-	void ChangeTask(const char* taskName, const char* docName, bool bPreserve);
 	CTask* GetCurrentTask() const;
 	CTask* GetPreservedTask() const { return m_pPreservedTask; }
+	bool IsTaskChanging() { return m_bChangeTask; }
+
+	int PostMsg(const IActor* sender, const char* target, int message,
+		int param1, int param2, int param3, unsigned long time);
+	void AddNewItemToDoc(unsigned int type, WReceivedPacket& packet);
+
+	void NaviOpenLayout(const char* task, const char* doc, const char* actor,
+		const char* layout);
+	void NaviGoForward();
+	void NaviGoBackward();
+	bool IsNaviForwardEnable();
+	bool IsNaviBackwardEnable();
+	void NaviDisplayDebugInfo();
 
 	void SetWork(CWork* pWork) { m_pWork.reset(pWork); }
 	void ReleaseWork() { delete m_pWork.release(); }
 
 protected:
+	struct history_t
+	{
+		const char* task;
+		const char* doc;
+		const char* actor;
+		const char* layout;
+	};
+	typedef std::list<history_t> HISTORY_LIST;
+	typedef HISTORY_LIST::iterator HISTORY_IT;
+
+	void NaviAddHistory(const char* task, const char* doc, const char* actor,
+		const char* layout);
+	void NaviClearHistory();
+	bool IsNaviForwardSameHistory(const char* layout);
+
 	bool m_bChangeTask;
 	bool m_bPreserveTask;
 	const char* m_nextTaskName;
 	const char* m_nextDocName;
 	CTask* m_pCurrentTask;
 	CTask* m_pPreservedTask;
-	unsigned char m_unused3c[0x30];
+	CBackGround* m_pFadeBg;
+	float m_fadeAlpha;
+	std::queue<sPostMsg> m_postMsgQueue;
+	HISTORY_LIST m_history;
+	HISTORY_IT m_curHistory;
+	int m_naviDirection;
 	std::auto_ptr<CWork> m_pWork;
-	// TODO: this class definition is incomplete
 };
+
+namespace ranktype
+{
+	struct sListInfo
+	{
+		unsigned long uid;
+		unsigned long rank;
+		unsigned long preRank;
+		unsigned long value;
+		unsigned short level;
+		unsigned char unknown;
+		std::string id;
+		std::string nickname;
+	};
+}
+
+typedef std::list<ranktype::sListInfo>::iterator RANKLIST_IT;
 
 inline int AfxPostMsg(const IActor* sender, const char* target, int message,
 	int param1, int param2, int param3, unsigned long time)

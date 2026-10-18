@@ -40,6 +40,8 @@ namespace S5
 		void SendCutInPacket(unsigned long uid, short type,
 			unsigned long gameMode, unsigned long charTid);
 		void SetServerProperty(unsigned long property);
+		int ErasePartsCardAll(unsigned long partGuid,
+			std::list<unsigned long>& cards);
 	}
 
 	bool ISCutinItem(unsigned long typeId);

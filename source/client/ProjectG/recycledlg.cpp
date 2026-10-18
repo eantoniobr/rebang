@@ -1,5 +1,6 @@
 #include "minatl.h"
 #include "recycledlg.h"
+#include "../../shared/recycletable.inl"
 #include "shareddoc.h"
 #include "simpleoverlay.h"
 #include "exhibition.h"

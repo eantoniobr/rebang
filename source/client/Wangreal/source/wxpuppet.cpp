@@ -58,7 +58,7 @@ void WxPuppet::xUpdateTnLBuffers(bool rebuild)
 void WxPuppet::xShareTnLResources(WxPuppet* destination)
 {
 	// HACK: this is a workaround for an ordering issue for exactness
-	(void)&WList<int>::Next;
+	(void)static_cast<int (WList<int>::*)()>(&WList<int>::Next);
 	if (m_xpTnLBuf)
 	{
 		m_xpTnLBuf->xCopy(&destination->m_xpTnLBuf, GetResrcManager()->video);

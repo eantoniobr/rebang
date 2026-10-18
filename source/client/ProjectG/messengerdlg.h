@@ -184,6 +184,7 @@ class CMessengerInfo : public WSingleton<CMessengerInfo>, public FrCmdTarget
 	friend class MSNUnit;
 	friend class FrMessengerDlg;
 	friend class FrMessengerChatDlg;
+	friend class CTask;
 
 public:
 	CMessengerInfo();

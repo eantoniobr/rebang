@@ -301,10 +301,10 @@ protected:
 	void OnInitBtnContribution(int param);
 	void OnLBDownBtnContribution();
 
-	static const int m_iPangDouble1 = 30000;
-	static const int m_iExpDouble = 70000;
-	static const int m_iPangDouble2 = 120000;
 	static const int m_iMaxContribution = 200000;
+	static const int m_iPangDouble2 = 120000;
+	static const int m_iExpDouble = 70000;
+	static const int m_iPangDouble1 = 30000;
 
 	float m_elapsed;
 	FrButton* m_pDescButton;

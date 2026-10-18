@@ -155,6 +155,7 @@ const char* GetUccItemName(unsigned long guid);
 
 const Bitmap* GetUccItemIcon(sItemInfo* item);
 const char* GetUccItemName(sItemInfo* item);
+sItemInfo* GetMyItemInfo(unsigned long id);
 sItemInfo* GetMyItemInfo(unsigned long typeId, const char* uccIndex,
 	unsigned short seq);
 bool IsSameClothes(IFF_STRUCT::sPart* first, IFF_STRUCT::sPart* second);

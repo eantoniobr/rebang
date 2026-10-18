@@ -87,6 +87,74 @@ public:
 		}
 		return 0;
 	}
+	T Start(void*& pos) const
+	{
+		pos = m_list;
+		return m_list ? m_list->item : 0;
+	}
+	T Next(void*& pos) const
+	{
+		if (pos)
+		{
+			listinfo* info = (listinfo*)pos;
+			if (info->next == m_list)
+			{
+				pos = 0;
+			}
+			else
+			{
+				info = info->next;
+				pos = info;
+				return info->item;
+			}
+		}
+		return 0;
+	}
+	T End()
+	{
+		m_surf = m_list ? m_list->prev : 0;
+		return Prev();
+	}
+	T Prev()
+	{
+		if (m_surf)
+		{
+			T item = m_surf->item;
+			m_surf = m_surf == m_list ? 0 : m_surf->prev;
+			return item;
+		}
+		return 0;
+	}
+	T End(void*& pos) const
+	{
+		pos = m_list ? m_list->prev : 0;
+		return m_list ? m_list->prev->item : 0;
+	}
+	T Prev(void*& pos) const
+	{
+		if (pos)
+		{
+			listinfo* info = (listinfo*)pos;
+			if (info == m_list)
+			{
+				pos = 0;
+			}
+			else
+			{
+				info = info->prev;
+				pos = info;
+				return info->item;
+			}
+		}
+		return 0;
+	}
+	int GetCount() const
+	{
+		int count = 0;
+		for (listinfo* info = m_list; info; ++count)
+			info = m_list == info->next ? 0 : info->next;
+		return count;
+	}
 	T Find(const char* keycode) const
 	{
 		if (!keycode || !m_hash_list)
@@ -147,6 +215,7 @@ public:
 			AddHash(HASHCODE(keycode), info);
 		m_list = Link(m_list, info);
 	}
+	void Report(char* name) const;
 	void operator+=(const T& item) { AddItem(item, 0, false); }
 	void operator-=(const T& item) { DelItem(item); }
 

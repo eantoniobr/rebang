@@ -188,6 +188,11 @@ inline void SetHoles(unsigned char holes)
 	Doc()->m_golfGame.holes = holes;
 }
 
+inline void SetHoleType(unsigned char holeType)
+{
+	Doc()->m_holeType = holeType;
+}
+
 inline unsigned char GetStartHole()
 {
 	return Doc()->m_holeOrder[0];
@@ -221,6 +226,11 @@ inline unsigned char GetWeather()
 inline unsigned long GetShotTimeLimit()
 {
 	return Doc()->m_golfGame.shotTimeLimit;
+}
+
+inline void SetShotTimeLimit(unsigned long limit)
+{
+	Doc()->m_golfGame.shotTimeLimit = limit;
 }
 
 inline CItemManager* ItemManager()
@@ -320,6 +330,11 @@ inline void DeleteString(std::string* p)
 inline unsigned long GetGameTimeLimit()
 {
 	return Doc()->m_golfGame.gameTimeLimit;
+}
+
+inline void SetGameTimeLimit(unsigned long limit)
+{
+	Doc()->m_golfGame.gameTimeLimit = limit;
 }
 
 inline unsigned long MyGuid(bool bGallery)
@@ -458,4 +473,9 @@ inline bool IsMannerPlayer()
 inline unsigned char GetCurRoomMapType()
 {
 	return Doc()->m_roomInfo.mapType;
+}
+
+inline void SetMyOutsideCash(__int64 cash)
+{
+	Doc()->m_cash = cash;
 }

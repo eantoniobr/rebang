@@ -79,7 +79,7 @@ ILFILL0
 #include "lock.hpp"
 #include "packet.h"
 #include "titles_client.h"
-#include "clientsocket.h"
+ILFILLC
 #include "../../shared/classdefine.h"
 #include "chatmsg.h"
 // HACK: originally in chatmsg.h, but shifts the frwndmanager unit too much
@@ -87,6 +87,8 @@ inline void CChatMsg::Toggle(bool toggle)
 {
 	m_bToggle = toggle;
 }
+#include "../../shared/errorcode.h"
+#include "clientsocket.h"
 #include "frelement.h"
 #include "frgraphicinterface.h"
 #include "wfont.h"

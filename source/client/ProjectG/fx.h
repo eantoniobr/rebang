@@ -54,6 +54,7 @@ public:
 		defines_t* defines);
 	void SetActive(bool bActive);
 	void ClearAll(bool bMarkedOnly);
+	void ClearFxKeeper();
 	void UpdateExtWind(WVector wind);
 	bool FindSequence(CFxSequence* sequence);
 	bool GetOutput(WVector& out, unsigned char& value);

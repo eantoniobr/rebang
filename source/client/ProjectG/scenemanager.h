@@ -65,6 +65,9 @@ public:
 	WPuppet* GetPuppet(const char* name);
 	void ReleaseElement();
 	void UpdateWind();
+	void Process(float delta);
+	void Prerender(WView* view);
+	void Render(WView* view, unsigned long flag);
 };
 
 class CWavelet

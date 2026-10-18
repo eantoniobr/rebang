@@ -1,11 +1,13 @@
 #pragma once
 #include "rtti.h"
+#include <string>
+#include <map>
 
 class IObject
 {
 public:
 	static const WRTTI m_RTTI;
-	virtual const WRTTI* GetRTTI() const = 0;
+	virtual const WRTTI* GetRTTI() const { return &m_RTTI; }
 	bool IsExactKindOf(const WRTTI* pRTTI) const { return GetRTTI() == pRTTI; }
 	bool IsKindOf(const WRTTI* pRTTI) const
 	{
@@ -29,7 +31,20 @@ class CObjectFactory
 {
 public:
 	typedef IObject* (*ObjectFunctor)();
+	~CObjectFactory() { }
 	void AddObjectFunctor(ObjectFunctor function, const char* name);
+	IObject* CreateObject(const char* name)
+	{
+		std::map<const std::string, ObjectFunctor>::iterator it =
+			m_objectFuncList.find(name);
+		if (it != m_objectFuncList.end())
+			return (*it).second();
+		return NULL;
+	}
+
+protected:
+	std::map<const std::string, IObject*> m_objectTypeList;
+	std::map<const std::string, ObjectFunctor> m_objectFuncList;
 };
 
 CObjectFactory& ObjectFactory();

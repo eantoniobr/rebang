@@ -181,6 +181,8 @@ private:
 
 class COfflineShopEditDlg : public FrTradeEditDlg
 {
+	friend class CTask;
+
 public:
 	DECLARE_OBJECT(COfflineShopEditDlg)
 

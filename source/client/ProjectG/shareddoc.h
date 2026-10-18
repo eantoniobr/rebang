@@ -236,6 +236,18 @@ public:
 		return m_myInfo.info.iBongdariShopRemainedBonus;
 	}
 	int GetTimeBlock() { return m_myInfo.info.iTimeBlock; }
+	void SetBsUsableTimes(short times)
+	{
+		m_myInfo.info.iBongdariShopUsableTimes = times;
+	}
+	void SetBsUsableBonusTimes(short times)
+	{
+		m_myInfo.info.iBongdariShopBonusTimes = times;
+	}
+	void SetBsRemainedBonusTimes(short times)
+	{
+		m_myInfo.info.iBongdariShopRemainedBonus = times;
+	}
 
 	void HaveAngelWing(bool bHave) { m_bHaveAngelWing = bHave; }
 	void SetIndex(unsigned long uid);
@@ -330,20 +342,27 @@ public:
 	void SetInitAbilityItem();
 	void InitTradeData();
 	eStateTrade GetStateTrade() { return m_stateTrade; }
+	void SetStateTrade(eStateTrade state) { m_stateTrade = state; }
 	void ClearListTradeItem() { m_listTradeItem.clear(); }
 	std::list<sTradeItem>* GetListTradeItem() { return &m_listTradeItem; }
 	int GetSizeTradeItem() { return (int)m_listTradeItem.size(); }
 	unsigned long GetTradeUID() { return m_tradeUID; }
 	const char* GetTradeTitle() { return m_tradeTitle.c_str(); }
+	void SetTradeTitle(std::string title) { m_tradeTitle = title; }
 	int GetCountVisitor() { return m_countVisitor; }
-	__int64 GetTradeIncome() { return m_tradeIncome; }
+	void SetCountVisitor(int count) { m_countVisitor = count; }
 	void ClearListStallItem() { m_listStallItem.clear(); }
 	std::list<sStall>* GetListStallItem() { return &m_listStallItem; }
 	void AddListStallItem(sStall item) { m_listStallItem.push_back(item); }
 	sStall* GetStallItem() { return &m_stallItem; }
+	void SetStallItem(sStall item) { m_stallItem = item; }
+	__int64 GetTradeIncome() { return m_tradeIncome; }
+	void SetTradeIncome(__int64 income) { m_tradeIncome = income; }
+	void AddTradeIncome(__int64 income) { m_tradeIncome += income; }
 	std::list<sSaleItem>* GetMaketList() { return &m_maketList; }
 	void ClearMaketList() { m_maketList.clear(); }
 	void AddMaketListItem(sSaleItem item) { m_maketList.push_back(item); }
+	void SetFlagBlock(unsigned long flag) { m_myInfo.info.dwFlagBlock = flag; }
 	bool AddListTradeItem(sTradeItem item);
 	bool MinusListTradeItem(sTradeItem item);
 	void SetTradeUID(unsigned long uid);

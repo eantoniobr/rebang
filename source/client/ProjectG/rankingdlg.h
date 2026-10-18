@@ -19,18 +19,6 @@ struct sTypeName;
 
 namespace ranktype
 {
-	struct sListInfo
-	{
-		unsigned long uid;
-		unsigned long rank;
-		unsigned long preRank;
-		unsigned long value;
-		unsigned short level;
-		unsigned char unknown;
-		std::string id;
-		std::string nickname;
-	};
-
 	struct sRankRecord
 	{
 		unsigned long rank;
@@ -52,6 +40,8 @@ namespace ranktype
 
 class FrRankingDlg : public FrForm, public CHandOwner
 {
+	friend class CTask;
+
 public:
 	DECLARE_OBJECT(FrRankingDlg)
 

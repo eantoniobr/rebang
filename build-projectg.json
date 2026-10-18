@@ -1016,7 +1016,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/taskmanager.obj",
+    {
+      "path": "source/client/ProjectG/taskmanager.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/shared/itemmanager.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
