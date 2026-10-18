@@ -262,7 +262,11 @@
     "source/client/ProjectG/golfbg.obj",
     "source/client/ProjectG/golfcadie.obj",
     "source/client/ProjectG/golfplayer.obj",
-    "source/client/ProjectG/grid.obj",
+    {
+      "path": "source/client/ProjectG/grid.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/gui_control.obj",
     "source/client/ProjectG/guidebook.obj",
     "source/client/ProjectG/guideline.obj",
@@ -503,7 +507,11 @@
     },
     "source/client/ProjectG/ghosthandler.obj",
     "source/client/ProjectG/ghostmain.obj",
-    "source/client/ProjectG/ghostmanager.obj",
+    {
+      "path": "source/client/ProjectG/ghostmanager.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/ghostplayer.obj",
     {
       "path": "source/client/ProjectG/ghosttask.cpp",

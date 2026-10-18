@@ -22,8 +22,37 @@ public:
 	void MakeBaseStructure(WPolySoup::sModel* model, bool bRebuild);
 	void MakeObjStructure(short index, int modelIndex, bool bRebuild);
 	float GetMaxPowerOnGround() const;
+	float GetMaxPowerOnGround(const WVector& pos);
+	WVector GetMeshNormal(const WVector& pos);
 	float GetMinPowerOnGround() const;
 	void CalcGreenPlane();
+	float GetGreenPos(const WVector& pos);
+	float RayIntersectAll(const WVector& start, const WVector& ray,
+		bool bObject);
+	void GetMeshList(WVector pos);
+	void GetMeshList(WVector start, const WVector& end);
+	void GetMeshList(Waabb aabb);
+	void Display();
+	float GetHighestGround(WVector pos, int* index);
+	float GetLowestGround(WVector pos);
+	void SetCondition();
+	void UpdateProperty();
+	void SetAvatarPosition(const WVector& pos, float radius);
+	void HoleIn();
+	int GetBounceCount();
+	WVector ColObject(const WVector& pos, bool bObject, int* index,
+		bool bWater);
+	void GetObjList(Waabb aabb);
+	void GetObjList(WVector start, const WVector& end);
+	bool OverlappedWithObject(WVector pos, float radius);
+	void SetObjVtxColor(unsigned long color);
+	bool SimpleColTest(const WVector& start, const WVector& end);
+	bool IsFallenIntoWater(WVector pos, Waabb* aabb, bool bCheck);
+	float GetShadowIntensity(const WVector& pos);
+	WVector GetRayIntersectionObj(WVector start, WVector ray);
+	int CheckCamera();
+	bool CheckPickRoom(WVector pos);
+	WVector TestCameraCollision(const WVector& pos);
 	int GetObjColNum();
 	float GetBasePosY(WVector pos, float height);
 	void ResetVariable();

@@ -24,6 +24,8 @@ public:
 	void SetClub(unsigned char index);
 	void SelectBestClub(const WVector& target);
 	void SelectBestClub();
+	void ClearPointFactor();
+	void SetPointFactor(float factor);
 	void AddCrypticValue();
 	void Process(float dt);
 
@@ -42,6 +44,9 @@ public:
 	unsigned char GetApproachMode() { return m_approachMode; }
 	unsigned char GetIndex() { return m_pClub->index; }
 	unsigned char GetID() { return m_pClub->id; }
+	bool Updated();
+	bool IsPowerPutter();
+	bool Is(char* name, sClub* club = NULL);
 	bool BarIs(int state) { return m_bar == state; }
 	void SetRandomPower(float power) { m_randomPower = power; }
 	float GetRandomPower() const { return m_randomPower; }
@@ -55,7 +60,12 @@ private:
 	unsigned char m_limitIndex;
 	WCrypticValue<int> m_powerShot;
 	unsigned char m_approachMode;
-	unsigned char m_unused3d[0x17];
+	unsigned char m_unused3d[3];
+	unsigned int m_flag;
+	bool m_bPowerPutter;
+	float m_barDelay;
+	float m_barAlpha;
+	float m_barWidth;
 	int m_bar;
 	bool m_bItemWindow;
 	unsigned char m_prevIndex;
