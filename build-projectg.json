@@ -1733,7 +1733,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/guildauthcontroller.obj",
+    {
+      "path": "source/client/ProjectG/guildauthcontroller.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/guildformcontroller.obj",
     {
       "path": "source/client/ProjectG/ingameguildlobbydlg.cpp",
