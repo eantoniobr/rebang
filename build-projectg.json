@@ -154,7 +154,11 @@
     "source/client/ProjectG/extendedeffect.obj",
     "source/client/ProjectG/fontinfo.obj",
     "source/client/ProjectG/ground_info.obj",
-    "source/client/ProjectG/headicon.obj",
+    {
+      "path": "source/client/ProjectG/headicon.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/helpmsg.obj",
     {
       "path": "source/client/ProjectG/obmarker.cpp",
@@ -188,7 +192,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/rival.obj",
+    {
+      "path": "source/client/ProjectG/rival.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/beach.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -269,7 +277,11 @@
     },
     "source/client/ProjectG/gui_control.obj",
     "source/client/ProjectG/guidebook.obj",
-    "source/client/ProjectG/guideline.obj",
+    {
+      "path": "source/client/ProjectG/guideline.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/itemwindow.obj",
     "source/client/ProjectG/letter_effect.obj",
     {
@@ -326,7 +338,11 @@
     "source/client/ProjectG/avatar_main.obj",
     "source/client/ProjectG/avatar_mainui.obj",
     "source/client/ProjectG/avatar_task.obj",
-    "source/client/ProjectG/balloontext.obj",
+    {
+      "path": "source/client/ProjectG/balloontext.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/avatarchatlogdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -386,7 +402,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/overlaycursor.obj",
+    {
+      "path": "source/client/ProjectG/overlaycursor.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/securitykeymanager.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
