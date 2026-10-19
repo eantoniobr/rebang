@@ -20,3 +20,8 @@ protected:
 
 	bool m_CaptureMode;
 };
+// HACK: CStackableSingleton<CCapturedBg>::m_InstanceStack instantiates a stack or list here
+namespace ILNUM_CAPBG
+{
+	typedef int t0;
+}

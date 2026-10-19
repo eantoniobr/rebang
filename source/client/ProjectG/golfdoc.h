@@ -4,6 +4,7 @@
 #include "encrypttypes.h"
 #include "parttidlist.h"
 #include <map>
+#include <stack>
 
 class WPolySoup;
 struct sApproachResultData;
@@ -15,6 +16,14 @@ enum eTeamName
 };
 
 enum eApproachMissionType
+{
+};
+
+enum eApproachPrizeType
+{
+};
+
+enum eApproachWinnerType
 {
 };
 
@@ -51,6 +60,152 @@ struct sShotResult
 	unsigned short traceNum;
 };
 #pragma pack(pop)
+
+struct sProperty
+{
+	float bound;
+	float roll;
+	float min[3];
+	float max[3];
+	unsigned char pass;
+	unsigned char ground;
+
+	sProperty()
+	{
+		boundSound[0] = 0;
+		rollSound[0] = 0;
+	}
+	~sProperty() { }
+
+	char boundSound[64];
+	char rollSound[64];
+	char stepSound[64];
+};
+
+class CPropertyInfo
+{
+public:
+	CPropertyInfo() { m_defaultIndex = -1; }
+	~CPropertyInfo();
+
+	void Init(const TiXmlDocument& doc);
+	int GetPropertyIndex(const char* texture);
+	const sProperty& GetProperty(int index);
+
+private:
+	std::vector<sProperty> m_property;
+	std::map<std::string, int> m_textureIndex;
+	int m_defaultIndex;
+};
+
+class CMapInfo
+{
+public:
+	void Init(const TiXmlDocument& doc, unsigned char hole);
+	const char* FindItem(const std::string& key);
+
+private:
+	std::map<std::string, std::string> m_item;
+};
+
+struct sWave
+{
+	char texture[32];
+	float width;
+	float freq;
+};
+
+class CWaveInfo
+{
+public:
+	CWaveInfo() { }
+	~CWaveInfo() { m_wave.clear(); }
+
+	void Load(const char* filename);
+
+	char* GetTexture(int index) { return m_wave[index].texture; }
+	float GetWidth(int index) { return m_wave[index].width; }
+	float GetFreq(int index) { return m_wave[index].freq; }
+
+private:
+	std::map<int, sWave> m_wave;
+};
+
+struct sRiver
+{
+	float scrollVel;
+	float tileHead;
+	float tileSide;
+	float depth;
+};
+
+class CRiverInfo
+{
+public:
+	CRiverInfo() { }
+	~CRiverInfo() { m_river.clear(); }
+
+	void Load(const char* filename);
+
+	float GetScrollVelocity(int index) { return m_river[index].scrollVel; }
+	float GetHeadTile(int index) { return m_river[index].tileHead; }
+	float GetSideTile(int index) { return m_river[index].tileSide; }
+	float GetDepth(int index) { return m_river[index].depth; }
+
+private:
+	std::map<int, sRiver> m_river;
+};
+
+const float BAR_GAUGE_START = 105.0f;
+ILNUM_GDH
+const float BAR_END = 500.0f;
+const float BAR_START = 140.0f;
+static float BAR_LENGTH = BAR_END - BAR_START;
+static float BAR_CENTER = (BAR_START + BAR_END) / 2;
+
+struct sBar
+{
+	float power;
+	float impact;
+	float gauge;
+	float gaugeStep;
+	int grade;
+	bool bFullPower;
+	int dir;
+	float center;
+	float calipers;
+
+	void Reset();
+	float Persent() const { return (power - BAR_START) / BAR_LENGTH; }
+	float Delta() const { return impact - center; }
+};
+
+struct sHoleData
+{
+	WVector tee;
+	WVector pin;
+	unsigned char par;
+	unsigned char playerNum;
+	unsigned char rank[4];
+	unsigned char result;
+	unsigned char carry;
+	__int64 pang;
+	__int64 basePang;
+	unsigned long checkSum;
+	unsigned long reserved;
+};
+
+struct sCameraData
+{
+	float distance;
+	float height;
+	float clearance;
+	WVector target;
+	float angle;
+	float angleOffset;
+	WMatrix mat;
+	float pitch;
+};
 
 struct sPlayerData
 {
@@ -125,135 +280,35 @@ struct sTeamData
 	unsigned char holeInCollision;
 };
 
-struct sProperty
+class CGolfDoc : public CTaskDoc
 {
-	float bound;
-	float roll;
-	float min[3];
-	float max[3];
-	unsigned char pass;
-	unsigned char ground;
+	DECLARE_OBJECT(CGolfDoc)
 
-	sProperty()
-	{
-		boundSound[0] = 0;
-		rollSound[0] = 0;
-	}
-	~sProperty() { }
-
-	char boundSound[64];
-	char rollSound[64];
-	char stepSound[64];
-};
-
-class CPropertyInfo
-{
-public:
-	CPropertyInfo() { m_defaultIndex = -1; }
-	~CPropertyInfo();
-
-	void Init(const TiXmlDocument& doc);
-	int GetPropertyIndex(const char* texture);
-	const sProperty& GetProperty(int index);
-
-private:
-	std::vector<sProperty> m_property;
-	std::map<std::string, int> m_textureIndex;
-	int m_defaultIndex;
-};
-
-struct sWave
-{
-	char texture[32];
-	float width;
-	float freq;
-};
-
-class CWaveInfo
-{
-public:
-	void Load(const char* filename);
-
-	char* GetTexture(int index) { return m_wave[index].texture; }
-	float GetWidth(int index) { return m_wave[index].width; }
-	float GetFreq(int index) { return m_wave[index].freq; }
-
-private:
-	std::map<int, sWave> m_wave;
-};
-
-struct sRiver
-{
-	float scrollVel;
-	float tileHead;
-	float tileSide;
-	float depth;
-};
-
-class CRiverInfo
-{
-public:
-	void Load(const char* filename);
-
-private:
-	std::map<int, sRiver> m_river;
-};
-
-const float BAR_GAUGE_START = 105.0f;
-const float BAR_END = 500.0f;
-const float BAR_START = 140.0f;
-static float BAR_LENGTH = BAR_END - BAR_START;
-static float BAR_CENTER = (BAR_START + BAR_END) / 2;
-
-struct sBar
-{
-	float power;
-	float impact;
-	float gauge;
-	float gaugeStep;
-	int grade;
-	bool bFullPower;
-	int dir;
-	float center;
-	float calipers;
-
-	void Reset();
-	float Persent() const { return (power - BAR_START) / BAR_LENGTH; }
-	float Delta() const { return impact - center; }
-};
-
-struct sHoleData
-{
-	WVector tee;
-	WVector pin;
-	unsigned char par;
-	unsigned char playerNum;
-	unsigned char rank[4];
-	unsigned char result;
-	unsigned char carry;
-	__int64 pang;
-	__int64 basePang;
-	unsigned long checkSum;
-	unsigned long reserved;
-};
-
-struct sCameraData
-{
-	float distance;
-	float height;
-	float clearance;
-	WVector target;
-	float angle;
-	float angleOffset;
-	WMatrix mat;
-	float pitch;
-};
-
-class CGolfDoc
-{
-public:
+protected:
 	CGolfDoc();
+
+public:
 	virtual ~CGolfDoc();
+
+	void LoadXml(const char* filename, unsigned char hole, bool bReload);
+	void UpdateBright(float bright);
+	void SendReport();
+
+	void MakeDefaultCamera(bool bApply);
+	WMatrix GetDefaultCamera();
+	WMatrix MakeTopViewCameraMatrix(bool bKeep);
+
+	struct sTarget
+	{
+		WPuppet* pet;
+		WVector pos;
+		bool bShow;
+
+		sTarget()
+			: pet(NULL), bShow(false)
+		{
+		}
+	};
 
 	sPlayerData* GetPlayer(unsigned char index);
 	sTeamData* GetTeam(unsigned char index);
@@ -262,22 +317,10 @@ public:
 	void MakeHoleData();
 	void ResetTeamVars();
 	void RefreshPlayerNum();
+	void SetCurrentPlayerNum(int num);
 	unsigned char GetCurrentPlayerNum();
-	void InitShotResultMsg();
-	void ClearShotResultMsg();
 	void SetPlayerLevel(unsigned char index);
-	CPartTidList& GetPartTidList(unsigned char index);
-	void SetPartTidList(unsigned char index, unsigned long charTid,
-		unsigned char hairColor, unsigned char shirtColor,
-		unsigned long* partTid, unsigned long* partId);
-	void ApproachDataAllClear();
-	std::list<sApproachResultData*>& GetApproachCurHoleResult();
-	std::list<sApproachResultData*>& GetApproachGameResult();
-	void LoadXml(const char* filename, unsigned char hole, bool bReload);
-	eApproachMissionType GetApproachMissionType() const;
-	WMatrix GetDefaultCamera();
-	void MakeDefaultCamera(bool bApply);
-	WMatrix MakeTopViewCameraMatrix(bool bKeep);
+	void LogStrokeScore();
 
 	unsigned char GetCurrentPlayer() { return m_currentPlayer; }
 	unsigned char GetPlayerNum() { return m_playerNum; }
@@ -285,23 +328,59 @@ public:
 	sHoleData& GetHoleData(unsigned char hole) { return m_pHoleData[hole - 1]; }
 	unsigned char& GetUIAlpha() { return m_uiAlpha; }
 	sBar& GetBar() { return m_bar; }
+	sCameraData& GetCameraData() { return m_cameraData; }
 
 	unsigned long& GameMode() { return m_gameMode; }
+
+	void InitShotResultMsg();
+	void ClearShotResultMsg();
 
 	void NetGameEnd() { m_bNetGameEnd = true; }
 	bool IsNetGameEnd() { return m_bNetGameEnd; }
 	void SetTeeShotReady(bool bReady) { m_bTeeShotReady = bReady; }
 	bool IsTeeShotReady() { return m_bTeeShotReady; }
 
+	CPartTidList& GetPartTidList(unsigned char index);
+	void SetPartTidList(unsigned char index, unsigned long charTid,
+		unsigned char hairColor, unsigned char shirtColor,
+		unsigned long* partTid, unsigned long* partId);
+
 	void SetPause(bool bPause) { m_bPause = bPause; }
 	bool IsPause() { return m_bPause; }
+	void SetTeamGameWinner(eTeamName team) { m_teamGameWinner = team; }
+	eTeamName GetTeamGameWinner() { return m_teamGameWinner; }
+
+	void SetReport(bool bReport) { m_bReported = bReport; }
+	bool IsReported() { return m_bReported; }
 
 	void SetDay(bool bDay) { m_bDay = bDay; }
-	void SetTeamGameWinner(eTeamName team) { m_teamGameWinner = team; }
-	void SetReport(bool bReport) { m_bReported = bReport; }
+	bool GetDay() { return m_bDay; }
 
 	void ShowChat(bool bShow) { m_bShowChat = bShow; }
 	bool IsShowChat() { return m_bShowChat; }
+
+	void SetSaveChatNum(int num) { m_saveChatNum = num; }
+	int GetSaveChatNum() { return m_saveChatNum; }
+
+	void SetApproachMissionDesc(const char* desc);
+	char* GetApproachMissionDesc();
+	void SetApproachMissionType(eApproachMissionType type);
+	void SetApproachPrizeType(eApproachPrizeType type);
+	void SetApproachWinnerType(eApproachWinnerType type);
+	eApproachMissionType GetApproachMissionType() const;
+	eApproachPrizeType GetApproachPrizeType() const;
+	eApproachWinnerType GetApproachWinnerType() const;
+	void SetApproachCurHoleResult(sApproachResultData& result);
+	void SetApproachGameResult(sApproachResultData& result);
+	void ClearApproachCurHoleResult();
+	void ClearApproachGameResult();
+	std::list<sApproachResultData*>& GetApproachCurHoleResult();
+	std::list<sApproachResultData*>& GetApproachGameResult();
+	sApproachResultData* GetAppMyCurHoleResult();
+	sApproachResultData* GetAppMyGameResult();
+	void AddApproachTotalPrize(unsigned long prize);
+	unsigned long GetApproachTotalPrize() const;
+	void ApproachDataAllClear();
 
 	void SetStatUpdated(bool bUpdated) { m_bStatUpdated = bUpdated; }
 	bool GetStatUpdated() const { return m_bStatUpdated; }
@@ -311,13 +390,6 @@ public:
 	{
 		m_bApproachReloaded = bReloaded;
 	}
-
-	struct sTarget
-	{
-		WPuppet* pet;
-		WVector pos;
-		bool bShow;
-	};
 
 #pragma pack(push, 1)
 	struct sGameResult
@@ -339,23 +411,23 @@ public:
 	};
 #pragma pack(pop)
 
-	// TODO: incomplete
 	WPolySoup* m_pPolySoup;
 	CSky* m_pSky;
 	CAutoTarget* m_pAutoTarget;
 	CPropertyInfo m_propertyInfo;
-	unsigned char m_unused34[0xc];
+	CMapInfo m_mapInfo;
 	CWaveInfo m_waveInfo;
 	CRiverInfo m_riverInfo;
 	WList<char*> m_modelNameList;
 	int m_tutorialMode;
 	std::list<unsigned long> m_commandList;
 	sTarget m_target;
-	unsigned char m_unused9c[0x24];
+	std::string m_xmlName;
+	sPlayerData* m_pPlayerData;
+	sTeamData* m_pTeamData;
 	eTeamName m_teamGameWinner;
 	unsigned char m_currentPlayerNum;
 	unsigned char m_playerNum;
-	unsigned char m_unusedc6[2];
 	sHoleData* m_pHoleData;
 	unsigned char m_uiAlpha;
 	sBar m_bar;
@@ -367,19 +439,18 @@ public:
 	bool m_bReported;
 	bool m_bDay;
 	bool m_bShowChat;
-	unsigned char m_unused152[2];
 	int m_saveChatNum;
 	bool m_bReplay;
 	bool m_bShowDropPos;
 	bool m_bLockGauge;
-	unsigned char m_unused15b[0xd];
+	int m_tutorialPower;
+	bool m_bGodMode;
+	float m_debugBar;
 	unsigned char m_currentHole;
-	unsigned char m_unused169[3];
 	unsigned long m_remainTime;
 	unsigned long m_shotTime;
 	unsigned char m_shotPhase;
 	unsigned char m_currentPlayer;
-	unsigned char m_unused176[2];
 	float m_bright;
 	bool m_bDropRequest;
 	bool m_bStopRequest;
@@ -402,7 +473,16 @@ public:
 	sShotResult m_shotResult[4];
 	sShotProtocol m_shotInfo;
 	sGaugeInfo m_gaugeInfo;
-	unsigned char m_unused473[0x321];
+	CPartTidList m_partTidList[4];
 	bool m_bStatUpdated;
 	bool m_bApproachReloaded;
+	char m_approachMissionDesc[128];
+	eApproachMissionType m_approachMissionType;
+	eApproachPrizeType m_approachPrizeType;
+	eApproachWinnerType m_approachWinnerType;
+	std::list<sApproachResultData*> m_approachCurHoleResult;
+	std::list<sApproachResultData*> m_approachGameResult;
+	unsigned long m_approachTotalPrize;
+
+	static std::stack<CGolfDoc*, std::list<CGolfDoc*> > m_GolfDocInstanceStack;
 };

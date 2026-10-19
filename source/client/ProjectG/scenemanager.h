@@ -48,9 +48,12 @@ struct TransparentElement
 };
 
 // TODO: incomplete
-class CSceneManager : public WSingleton<CSceneManager>
+class CSceneManager : public CStackableSingleton<CSceneManager>
 {
 public:
+	CSceneManager();
+	virtual ~CSceneManager();
+
 	void RegisterElement(eObjType type, WPuppet* puppet, CRenderFuncPtr* func,
 		const char* name, unsigned long flag, Waabb* aabb);
 	void DeleteElement(const char* name);
@@ -65,9 +68,12 @@ public:
 	WPuppet* GetPuppet(const char* name);
 	void ReleaseElement();
 	void UpdateWind();
+	void UpdateBright();
 	void Process(float delta);
 	void Prerender(WView* view);
 	void Render(WView* view, unsigned long flag);
+
+	unsigned char m_unused28[0x108];
 };
 
 class CWavelet

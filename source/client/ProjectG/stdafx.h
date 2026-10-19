@@ -28,6 +28,7 @@ ILFILLX1B
 #include <stdexcept>
 ILFILLX2
 #include "wmath.h"
+ILNUM_WMATH
 #include "gamath.h"
 #include "wutil.h"
 #include "wminmax.h"
@@ -58,6 +59,8 @@ ILFILLX2
 #include "soundmanager.h"
 #include "z_ilfill.h"
 ILFILL0
+#include "exception.h"
+ILNUM_EXC
 #include "objectfactory.h"
 #include "background.h"
 #include "w3danispr.h"
@@ -72,6 +75,7 @@ ILFILL0
 
 #include "basicdebug.h"
 #include "commonutil.h"
+ILNUM_CU
 
 #include "tinyxml.h"
 
@@ -89,6 +93,8 @@ inline void CChatMsg::Toggle(bool toggle)
 }
 #include "../../shared/errorcode.h"
 #include "clientsocket.h"
+ILFILLEXC
+ILNUM_EXC2
 #include "frelement.h"
 #include "frgraphicinterface.h"
 #include "wfont.h"
@@ -113,6 +119,7 @@ ILFILLF2
 #include "inputmanager.h"
 #include "tweaker.h"
 #include "networksystem.h"
+ILNUM_NET
 #include "networkmonitor.h"
 #include "ccrc32.h"
 // HACK
@@ -152,3 +159,4 @@ template float Min<float>(float, float);
 
 // HACK: the PCH seems to instantiate these somewhere - it hasn't been recovered yet
 template std::string::iterator std::string::iterator::operator+(int) const;
+ILNUM_END

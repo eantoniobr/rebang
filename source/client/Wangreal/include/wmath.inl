@@ -143,35 +143,18 @@ inline WMatrix operator*(const WMatrix& left, const WMatrix& right)
 #ifndef WANGREAL_DEVICE
 inline WMatrix RotMat(float angle, char direct)
 {
-	WMatrix m;
-	m.Reset();
-
 	float c = cosf(angle);
 	float s = sinf(angle);
 
 	switch (direct)
 	{
 	case 0:
-		m.yy = c;
-		m.zy = -s;
-		m.yz = s;
-		m.zz = c;
-		break;
-	default:
-		m.xx = c;
-		m.zx = s;
-		m.xz = -s;
-		m.zz = c;
-		break;
+		return WMatrix(1.0f, 0.0f, 0.0f, 0.0f, c, -s, 0.0f, s, c);
 	case 2:
-		m.xx = c;
-		m.yx = s;
-		m.xy = -s;
-		m.yy = c;
-		break;
+		return WMatrix(c, s, 0.0f, -s, c, 0.0f, 0.0f, 0.0f, 1.0f);
+	default:
+		return WMatrix(c, 0.0f, s, 0.0f, 1.0f, 0.0f, -s, 0.0f, c);
 	}
-
-	return m;
 }
 #endif
 
@@ -289,6 +272,21 @@ inline void WMatrix::Reset()
 {
 	xx = yy = zz = 1.0f;
 	yx = zx = xy = zy = xz = yz = xm = ym = zm = 0.0f;
+}
+
+inline WMatrix::WMatrix(float xx_, float yx_, float zx_, float xy_, float yy_,
+	float zy_, float xz_, float yz_, float zz_)
+	: xx(xx_),
+	  yx(yx_),
+	  zx(zx_),
+	  xy(xy_),
+	  yy(yy_),
+	  zy(zy_),
+	  xz(xz_),
+	  yz(yz_),
+	  zz(zz_)
+{
+	xm = ym = zm = 0.0f;
 }
 
 inline WMatrix4& WMatrix4::operator=(const WMatrix4& other)
@@ -494,6 +492,16 @@ inline int operator&(const Waabb& left, const Waabb& right)
 	}
 	return 1;
 }
+
+#ifndef WANGREAL_DEVICE
+inline Waabb ExpandAABB(const Waabb& a, const Waabb& b)
+{
+	return Waabb(WVector(Min(a.min.x, b.min.x), Min(a.min.y, b.min.y),
+					 Min(a.min.z, b.min.z)),
+		WVector(Max(a.max.x, b.max.x), Max(a.max.y, b.max.y),
+			Max(a.max.z, b.max.z)));
+}
+#endif
 
 inline Wobb& Wobb::operator=(const Wobb& obb)
 {

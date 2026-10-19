@@ -13,6 +13,7 @@ public:
 	void GenerateStars(int map);
 	void GenerateMoons();
 	void GenerateLensFlare();
+	void UpdateBright();
 
 	unsigned char m_unused0[0x8d8];
 	unsigned long m_color;

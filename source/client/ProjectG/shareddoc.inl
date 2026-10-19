@@ -110,7 +110,8 @@ inline bool IsMyTurn(bool bCheck)
 	switch (Doc()->m_gameMode)
 	{
 	case 5:
-		return PLAYER(GOLFDOC()->m_currentPlayer)->oid == MyGuid(false);
+		return PLAYER(GOLFDOC()->m_currentPlayer)->oid == MyGuid(false) ? true
+																		: false;
 
 	case 0:
 		if (WNetworkSystem::Instance()->IsConnected(WNetworkSystem::NET_GAME))
@@ -265,7 +266,7 @@ inline CGolfDoc* GOLFDOC()
 
 inline WVector GetTeeShotPos()
 {
-	return GOLFDOC()->m_pHoleData[GOLFDOC()->m_currentHole - 1].tee;
+	return GOLFDOC()->GetHoleData().tee;
 }
 
 inline WVector GetHoleCupPos()

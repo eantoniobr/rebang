@@ -250,19 +250,7 @@ public:
 	WMatrix() { }
 
 	WMatrix(float xx_, float yx_, float zx_, float xy_, float yy_, float zy_,
-		float xz_, float yz_, float zz_)
-		: xx(xx_),
-		  yx(yx_),
-		  zx(zx_),
-		  xy(xy_),
-		  yy(yy_),
-		  zy(zy_),
-		  xz(xz_),
-		  yz(yz_),
-		  zz(zz_)
-	{
-		pivot.Reset();
-	}
+		float xz_, float yz_, float zz_);
 
 	WMatrix& operator=(const WMatrix& other);
 	void operator=(const WQuat& quat);

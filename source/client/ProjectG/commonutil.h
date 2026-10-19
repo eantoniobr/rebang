@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <list>
+#include <stack>
 #include "singleton.h"
 
 class cFile;
@@ -53,4 +55,34 @@ public:
 
 protected:
 	CStackableSingleton() { }
+
+public:
+	static void PushInstance();
+	static void PopInstance();
+
+	static std::stack<T*, std::list<T*> > m_InstanceStack;
 };
+
+template <class T>
+void CStackableSingleton<T>::PushInstance()
+{
+	m_InstanceStack.push(WSingleton<T>::m_pInstance);
+	WSingleton<T>::m_pInstance = NULL;
+}
+
+template <class T>
+void CStackableSingleton<T>::PopInstance()
+{
+	if (m_InstanceStack.empty())
+	{
+		WSingleton<T>::m_pInstance = NULL;
+	}
+	else
+	{
+		WSingleton<T>::m_pInstance = m_InstanceStack.top();
+		m_InstanceStack.pop();
+	}
+}
+
+template <class T>
+std::stack<T*, std::list<T*> > CStackableSingleton<T>::m_InstanceStack;

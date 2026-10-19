@@ -9,6 +9,7 @@
     "/Gr",
     "/GS",
     "/Oy-",
+    "/Zm200",
     "/DNDEBUG",
     "/DWIN32",
     "/D_WINDOWS",
@@ -51,7 +52,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/taskmain.obj",
-    "source/client/ProjectG/golfdoc.obj",
+    {
+      "path": "source/client/ProjectG/golfdoc.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/golfrule.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
