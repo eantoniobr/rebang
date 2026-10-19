@@ -10,6 +10,10 @@
 #include <winsock2.h>
 #include <windows.h>
 #include "../Wangreal/include/wtypes.h"
+namespace ILNUM_WT
+{
+	typedef int t0;
+}
 #include <atlbase.h>
 #include <atlapp.h>
 extern WTL::CAppModule _Module;
@@ -50,13 +54,16 @@ ILNUM_WMATH
 #include "wavi.h"
 #include "wpuppet.h"
 #include "wview.h"
+ILNUM_WF0
+#include "wfont.h"
+ILNUM_WF1
 #include "wflag.h"
 #include "wangrealapp.h"
 #include "westpak.h"
 #include "wblockmodel.h"
 #include "wboneset.h"
 #include "wpetfile.h"
-#include "soundmanager.h"
+ILNUM_SND0
 #include "z_ilfill.h"
 ILFILL0
 #include "exception.h"
@@ -64,6 +71,7 @@ ILNUM_EXC
 #include "objectfactory.h"
 #include "background.h"
 #include "w3danispr.h"
+ILNUM_WOV
 #include "woverlay.h"
 #include "singleton.h"
 
@@ -96,13 +104,13 @@ inline void CChatMsg::Toggle(bool toggle)
 ILFILLEXC
 ILNUM_EXC2
 #include "frelement.h"
-#include "frgraphicinterface.h"
-#include "wfont.h"
+ILNUM_FGI
 #include "ucclibrary.h"
 #include "hackingmanager.h"
 #include "z_ilfill.h"
 ILFILL1
 #include "frwndinl.h"
+ILNUM_FW
 ILFILLF1
 #include "frframe.h"
 #include "frbutton.h"
@@ -115,8 +123,23 @@ ILFILLF2
 #include "frlistbox.h"
 #include "frcombobox.h"
 #include "frarea.h"
+ILFILLTB
+ILNUM_TB0
+#include "frtabbutton.h"
+ILNUM_TB1
 #include "frwndmanager.h"
+ILNUM_G0
+#include "frgraphicinterface.h"
+#include "fresh.h"
+// HACK: packet.h belongs here
+inline WSendPacket::WSendPacket(int type)
+	: WMemBlock(0x40)
+{
+	InitPacket(type);
+}
+#include "soundmanager.h"
 #include "inputmanager.h"
+ILNUM_G1
 #include "tweaker.h"
 #include "networksystem.h"
 ILNUM_NET
@@ -124,7 +147,7 @@ ILNUM_NET
 #include "ccrc32.h"
 // HACK
 template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
-#include "fresh.h"
+ILNUM_FR
 #include "mainframe.h"
 // HACK: should be inline with class definition, but symbol ordering is tricky
 inline FrDesktop* Fresh::GetDesktop() const
@@ -132,7 +155,7 @@ inline FrDesktop* Fresh::GetDesktop() const
 	return manager->GetDesktop();
 }
 #include "projectg.h"
-#include "frtabbutton.h"
+ILNUM_TB2
 #include "tooltip.h"
 #include "frgaugebar.h"
 #include "fremoticon.h"
@@ -145,6 +168,7 @@ inline FrDesktop* Fresh::GetDesktop() const
 #include "taskmanager.h"
 #include "actor.h"
 #include "taskmain.h"
+ILNUM_TM
 #include "nodecontainer.h"
 #include "scenemanager.h"
 #include "courseorder.h"

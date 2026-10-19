@@ -46,3 +46,11 @@ namespace S5
 
 	bool ISCutinItem(unsigned long typeId);
 }
+
+namespace _util
+{
+	const char* GetAvatarServerServiceMessage(int code);
+	const char* GetNormalServerServiceMessage(int code);
+	bool IsAvatarChatServer(int property);
+}
+ILNUM_UT

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "user_info.h"
 #include "anotherhand.h"
 
 struct sUserInfoTime;
@@ -324,4 +323,5 @@ public:
 	DECLARE_FRESH_MSGMAP()
 };
 
-FrUserInfoForm* USERINFODLG();
+ILNUM_UF
+#include "user_info.h"

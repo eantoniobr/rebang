@@ -172,16 +172,16 @@ protected:
 	FrWnd();
 	virtual void OnDraw();
 	virtual void OnProc(const float deltaTime) { }
-	virtual void OnResize();
+	virtual void OnResize() { }
 	virtual void OnMouseMove(const WPoint& mousePos) { }
 	virtual bool OnLButtonUp(const WPoint& mousePos) { return false; }
 	virtual bool OnLButtonDown(const WPoint& mousePos) { return false; }
-	virtual bool OnRButtonUp(const WPoint& point);
-	virtual bool OnRButtonDown(const WPoint& point);
-	virtual void OnDblClick(const WPoint& point);
+	virtual bool OnRButtonUp(const WPoint& point) { return false; }
+	virtual bool OnRButtonDown(const WPoint& point) { return false; }
+	virtual void OnDblClick(const WPoint& point) { }
 	virtual void OnWheel(FrInputState& input) { }
 	virtual const char* OnSelectText(const FrInputState* input) { return NULL; }
-	virtual void OnKeyFocus(CChatMsg* message);
+	virtual void OnKeyFocus(CChatMsg* message) { }
 	virtual void OnSetCursor(bool bInClient, const WPoint& mousePos) { }
 	virtual void EnableKeyFocus(FrInputState& input) { m_nFlags.Enable(0x10); }
 	virtual void SetIconRect(const WRect& rect) { }

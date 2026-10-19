@@ -49,11 +49,7 @@ public:
 	{
 		InitPacket(type);
 	}
-	WSendPacket(int type)
-		: WMemBlock(0x40)
-	{
-		InitPacket(type);
-	}
+	WSendPacket(int type);
 	virtual ~WSendPacket();
 
 	void InitPacket(int nPacketType);

@@ -33,3 +33,11 @@ protected:
 	bool m_bRequest;
 	std::string m_nickname;
 };
+
+inline FrUserInfoForm* USERINFODLG()
+{
+	if (!CUserInfo::IsInstantiated())
+		return NULL;
+	return CUserInfo::Instance()->GetDlg();
+}
+ILNUM_UI

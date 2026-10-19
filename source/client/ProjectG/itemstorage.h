@@ -36,9 +36,9 @@ public:
 		eFORM_UNLOCK
 	};
 
-	static const int COUNT_NUMBER_SLOT = 10;
-	static const int MIN_PASSWORD_LENGTH = 4;
 	static const int MAX_PASSWORD_LENGTH = 4;
+	static const int MIN_PASSWORD_LENGTH = 4;
+	static const int COUNT_NUMBER_SLOT = 10;
 
 	FrItemStorageAccessPanel();
 	virtual ~FrItemStorageAccessPanel();

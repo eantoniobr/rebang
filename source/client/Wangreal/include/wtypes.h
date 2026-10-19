@@ -120,6 +120,14 @@ public:
 		this->w = width;
 		this->h = height;
 	}
+	template <>
+	WRect(float x, float y, float width, float height)
+	{
+		this->x = x;
+		this->y = y;
+		this->w = width;
+		this->h = height;
+	}
 	WRect(const WRect& rect)
 	{
 		x = rect.x;
@@ -158,15 +166,6 @@ public:
 	WPoint TopLeft() const { return WPoint(x, y); }
 	WSize Size() const { return WSize(w, h); }
 };
-
-template <>
-inline WRect::WRect(float x, float y, float width, float height)
-{
-	this->x = x;
-	this->y = y;
-	this->w = width;
-	this->h = height;
-}
 
 inline WRect WRect::operator+(WPoint& point) const
 {

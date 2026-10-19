@@ -132,6 +132,11 @@ inline bool IsOthersTurn(bool bCheck)
 	return !IsMyTurn(bCheck);
 }
 
+inline int OfflinePlay()
+{
+	return Doc()->m_offlinePlay;
+}
+
 inline const char* GetCurMapName()
 {
 	if (Doc()->m_golfGame.pCourse)
@@ -340,7 +345,7 @@ inline void SetGameTimeLimit(unsigned long limit)
 
 inline unsigned long MyGuid(bool bGallery)
 {
-	if (bGallery && GalleryMode())
+	if (GalleryMode() && bGallery)
 		return Doc()->m_myInfo.info.dwGalleryGuid;
 	return Doc()->m_myInfo.info.dwGuid;
 }
@@ -431,9 +436,17 @@ inline __int64 MyCookie()
 	return Doc()->m_cookie;
 }
 
+inline __int64 MyOutsideCash()
+{
+	return Doc()->m_cash;
+}
+
 inline int GalleryMode()
 {
-	return (bool)((Doc()->m_myInfo.info.dwIdentity >> 1) & 1);
+	if (Doc()->m_myInfo.info.IsIdentity(2))
+		return TRUE;
+
+	return FALSE;
 }
 
 inline bool IsAngelWing(unsigned long typeId)

@@ -4,6 +4,7 @@
 #include <string>
 
 class WReceivedPacket;
+class FrGraphicInterface;
 struct sItemInfo;
 struct sUserInfoTime;
 struct sUserInfo;

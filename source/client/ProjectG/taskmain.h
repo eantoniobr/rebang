@@ -273,7 +273,7 @@ protected:
 	FrViewer* m_pOverBarMascotSel;
 	FrStatic* m_pOverBarSite;
 	FrArea* m_pOverBarPangCookie;
-	Bitmap* m_pPangCookieBmp[4];
+	const Bitmap* m_pPangCookieBmp[4];
 	bool m_bOverBarFlag0;
 	bool m_bOverBarFlag1;
 	FrEdit* m_pMessengerBubbleEdit;

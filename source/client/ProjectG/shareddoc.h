@@ -229,6 +229,8 @@ public:
 	std::string GetLoginAuthKey();
 	int IsControlServerService(int service);
 	void ClearUserInfoTimeMap(unsigned long uid);
+	void SetRmrMode(unsigned char mode) { m_rmrMode = mode; }
+	unsigned char GetRmrMode() { return m_rmrMode; }
 	unsigned long GetFlagBlock() { return m_myInfo.info.dwFlagBlock; }
 	short GetBsUsableTimes() { return m_myInfo.info.iBongdariShopUsableTimes; }
 	short GetBsUsableBonusTimes()
@@ -267,7 +269,6 @@ public:
 	__int64 RemainOwnCash(unsigned long provider, __int64 cookie);
 
 	const std::list<sItemInfo>& GetConstMyItemList() { return m_myItemList; }
-	eReplayModeType GetPlayingMode() { return m_playingMode; }
 
 	void ClearCardStack() { m_cardStackList.clear(); }
 	void ClearAll();
@@ -390,6 +391,12 @@ public:
 	unsigned long GetMyDisconPangPenalty();
 	void LoadVisGroup(const char* filename);
 	void SetTradeMode(unsigned char mode) { m_tradeMode = mode; }
+	void SetHaveHalloweenItem(bool bHave) { m_bHaveHalloweenItem = bHave; }
+	void SetWearHalloweenItem(bool bWear) { m_bWearHalloweenItem = bWear; }
+	bool IsHaveHalloweenItem() { return m_bHaveHalloweenItem; }
+	bool IsWearHalloweenItem() { return m_bWearHalloweenItem; }
+	eReplayModeType GetPlayingMode() { return m_playingMode; }
+	void SetPlayingMode(eReplayModeType mode) { m_playingMode = mode; }
 	unsigned char GetTradeMode() { return m_tradeMode; }
 	void SetFileName(char* const filename);
 	void ReplaySavFileCheck();
@@ -436,6 +443,8 @@ public:
 		m_goWithMode = 0;
 		m_goWithFriendUID = -1;
 	}
+	int GetNowGoWithMode() { return m_goWithMode; }
+	int GetGoWithFriendUID() { return m_goWithFriendUID; }
 	void SetGoWithMode(int mode) { m_goWithMode = mode; }
 
 protected:
@@ -662,10 +671,6 @@ public:
 	std::list<sSaleItem> m_maketList;
 	unsigned char m_rmrMode;
 	__int64 m_tradeIncome;
-	void SetHaveHalloweenItem(bool bHave) { m_bHaveHalloweenItem = bHave; }
-	void SetWearHalloweenItem(bool bWear) { m_bWearHalloweenItem = bWear; }
-	bool IsHaveHalloweenItem() { return m_bHaveHalloweenItem; }
-	bool IsWearHalloweenItem() { return m_bWearHalloweenItem; }
 	bool m_bHaveHalloweenItem;
 	bool m_bWearHalloweenItem;
 	void SetReplayState(int state) { m_replayState = state; }
@@ -729,6 +734,7 @@ unsigned char GetCurMap();
 bool IsCurMapSnow();
 
 ILFILL3
+ILNUM_SD1
 
 #include "golftask.h"
 #include "voiceitem.h"
@@ -736,3 +742,4 @@ class CContentsDoc;
 // HACK!
 typedef char CONTENTSDOC_SINGLETON_SIZE[sizeof(WSingleton<CContentsDoc>)];
 #include "shareddoc.inl"
+ILNUM_SD2
