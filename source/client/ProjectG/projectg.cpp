@@ -24,6 +24,7 @@
 #include "eventthread.h"
 #include "messagemanager.h"
 #include "winnernotice.h"
+#include "topiconinterface.h"
 #include "topiconmanager.h"
 #include "ghostmanager.h"
 #include "ghosthandler.h"

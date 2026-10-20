@@ -13,6 +13,7 @@ class FrMailBoxDlg;
 #include "pointeventdlg.h"
 #include "netresourcemanager.h"
 #include "treasuredlg.h"
+#include "topiconinterface.h"
 #include "topiconmanager.h"
 #include "lobbymain.h"
 #include "user_info.h"

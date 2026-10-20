@@ -73,6 +73,9 @@ namespace _guild
 			}
 		};
 
+		typedef std::map<sPostAction*, sPostAction*>::iterator
+			PostActionIterator;
+
 		void ControllForm(eFormStyle style, eAuthority authority);
 		void InsertControl(FrWnd* pWnd);
 

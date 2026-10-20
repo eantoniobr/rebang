@@ -10,7 +10,7 @@ inline void CFxSequence::SetActive(bool bActive, bool bChild)
 	for (std::map<CFxSpray*, CFxSpray*>::iterator it = m_spray.begin();
 		it != m_spray.end(); ++it)
 	{
-		(*it).second->m_bActive = bActive;
+		(*it).second->SetActive(bActive);
 	}
 }
 

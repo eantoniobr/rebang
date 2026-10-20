@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <map>
-#include "topiconinterface.h"
+class CIconInterface;
 
 class TiXmlNode;
 class TiXmlDocument;
@@ -43,6 +43,8 @@ struct sInstanceFunctions
 	}
 	~sInstanceFunctions() { }
 };
+
+typedef std::vector<sTopIcon*>::iterator TopIconIterator;
 
 class CIconManager : public WSingleton<CIconManager>
 {

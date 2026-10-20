@@ -160,7 +160,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/extendedeffect.obj",
+    {
+      "path": "source/client/ProjectG/extendedeffect.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/fontinfo.obj",
     "source/client/ProjectG/ground_info.obj",
     {
@@ -249,7 +253,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/wavelet.obj",
+    {
+      "path": "source/client/ProjectG/wavelet.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/weather.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -285,7 +293,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/gui_control.obj",
-    "source/client/ProjectG/guidebook.obj",
+    {
+      "path": "source/client/ProjectG/guidebook.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/guideline.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -626,7 +638,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/approachdesc.obj",
+    {
+      "path": "source/client/ProjectG/approachdesc.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/intrusion.obj",
     "source/client/ProjectG/voiceitem.obj",
     {
@@ -891,7 +907,11 @@
     },
     "source/client/ProjectG/contentsdoc.obj",
     "source/client/ProjectG/icontentsdoc.obj",
-    "source/client/ProjectG/bonusticket.obj",
+    {
+      "path": "source/client/ProjectG/bonusticket.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/initdelegate.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -918,13 +938,21 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/tradehandler.obj",
-    "source/client/ProjectG/gatewayactor.obj",
+    {
+      "path": "source/client/ProjectG/gatewayactor.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/gatewaydoc.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/eventactor.obj",
+    {
+      "path": "source/client/ProjectG/eventactor.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/specialbox.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1236,7 +1264,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/ggc_helper.obj",
+    {
+      "path": "source/client/ProjectG/ggc_helper.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/ggc_wrapper.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1695,7 +1727,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/topiconmanager.obj",
+    {
+      "path": "source/client/ProjectG/topiconmanager.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/topicons.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1742,7 +1778,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/guildformcontroller.obj",
+    {
+      "path": "source/client/ProjectG/guildformcontroller.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/ingameguildlobbydlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
