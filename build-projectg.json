@@ -303,7 +303,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/mascot.obj",
+    {
+      "path": "source/client/ProjectG/mascot.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/npc.obj",
     {
       "path": "source/client/ProjectG/overlaymixer.cpp",

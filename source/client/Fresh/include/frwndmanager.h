@@ -29,6 +29,8 @@ struct FrInputState
 	CChatMsg* im;
 };
 
+// HACK!
+#pragma optimize("a", on)
 class FrWndManager
 {
 public:
@@ -125,3 +127,4 @@ protected:
 	WPoint m_caretPos;
 	bool m_hidePrivacy;
 };
+#pragma optimize("", on)

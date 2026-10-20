@@ -25,6 +25,7 @@ struct _WRECT
 	float x, y, w, h;
 };
 
+#pragma optimize("a", on)
 class WPoint : public _WPOINT
 {
 public:
@@ -34,42 +35,80 @@ public:
 		this->x = x;
 		this->y = y;
 	}
-	WPoint(WPoint& p)
-	{
-		x = p.x;
-		y = p.y;
-	}
-	WPoint(WPoint* p)
-	{
-		x = p->x;
-		y = p->y;
-	}
-	void Offset(WPoint& p)
-	{
-		x += p.x;
-		y += p.y;
-	}
-	void Offset(float dx, float dy)
-	{
-		x += dx;
-		y += dy;
-	}
-	int operator==(WPoint& _p) const { return (x == _p.x && y == _p.y); }
-	int operator!=(WPoint& _p) const { return !(x == _p.x && y == _p.y); }
-	void operator+=(WPoint& p)
-	{
-		x += p.x;
-		y += p.y;
-	}
-	void operator-=(WPoint& p)
-	{
-		x -= p.x;
-		y -= p.y;
-	}
-	WPoint operator-() const { return WPoint(-x, -y); }
-	WPoint operator+(WPoint& p) const { return WPoint(x + p.x, y + p.y); }
-	WPoint operator-(WPoint& _p) const { return WPoint(x - _p.x, y - _p.y); }
+	WPoint(WPoint& p);
+	WPoint(WPoint* p);
+	void Offset(WPoint& p);
+	void Offset(float dx, float dy);
+	int operator==(WPoint& _p) const;
+	int operator!=(WPoint& _p) const;
+	void operator+=(WPoint& p);
+	void operator-=(WPoint& p);
+	WPoint operator-() const;
+	WPoint operator+(WPoint& p) const;
+	WPoint operator-(WPoint& _p) const;
 };
+
+#pragma optimize("", on)
+inline WPoint::WPoint(WPoint& p)
+{
+	x = p.x;
+	y = p.y;
+}
+
+inline WPoint::WPoint(WPoint* p)
+{
+	x = p->x;
+	y = p->y;
+}
+
+inline void WPoint::Offset(WPoint& p)
+{
+	x += p.x;
+	y += p.y;
+}
+
+inline void WPoint::Offset(float dx, float dy)
+{
+	x += dx;
+	y += dy;
+}
+
+inline int WPoint::operator==(WPoint& _p) const
+{
+	return (x == _p.x && y == _p.y);
+}
+
+inline int WPoint::operator!=(WPoint& _p) const
+{
+	return !(x == _p.x && y == _p.y);
+}
+
+inline void WPoint::operator+=(WPoint& p)
+{
+	x += p.x;
+	y += p.y;
+}
+
+inline void WPoint::operator-=(WPoint& p)
+{
+	x -= p.x;
+	y -= p.y;
+}
+
+inline WPoint WPoint::operator-() const
+{
+	return WPoint(-x, -y);
+}
+
+inline WPoint WPoint::operator+(WPoint& p) const
+{
+	return WPoint(x + p.x, y + p.y);
+}
+
+inline WPoint WPoint::operator-(WPoint& _p) const
+{
+	return WPoint(x - _p.x, y - _p.y);
+}
 
 class WSize : public _WSIZE
 {

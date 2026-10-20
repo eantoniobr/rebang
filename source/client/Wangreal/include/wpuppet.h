@@ -223,7 +223,7 @@ public:
 	void CalcBound(Waabb* box, bool flag);
 	void CalcBound(bool reset, WPuppet* puppet, bool mode, char* name,
 		Waabb* box);
-	const Waabb& GetBoundBox();
+	const Waabb& GetBoundBox() { return m_bound; }
 	void UpdateBound(bool transform, bool flag);
 	void UpdateBSphere();
 	Waabb GetTransformedBoundBox() const;

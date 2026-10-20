@@ -61,6 +61,19 @@ public:
 				return false;
 		return true;
 	}
+	bool InFrustumSafe(const Waabb& box)
+	{
+		WPlane* plane = frustumSafe;
+		for (int i = 0; i < 6; ++i, ++plane)
+		{
+			WVector v(plane->x > 0.0f ? box.max.x : box.min.x,
+				plane->y > 0.0f ? box.max.y : box.min.y,
+				plane->z > 0.0f ? box.max.z : box.min.z);
+			if (*plane * v >= 0.0f)
+				return false;
+		}
+		return true;
+	}
 	bool ProcessEffect() { return m_bProcessEffect; }
 	bool GetReflective() const;
 	void SetReflective(bool);
