@@ -285,7 +285,11 @@ private:
 	std::list<LightSet> m_lightList;
 	std::vector<unsigned long> m_npcList;
 	std::vector<int> m_unusedList;
+
+public:
 	std::list<sSoundBox> m_soundBox;
+
+private:
 	unsigned long m_reserved;
 	float m_cullDistance;
 	int m_smapMeshNum;

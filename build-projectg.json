@@ -179,7 +179,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/particleparty.obj",
-    "source/client/ProjectG/quitwindow.obj",
+    {
+      "path": "source/client/ProjectG/quitwindow.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/randomhouse.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -264,7 +268,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/petbody.obj",
-    "source/client/ProjectG/ambientsound.obj",
+    {
+      "path": "source/client/ProjectG/ambientsound.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/ball.obj",
     {
       "path": "source/client/ProjectG/bubble.cpp",
@@ -304,7 +312,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/itemwindow.obj",
-    "source/client/ProjectG/letter_effect.obj",
+    {
+      "path": "source/client/ProjectG/letter_effect.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/logo.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -327,7 +339,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/particle.obj",
-    "source/client/ProjectG/privatetrade.obj",
+    {
+      "path": "source/client/ProjectG/privatetrade.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/scoreboard.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -543,7 +559,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/itembuffactor.obj",
+    {
+      "path": "source/client/ProjectG/itembuffactor.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/ghostdocument.obj",
     {
       "path": "source/client/ProjectG/ghostgamedlg.cpp",
@@ -617,7 +637,11 @@
     },
     "source/client/ProjectG/shotpreview.obj",
     "source/client/ProjectG/shotreview.obj",
-    "source/client/ProjectG/guildactor.obj",
+    {
+      "path": "source/client/ProjectG/guildactor.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/frpointshopdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -644,7 +668,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/intrusion.obj",
-    "source/client/ProjectG/voiceitem.obj",
+    {
+      "path": "source/client/ProjectG/voiceitem.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/shufflebonus.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -937,7 +965,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/tradehandler.obj",
+    {
+      "path": "source/client/ProjectG/tradehandler.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/gatewayactor.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1799,7 +1831,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/s5/utilities.obj",
+    {
+      "path": "source/client/ProjectG/s5/utilities.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/s5/classicserver/classicserver.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1858,7 +1894,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/integritycheck.obj",
+    {
+      "path": "source/client/ProjectG/integritycheck.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "tools/PlatformSDK-Aug2002/lib/kernel32.lib",
     "tools/PlatformSDK-Aug2002/lib/winmm.lib",
     {

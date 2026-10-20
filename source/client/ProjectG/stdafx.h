@@ -164,7 +164,6 @@ ILNUM_TB2
 #include "../../shared/globalnetworkdefine.h"
 #include "gdtextbox.h"
 #include "gdbitmapbox.h"
-#include "gdvoiceitem.h"
 #include "taskmanager.h"
 #include "actor.h"
 #include "taskmain.h"

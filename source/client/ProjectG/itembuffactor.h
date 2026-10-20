@@ -20,8 +20,6 @@ protected:
 public:
 	DECLARE_OBJECT(CItemBuff)
 
-	virtual ~CItemBuff();
-
 	virtual void OnLoad();
 	virtual void HandleMsg(const MsgObject& msg);
 
@@ -30,4 +28,22 @@ public:
 	static void AddBuffItem(sSCardAvilityPeriodInfo& info);
 	static void RemoveBuffItem(unsigned long typeId);
 	static void UpdateBuffDlg(FrSPCardBuffDlg* dlg);
+
+protected:
+	void HandleBuffItemSubMsg(const MsgObject& msg);
+	void DrawMiniButton(FrListItem* item, const WPoint& pos);
+	void ButtonDown(FrListItem* item, const WPoint& pos);
+	void UseBuffItem(sItemInfo* item);
+	void IsCompatibleBuff(unsigned long typeId,
+		const std::list<sSCardAvilityPeriodInfo>& buffList, bool& compatible,
+		unsigned long& conflictTypeId);
+	bool OnUseBuffItemDlgResult(int result, FrForm* form);
+
+	const Bitmap* m_pButtonNormal;
+	const Bitmap* m_pButtonOver;
+	WRect m_buttonRect;
+	unsigned long m_useTypeId;
+
+private:
+	static std::list<sSCardAvilityPeriodInfo> ms_BuffItemInfoList;
 };

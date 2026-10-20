@@ -529,9 +529,11 @@ inline Wobb& Wobb::operator=(const Waabb& box)
 inline bool Wobb::IsInclude(const WVector& point) const
 {
 	WVector direction = point - center;
-	return Abs(direction * extend[0]) <= (extend[0] * extend[0]) &&
+	if (Abs(direction * extend[0]) <= (extend[0] * extend[0]) &&
 		Abs(direction * extend[1]) <= (extend[1] * extend[1]) &&
-		Abs(direction * extend[2]) <= (extend[2] * extend[2]);
+		Abs(direction * extend[2]) <= (extend[2] * extend[2]))
+		return true;
+	return false;
 }
 
 inline WVector4::WVector4(float x_, float y_, float z_, float w_)

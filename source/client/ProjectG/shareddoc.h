@@ -169,6 +169,7 @@ struct sChatLine
 	unsigned long color;
 };
 
+ILFILL_SHARED_ITEMMANAGER
 #include "../../shared/itemmanager.h"
 typedef std::map<unsigned long, sRoomSlot>::iterator ROOMSLOT_MAP_IT;
 typedef std::list<sItemInfo>::iterator ITEM_LIST_IT;
@@ -316,6 +317,7 @@ public:
 	bool DeleteMyItem(std::list<sItemInfo>::iterator& it);
 	sItemInfo* FindMyItemByGuid(unsigned long uid);
 	void ClearMyGuildInfo();
+	const sPangYaUserInfo& GetPangyaUserInfo() { return m_myInfo.info; }
 	void SetEquipCharCaddieInfoFromMyInfo();
 	sRivalData* GetRival(unsigned long oid);
 	const char* GetDefaultTitle(unsigned char level);
@@ -738,6 +740,7 @@ ILNUM_SD1
 
 #include "golftask.h"
 #include "voiceitem.h"
+#include "gdvoiceitem.h"
 class CContentsDoc;
 // HACK!
 typedef char CONTENTSDOC_SINGLETON_SIZE[sizeof(WSingleton<CContentsDoc>)];
