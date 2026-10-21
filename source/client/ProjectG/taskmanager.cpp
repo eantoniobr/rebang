@@ -1,3 +1,9 @@
+// HACK!
+namespace
+{
+	typedef int t0;
+}
+
 #include "minatl.h"
 #include "taskmanager.h"
 #include "projectg.h"

@@ -105,6 +105,8 @@ struct sDisplayUccClothes
 	}
 };
 
+typedef std::map<std::string, Bitmap*>::iterator UCC_ICON_IT;
+
 class CUccManager
 {
 public:

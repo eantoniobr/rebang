@@ -59,8 +59,6 @@ public:
 		std::string help;
 	};
 
-	~tweaker();
-
 	std::string run_command(const char* param);
 	bool is_exist_command(const std::string& command);
 	void get_command_list(std::vector<std::string>& list, bool bWithName) const;

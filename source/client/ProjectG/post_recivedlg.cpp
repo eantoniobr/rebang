@@ -1,3 +1,10 @@
+// HACK!
+namespace
+{
+	typedef int t0;
+	typedef int t1;
+}
+
 #include "post_recivedlg.h"
 #include "transferableitem.h"
 #include "returngiftdlg.h"

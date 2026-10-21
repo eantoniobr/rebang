@@ -495,7 +495,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/ucclibrary.obj",
-    "source/client/ProjectG/uccmanager.obj",
+    {
+      "path": "source/client/ProjectG/uccmanager.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/uccpickcolordlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -570,7 +574,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/ghosthandler.obj",
+    {
+      "path": "source/client/ProjectG/ghosthandler.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/ghostmain.obj",
     {
       "path": "source/client/ProjectG/ghostmanager.cpp",
@@ -629,7 +637,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/treasure.obj",
+    {
+      "path": "source/client/ProjectG/treasure.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/treasuredlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -667,7 +679,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/intrusion.obj",
+    {
+      "path": "source/client/ProjectG/intrusion.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/voiceitem.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -791,7 +807,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/user_info.obj",
-    "source/client/ProjectG/winnernotice.obj",
+    {
+      "path": "source/client/ProjectG/winnernotice.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/searchdoc.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1077,7 +1097,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/tweaker.obj",
+    {
+      "path": "source/client/ProjectG/tweaker.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/wtimer.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1321,7 +1345,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/paper.obj",
+    {
+      "path": "source/client/ProjectG/paper.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/shared/LuaSystem/luascript.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1543,7 +1571,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/dlgquickstartsetting.obj",
+    {
+      "path": "source/client/ProjectG/dlgquickstartsetting.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/equipdlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1846,7 +1878,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/s5/cutinsystem/cutinsystem.obj",
+    {
+      "path": "source/client/ProjectG/s5/cutinsystem/cutinsystem.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/s5/rentalextensiondlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1857,7 +1893,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/s5/supplypack.obj",
+    {
+      "path": "source/client/ProjectG/s5/supplypack.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/audioin.cpp",
       "extra_flags": ["/Zd"]

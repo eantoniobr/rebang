@@ -31,7 +31,7 @@ public:
 
 	bool operator()(const CTMapInfo* pInfo) const
 	{
-		return pInfo->m_TMapIndex == m_index;
+		return pInfo->GetTMapIndex() == m_index;
 	}
 
 	unsigned char m_index;
