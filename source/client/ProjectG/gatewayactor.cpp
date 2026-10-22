@@ -37,9 +37,6 @@ namespace _gateway
 
 #include "gatewaydoc.h"
 
-static const char* s_taskNames[] = { "CLobbyTask", "CShopTask",
-	"CRealMyRoomTask", "ntAvatarChatTask", "CGolfTask" };
-
 namespace _gateway
 {
 	IMPLEMENT_ACTOR(CGatewayActor, IActor)

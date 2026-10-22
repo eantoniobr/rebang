@@ -31,7 +31,7 @@ void CRival::Shot()
 {
 	if (WisEqual(m_power, 1.f, g_EPSILON))
 		GOLFDOC()->m_bar.bFullPower = true;
-	GOLFDOC()->m_bar.power = BAR_LENGTH * m_power + BAR_START;
+	GOLFDOC()->m_bar.power = BAR_LEN * m_power + BAR_START;
 	GOLFDOC()->m_bar.impact = Random(-10.f, 10.f) + GOLFDOC()->m_bar.center;
 	float offset = Abs(GOLFDOC()->m_bar.impact - BAR_START);
 	if (offset < 2.f)

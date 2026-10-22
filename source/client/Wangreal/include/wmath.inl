@@ -140,6 +140,16 @@ inline WMatrix operator*(const WMatrix& left, const WMatrix& right)
 	return m;
 }
 
+inline WMatrix operator*(const WMatrix& matrix, float scalar)
+{
+	WMatrix result;
+	result.xa = matrix.xa * scalar;
+	result.ya = matrix.ya * scalar;
+	result.za = matrix.za * scalar;
+	result.pivot = matrix.pivot;
+	return result;
+}
+
 #ifndef WANGREAL_DEVICE
 inline WMatrix RotMat(float angle, char direct)
 {

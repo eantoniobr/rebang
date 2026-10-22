@@ -273,7 +273,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/ball.obj",
+    {
+      "path": "source/client/ProjectG/ball.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/bubble.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -954,7 +958,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/contentsdoc.obj",
-    "source/client/ProjectG/icontentsdoc.obj",
+    {
+      "path": "source/client/ProjectG/icontentsdoc.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/bonusticket.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1020,7 +1028,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/miles.obj",
+    {
+      "path": "source/client/ProjectG/miles.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/background.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1034,7 +1046,11 @@
     "source/client/ProjectG/quadtree.obj",
     "source/client/ProjectG/shadow.obj",
     "source/client/ProjectG/fxbox.obj",
-    "source/client/ProjectG/fxsequence.obj",
+    {
+      "path": "source/client/ProjectG/fxsequence.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/fxspray.obj",
     {
       "path": "source/client/ProjectG/anotherhand.cpp",
@@ -1046,7 +1062,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/commonutil.obj",
+    {
+      "path": "source/client/ProjectG/commonutil.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/dxdiaginfo.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1182,7 +1202,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/objectfactory.obj",
+    {
+      "path": "source/client/ProjectG/objectfactory.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/rtti.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1380,7 +1404,10 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/stdafx.obj",
+    {
+      "path": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/Zd"]
+    },
     {
       "path": "source/client/ProjectG/winmain.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1459,7 +1486,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/shopmain.obj",
-    "source/client/ProjectG/shoptask.obj",
+    {
+      "path": "source/client/ProjectG/shoptask.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/caddieinfodlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1857,7 +1888,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/logininfo.obj",
+    {
+      "path": "source/client/ProjectG/logininfo.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/s5/skinnedtheme.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
@@ -1908,7 +1943,10 @@
       "path": "source/client/ProjectG/vcomp.cpp",
       "extra_flags": ["/Zd"]
     },
-    "source/client/ProjectG/videoin.obj",
+    {
+      "path": "source/client/ProjectG/videoin.cpp",
+      "extra_flags": ["/Zd"]
+    },
     {
       "path": "source/client/ProjectG/aztecmgr.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

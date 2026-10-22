@@ -22,11 +22,6 @@
 #include "chatmsg.h"
 #include "netresourcemanager.h"
 
-typedef std::list<sChatSlot> ChatSlotList;
-typedef std::list<unsigned long> MessengerFocusList;
-typedef std::list<sFriend*> MessengerFriendList;
-typedef std::map<unsigned long, sFriend> MessengerFriendMap;
-
 extern Fresh* g_pFresh;
 
 bool FriendCompare(const void* left, const void* right)
@@ -150,8 +145,9 @@ FrMessengerDlg::FrMessengerDlg()
 
 bool FrMessengerDlg::Close(bool bResult)
 {
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
-	for (ChatSlotList::iterator it = slots.begin(); it != slots.end(); ++it)
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
+	for (std::list<sChatSlot>::iterator it = slots.begin(); it != slots.end();
+		++it)
 	{
 		if ((*it).pDlg)
 		{
@@ -834,11 +830,12 @@ void FrMessengerDlg::OnChatToFriend()
 			"\xc2\xf7\xb4\xdc\xc7\xd1 \xbb\xf3\xb4\xeb\xbf\xcd\xb4\xc2 \xb4\xeb\xc8\xad\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9. \xc2\xf7\xb4\xdc\xc0\xbb \xc7\xd8\xc1\xa6\xc7\xcf\xbd\xc3\xb0\xed \xb4\xd9\xbd\xc3 \xbd\xc3\xb5\xb5\xc7\xcf\xbd\xc3\xb1\xe2 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.");
 		return;
 	}
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
 	int count = slots.size();
 	if (count < 10)
 	{
-		for (ChatSlotList::iterator it = slots.begin(); it != slots.end(); ++it)
+		for (std::list<sChatSlot>::iterator it = slots.begin();
+			it != slots.end(); ++it)
 		{
 			if (!(*it).pDlg && m_selectUID == (*it).uid)
 				MESSENGER()->AlarmBtnUp(m_selectUID);
@@ -1102,7 +1099,7 @@ void FrMessengerDlg::UpdateFriendList()
 {
 	if (!m_pFriendList || !m_pGuildList)
 		return;
-	MessengerFriendMap* friends = Buddy()->GetBuddyList();
+	std::map<unsigned long, sFriend>* friends = Buddy()->GetBuddyList();
 	if (!friends)
 		return;
 	m_friendOnList.clear();
@@ -1112,7 +1109,7 @@ void FrMessengerDlg::UpdateFriendList()
 	m_guildList.clear();
 	m_pFriendList->ClearItem();
 	m_pGuildList->ClearItem();
-	MessengerFriendMap::iterator it;
+	std::map<unsigned long, sFriend>::iterator it;
 	for (it = friends->begin(); it != friends->end(); ++it)
 	{
 		sFriend& pFriend = it->second;
@@ -1146,7 +1143,7 @@ void FrMessengerDlg::UpdateFriendList()
 			m_guildOffList.push_back(&pFriend);
 		}
 	}
-	MessengerFriendList::iterator friendIt;
+	std::list<sFriend*>::iterator friendIt;
 	m_pFriendList->AddItem(&m_groupRow[0]);
 	if (m_groupRow[0].State)
 	{
@@ -1446,14 +1443,14 @@ MSN::eStatusType FrMessengerDlg::GetBuddyStatus(sFriend* pFriend)
 
 void FrMessengerDlg::SetCount()
 {
-	MessengerFriendMap* friends = Buddy()->GetBuddyList();
+	std::map<unsigned long, sFriend>* friends = Buddy()->GetBuddyList();
 	if (!friends)
 		return;
 	m_friendCount = 0;
 	m_friendOnCount = 0;
 	m_guildCount = 0;
 	m_guildOnCount = 0;
-	for (MessengerFriendMap::iterator it = friends->begin();
+	for (std::map<unsigned long, sFriend>::iterator it = friends->begin();
 		it != friends->end(); ++it)
 	{
 		if (it->second.PangyaFriend)
@@ -1654,8 +1651,8 @@ bool CMessengerInfo::Close(bool bForce)
 	CMessengerInfo* messenger = MESSENGER();
 	if (!bForce && !IsVisible())
 		return true;
-	ChatSlotList& slots = messenger->m_chatSlotList;
-	ChatSlotList::iterator it = slots.begin();
+	std::list<sChatSlot>& slots = messenger->m_chatSlotList;
+	std::list<sChatSlot>::iterator it = slots.begin();
 	while (it != slots.end())
 	{
 		if ((*it).pDlg)
@@ -1697,8 +1694,9 @@ bool CMessengerInfo::Close(bool bForce)
 void CMessengerInfo::CloseWindow()
 {
 	SaveCurrentFocus();
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
-	for (ChatSlotList::iterator it = slots.begin(); it != slots.end(); ++it)
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
+	for (std::list<sChatSlot>::iterator it = slots.begin(); it != slots.end();
+		++it)
 	{
 		if ((*it).pDlg)
 		{
@@ -1719,7 +1717,7 @@ void CMessengerInfo::CloseWindow()
 
 void CMessengerInfo::Toggle()
 {
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
 	bool visible = IsVisible() ? true : false;
 	bool chatOpened = false;
 	if (IS_KINDOF(CGolfTask, AfxGetTask()))
@@ -1727,7 +1725,8 @@ void CMessengerInfo::Toggle()
 	if (visible == true)
 	{
 		SaveCurrentFocus();
-		for (ChatSlotList::iterator it = slots.begin(); it != slots.end(); ++it)
+		for (std::list<sChatSlot>::iterator it = slots.begin();
+			it != slots.end(); ++it)
 		{
 			sChatSlot& chatSlot = *it;
 			if (chatSlot.pDlg)
@@ -1749,7 +1748,7 @@ void CMessengerInfo::Toggle()
 		FrMessengerChatDlg* focus = NULL;
 		if (m_focusList.size() > 0)
 		{
-			for (MessengerFocusList::iterator it = m_focusList.begin();
+			for (std::list<unsigned long>::iterator it = m_focusList.begin();
 				it != m_focusList.end(); ++it)
 			{
 				unsigned long uid = *it;
@@ -1777,7 +1776,7 @@ void CMessengerInfo::Toggle()
 				}
 				else
 				{
-					for (ChatSlotList::iterator slot = slots.begin();
+					for (std::list<sChatSlot>::iterator slot = slots.begin();
 						slot != slots.end(); ++slot)
 					{
 						sChatSlot& chatSlot = *slot;
@@ -1859,12 +1858,12 @@ void CMessengerInfo::Toggle()
 void CMessengerInfo::SaveCurrentFocus()
 {
 	std::string name;
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
 	std::list<FrWnd*>& windows = g_pFresh->GetManager()->GetTopWndList();
 	for (std::list<FrWnd*>::iterator it = windows.begin(); it != windows.end();
 		++it)
 	{
-		ChatSlotList::iterator slot;
+		std::list<sChatSlot>::iterator slot;
 		FrWnd* form = *it;
 		if (IS_KINDOF(FrForm, form))
 		{
@@ -1883,8 +1882,8 @@ void CMessengerInfo::SaveCurrentFocus()
 
 void CMessengerInfo::ApplySavedFocus()
 {
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
-	for (MessengerFocusList::iterator it = m_focusList.begin();
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
+	for (std::list<unsigned long>::iterator it = m_focusList.begin();
 		it != m_focusList.end(); ++it)
 	{
 		unsigned long uid = *it;
@@ -1895,7 +1894,7 @@ void CMessengerInfo::ApplySavedFocus()
 		}
 		else
 		{
-			for (ChatSlotList::iterator slot = slots.begin();
+			for (std::list<sChatSlot>::iterator slot = slots.begin();
 				slot != slots.end(); ++slot)
 				if ((*slot).uid == uid && (*slot).pDlg)
 					(*slot).pDlg->FindNextTopFocus(false);
@@ -1967,9 +1966,9 @@ void CMessengerInfo::Process(float delta)
 			const WPoint& pos = g_pFresh->GetManager()->GetMousePos();
 			bool outside = true;
 			WRect rect;
-			ChatSlotList& slots = MESSENGER()->m_chatSlotList;
-			for (ChatSlotList::iterator it = slots.begin(); it != slots.end();
-				++it)
+			std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
+			for (std::list<sChatSlot>::iterator it = slots.begin();
+				it != slots.end(); ++it)
 			{
 				if ((*it).pDlg)
 				{
@@ -2033,7 +2032,7 @@ bool CMessengerInfo::OnMessengerDlgResult(int result, FrForm* pForm)
 
 bool CMessengerInfo::OnMessengerChatDlgResult(int result, FrForm* pForm)
 {
-	ChatSlotList::iterator it = m_chatSlotList.begin();
+	std::list<sChatSlot>::iterator it = m_chatSlotList.begin();
 	while (it != m_chatSlotList.end())
 	{
 		if ((*it).pDlg == pForm)
@@ -2127,8 +2126,8 @@ void CMessengerInfo::Notify4(bool bAlarm)
 
 void CMessengerInfo::AlarmBtnUp(unsigned long uid)
 {
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
-	ChatSlotList::iterator it;
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
+	std::list<sChatSlot>::iterator it;
 	int count = slots.size();
 	for (it = slots.begin(); it != slots.end(); ++it)
 	{
@@ -2168,13 +2167,13 @@ void CMessengerInfo::AlarmBtnUp(unsigned long uid)
 
 void CMessengerInfo::RecvChat(sFriend* pFriend, std::string msg)
 {
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
 	int count = slots.size();
 	if (count < 10)
 	{
 		bool found = false;
 		sMsnChat chat;
-		ChatSlotList::iterator it;
+		std::list<sChatSlot>::iterator it;
 		for (it = slots.begin(); it != slots.end(); ++it)
 		{
 			if ((*it).uid == pFriend->Uid)
@@ -2249,8 +2248,9 @@ void CMessengerInfo::SetMyStatus(MSN::eStatusType status)
 
 bool CMessengerInfo::IsVisible()
 {
-	ChatSlotList& slots = MESSENGER()->m_chatSlotList;
-	for (ChatSlotList::iterator it = slots.begin(); it != slots.end(); ++it)
+	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
+	for (std::list<sChatSlot>::iterator it = slots.begin(); it != slots.end();
+		++it)
 		if ((*it).pDlg)
 			return true;
 	if (m_pMessengerDlg)

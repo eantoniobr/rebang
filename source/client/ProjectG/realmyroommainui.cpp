@@ -10159,7 +10159,7 @@ void CRealMyRoomMain::OpenInformation(unsigned long* pTypeId, sGiftInfo* pGift,
 	if (pWnd)
 		return;
 
-	(void)DYNAMIC_CAST(FrForm, pWnd);
+	FrForm* pInfo = DYNAMIC_CAST(FrForm, pWnd);
 
 	pWnd = g_pFresh->GetManager()->GetDesktop()->FindChildByName(
 		"information_setitem");
@@ -10186,8 +10186,7 @@ void CRealMyRoomMain::OpenInformation(unsigned long* pTypeId, sGiftInfo* pGift,
 	}
 	else
 	{
-		FrForm* pInfo =
-			CreateForm<FrForm>(g_pFresh->GetManager(), this, "information");
+		pInfo = CreateForm<FrForm>(g_pFresh->GetManager(), this, "information");
 		if (!pInfo)
 			return;
 

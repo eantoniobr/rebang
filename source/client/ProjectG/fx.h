@@ -15,6 +15,7 @@ struct Attacher
 	bool Get(WVector& out);
 };
 
+struct sFxKeeper;
 struct defines_t;
 class CFxControl;
 class CGolfBall;
@@ -55,6 +56,7 @@ public:
 	void SetActive(bool bActive);
 	void ClearAll(bool bMarkedOnly);
 	void ClearFxKeeper();
+	void AddFxKeeper(sFxKeeper& keeper);
 	void UpdateExtWind(WVector wind);
 	bool FindSequence(CFxSequence* sequence);
 	bool GetOutput(WVector& out, unsigned char& value);

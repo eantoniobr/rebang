@@ -160,7 +160,7 @@ const float BAR_GAUGE_START = 105.0f;
 ILNUM_GDH
 const float BAR_END = 500.0f;
 const float BAR_START = 140.0f;
-static float BAR_LENGTH = BAR_END - BAR_START;
+static float BAR_LEN = BAR_END - BAR_START;
 static float BAR_CENTER = (BAR_START + BAR_END) / 2;
 
 struct sBar
@@ -176,7 +176,7 @@ struct sBar
 	float calipers;
 
 	void Reset();
-	float Persent() const { return (power - BAR_START) / BAR_LENGTH; }
+	float Persent() const { return (power - BAR_START) / BAR_LEN; }
 	float Delta() const { return impact - center; }
 };
 

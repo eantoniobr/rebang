@@ -58,32 +58,32 @@ void FrUccSetInfoDlg::OnOkBtnUp()
 	const char* err = Doc()->m_chatManager.FilteringNick(nick);
 	if (err)
 	{
-		if (!strcmp(err, NICK_ERR_EMPTY))
+		if (!strcmp(err, NICKNAME_ERR_EMPTY))
 		{
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 0x23,
 				(int)"\xc0\xc7\xbb\xf3 \xc0\xcc\xb8\xa7\xc0\xbb \xc0\xd4\xb7\xc2\xc7\xd8\xc1\xd6\xbc\xbc\xbf\xe4.",
 				0, 0, 0, 0);
 		}
-		else if (!strcmp(err, NICK_ERR_LENGTH))
+		else if (!strcmp(err, NICKNAME_ERR_LENGTH_LIMIT))
 		{
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 0x23,
 				(int)"\xc0\xc7\xbb\xf3 \xc0\xcc\xb8\xa7\xc0\xba \\c0xffff0000\\c\xbf\xb5\xb9\xae 4 - 16 \xb1\xdb\xc0\xda\\c0xff000000\\c \xb6\xc7\xb4\xc2 \\c0xffff0000\\c\xc7\xd1\xb1\xdb 2 - 8\xb1\xdb\xc0\xda\\c0xff000000\\c\xc0\xc7 \xb1\xe6\xc0\xcc\xb8\xa6 \xb0\xa1\xc1\xae\xbe\xdf \xc7\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 		}
-		else if (!strcmp(err, NICK_ERR_SPACE))
+		else if (!strcmp(err, NICKNAME_ERR_SPACE))
 		{
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 0x23,
 				(int)"\xc0\xc7\xbb\xf3 \xc0\xcc\xb8\xa7\xc0\xba \\c0xffff0000\\c\xb0\xf8\xb9\xe9\xb9\xae\xc0\xda\\c0xff000000\\c\xb8\xa6 \xc6\xf7\xc7\xd4\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 		}
-		else if (!strcmp(err, NICK_ERR_INVALID_CHAR))
+		else if (!strcmp(err, NICKNAME_ERR_INVALID_CHAR))
 		{
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 0x23,
 				(int)"\xc0\xc7\xbb\xf3 \xc0\xcc\xb8\xa7\xc0\xb8\xb7\xce \xbb\xe7\xbf\xeb\xc7\xd2 \xbc\xf6 \xbe\xf8\xb4\xc2 \xb9\xae\xc0\xda\xb8\xa6 \xc6\xf7\xc7\xd4\xc7\xcf\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 		}
-		else if (!strcmp(err, NICK_ERR_BAD_WORD) ||
-			!strcmp(err, NICK_ERR_HAS_BAD_WORD))
+		else if (!strcmp(err, NICKNAME_ERR_BAD_WORD) ||
+			!strcmp(err, NICKNAME_ERR_CONTAINS_BAD_WORD))
 		{
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 0x23,
 				(int)"\xc0\xc7\xbb\xf3 \xc0\xcc\xb8\xa7\xbf\xa1 \xbb\xe7\xbf\xeb\xc7\xd2 \xbc\xf6 \xbe\xf8\xb4\xc2 \xc7\xa5\xc7\xf6\xc0\xcc \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",

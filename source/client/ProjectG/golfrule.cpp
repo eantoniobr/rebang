@@ -9894,8 +9894,8 @@ void CGolfRule::DoApproachNextHole(float delta)
 void CGolfRule::CommandBox()
 {
 	if (GOLFDOC()->m_shotPhase < 2 ||
-		GOLFDOC()->GetBar().gauge > BAR_LENGTH * 0.5f + BAR_START ||
-		GOLFDOC()->GetBar().power < BAR_LENGTH * 0.8f + BAR_START ||
+		GOLFDOC()->GetBar().gauge > BAR_LEN * 0.5f + BAR_START ||
+		GOLFDOC()->GetBar().power < BAR_LEN * 0.8f + BAR_START ||
 		(GOLFDOC()->m_commandList.size() > 0 &&
 			GOLFDOC()->m_commandList.back() & 0x70))
 		return;
@@ -10598,7 +10598,7 @@ void CGolfRule::PuttingGauge(float delta, bool bAuto)
 {
 	float speed = GolfClub().GetBarSpeed();
 
-	float persent = (GOLFDOC()->GetBar().gauge - BAR_START) / BAR_LENGTH;
+	float persent = (GOLFDOC()->GetBar().gauge - BAR_START) / BAR_LEN;
 	speed = speed * (persent * persent + 1.0f) * 0.5f;
 
 	if (bAuto)

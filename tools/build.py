@@ -273,8 +273,15 @@ def rules() -> None:
                 action = "resource"
             else:
                 action = "compile"
+            rule_target = dest + ":"
+            if precompile:
+                obj = target.product(entry)
+                if obj in outputs:
+                    raise ValueError(f"conflicting sources for {obj}")
+                outputs.add(obj)
+                rule_target = f"{dest} {obj} &:"
             lines += [
-                f"{dest}: {source} "
+                f"{rule_target} {source} "
                 + " ".join(map(make_escape, dependencies))
                 + " "
                 + common_deps
@@ -331,7 +338,7 @@ def compile_source(
             "/Fp" + common.windows(target.pch_product(pch_source)),
         ]
         pdb = Path(target.pch_product(pch_source)).with_suffix(".pdb")
-    obj = output + ".obj" if precompile else output
+    obj = target.product(entry)
     args = [
         "/nologo",
         "/c",

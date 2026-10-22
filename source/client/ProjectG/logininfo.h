@@ -330,16 +330,9 @@ inline int IsPcBang()
 
 struct FnTrim
 {
-	FnTrim(const char* trimChars)
-		: m_trimChars(trimChars), m_result("")
-	{
-	}
-	void operator()(char c)
-	{
-		if (m_trimChars.find(c) == std::string::npos)
-			m_result += c;
-	}
-
+	FnTrim(const char* trimChars);
+	void operator()(char c);
+	~FnTrim();
 	std::string m_trimChars;
 	std::string m_result;
 };

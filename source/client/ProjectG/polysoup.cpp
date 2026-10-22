@@ -1759,6 +1759,13 @@ static void Barycentric(float* u, float* v, const WVector* p, const WVector* a,
 
 void WPolySoup::MakeStatistics()
 {
+	// HACK!
+	typedef int t0;
+	typedef int t1;
+	typedef int t2;
+	typedef int t3;
+	typedef int t4;
+
 	mkdir("statistics");
 	FILE* fp = fopen(MakeStr("statistics/%s_%02d_stat.txt", GetCurMapName(),
 						 GOLFDOC()->m_currentHole),

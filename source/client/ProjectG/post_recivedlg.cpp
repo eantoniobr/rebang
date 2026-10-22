@@ -1,10 +1,3 @@
-// HACK!
-namespace
-{
-	typedef int t0;
-	typedef int t1;
-}
-
 #include "post_recivedlg.h"
 #include "transferableitem.h"
 #include "returngiftdlg.h"
@@ -343,22 +336,22 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 			WRect(row->pos.x, row->pos.y, (float)bitmap->Width(),
 				(float)bitmap->Height()),
 			0xffffffff, 0);
-	sMailInfoBrief* mail = (sMailInfoBrief*)row->pData;
-	if (!mail)
+	if (!row->pData)
 		return;
+	sMailInfoBrief& mail = *(sMailInfoBrief*)row->pData;
 	const char* name = "\xc6\xed\xc1\xf6";
-	unsigned long typeId = mail->item.dwTID;
+	unsigned long typeId = mail.item.dwTID;
 	IFF_ITEM_COMMON* common = ItemManager()->FindCommonItem(typeId);
 	int count;
-	if (common && mail->itemCount != 0)
+	if (common && mail.itemCount != 0)
 	{
 		name = common->Name;
-		count = mail->item.iCount;
+		count = mail.item.iCount;
 		bitmap = g_pFresh->GetBitmap(common->Icon);
 	}
 	else
 	{
-		if (!mail->bRead)
+		if (!mail.bRead)
 			bitmap = m_pArrivalMail;
 		else
 			bitmap = m_pOpenMail;
@@ -405,8 +398,8 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 		}
 	}
 	if (IsLocalContent((localContentType_t)0x57) && IsUccClothes(typeId) &&
-		mail->itemCount > 0)
-		bitmap = GetUccItemIcon(mail->item.dwTID, mail->item.csUCCIndex);
+		mail.itemCount > 0)
+		bitmap = GetUccItemIcon(mail.item.dwTID, mail.item.csUCCIndex);
 	if (bitmap && graphic)
 	{
 		graphic->DrawTexture(bitmap,
@@ -416,7 +409,7 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 	}
 	const WPoint& mouse = g_pFresh->GetManager()->GetMousePos();
 	miniBtn_t btn;
-	if (mail->itemCount > 0)
+	if (mail.itemCount > 0)
 		btn = m_miniBtn[0];
 	else
 		btn = m_miniBtn[1];
@@ -435,7 +428,7 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 	{
 		graphic->DrawTexture(btn.pNormal, WRect(rect), 0xffffffff, 0);
 	}
-	if (mail->item.btItemType && mail->item.iTimeCount > 0)
+	if (mail.item.btItemType && mail.item.iTimeCount > 0)
 	{
 		graphic->SetTextStyle(2);
 		graphic->SetTextColor(0xff000000, 0xffffffff);
@@ -454,7 +447,7 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 		if (format)
 		{
 			WPoint labelPos(row->pos.x + 72.0f, row->pos.y + 72.0f);
-			graphic->Print(WPoint(labelPos), 2, format, mail->item.iTimeCount);
+			graphic->Print(WPoint(labelPos), 2, format, mail.item.iTimeCount);
 		}
 	}
 	else if (count > 1)
@@ -467,16 +460,16 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 		m_pTitleFont->Print(g_view, x, row->pos.y + 42.0f, text, 0, 0xffffffff,
 			NULL);
 	}
-	if (mail->itemCount == -1)
+	if (mail.itemCount == -1)
 	{
 		WPoint labelPos(row->pos.x + 182.0f, row->pos.y + 23.0f);
 		graphic->Print(WPoint(labelPos), 2, "%d", typeId);
 	}
-	else if (mail->itemCount > 1)
+	else if (mail.itemCount > 1)
 	{
 		WPoint labelPos(row->pos.x + 182.0f, row->pos.y + 23.0f);
 		graphic->Print(WPoint(labelPos), 2, " + %d\xb0\xb3",
-			mail->itemCount - 1);
+			mail.itemCount - 1);
 	}
 	graphic->SetTextStyle(0);
 	{
@@ -484,7 +477,7 @@ void CPost_ReciveDlg::OnPostListOwnerDraw(int param)
 		graphic->Print(WPoint(labelPos), 2, "%s", name);
 	}
 	if (IsLocalContent((localContentType_t)0x51) &&
-		(mail->item.dwTID & 0xfc000000) == 0x08000000 && mail->itemCount > 0)
+		(mail.item.dwTID & 0xfc000000) == 0x08000000 && mail.itemCount > 0)
 		DrawPartsSlot(graphic, row);
 }
 

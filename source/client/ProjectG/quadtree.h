@@ -24,7 +24,9 @@ public:
 	float GetMaxPowerOnGround() const;
 	float GetMaxPowerOnGround(const WVector& pos);
 	WVector GetMeshNormal(const WVector& pos);
+	WVector GetMeshNormal(int index);
 	float GetMinPowerOnGround() const;
+	float GetMinPowerOnGround(const WVector& pos);
 	void CalcGreenPlane();
 	float GetGreenPos(const WVector& pos);
 	float RayIntersectAll(const WVector& start, const WVector& ray,

@@ -412,6 +412,8 @@ private:
 int WisEqual(const WVector& left, const WVector& right, float epsilon);
 Waabb operator+(const Waabb& box, const WVector& vector);
 WMatrix operator*(const WMatrix& left, const WMatrix& right);
+WMatrix operator*(const WMatrix& matrix, float scalar);
+WMatrix RotMat(const WVector& axis, float angle);
 WMatrix RotMat(float angle, char direct);
 WMatrix RotMat(WVector rotation);
 WVector MinPointLineSegment(WVector& vp, WVector& va, WVector& vb, WVector* vt);

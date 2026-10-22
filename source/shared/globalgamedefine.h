@@ -397,7 +397,6 @@ struct sTreasureItem
 	{
 	}
 };
-#pragma pack(pop)
 
 struct stGameClass
 {
@@ -411,6 +410,8 @@ struct stGameClass
 	}
 };
 
+#pragma pack(pop)
+static stGameClass s_gameClass((eGameStyle)255, 255);
 enum eMapType
 {
 	MAP_BLUE_LAGOON = 0,

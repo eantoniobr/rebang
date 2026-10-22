@@ -3,9 +3,6 @@
 #include "gatewayactor.h"
 #include "gatewayinterface.h"
 
-static const char* s_taskNames[] = { "CLobbyTask", "CShopTask",
-	"CRealMyRoomTask", "ntAvatarChatTask", "CGolfTask" };
-
 namespace _event
 {
 	IMPLEMENT_ACTOR(CEventActor, IActor)

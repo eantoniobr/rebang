@@ -741,8 +741,7 @@ ILNUM_SD1
 #include "golftask.h"
 #include "voiceitem.h"
 #include "gdvoiceitem.h"
-class CContentsDoc;
-// HACK!
-typedef char CONTENTSDOC_SINGLETON_SIZE[sizeof(WSingleton<CContentsDoc>)];
+#include "icontentsdoc.h"
+#include "courseorder.h"
 #include "shareddoc.inl"
 ILNUM_SD2

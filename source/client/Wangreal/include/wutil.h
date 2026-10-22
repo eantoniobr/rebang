@@ -55,5 +55,7 @@ ulong __fastcall AddDiffuse(ulong left, ulong right, unsigned char value);
 
 inline bool Custom_IsLeadByte(unsigned char letter)
 {
-	return bool(letter >> 7);
+	if (letter >> 7)
+		return true;
+	return false;
 }

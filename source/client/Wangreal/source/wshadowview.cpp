@@ -1,6 +1,6 @@
+#include "wpuppet.h"
 #include "wshadowview.h"
 #include "wtextureview.h"
-#include "wpuppet.h"
 #include "bitmap.h"
 #include <stdlib.h>
 #include <string.h>

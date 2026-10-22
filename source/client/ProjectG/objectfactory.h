@@ -31,7 +31,10 @@ class CObjectFactory
 {
 public:
 	typedef IObject* (*ObjectFunctor)();
-	~CObjectFactory() { }
+	CObjectFactory() { }
+	~CObjectFactory() { Reset(); }
+	void Reset();
+	void AddObjectType(IObject* object, const char* name);
 	void AddObjectFunctor(ObjectFunctor function, const char* name);
 	IObject* CreateObject(const char* name)
 	{

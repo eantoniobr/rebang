@@ -186,6 +186,11 @@ class Unit:
 def _entries() -> tuple[dict[str, dict], set[str]]:
     config, entries = common.target().settings()
     pch = {common.entry_path(e) for e in config.get("precompiled_headers", [])}
+    pch.difference_update(
+        common.entry_path(e)
+        for e in config["inputs"]
+        if not isinstance(e, dict) or "library" not in e
+    )
     options: dict[str, dict] = {
         k: dict(v) if isinstance(v, dict) else {"path": v} for k, v in entries.items()
     }

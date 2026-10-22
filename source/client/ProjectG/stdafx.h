@@ -170,7 +170,6 @@ ILNUM_TB2
 ILNUM_TM
 #include "nodecontainer.h"
 #include "scenemanager.h"
-#include "courseorder.h"
 
 // HACK: workaround for unsolved symbol ordering problems
 template void std::vector<WVector>::reserve(unsigned int);

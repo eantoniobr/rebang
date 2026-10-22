@@ -3322,7 +3322,7 @@ float CalcPowerBarPosition()
 	float value = (float)atof(buf);
 	value *= 3.2f;
 
-	return (value / range) * BAR_LENGTH + BAR_START;
+	return (value / range) * BAR_LEN + BAR_START;
 }
 
 void PerformPowerBarSetting()

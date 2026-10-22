@@ -237,11 +237,3 @@ bool CSpecialBoxDoc::Release()
 
 	return true;
 }
-
-inline CGatewayControlDoc::CGatewayControlDoc()
-{
-}
-
-inline CGatewayControlDoc::~CGatewayControlDoc()
-{
-}

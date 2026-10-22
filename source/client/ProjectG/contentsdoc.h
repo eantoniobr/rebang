@@ -186,6 +186,10 @@ namespace _guild
 	class CGuildInfo : public IContentsDataContainer
 	{
 	public:
+		typedef std::map<int, const char*>::iterator MESSAGE_MAP_IT;
+		typedef std::map<int, std::list<GUILD_USER_LIST> >::iterator
+			MEMBER_MAP_IT;
+		typedef std::map<int, std::list<GUILD_LIST> >::iterator SEARCH_MAP_IT;
 		virtual bool Initialize();
 		virtual bool Release();
 

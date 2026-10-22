@@ -16,6 +16,37 @@ struct Attacher;
 class CFxSpray
 {
 public:
+	struct sRevol
+	{
+		sRevol() { }
+		WVector center;
+		WVector axis;
+		int start;
+		float speed;
+		int end;
+		float acceleration;
+	};
+
+	struct sNozzleRot
+	{
+		sNozzleRot() { }
+		WVector axis;
+		int start;
+		float speed;
+		int end;
+		float acceleration;
+	};
+
+	struct sSpawn
+	{
+		int type;
+		char name[260];
+		bool attached;
+		float time;
+		int count;
+	};
+
+	void SetDistLimit(float nearLimit, float farLimit);
 	virtual ~CFxSpray();
 	void SetActive(bool active);
 	WVector& Pos();
@@ -44,6 +75,18 @@ public:
 	WVector m_pos;
 	WVector m_bgPos;
 	WVector m_vel;
+	unsigned char m_unused115c[100];
+	bool m_strongBond;
+	unsigned char m_unused11c1[2];
+	bool m_attachedToParent;
+	unsigned long m_parentMask;
+	unsigned char m_unused11c8[780];
+	std::list<sNozzleRot> m_nozzleRotation;
+	std::list<sNozzleRot> m_rotation;
+	std::list<sRevol> m_revolution;
+	std::list<sRevol> m_parentRevolution;
+	unsigned char m_unused1504[116];
+	std::list<sSpawn> m_spawn;
 };
 
 #include "fxspray.inl"

@@ -17,8 +17,8 @@ namespace _gateway
 	class CGatewayControlDoc : public IContentsDataContainer
 	{
 	public:
-		CGatewayControlDoc();
-		virtual ~CGatewayControlDoc();
+		CGatewayControlDoc() { }
+		virtual ~CGatewayControlDoc() { }
 
 		virtual CGatewayHandler* GetGatewayHandler() { return NULL; }
 	};
@@ -138,6 +138,7 @@ namespace _gateway
 	class CSpecialBoxDoc : public CGatewayControlDoc
 	{
 	public:
+		CSpecialBoxDoc() { }
 		virtual ~CSpecialBoxDoc() { }
 
 		virtual bool Initialize();

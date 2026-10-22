@@ -8,6 +8,8 @@
 #include "anotherhand.h"
 #include "frcmdtarget.h"
 
+static const char* s_taskNames[] = { "CLobbyTask", "CShopTask",
+	"CRealMyRoomTask", "ntAvatarChatTask", "CGolfTask" };
 class IActor;
 class CBackGround;
 class Fresh;
