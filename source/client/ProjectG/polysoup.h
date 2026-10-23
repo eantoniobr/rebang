@@ -29,6 +29,8 @@ struct sSoundBox
 
 class WPolySoup : public WResource
 {
+	friend class CSky;
+
 public:
 	WPolySoup(CGolfDoc* pDoc);
 	virtual ~WPolySoup();

@@ -259,7 +259,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/sky.obj",
+    {
+      "path": "source/client/ProjectG/sky.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/snow.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

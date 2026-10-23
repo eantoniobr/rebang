@@ -75,7 +75,6 @@ public:
 		return true;
 	}
 	bool ProcessEffect() { return m_bProcessEffect; }
-	bool GetReflective() const;
 	void SetReflective(bool);
 	bool SetFogEnable(bool);
 	void SetFogState(float, float, unsigned long);
@@ -115,8 +114,9 @@ public:
 	void xScaleProjMat(int, int);
 	void SetScale(float);
 	float GetScale() const { return m_scale; }
+	bool GetReflective() const { return m_isReflective; }
 	float GetFOV_Unmodified() const { return FOV; }
-	PROJECTION_MODE GetProjectionMode() const;
+	PROJECTION_MODE GetProjectionMode() const { return m_projMode; }
 	void SetProjectionMode(PROJECTION_MODE);
 	WVector Projection(const WVector&);
 	void Projection2(WTVertex*, const WVector&);
