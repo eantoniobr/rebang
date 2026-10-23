@@ -19,6 +19,7 @@ public:
 		bool b2);
 	void SetActive(bool active, bool b2, bool b3);
 	void Close(bool b1, bool b2);
+	void Open(bool b1, bool b2);
 	void SetChatText(const char* text, bool b);
 	void Process(float deltaTime);
 	void ProcessMacro(const float deltaTime);

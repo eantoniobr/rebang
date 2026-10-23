@@ -104,7 +104,10 @@ public:
 	void DrawSphere(const WVector&, float, unsigned long, int, int);
 	void DrawSphere(const WSphere&, unsigned long, int, int);
 	void SetScreenCenter(float, float);
-	void ResetScreenCenter();
+	void ResetScreenCenter()
+	{
+		SetScreenCenter(SCREEN_XS * 0.5f, SCREEN_YS * 0.5f);
+	}
 	void UpdateCamera(void);
 	void GetScreen2World(float, float, WVector&, WVector&);
 	void xSetLight(unsigned long, const LightSet&);

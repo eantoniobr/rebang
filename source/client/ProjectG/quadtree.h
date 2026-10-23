@@ -79,6 +79,7 @@ public:
 		m_frameTime = 0.0f;
 	}
 
+	void SetRandSeed(unsigned long seed) { m_randSeed = seed; }
 	unsigned long GetFrame() { return m_frame; }
 
 	WPolySoup* m_pPolySoup;
@@ -89,7 +90,8 @@ public:
 	unsigned char m_unknown219c[0x20];
 	float m_frameTime;
 	unsigned long m_frame;
-	unsigned char m_unknown21c4[0x14];
+	unsigned char m_unknown21c4[0x10];
+	unsigned long m_randSeed;
 	float m_slopeFactor;
 };
 

@@ -194,6 +194,11 @@ inline void SetHoles(unsigned char holes)
 	Doc()->m_golfGame.holes = holes;
 }
 
+inline unsigned char GetHoleType()
+{
+	return Doc()->m_holeType;
+}
+
 inline void SetHoleType(unsigned char holeType)
 {
 	Doc()->m_holeType = holeType;
@@ -492,4 +497,12 @@ inline unsigned char GetCurRoomMapType()
 inline void SetMyOutsideCash(__int64 cash)
 {
 	Doc()->m_cash = cash;
+}
+
+inline unsigned char GetDiffFlag()
+{
+	IFF_STRUCT::sCourse* course = Doc()->m_golfGame.pCourse;
+	if (!course)
+		return 0;
+	return course->DiffFlag;
 }

@@ -34,8 +34,7 @@ public:
 
 		converter_map::iterator it = convmap().find(key);
 		if (it != convmap().end())
-
-			it->second(from, to);
+			(*it).second(from, to);
 		else
 			m_bFailed = true;
 	}
@@ -57,8 +56,8 @@ public:
 private:
 	static converter_map& convmap()
 	{
-		static converter_map _map;
-		return _map;
+		static converter_map _cvmap;
+		return _cvmap;
 	}
 
 	bool m_bFailed;

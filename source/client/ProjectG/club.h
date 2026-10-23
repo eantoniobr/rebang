@@ -5,6 +5,8 @@
 class CClub
 {
 public:
+	enum eClub;
+
 	struct sClub
 	{
 		WCrypticValue<float> range;
@@ -20,6 +22,7 @@ public:
 		WCrypticValue<float> barSpeed;
 	};
 
+	const char* GetClubString(eClub club);
 	void SetClub(const char* name);
 	void SetClub(unsigned char index);
 	void SelectBestClub(const WVector& target);

@@ -736,7 +736,6 @@ unsigned char GetCurMap();
 bool IsCurMapSnow();
 
 ILFILL3
-ILNUM_SD1
 
 #include "golftask.h"
 #include "voiceitem.h"
@@ -744,4 +743,3 @@ ILNUM_SD1
 #include "icontentsdoc.h"
 #include "courseorder.h"
 #include "shareddoc.inl"
-ILNUM_SD2

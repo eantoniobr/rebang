@@ -8,6 +8,11 @@ inline int WisEqual(const WVector& left, const WVector& right, float epsilon)
 		return 0;
 }
 
+inline int operator==(const WVector& a, const WVector& b)
+{
+	return WisEqual(a, b, g_EPSILON);
+}
+
 inline WVector WVector::operator-() const
 {
 	return WVector(-x, -y, -z);
@@ -519,6 +524,13 @@ inline Wobb& Wobb::operator=(const Wobb& obb)
 	extend[0] = obb.extend[0];
 	extend[1] = obb.extend[1];
 	extend[2] = obb.extend[2];
+	return *this;
+}
+
+inline Waabb& Waabb::operator=(const Waabb& box)
+{
+	min = box.min;
+	max = box.max;
 	return *this;
 }
 

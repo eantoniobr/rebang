@@ -5,6 +5,8 @@
 #include "fxspray.h"
 class CFxSequence
 {
+	friend class CFxBox;
+
 public:
 	struct sLine
 	{

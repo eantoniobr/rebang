@@ -1928,14 +1928,6 @@ failed:
 	}
 }
 
-inline unsigned char GetDiffFlag()
-{
-	IFF_STRUCT::sCourse* pCourse = Doc()->m_golfGame.pCourse;
-	if (pCourse == NULL)
-		return 0;
-	return pCourse->DiffFlag;
-}
-
 void WPolySoup::smLoadSmapMeshes(SmCase* smCase, cFile* file, w_mesh** meshList,
 	WVector* vtxList, float (*uvList)[2])
 {

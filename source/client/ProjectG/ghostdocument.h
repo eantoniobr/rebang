@@ -4,9 +4,68 @@
 #include <vector>
 #include <list>
 
-struct GHOST_GAME_DATA;
-struct GHOST_SHOT_DATA;
-class CGhostHoleData;
+struct GHOST_GAME_DATA
+{
+	unsigned char holeIndex[18];
+	unsigned long holeRandom[18];
+	unsigned char course;
+	unsigned char holeType;
+	unsigned char gameType;
+	unsigned long serverProperty;
+};
+
+struct GHOST_ACTION
+{
+	bool bActive;
+	unsigned char valueType;
+	int param[5];
+};
+
+struct GHOST_SHOT_DATA
+{
+	int bDummy;
+	unsigned int holeIndex;
+	unsigned int shotIndex;
+	GHOST_ACTION action[9];
+	GHOST_SHOT_PROTOCOL shotProtocol;
+	float windPower;
+	float windDirection;
+	unsigned char windPowerTenth;
+	struct
+	{
+		float x, y, z;
+	} ballPosition;
+	struct
+	{
+		float x, y, z;
+	} globalWind;
+	float cameraAngle;
+};
+
+class CGhostHoleData
+{
+public:
+	CGhostHoleData();
+	~CGhostHoleData();
+
+	void RecordAct(int index, int valueType, const int* param, int paramNum);
+
+	void SetHoleNum(unsigned char hole) { m_holeNum = hole; }
+	const GHOST_SHOT_DATA* RecordShotData(const sShotProtocol* protocol,
+		unsigned int shotIndex);
+	void RecordDummyShot(unsigned int shotIndex);
+	void AddShotData(const GHOST_SHOT_DATA* shot);
+	const std::list<GHOST_SHOT_DATA*>& GetShotDataList() const
+	{
+		return m_shotDataList;
+	}
+	unsigned int RollBackShotData(unsigned int count);
+
+private:
+	unsigned char m_holeNum;
+	std::list<GHOST_SHOT_DATA*> m_shotDataList;
+	GHOST_SHOT_DATA* m_pRecordShot;
+};
 
 struct GHOST_CARD_DATA
 {

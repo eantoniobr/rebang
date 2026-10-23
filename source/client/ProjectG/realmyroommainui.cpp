@@ -65,7 +65,6 @@
 #include "avatar_task.h"
 #include "anotherhand.inl"
 #include "minatl.h"
-ILFILLTU_REALMYROOMMAINUI0
 
 namespace S5
 {

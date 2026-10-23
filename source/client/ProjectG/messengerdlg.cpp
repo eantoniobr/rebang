@@ -4,7 +4,6 @@
 #include "buddymanager.h"
 #include "notedlg.h"
 #include "memodlg.h"
-#include "optiondlg.h"
 #include "addfrienddlg.h"
 #include "guildnoticedlg.h"
 #include "newsreader.h"
@@ -2127,9 +2126,9 @@ void CMessengerInfo::Notify4(bool bAlarm)
 void CMessengerInfo::AlarmBtnUp(unsigned long uid)
 {
 	std::list<sChatSlot>& slots = MESSENGER()->m_chatSlotList;
-	std::list<sChatSlot>::iterator it;
 	int count = slots.size();
-	for (it = slots.begin(); it != slots.end(); ++it)
+	for (std::list<sChatSlot>::iterator it = slots.begin(); it != slots.end();
+		++it)
 	{
 		sChatSlot& slot = *it;
 		if (!slot.pDlg && slot.bAlarm && (uid == -1 || uid == slot.uid))

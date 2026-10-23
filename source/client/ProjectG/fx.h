@@ -1,8 +1,16 @@
 #pragma once
 
+#include <map>
 #include "scenemanager.h"
-
 #include "fxbox.h"
+
+class CGolfBall;
+class CFxControl;
+class CFxSequence;
+class CFxSpray;
+class CFxKeeper;
+struct sFxKeeper;
+struct defines_t;
 
 struct Attacher
 {
@@ -15,12 +23,6 @@ struct Attacher
 	bool Get(WVector& out);
 };
 
-struct sFxKeeper;
-struct defines_t;
-class CFxControl;
-class CGolfBall;
-
-// TODO: incomplete
 class CPvsFxBox : public CFxBox
 {
 public:
@@ -33,6 +35,7 @@ protected:
 	virtual void OnSequenceDeleted(CFxSequence* sequence);
 	virtual void OnSprayCreated(CFxSpray* spray);
 	virtual void OnSprayDeleted(CFxSpray* spray);
+	void UpdateLightSrc(const LightSet& light);
 
 	std::map<CFxSequence*, Attacher> m_seqAttacher;
 	std::map<CFxSpray*, Attacher> m_sprayAttacher;
@@ -51,31 +54,44 @@ public:
 	void CloseSequence(CFxSequence* sequence, bool bDeleteChild);
 	CFxSpray* OpenSpray(const char* filename);
 	void CloseSpray(CFxSpray* spray);
+	void ClearAll(bool bMarkedOnly);
+
+	void AddFxKeeper(sFxKeeper& keeper);
+	void EraseFxKeeper(CFxKeeper* keeper);
+	void ClearFxKeeper();
+
+	CFxSpray* GetSpray(int index);
+	bool FindSequence(CFxSequence* sequence);
+	bool FindSpray(CFxSpray* spray);
 	void* Attach(const Attacher& attacher, const char* filename, bool bMark,
 		defines_t* defines);
-	void SetActive(bool bActive);
-	void ClearAll(bool bMarkedOnly);
-	void ClearFxKeeper();
-	void AddFxKeeper(sFxKeeper& keeper);
-	void UpdateExtWind(WVector wind);
-	bool FindSequence(CFxSequence* sequence);
 	bool GetOutput(WVector& out, unsigned char& value);
+
 	CFxControl* FindControl(int handle);
-	int MakePowerSpin(CGolfBall& ball);
-	int MakeBoosterWarp(CGolfBall& ball, unsigned char type);
-	int MakeShotImpact(CGolfBall& ball);
-	int MakeClubImpact(CGolfBall& ball, unsigned long typeId);
-	int MakeTomahawk(const CGolfBall& ball, bool bPower);
+	int MakeRunDust(const WVector& pos, const WVector& vel);
+	bool RemoveRunDust(int handle);
 	int MakeCobra(const CGolfBall& ball);
-	int MakeSpike(const CGolfBall& ball, bool bPower);
+	int MakeTomahawk(const CGolfBall& ball, bool bTrajectory);
+	int MakePowerSpin(CGolfBall& ball);
+	int MakeShotImpact(CGolfBall& ball);
+	int MakeClubImpact(CGolfBall& ball, unsigned long clubId);
+	int MakeSpike(const CGolfBall& ball, bool bTrajectory);
 	int MakePowerShot2(CGolfBall& ball);
+	int MakeBoosterWarp(CGolfBall& ball, unsigned char type);
+
+	void SetActive(bool bActive);
+	void UpdateExtWind(WVector wind);
+
 	void SetPvsFxBoxGroundHeight(float maxHeight, float minHeight)
 	{
 		m_pvsFxBox.SetGroundHeightArea(maxHeight, minHeight);
 	}
 
 protected:
+	int AddFxControl(CFxControl* control);
+	void ClearControl();
+
 	CPvsFxBox m_pvsFxBox;
-	std::map<int, void*> m_control;
+	std::map<int, CFxControl*> m_control;
 	bool m_bActive;
 };

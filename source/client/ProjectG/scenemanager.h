@@ -1,6 +1,7 @@
 #pragma once
 
 class WPuppet;
+class CWeatherType;
 
 enum eObjType
 {
@@ -73,7 +74,9 @@ public:
 	void Prerender(WView* view);
 	void Render(WView* view, unsigned long flag);
 
-	unsigned char m_unused28[0x108];
+	unsigned char m_unused28[0x88];
+	CWeatherType* m_pWeather;
+	unsigned char m_unusedb4[0x7c];
 };
 
 class CWavelet

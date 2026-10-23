@@ -32,7 +32,6 @@ ILFILLX1B
 #include <stdexcept>
 ILFILLX2
 #include "wmath.h"
-ILNUM_WMATH
 #include "gamath.h"
 #include "wutil.h"
 #include "wminmax.h"
@@ -126,7 +125,6 @@ ILFILLF2
 ILFILLTB
 ILNUM_TB0
 #include "frtabbutton.h"
-ILNUM_TB1
 #include "frwndmanager.h"
 ILNUM_G0
 #include "frgraphicinterface.h"
@@ -147,7 +145,6 @@ ILNUM_NET
 #include "ccrc32.h"
 // HACK
 template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
-ILNUM_FR
 #include "mainframe.h"
 // HACK: should be inline with class definition, but symbol ordering is tricky
 inline FrDesktop* Fresh::GetDesktop() const
@@ -167,7 +164,6 @@ ILNUM_TB2
 #include "taskmanager.h"
 #include "actor.h"
 #include "taskmain.h"
-ILNUM_TM
 #include "nodecontainer.h"
 #include "scenemanager.h"
 
@@ -180,5 +176,6 @@ template float Min<float>(float, float);
 #include "wtemplate.h"
 
 // HACK: the PCH seems to instantiate these somewhere - it hasn't been recovered yet
+template const char& std::string::const_iterator::operator*() const;
+template char& std::string::iterator::operator*() const;
 template std::string::iterator std::string::iterator::operator+(int) const;
-ILNUM_END

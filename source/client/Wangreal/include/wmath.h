@@ -163,6 +163,7 @@ public:
 	WVector min;
 	WVector max;
 
+	Waabb& operator=(const Waabb& box);
 	Waabb& operator+=(const Waabb& box);
 	Waabb& operator+=(const WVector& vector);
 	void Reset()
@@ -450,3 +451,4 @@ float WVectorLen(const WVector& vector);
 WVector RotVec(const WVector& vector, const WMatrix& matrix);
 
 #include "wmath.inl"
+#include "wmathutil.inl"

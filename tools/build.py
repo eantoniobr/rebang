@@ -355,6 +355,9 @@ def compile_source(
     with pdb.with_suffix(".pdb.lock").open("w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         log = common.invoke("cl.exe", output, args)
+        # Workaround for stale PCH: do an extra pass to get the includes only.
+        if precompile:
+            log += common.invoke("cl.exe", output + ".includes", [*args, "/Y-", "/Zs"])
     headers: list[str] = []
     actual_paths = {
         str(p).lower(): p

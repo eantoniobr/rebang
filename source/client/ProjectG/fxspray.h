@@ -15,6 +15,8 @@ struct Attacher;
 // TODO: incomplete
 class CFxSpray
 {
+	friend class CFxBox;
+
 public:
 	struct sRevol
 	{
@@ -37,6 +39,12 @@ public:
 		float acceleration;
 	};
 
+	struct sSound
+	{
+		char name[260];
+		float range;
+	};
+
 	struct sSpawn
 	{
 		int type;
@@ -46,11 +54,21 @@ public:
 		int count;
 	};
 
+	CFxSpray(CFxBox& box);
+	bool ParseFile(const char* name, bool useOriginal);
+
+protected:
+	bool Process(float elapsed);
+	void Display(WView* view);
+
+public:
 	void SetDistLimit(float nearLimit, float farLimit);
 	virtual ~CFxSpray();
 	void SetActive(bool active);
 	WVector& Pos();
 	WVector& Vel();
+	WVector& InitialMinVel() { return m_initialMinVel; }
+	WVector& InitialMaxVel() { return m_initialMaxVel; }
 	void SetWind(const WVector& wind);
 	void SetLight(const LightSet& light);
 
@@ -80,13 +98,23 @@ public:
 	unsigned char m_unused11c1[2];
 	bool m_attachedToParent;
 	unsigned long m_parentMask;
-	unsigned char m_unused11c8[780];
+	unsigned char m_unused11c8[648];
+	int m_tailTexHandle;
+	unsigned char m_unused1454[8];
+	WVector m_initialMinVel;
+	WVector m_initialMaxVel;
+	unsigned char m_unused1474[96];
 	std::list<sNozzleRot> m_nozzleRotation;
 	std::list<sNozzleRot> m_rotation;
 	std::list<sRevol> m_revolution;
 	std::list<sRevol> m_parentRevolution;
 	unsigned char m_unused1504[116];
 	std::list<sSpawn> m_spawn;
+
+	std::list<sSound> m_sounds;
+	bool m_evenSphere;
+	unsigned char m_unused1594[4];
+	float m_sphereAngle;
 };
 
 #include "fxspray.inl"
