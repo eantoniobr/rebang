@@ -1525,7 +1525,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/shopmain.obj",
+    {
+      "path": "source/client/ProjectG/shopmain.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/shoptask.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
