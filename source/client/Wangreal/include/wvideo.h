@@ -269,14 +269,10 @@ struct WRenderToTextureSizeInfo
 	static const WRenderToTextureSizeInfo SIZE_HALF;
 	static const WRenderToTextureSizeInfo SIZE_ABS;
 
-#ifdef WANGREAL_DEVICE
 	WRenderToTextureSizeInfo()
 		: m_isAbsolute(true), m_width(0.0f), m_height(0.0f)
 	{
 	}
-#else
-	WRenderToTextureSizeInfo() { Reset(); }
-#endif
 	WRenderToTextureSizeInfo(bool isAbsolute, float width, float height)
 		: m_isAbsolute(isAbsolute), m_width(width), m_height(height)
 	{

@@ -371,6 +371,15 @@ static bool IsSilviaCannonArea(const WPolySoup::sArea* area)
 	return false;
 }
 
+// HACK!
+__declspec(dllimport) __forceinline WVector ModelBoundsCenter(
+	const Waabb& bounds)
+{
+	WVector sum(bounds.min.x + bounds.max.x, bounds.min.y + bounds.max.y,
+		bounds.min.z + bounds.max.z);
+	return sum * 0.5f;
+}
+
 bool WPolySoup::Load(const char* filename, bool bOption)
 {
 	int caps;
@@ -624,7 +633,7 @@ bool WPolySoup::Load(const char* filename, bool bOption)
 	m_baseModel->flag = bgModel.flag & 0xf8;
 	m_baseModel->aabb = bgModel.localAabb;
 	m_baseModel->mat = bgModel.mat;
-	m_baseModel->pos = m_baseModel->aabb.GetCenter();
+	m_baseModel->pos = ModelBoundsCenter(m_baseModel->aabb);
 	m_baseModel->center =
 		(m_baseModel->aabb.max + m_baseModel->aabb.min) * 0.5f;
 	m_baseModel->radius =

@@ -218,9 +218,9 @@ inline WMatrix WMatrix::operator~() const
 {
 	WMatrix r;
 	WVector c;
-	c.x = yy * zz - yz * zy;
-	c.y = xz * zy - zz * xy;
-	c.z = yz * xy - yy * xz;
+	c.x = (float)(double)(yy * zz - yz * zy);
+	c.y = (float)(double)(xz * zy - zz * xy);
+	c.z = (float)(double)(yz * xy - yy * xz);
 	float inv = 1.0f / (xx * c.x + yx * c.y + zx * c.z);
 	r.xx = c.x * inv;
 	r.yx = (yz * zx - yx * zz) * inv;
@@ -235,6 +235,24 @@ inline WMatrix WMatrix::operator~() const
 	r.ym = -(r.yx * xm + r.yy * ym + r.yz * zm);
 	r.zm = -(r.zx * xm + r.zy * ym + r.zz * zm);
 	return r;
+}
+
+inline WMatrix::WMatrix(const WPlane& source)
+{
+	WPlane plane = source;
+	plane.Normalize();
+	xx = 1 - 2 * plane.x * plane.x;
+	yx = -2 * plane.x * plane.y;
+	zx = -2 * plane.x * plane.z;
+	xy = -2 * plane.x * plane.y;
+	yy = 1 - 2 * plane.y * plane.y;
+	zy = -2 * plane.y * plane.z;
+	xz = -2 * plane.x * plane.z;
+	yz = -2 * plane.y * plane.z;
+	zz = 1 - 2 * plane.z * plane.z;
+	xm = -2 * plane.x * plane.dis;
+	ym = -2 * plane.y * plane.dis;
+	zm = -2 * plane.z * plane.dis;
 }
 
 inline bool operator==(const WMatrix& left, const WMatrix& right)
@@ -438,6 +456,15 @@ inline WPlane& WPlane::operator=(const WPlane& other)
 	return *this;
 }
 
+inline void WPlane::Normalize()
+{
+	float scale = 1.0f / sqrtf(x * x + y * y + z * z);
+	x *= scale;
+	y *= scale;
+	z *= scale;
+	dis *= scale;
+}
+
 inline float WDotProduct(const WQuat& left, const WQuat& right)
 {
 	return left.x * right.x + left.y * right.y + left.z * right.z +
@@ -534,14 +561,9 @@ inline Waabb& Waabb::operator=(const Waabb& box)
 	return *this;
 }
 
-inline WVector Waabb::GetCenter() const
-{
-	return (min + max) * 0.5f;
-}
-
 inline Wobb& Wobb::operator=(const Waabb& box)
 {
-	center = box.GetCenter();
+	center = (box.min + box.max) * 0.5f;
 	extend[0] = WVector(box.max.x - box.min.x, 0.0f, 0.0f) * 0.5f;
 	extend[1] = WVector(0.0f, box.max.y - box.min.y, 0.0f) * 0.5f;
 	extend[2] = WVector(0.0f, 0.0f, box.max.z - box.min.z) * 0.5f;

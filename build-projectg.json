@@ -247,7 +247,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/pool.obj",
+    {
+      "path": "source/client/ProjectG/pool.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/rain.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

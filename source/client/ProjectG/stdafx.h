@@ -57,6 +57,7 @@ ILNUM_WF0
 #include "wfont.h"
 ILNUM_WF1
 #include "wflag.h"
+#include "pool.h"
 #include "wangrealapp.h"
 #include "westpak.h"
 #include "wblockmodel.h"

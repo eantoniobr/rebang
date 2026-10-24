@@ -149,60 +149,7 @@ public:
 	static const WVector4 ZERO;
 };
 
-class Waabb
-{
-public:
-	Waabb() { Reset(); }
-	Waabb(const WVector& minimum, const WVector& maximum)
-	{
-		min = minimum;
-		max = maximum;
-	}
-	Waabb(short* minimum, short* maximum);
-
-	WVector min;
-	WVector max;
-
-	Waabb& operator=(const Waabb& box);
-	Waabb& operator+=(const Waabb& box);
-	Waabb& operator+=(const WVector& vector);
-	void Reset()
-	{
-		min.Reset();
-		max.Reset();
-	}
-	void Default();
-	bool IsInclude(const Waabb& box) const;
-	bool IsInclude(const WVector& vector) const
-	{
-		if (min.x <= vector.x && vector.x <= max.x && min.y <= vector.y &&
-			vector.y <= max.y && min.z <= vector.z && vector.z <= max.z)
-			return true;
-		return false;
-	}
-	bool IsInclude(WVector& vector) const;
-	void Clear()
-	{
-		min = WVector(3.402823466e+38f, 3.402823466e+38f, 3.402823466e+38f);
-		max = WVector(-3.402823466e+38f, -3.402823466e+38f, -3.402823466e+38f);
-	}
-	void AddPoint(const WVector& vector)
-	{
-		if (vector.x > max.x)
-			max.x = vector.x;
-		if (vector.x < min.x)
-			min.x = vector.x;
-		if (vector.y > max.y)
-			max.y = vector.y;
-		if (vector.y < min.y)
-			min.y = vector.y;
-		if (vector.z > max.z)
-			max.z = vector.z;
-		if (vector.z < min.z)
-			min.z = vector.z;
-	}
-	WVector GetCenter() const;
-};
+class Waabb;
 
 class Wobb
 {
@@ -249,6 +196,7 @@ public:
 	};
 
 	WMatrix() { }
+	WMatrix(const class WPlane& plane);
 
 	WMatrix(float xx_, float yx_, float zx_, float xy_, float yy_, float zy_,
 		float xz_, float yz_, float zz_);
@@ -344,6 +292,7 @@ public:
 	};
 
 	WPlane() { }
+	void Normalize();
 
 	WPlane(const WVector& normal_, const WVector& point);
 
@@ -408,6 +357,68 @@ public:
 
 private:
 	void SetFromAxisAngle(const WVector& vector, float theta);
+};
+
+class Waabb
+{
+public:
+	Waabb() { Reset(); }
+	Waabb(const WVector& minimum, const WVector& maximum)
+	{
+		min = minimum;
+		max = maximum;
+	}
+	Waabb(short* minimum, short* maximum);
+
+	WVector min;
+	WVector max;
+
+	Waabb& operator=(const Waabb& box);
+	Waabb& operator+=(const Waabb& box);
+	Waabb& operator+=(const WVector& vector);
+	void Reset()
+	{
+		min.Reset();
+		max.Reset();
+	}
+	void Default();
+	bool IsInclude(const Waabb& box) const;
+	bool IsInclude(const WVector& vector) const
+	{
+		if (min.x <= vector.x && vector.x <= max.x && min.y <= vector.y &&
+			vector.y <= max.y && min.z <= vector.z && vector.z <= max.z)
+			return true;
+		return false;
+	}
+	bool IsInclude(WVector& vector) const;
+	void Clear()
+	{
+		min = WVector(3.402823466e+38f, 3.402823466e+38f, 3.402823466e+38f);
+		max = WVector(-3.402823466e+38f, -3.402823466e+38f, -3.402823466e+38f);
+	}
+	void AddPoint(const WVector& vector)
+	{
+		if (vector.x > max.x)
+			max.x = vector.x;
+		if (vector.x < min.x)
+			min.x = vector.x;
+		if (vector.y > max.y)
+			max.y = vector.y;
+		if (vector.y < min.y)
+			min.y = vector.y;
+		if (vector.z > max.z)
+			max.z = vector.z;
+		if (vector.z < min.z)
+			min.z = vector.z;
+	}
+	WVector GetCenter() const
+	{
+		WVector center;
+		center.x = (min.x + max.x) * .5f;
+		center.y = (min.y + max.y) * .5f;
+		center.z = (min.z + max.z) * .5f;
+		return center;
+	}
 };
 
 int WisEqual(const WVector& left, const WVector& right, float epsilon);

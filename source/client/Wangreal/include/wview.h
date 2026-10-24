@@ -35,47 +35,11 @@ public:
 	void SetCamera(const WMatrix&);
 	const WMatrix& GetCamera() const { return camera; }
 	const WMatrix& GetInvCamera() const { return invcamera; }
-	bool InFrustum(const WSphere& sphere)
-	{
-		for (int i = 0; i < 6; ++i)
-			if (frustum[i] * sphere.pos > sphere.radius)
-				return false;
-		return true;
-	}
-	bool InFrustum(const Waabb& box)
-	{
-		for (int i = 0; i < 6; ++i)
-		{
-			WVector v(frustum[i].x < 0.0f ? box.max.x : box.min.x,
-				frustum[i].y < 0.0f ? box.max.y : box.min.y,
-				frustum[i].z < 0.0f ? box.max.z : box.min.z);
-			if (frustum[i] * v > 0.0f)
-				return false;
-		}
-		return true;
-	}
-	bool InFrustumSafe(const WSphere& sphere)
-	{
-		for (int i = 0; i < 6; ++i)
-			if (frustumSafe[i] * sphere.pos + sphere.radius >= 0.0f)
-				return false;
-		return true;
-	}
-	bool InFrustumSafe(const Waabb& box)
-	{
-		WPlane* plane = frustumSafe;
-		for (int i = 0; i < 6; ++i, ++plane)
-		{
-			WVector v(plane->x > 0.0f ? box.max.x : box.min.x,
-				plane->y > 0.0f ? box.max.y : box.min.y,
-				plane->z > 0.0f ? box.max.z : box.min.z);
-			if (*plane * v >= 0.0f)
-				return false;
-		}
-		return true;
-	}
+	bool InFrustum(const WSphere& sphere);
+	bool InFrustum(const Waabb& box);
+	bool InFrustumSafe(const WSphere& sphere);
+	bool InFrustumSafe(const Waabb& box);
 	bool ProcessEffect() { return m_bProcessEffect; }
-	void SetReflective(bool);
 	bool SetFogEnable(bool);
 	void SetFogState(float, float, unsigned long);
 	void SetViewport(float, float);
@@ -175,8 +139,10 @@ public:
 	float GetFOV() const { return FOV * (SCREEN_YS / SCREEN_XS) * (4.f / 3.f); }
 	__forceinline WVideoDev* GetVideoDevice() const
 	{
-		return GetResrcManager()->video;
+		WVideoDev* video = GetResrcManager()->video;
+		return video;
 	}
+	void SetReflective(bool reflective) { m_isReflective = reflective; }
 	float xGetProjScale() const { return proj_scale; }
 	const WxViewState& xGetViewState() const { return m_xViewState; }
 
@@ -258,4 +224,48 @@ inline unsigned long ULblend(unsigned long c1, unsigned long c2,
 			   0xff00ff) |
 		((((c1 >> 8) & 0xff00ff) * (255 - t) + ((c2 >> 8) & 0xff00ff) * t) &
 			0xff00ff00);
+}
+
+inline bool WView::InFrustum(const WSphere& sphere)
+{
+	for (int i = 0; i < 6; ++i)
+		if (frustum[i] * sphere.pos > sphere.radius)
+			return false;
+	return true;
+}
+
+inline bool WView::InFrustum(const Waabb& box)
+{
+	WPlane* plane = frustum;
+	for (int i = 0; i < 6; ++i, ++plane)
+	{
+		WVector v(plane->x < 0.0f ? box.max.x : box.min.x,
+			plane->y < 0.0f ? box.max.y : box.min.y,
+			plane->z < 0.0f ? box.max.z : box.min.z);
+		if (*plane * v > 0.0f)
+			return false;
+	}
+	return true;
+}
+
+inline bool WView::InFrustumSafe(const WSphere& sphere)
+{
+	for (int i = 0; i < 6; ++i)
+		if (frustumSafe[i] * sphere.pos + sphere.radius >= 0.0f)
+			return false;
+	return true;
+}
+
+inline bool WView::InFrustumSafe(const Waabb& box)
+{
+	WPlane* plane = frustumSafe;
+	for (int i = 0; i < 6; ++i, ++plane)
+	{
+		WVector v(plane->x > 0.0f ? box.max.x : box.min.x,
+			plane->y > 0.0f ? box.max.y : box.min.y,
+			plane->z > 0.0f ? box.max.z : box.min.z);
+		if (*plane * v >= 0.0f)
+			return false;
+	}
+	return true;
 }
