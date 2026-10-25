@@ -59,7 +59,14 @@ public:
 	int Disable();
 	int IsEnabled() const;
 
-	void Crash() const { *(unsigned long*)0xdeaddead = 0xdeaddead; }
+	void Crash() const;
 };
 
 extern CExceptionReport g_exceptionReport;
+
+#pragma optimize("", off)
+inline void CExceptionReport::Crash() const
+{
+	*(unsigned long*)0xdeaddead = 0xdeaddead;
+}
+#pragma optimize("", on)

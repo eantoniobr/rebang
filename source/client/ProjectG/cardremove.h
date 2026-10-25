@@ -39,7 +39,6 @@ protected:
 	DECLARE_FRESH_MSGMAP()
 
 protected:
-protected:
 	FrArea* m_pDrawArea;
 	FrListBox* m_pItemList;
 	unsigned long m_itemTypeId;

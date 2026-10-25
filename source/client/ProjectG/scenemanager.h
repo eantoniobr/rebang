@@ -58,6 +58,8 @@ public:
 	void RegisterElement(eObjType type, WPuppet* puppet, CRenderFuncPtr* func,
 		const char* name, unsigned long flag, Waabb* aabb);
 	void DeleteElement(const char* name);
+	void SetType(const char* name, eObjType type);
+	eObjType GetType(const char* name);
 	void SetVisible(const char* name, bool bVisible);
 	void SetLOD(bool bEnable, bool bRebuild);
 	void Load();

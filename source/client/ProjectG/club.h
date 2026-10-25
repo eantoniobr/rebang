@@ -1,6 +1,9 @@
 #pragma once
 
 #include "encrypttypes.h"
+#include "wlist.h"
+#include "wflag.h"
+class WVector;
 
 class CClub
 {
@@ -47,12 +50,24 @@ public:
 	unsigned char GetApproachMode() { return m_approachMode; }
 	unsigned char GetIndex() { return m_pClub->index; }
 	unsigned char GetID() { return m_pClub->id; }
-	bool Updated();
-	bool IsPowerPutter();
-	bool Is(char* name, sClub* club = NULL);
+	bool Updated() { return m_flag.GetFlag(1); }
+	void SelectClubByDist(float distance);
+	bool IsPowerPutter() { return m_bPowerPutter; }
+	bool Is(char* name, sClub* club = NULL)
+	{
+		char* result;
+		if (club)
+			result = strstr(club->name, name);
+		else
+			result = strstr(m_pClub->name, name);
+		return result != NULL;
+	}
+	void SetBar(int value) { m_bar = value; }
+	void SetItemWindow(bool value) { m_bItemWindow = value; }
 	bool BarIs(int state) { return m_bar == state; }
 	void SetRandomPower(float power) { m_randomPower = power; }
 	float GetRandomPower() const { return m_randomPower; }
+	bool IsCalcRandomPower() { return m_bCalcRandomPower; }
 	void SetCalcRandomPower(bool bCalc) { m_bCalcRandomPower = bCalc; }
 
 private:
@@ -64,7 +79,7 @@ private:
 	WCrypticValue<int> m_powerShot;
 	unsigned char m_approachMode;
 	unsigned char m_unused3d[3];
-	unsigned int m_flag;
+	WFlags m_flag;
 	bool m_bPowerPutter;
 	float m_barDelay;
 	float m_barAlpha;

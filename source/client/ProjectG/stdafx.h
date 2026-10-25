@@ -94,11 +94,6 @@ ILNUM_CU
 ILFILLC
 #include "../../shared/classdefine.h"
 #include "chatmsg.h"
-// HACK: originally in chatmsg.h, but shifts the frwndmanager unit too much
-inline void CChatMsg::Toggle(bool toggle)
-{
-	m_bToggle = toggle;
-}
 #include "../../shared/errorcode.h"
 #include "clientsocket.h"
 ILFILLEXC
@@ -147,11 +142,6 @@ ILNUM_NET
 // HACK
 template unsigned int std::vector<CRC_MT::sCRC_CHKTASK*>::size() const;
 #include "mainframe.h"
-// HACK: should be inline with class definition, but symbol ordering is tricky
-inline FrDesktop* Fresh::GetDesktop() const
-{
-	return manager->GetDesktop();
-}
 #include "projectg.h"
 ILNUM_TB2
 #include "tooltip.h"
@@ -162,10 +152,10 @@ ILNUM_TB2
 #include "../../shared/globalnetworkdefine.h"
 #include "gdtextbox.h"
 #include "gdbitmapbox.h"
+#include "nodecontainer.h"
 #include "taskmanager.h"
 #include "actor.h"
 #include "taskmain.h"
-#include "nodecontainer.h"
 #include "scenemanager.h"
 
 // HACK: workaround for unsolved symbol ordering problems

@@ -1766,15 +1766,18 @@ static void Barycentric(float* u, float* v, const WVector* p, const WVector* a,
 		(d[2].y * d[1].x - d[2].x * d[1].y);
 }
 
-void WPolySoup::MakeStatistics()
+// HACK!
+namespace ILNUM_POLYSTATS
 {
-	// HACK!
+	ILNUM_EXC2
 	typedef int t0;
 	typedef int t1;
 	typedef int t2;
 	typedef int t3;
-	typedef int t4;
+}
 
+void WPolySoup::MakeStatistics()
+{
 	mkdir("statistics");
 	FILE* fp = fopen(MakeStr("statistics/%s_%02d_stat.txt", GetCurMapName(),
 						 GOLFDOC()->m_currentHole),

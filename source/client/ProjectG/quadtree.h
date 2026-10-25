@@ -4,10 +4,15 @@
 #include "polysoup.h"
 #include "golfball.h"
 
+enum enumPolyBlend;
+
 // TODO: incomplete
 class CQuadTree
 {
 public:
+	void DrawDecal(int texHandle, const WVector& pos, const WVector& right,
+		const WVector& up, float alpha, float scale, enumPolyBlend blend,
+		bool bObject);
 	void ResetHoleData();
 	int GetMeshIndex(const WVector& pos, bool bObject);
 	void PreProcess(float dt, bool bOneFrame);

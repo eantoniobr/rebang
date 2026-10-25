@@ -25,7 +25,10 @@ public:
 		bool transform);
 	virtual void DrawIndexedTriangles(WTVertex* vertices, int vertexCount,
 		unsigned short* indices, int indexCount, int flags, int transform);
-	void DrawProjPolygonFan(WTVertex**, int, int);
+	void DrawProjPolygonFan(WTVertex** v, int type, int flags)
+	{
+		DrawPolygonFan(v, type, flags, true);
+	}
 	virtual bool IsShadowView(void) { return false; }
 	virtual void DrawIndexedTrianglesDirect(WTVertex*, int, unsigned short*,
 		int, int, int);
@@ -36,6 +39,7 @@ public:
 	const WMatrix& GetCamera() const { return camera; }
 	const WMatrix& GetInvCamera() const { return invcamera; }
 	bool InFrustum(const WSphere& sphere);
+	bool InFrustum(const WVector& pos);
 	bool InFrustum(const Waabb& box);
 	bool InFrustumSafe(const WSphere& sphere);
 	bool InFrustumSafe(const Waabb& box);
@@ -267,5 +271,13 @@ inline bool WView::InFrustumSafe(const Waabb& box)
 		if (*plane * v >= 0.0f)
 			return false;
 	}
+	return true;
+}
+
+inline bool WView::InFrustum(const WVector& pos)
+{
+	for (int i = 0; i < 6; ++i)
+		if (frustum[i] * pos > 0.f)
+			return false;
 	return true;
 }

@@ -7080,6 +7080,12 @@ void CRealMyRoomMain::OpenS4EventGiftBox(sItemInfo* pItem)
 
 void CRealMyRoomMain::OnItemListBtnDown()
 {
+	// HACK!
+	typedef int tlsPad0;
+	typedef int tlsPad1;
+	typedef int tlsPad2;
+	typedef int tlsPad3;
+
 	FrListItem* pItem = m_pItemList->GetItemUnderCursor();
 	if (pItem == NULL)
 		return;

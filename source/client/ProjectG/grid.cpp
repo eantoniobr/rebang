@@ -4,7 +4,6 @@
 #include "golfdoc.h"
 #include "golfball.h"
 #include "club.h"
-#include "club.inl"
 #include "quadtree.h"
 #include "capturedbg.h"
 

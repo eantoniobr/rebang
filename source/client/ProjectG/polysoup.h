@@ -30,6 +30,8 @@ struct sSoundBox
 class WPolySoup : public WResource
 {
 	friend class CSky;
+	friend class CGolfBg;
+	friend class CAmbientSound;
 
 public:
 	WPolySoup(CGolfDoc* pDoc);
@@ -288,10 +290,7 @@ private:
 	std::vector<unsigned long> m_npcList;
 	std::vector<int> m_unusedList;
 
-public:
 	std::list<sSoundBox> m_soundBox;
-
-private:
 	unsigned long m_reserved;
 	float m_cullDistance;
 	int m_smapMeshNum;

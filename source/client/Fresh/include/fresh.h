@@ -1,5 +1,6 @@
 #pragma once
 #include "frelement.h"
+#include "frwndmanager.h"
 
 class Bitmap;
 class FrElement;
@@ -30,6 +31,7 @@ public:
 	FrWndManager* GetManager() const { return manager; }
 
 	void Toggle(bool b) { show = b; }
+	bool IsVisible() const { return show; }
 
 private:
 	FrElementDoc document;
@@ -38,3 +40,8 @@ private:
 	std::string filename;
 };
 #pragma optimize("", on)
+
+inline FrDesktop* Fresh::GetDesktop() const
+{
+	return manager->GetDesktop();
+}

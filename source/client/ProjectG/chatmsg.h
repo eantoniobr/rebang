@@ -6,47 +6,100 @@
 class WFont;
 class WOverlay;
 
+struct sCompStr
+{
+	char* pCompStr;
+	unsigned char* pCompAttr;
+	unsigned long* pCompCls;
+	unsigned long dwCompAttrLen;
+	unsigned long dwCompClsLen;
+};
+
 class CChatMsg : public WSingleton<CChatMsg>
 {
 public:
 	CChatMsg();
 	virtual ~CChatMsg();
+	void Init();
+	void ResetUiPosition();
 	void Reset();
 	void ClearHistory();
 	void ReplaceBackupUiAlpha();
-	unsigned long ConvertToUIColor(unsigned long color);
-	void AddChatMsg(const std::string& msg, unsigned long color, bool b1,
-		bool b2);
-	void SetActive(bool active, bool b2, bool b3);
-	void Close(bool b1, bool b2);
-	void Open(bool b1, bool b2);
-	void SetChatText(const char* text, bool b);
-	void Process(float deltaTime);
-	void ProcessMacro(const float deltaTime);
-	const char* MakeShortID(const char* id, float width);
-	void GetChatText(std::string& front, std::string& comp, std::string& end);
+	void SetActive(bool active, bool reset, bool unused);
+	void ToggleInsertMode();
+	void AddChatMsg(const std::string&, unsigned long, bool, bool);
+	void RemoveColor(const std::string&, std::string&);
+	void GetChatText(std::string&, std::string&, std::string&);
+	void GetChatText_JP(std::string&, std::string&, std::string&, int);
 	int GetCurCaretPos() { return m_iCurByte; }
+	const char* GetCompChar();
+	const char* GetCompositionString();
+	void GetCompositionString(sCompStr*);
+	void SetChatText(const char*, bool);
+	void SetChatFacialUser(std::string& user) { m_chatFacialUser = user; }
 	void ResetCurCaretPos()
 	{
 		m_iCurByte = 0;
 		m_iCurChar = 0;
 	}
+	void CurCaretMoveLeft();
 	void CurCaretMoveRight() { OnMoveRight(); }
 	int GetNumBytes() { return m_iNumBytes; }
+	void Open(bool, bool);
+	void Close(bool, bool);
 	bool IsOpened() { return m_iState == 3; }
 	bool IsClosed() { return m_iState == 0; }
 	bool IsOpenning() { return m_iState == 2 || m_iState == 1; }
+	void Process(float);
+	void ProcessWindow(float);
+	void ProcessMacro(float);
+	void PrintInChatWindow();
+	void PrintInScreen();
+	void DrawChatWindow();
+	void PrintOnChatRoom();
+	std::string GetIncomingChatMsg() const;
 	int GetConsolKeyCode() const { return m_iConsolCode; }
 	bool IsActive() const { return m_bActive; }
 	WFont* GetMaskedFont() const { return m_pMaskedFont; }
+	char IsExtChar(int);
+	void SetAlwaysActive();
+	bool HasBeenPrinted();
 	void EnableCaretMove(bool enable) { m_bCaretMove = enable; }
 	void SetBufLen(int len) { m_nMaxBytes = len; }
 	void SetBufWidth(float width) { m_fMaxWidth = width; }
-	void Toggle(bool toggle);
-	void SetChatFacialUser(std::string& user) { m_chatFacialUser = user; }
+	void Toggle(bool);
+	const char* MakeShortID(const char*, float);
+	unsigned long ConvertToUIColor(unsigned long);
+	bool IME_IsCandWinOpened();
+	bool IME_IsCompDone();
+	bool IME_IsImeOpened();
+	bool IME_IsCompInProgress();
+	bool IME_IsAlphaNumericMode();
+	void IME_SetAlphaNumericMode();
+	void IME_SetOpenStatus(bool);
+	tagCANDIDATELIST* const IME_GetCandList();
 
 protected:
+	void InitFont();
+	void ProcessResultString();
+	void ProcessCompString();
+	void ProcessEditKey(float);
+	void ProcessResultString_JP();
+	void ProcessCompString_JP();
+	void OnMoveLeft();
 	void OnMoveRight();
+	void OnMoveEnd();
+	void OnMoveHome();
+	void OnBackSpace();
+	void OnDelete();
+	void DeleteCharacter();
+	void DeleteSelected();
+	void CopySelected();
+	void PasteCopied();
+	void InsertWCharacter(int);
+	void WriteCharacter(int);
+
+protected:
 	bool m_bPrinted;
 	bool m_bCaretMove;
 	int m_nMaxBytes;
@@ -95,3 +148,8 @@ protected:
 	unsigned long m_dwCompAttrLen;
 	unsigned long m_dwCompClsLen;
 };
+
+inline void CChatMsg::Toggle(bool toggle)
+{
+	m_bToggle = toggle;
+}
