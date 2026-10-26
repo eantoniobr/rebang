@@ -390,7 +390,6 @@ public:
 			return true;
 		return false;
 	}
-	bool IsInclude(WVector& vector) const;
 	void Clear()
 	{
 		min = WVector(3.402823466e+38f, 3.402823466e+38f, 3.402823466e+38f);

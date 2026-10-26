@@ -215,7 +215,7 @@ public:
 	float GetAnimationLength();
 	unsigned int GetFrameCount();
 	char* GetFrameData(int);
-	float GetFrameDataTime(int);
+	float GetFrameDataTime(int index) { return m_frame[index].num / 30.0f; }
 	bool GetFrameCheck(int);
 	WMatrix& GetMatrix();
 	float GetCamFOV(char* name, WBoneSet* set);
