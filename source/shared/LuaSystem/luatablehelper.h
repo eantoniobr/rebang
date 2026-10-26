@@ -17,6 +17,17 @@ namespace lua_system
 		}
 		~lua_table_helper() { }
 
+		int GetGlobalInt(const char* name)
+		{
+			return lua_tinker::get<int>(state, name);
+		}
+
+		template <class T>
+		T GetValueByName(const char* name)
+		{
+			return table.get<T>(name);
+		}
+
 		lua_tinker::table table;
 		lua_State* state;
 	};

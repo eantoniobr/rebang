@@ -1037,7 +1037,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/contentsdoc.obj",
+    {
+      "path": "source/client/ProjectG/contentsdoc.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/icontentsdoc.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

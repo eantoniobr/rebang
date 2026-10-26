@@ -7,5 +7,8 @@ static const char* s_guildJoinDateFormat =
 
 namespace _guild
 {
+	typedef std::list<GUILD_USER_LIST>::iterator MEMBER_LIST_IT;
+	typedef std::list<GUILD_LIST>::iterator SEARCH_LIST_IT;
+
 	int ConvertGuildHistory(GUILD_STATE_IDX state);
 }
