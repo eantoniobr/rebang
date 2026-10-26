@@ -606,8 +606,8 @@ bool PartCompare(const void* left, const void* right)
 	if (!aSale && bSale)
 	{
 		// HACK! Forces a specific tail merge that otherwise CL seems to stubbornly refuse.
-		__assume(bSale);
-		goto RF;
+		if (!aSale)
+			goto RF;
 	}
 	if (aSale && !bSale)
 		return true;
@@ -659,8 +659,8 @@ bool SpecialHitNewCompare(const void* left, const void* right)
 	if (!aSale && bSale)
 	{
 		// HACK! Forces a specific tail merge that otherwise CL seems to stubbornly refuse.
-		__assume(bSale);
-		goto RF;
+		if (!aSale)
+			goto RF;
 	}
 	if (aSale && !bSale)
 		return true;

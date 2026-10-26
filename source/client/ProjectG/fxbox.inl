@@ -64,24 +64,23 @@ inline WVector CFxBox::Random(const WVector& center, float minRadius,
 	float maxRadius, float angle)
 {
 	float c = cosf(angle * 0.5f);
-	float x, y, z, len;
+	WVector2D h;
+	float y, len;
 
 	do
 	{
-		x = Random(-1.0f, 1.0f);
-		z = Random(-1.0f, 1.0f);
+		h.x = Random(-1.0f, 1.0f);
+		h.y = Random(-1.0f, 1.0f);
 		y = Random(c, 1.0f);
 
-		len = sqrtf(x * x + z * z);
+		len = h.Magnitude();
 
 	} while (Wabs(len) < 0.00001f);
 
-	float s = sqrtf(1.0f - y * y) / len;
-	x *= s;
-	z *= s;
+	h = h * (sqrtf(1.0f - y * y) / len);
 
 	float r = Random(minRadius, maxRadius);
-	return center + WVector(x * r, y * r, z * r);
+	return center + WVector(h.x * r, y * r, h.y * r);
 }
 
 #define IS_EQUAL(a, b) ((a) - (b) < 0.00001f && (a) - (b) > -0.00001f)

@@ -1135,7 +1135,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/fxspray.obj",
+    {
+      "path": "source/client/ProjectG/fxspray.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/anotherhand.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

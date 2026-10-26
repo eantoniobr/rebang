@@ -79,10 +79,10 @@ void CFxBox::ClearOriginalSpray()
 		it != m_originalSpray.end(); ++it)
 	{
 		CFxSpray* spray = (*it).second;
-		if (g_resrcmng && spray->m_tailTexHandle)
+		if (g_resrcmng && spray->m_param.tailTexHandle)
 		{
-			g_resrcmng->Release(spray->m_tailTexHandle);
-			spray->m_tailTexHandle = NULL;
+			g_resrcmng->Release(spray->m_param.tailTexHandle);
+			spray->m_param.tailTexHandle = NULL;
 		}
 		delete spray;
 	}
@@ -186,7 +186,7 @@ void CFxBox::DeleteSequence(std::map<CFxSequence*, CFxSequence*>::iterator& it,
 		WVector& pos = spray->Pos();
 		pos += sequence->Pos();
 		spray->m_parent = NULL;
-		if (spray->m_strongBond && sequence->m_attacher)
+		if (spray->m_param.bStrongBond && sequence->m_attacher)
 		{
 			spray->m_attacher = (Attacher*)sequence->m_attacher;
 			AddSpray(spray);

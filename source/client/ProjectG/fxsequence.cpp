@@ -138,7 +138,7 @@ bool CFxSequence::ParseLine(const char* text, bool& error)
 				error = true;
 				return false;
 			}
-			spray->m_strongBond = !strcmpi(args[7], "strongbond");
+			spray->m_param.bStrongBond = !strcmpi(args[7], "strongbond");
 			spray->m_parent = this;
 			spray->m_centerX = m_centerX;
 			spray->m_centerY = m_centerY;
@@ -175,7 +175,7 @@ bool CFxSequence::ParseLine(const char* text, bool& error)
 				spawn.type = 2;
 			else if (!strcmpi(args[2], "onground"))
 				spawn.type = 3;
-			m_lastSpray->m_spawn.push_back(spawn);
+			m_lastSpray->m_param.spawn.push_back(spawn);
 		}
 	}
 	else if (!strcmpi(command, "add_revolution"))
@@ -190,10 +190,10 @@ bool CFxSequence::ParseLine(const char* text, bool& error)
 			sscanf(args[4], "%f", &revol.axis.y);
 			sscanf(args[5], "%f", &revol.axis.z);
 			revol.start = (int)m_fxBox.ParseNumber(args[6]);
-			revol.speed = m_fxBox.ParseNumber(args[7]);
+			revol.startSpeed = m_fxBox.ParseNumber(args[7]);
 			revol.end = (int)m_fxBox.ParseNumber(args[8]);
-			revol.acceleration = m_fxBox.ParseNumber(args[9]);
-			m_lastSpray->m_revolution.push_back(revol);
+			revol.endSpeed = m_fxBox.ParseNumber(args[9]);
+			m_lastSpray->m_param.revolution.push_back(revol);
 		}
 	}
 	else if (!strcmpi(command, "add_rotation"))
@@ -205,10 +205,10 @@ bool CFxSequence::ParseLine(const char* text, bool& error)
 			sscanf(args[1], "%f", &rot.axis.y);
 			sscanf(args[2], "%f", &rot.axis.z);
 			rot.start = (int)m_fxBox.ParseNumber(args[3]);
-			rot.speed = m_fxBox.ParseNumber(args[4]);
+			rot.startSpeed = m_fxBox.ParseNumber(args[4]);
 			rot.end = (int)m_fxBox.ParseNumber(args[5]);
-			rot.acceleration = m_fxBox.ParseNumber(args[6]);
-			m_lastSpray->m_rotation.push_back(rot);
+			rot.endSpeed = m_fxBox.ParseNumber(args[6]);
+			m_lastSpray->m_param.sprayRotation.push_back(rot);
 		}
 	}
 	else if (!strcmpi(command, "add_nrotation"))
@@ -220,10 +220,10 @@ bool CFxSequence::ParseLine(const char* text, bool& error)
 			sscanf(args[1], "%f", &rot.axis.y);
 			sscanf(args[2], "%f", &rot.axis.z);
 			rot.start = (int)m_fxBox.ParseNumber(args[3]);
-			rot.speed = m_fxBox.ParseNumber(args[4]);
+			rot.startSpeed = m_fxBox.ParseNumber(args[4]);
 			rot.end = (int)m_fxBox.ParseNumber(args[5]);
-			rot.acceleration = m_fxBox.ParseNumber(args[6]);
-			m_lastSpray->m_nozzleRotation.push_back(rot);
+			rot.endSpeed = m_fxBox.ParseNumber(args[6]);
+			m_lastSpray->m_param.nozzleRotation.push_back(rot);
 		}
 	}
 	else if (!strcmpi(command, "add_prevolution"))
@@ -238,30 +238,30 @@ bool CFxSequence::ParseLine(const char* text, bool& error)
 			sscanf(args[4], "%f", &revol.axis.y);
 			sscanf(args[5], "%f", &revol.axis.z);
 			revol.start = (int)m_fxBox.ParseNumber(args[6]);
-			revol.speed = m_fxBox.ParseNumber(args[7]);
+			revol.startSpeed = m_fxBox.ParseNumber(args[7]);
 			revol.end = (int)m_fxBox.ParseNumber(args[8]);
-			revol.acceleration = m_fxBox.ParseNumber(args[9]);
-			m_lastSpray->m_parentRevolution.push_back(revol);
+			revol.endSpeed = m_fxBox.ParseNumber(args[9]);
+			m_lastSpray->m_param.preRevolution.push_back(revol);
 		}
 	}
 	else if (!stricmp(command, "AttachedToParent"))
 	{
 		if (m_lastSpray)
 		{
-			m_lastSpray->m_attachedToParent = false;
+			m_lastSpray->m_param.bAttachedToParent = false;
 			if (!stricmp(args[0], "on"))
-				m_lastSpray->m_attachedToParent = true;
+				m_lastSpray->m_param.bAttachedToParent = true;
 			int x = 0, y = 0, z = 0;
 			sscanf(args[1], "%d", &x);
 			sscanf(args[2], "%d", &y);
 			sscanf(args[3], "%d", &z);
-			m_lastSpray->m_parentMask = 0;
+			m_lastSpray->m_param.attachedAxis = 0;
 			if (x)
-				m_lastSpray->m_parentMask |= 1;
+				m_lastSpray->m_param.attachedAxis |= 1;
 			if (y)
-				m_lastSpray->m_parentMask |= 2;
+				m_lastSpray->m_param.attachedAxis |= 2;
 			if (z)
-				m_lastSpray->m_parentMask |= 4;
+				m_lastSpray->m_param.attachedAxis |= 4;
 		}
 	}
 	else if (!strcmpi(command, "sound"))
