@@ -38,9 +38,9 @@ void CBall::OnPreLoadInit()
 	m_light.type = 2;
 	m_shadow = g_resrcmng->LoadTexture("[ball_shadow.jpg", 0, 0, 0);
 	CSceneManager::Instance()->RegisterElement(OBJ_ACTOR, NULL, NULL,
-		"\260\370", 8, NULL);
+		"\xb0\xf8", 8, NULL);
 	CSceneManager::Instance()->RegisterElement(OBJ_FUNC, NULL, this,
-		"\260\370\261\327\270\262\300\332", 0, NULL);
+		"\xb0\xf8\xb1\xd7\xb8\xb2\xc0\xda", 0, NULL);
 }
 
 void CBall::OnDestroy()
@@ -106,7 +106,7 @@ void CBall::OnReload()
 		}
 	}
 	m_balls.clear();
-	CSceneManager::Instance()->SetPuppet("\260\370", NULL);
+	CSceneManager::Instance()->SetPuppet("\xb0\xf8", NULL);
 	OnLoad();
 }
 
@@ -340,7 +340,7 @@ void CBall::HandleMsg(const MsgObject& msg)
 			m_pPuppet = ball->puppet;
 			if (m_pPuppet)
 				m_pPuppet->UpdateLightSource(&m_light, false, false);
-			CSceneManager::Instance()->SetPuppet("\260\370", m_pPuppet);
+			CSceneManager::Instance()->SetPuppet("\xb0\xf8", m_pPuppet);
 			AttachFx(0);
 			AttachFx(1);
 		}
@@ -359,7 +359,7 @@ void CBall::HandleMsg(const MsgObject& msg)
 			m_pPuppet = ball->puppet;
 			if (m_pPuppet)
 				m_pPuppet->UpdateLightSource(&m_light, false, false);
-			CSceneManager::Instance()->SetPuppet("\260\370", m_pPuppet);
+			CSceneManager::Instance()->SetPuppet("\xb0\xf8", m_pPuppet);
 			AttachFx(0);
 			AttachFx(1);
 		}
@@ -367,11 +367,11 @@ void CBall::HandleMsg(const MsgObject& msg)
 	break;
 	case 355:
 		m_bVisible = true;
-		CSceneManager::Instance()->SetVisible("\260\370", true);
+		CSceneManager::Instance()->SetVisible("\xb0\xf8", true);
 		break;
 	case 356:
 		m_bVisible = false;
-		CSceneManager::Instance()->SetVisible("\260\370", false);
+		CSceneManager::Instance()->SetVisible("\xb0\xf8", false);
 		break;
 	case 416:
 	{
@@ -385,7 +385,7 @@ void CBall::HandleMsg(const MsgObject& msg)
 			m_pPuppet = ball->puppet;
 			if (m_pPuppet)
 				m_pPuppet->UpdateLightSource(&m_light, false, false);
-			CSceneManager::Instance()->SetPuppet("\260\370", m_pPuppet);
+			CSceneManager::Instance()->SetPuppet("\xb0\xf8", m_pPuppet);
 			AttachFx(0);
 			AttachFx(1);
 		}

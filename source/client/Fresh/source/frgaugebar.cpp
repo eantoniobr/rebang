@@ -482,15 +482,15 @@ void FrGaugeBarImage::Init(FrGuiItem& item, FrWndManager* manager,
 	m_pBitImage[1] = document->GetBitmap(param["mask"]);
 	if (m_pBitImage[0] == 0 || m_pBitImage[1] == 0)
 		MessageBoxA(0,
-			"\300\314\271\314\301\366 \306\304\300\317\300\314 "
-			"\276\370\275\300\264\317\264\331.",
-			"\260\346\260\355", 0);
+			"\xc0\xcc\xb9\xcc\xc1\xf6 \xc6\xc4\xc0\xcf\xc0\xcc "
+			"\xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
+			"\xb0\xe6\xb0\xed", 0);
 	long width0 = m_pBitImage[0]->bi->bmiHeader.biWidth;
 	if (width0 != m_pBitImage[1]->bi->bmiHeader.biWidth)
 		MessageBoxA(0,
-			"\270\266\275\272\305\251\300\307 \263\320\300\314\260\241 "
-			"\306\262\270\263\264\317\264\331.",
-			"\260\346\260\355", 0);
+			"\xb8\xb6\xbd\xba\xc5\xa9\xc0\xc7 \xb3\xd0\xc0\xcc\xb0\xa1 "
+			"\xc6\xb2\xb8\xb3\xb4\xcf\xb4\xd9.",
+			"\xb0\xe6\xb0\xed", 0);
 	m_gaugeRect.x = m_rect.x;
 	m_gaugeRect.y = m_rect.y;
 	unsigned long w = m_pBitImage[0]->bi->bmiHeader.biWidth;

@@ -156,13 +156,13 @@ void FrTrainingOptionDlg::OnWeatherInit(int param)
 		switch (m_weather)
 		{
 		case 0:
-			m_pWeather->AddLine("\270\274\300\275", 0, 0);
+			m_pWeather->AddLine("\xb8\xbc\xc0\xbd", 0, 0);
 			break;
 		case 2:
-			m_pWeather->AddLine("\272\361", 0, 0);
+			m_pWeather->AddLine("\xba\xf1", 0, 0);
 			break;
 		case 3:
-			m_pWeather->AddLine("\264\253", 0, 0);
+			m_pWeather->AddLine("\xb4\xab", 0, 0);
 			break;
 		}
 	}
@@ -202,13 +202,13 @@ void FrTrainingOptionDlg::OnWeatherPrevBtnUp()
 		switch (m_weather)
 		{
 		case 0:
-			m_pWeather->SetLine(1, "\270\274\300\275", 0, 0, 0);
+			m_pWeather->SetLine(1, "\xb8\xbc\xc0\xbd", 0, 0, 0);
 			break;
 		case 2:
-			m_pWeather->SetLine(1, "\272\361", 0, 0, 0);
+			m_pWeather->SetLine(1, "\xba\xf1", 0, 0, 0);
 			break;
 		case 3:
-			m_pWeather->SetLine(1, "\264\253", 0, 0, 0);
+			m_pWeather->SetLine(1, "\xb4\xab", 0, 0, 0);
 			break;
 		}
 	}
@@ -248,13 +248,13 @@ void FrTrainingOptionDlg::OnWeatherNextBtnUp()
 		switch (m_weather)
 		{
 		case 0:
-			m_pWeather->SetLine(1, "\270\274\300\275", 0, 0, 0);
+			m_pWeather->SetLine(1, "\xb8\xbc\xc0\xbd", 0, 0, 0);
 			break;
 		case 2:
-			m_pWeather->SetLine(1, "\272\361", 0, 0, 0);
+			m_pWeather->SetLine(1, "\xba\xf1", 0, 0, 0);
 			break;
 		case 3:
-			m_pWeather->SetLine(1, "\264\253", 0, 0, 0);
+			m_pWeather->SetLine(1, "\xb4\xab", 0, 0, 0);
 			break;
 		}
 	}
@@ -268,7 +268,7 @@ void FrTrainingOptionDlg::OnDirectionInit(int param)
 			10.0f);
 	if (m_pDirection)
 	{
-		m_pDirection->AddLine(MakeStr("%d\265\265", m_direction), 0, 0);
+		m_pDirection->AddLine(MakeStr("%d\xb5\xb5", m_direction), 0, 0);
 	}
 }
 
@@ -303,7 +303,7 @@ void FrTrainingOptionDlg::OnDirectionPrevBtnUp()
 		m_pDirectionNext->Enable(true);
 	if (m_pDirection)
 	{
-		m_pDirection->SetLine(1, MakeStr("%d\265\265", m_direction), 0, 0, 0);
+		m_pDirection->SetLine(1, MakeStr("%d\xb5\xb5", m_direction), 0, 0, 0);
 	}
 }
 
@@ -338,7 +338,7 @@ void FrTrainingOptionDlg::OnDirectionNextBtnUp()
 		m_pDirectionPrev->Enable(true);
 	if (m_pDirection)
 	{
-		m_pDirection->SetLine(1, MakeStr("%d\265\265", m_direction), 0, 0, 0);
+		m_pDirection->SetLine(1, MakeStr("%d\xb5\xb5", m_direction), 0, 0, 0);
 	}
 }
 

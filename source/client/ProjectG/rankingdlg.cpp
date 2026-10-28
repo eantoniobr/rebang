@@ -28,64 +28,66 @@ int FrRankingDlg::s_iPageTotal;
 int FrRankingDlg::s_iSearchType;
 
 const sTypeName FrRankingDlg::s_aRankType[] = {
-	{ 0, K2L_Compatibility("\301\276\307\325 \267\251\305\267")         },
-	{ 1, K2L_Compatibility("\304\332\275\272\272\260 \267\251\305\267") },
-	{ 2, K2L_Compatibility("\261\342\267\317 \267\251\305\267")         }
+	{ 0, K2L_Compatibility("\xc1\xbe\xc7\xd5 \xb7\xa9\xc5\xb7")         },
+	{ 1, K2L_Compatibility("\xc4\xda\xbd\xba\xba\xb0 \xb7\xa9\xc5\xb7") },
+	{ 2, K2L_Compatibility("\xb1\xe2\xb7\xcf \xb7\xa9\xc5\xb7")         }
 };
 
 const sTypeName FrRankingDlg::s_aClassType[] = {
-	{ 0, K2L_Compatibility("\300\374\303\274") },
-	{ 1, K2L_Compatibility("\303\312\261\336") },
-	{ 2, K2L_Compatibility("\301\337\261\336") },
-	{ 3, K2L_Compatibility("\273\363\261\336") }
+	{ 0, K2L_Compatibility("\xc0\xfc\xc3\xbc") },
+	{ 1, K2L_Compatibility("\xc3\xca\xb1\xde") },
+	{ 2, K2L_Compatibility("\xc1\xdf\xb1\xde") },
+	{ 3, K2L_Compatibility("\xbb\xf3\xb1\xde") }
 };
 
 const sTypeName FrRankingDlg::s_aGenSubType[] = {
-	{ 0, K2L_Compatibility("\301\276\307\325 \301\241\274\366")             },
-	{ 1, K2L_Compatibility("\275\272\304\332\276\356 \301\241\274\366")     },
-	{ 2, K2L_Compatibility("\306\256\267\316\307\307 \301\241\274\366")     },
-	{ 3, K2L_Compatibility("\310\271\265\346\306\316 \301\241\274\366")     },
+	{ 0, K2L_Compatibility("\xc1\xbe\xc7\xd5 \xc1\xa1\xbc\xf6")             },
+	{ 1, K2L_Compatibility("\xbd\xba\xc4\xda\xbe\xee \xc1\xa1\xbc\xf6")     },
+	{ 2, K2L_Compatibility("\xc6\xae\xb7\xce\xc7\xc7 \xc1\xa1\xbc\xf6")     },
+	{ 3, K2L_Compatibility("\xc8\xb9\xb5\xe6\xc6\xce \xc1\xa1\xbc\xf6")     },
 	{ 4,
-     K2L_Compatibility("\307\303\267\271\300\314\310\246 \301\241\274\366") }
+     K2L_Compatibility("\xc7\xc3\xb7\xb9\xc0\xcc\xc8\xa6 \xc1\xa1\xbc\xf6") }
 };
 
 const sTypeName FrRankingDlg::s_aCourseType[] = {
-	{ 0,  K2L_Compatibility("\272\355\267\347\266\363\261\272")          },
-	{ 1,  K2L_Compatibility("\272\355\267\347\277\366\305\315")          },
-	{ 2,  K2L_Compatibility("\274\274\307\307\276\306\300\251\265\345")  },
-	{ 3,  K2L_Compatibility("\300\251\265\345\310\372")                  },
-	{ 4,  K2L_Compatibility("\300\247\301\356\300\247\301\356")          },
-	{ 5,  K2L_Compatibility("\277\376\275\272\306\256\300\247\301\356")  },
-	{ 6,  K2L_Compatibility("\272\355\267\347\271\256")                  },
-	{ 7,  K2L_Compatibility("\275\307\272\361\276\306\304\263\263\355")  },
-	{ 8,  K2L_Compatibility("\276\306\300\314\275\272\304\263\263\355")  },
-	{ 9,  K2L_Compatibility("\310\255\300\314\306\256\300\247\301\356")  },
-	{ 10, K2L_Compatibility("\273\376\300\314\264\327\273\367\265\345")  },
-	{ 11, K2L_Compatibility("\307\316\305\251\300\251\265\345")          },
-	{ 12, K2L_Compatibility("\265\366\300\316\306\344\270\243\263\353")  },
-	{ 13, K2L_Compatibility("\276\306\300\314\275\272 \275\272\306\304") },
+	{ 0,  K2L_Compatibility("\xba\xed\xb7\xe7\xb6\xf3\xb1\xba")          },
+	{ 1,  K2L_Compatibility("\xba\xed\xb7\xe7\xbf\xf6\xc5\xcd")          },
+	{ 2,  K2L_Compatibility("\xbc\xbc\xc7\xc7\xbe\xc6\xc0\xa9\xb5\xe5")  },
+	{ 3,  K2L_Compatibility("\xc0\xa9\xb5\xe5\xc8\xfa")                  },
+	{ 4,  K2L_Compatibility("\xc0\xa7\xc1\xee\xc0\xa7\xc1\xee")          },
+	{ 5,  K2L_Compatibility("\xbf\xfe\xbd\xba\xc6\xae\xc0\xa7\xc1\xee")  },
+	{ 6,  K2L_Compatibility("\xba\xed\xb7\xe7\xb9\xae")                  },
+	{ 7,  K2L_Compatibility("\xbd\xc7\xba\xf1\xbe\xc6\xc4\xb3\xb3\xed")  },
+	{ 8,  K2L_Compatibility("\xbe\xc6\xc0\xcc\xbd\xba\xc4\xb3\xb3\xed")  },
+	{ 9,  K2L_Compatibility("\xc8\xad\xc0\xcc\xc6\xae\xc0\xa7\xc1\xee")  },
+	{ 10, K2L_Compatibility("\xbb\xfe\xc0\xcc\xb4\xd7\xbb\xf7\xb5\xe5")  },
+	{ 11, K2L_Compatibility("\xc7\xce\xc5\xa9\xc0\xa9\xb5\xe5")          },
+	{ 12, K2L_Compatibility("\xb5\xf6\xc0\xce\xc6\xe4\xb8\xa3\xb3\xeb")  },
+	{ 13, K2L_Compatibility("\xbe\xc6\xc0\xcc\xbd\xba \xbd\xba\xc6\xc4") },
 	{ 14,
      K2L_Compatibility(
-			"\267\316\275\272\306\256 \275\303\277\376\300\314")         },
-	{ 15, K2L_Compatibility("\300\314\275\272\305\317 \272\247\270\256") },
-	{ 16, K2L_Compatibility("\300\247\301\356 \275\303\306\274")         }
+			"\xb7\xce\xbd\xba\xc6\xae \xbd\xc3\xbf\xfe\xc0\xcc")         },
+	{ 15, K2L_Compatibility("\xc0\xcc\xbd\xba\xc5\xcf \xba\xa7\xb8\xae") },
+	{ 16, K2L_Compatibility("\xc0\xa7\xc1\xee \xbd\xc3\xc6\xbc")         }
 };
 
 const sTypeName FrRankingDlg::s_aRecordType[] = {
-	{ 0, K2L_Compatibility("\276\313\271\331\306\256\267\316\275\272")         },
-	{ 1, K2L_Compatibility("\310\246\300\316\277\370")                         },
-	{ 2, K2L_Compatibility("\260\255\301\276\300\262")                         },
-	{ 3, K2L_Compatibility("\267\271\272\247")                                 },
-	{ 4, K2L_Compatibility("\303\321\305\270\261\270\272\361\260\305\270\256") }
+	{ 0, K2L_Compatibility("\xbe\xcb\xb9\xd9\xc6\xae\xb7\xce\xbd\xba")         },
+	{ 1, K2L_Compatibility("\xc8\xa6\xc0\xce\xbf\xf8")                         },
+	{ 2, K2L_Compatibility("\xb0\xad\xc1\xbe\xc0\xb2")                         },
+	{ 3, K2L_Compatibility("\xb7\xb9\xba\xa7")                                 },
+	{ 4, K2L_Compatibility("\xc3\xd1\xc5\xb8\xb1\xb8\xba\xf1\xb0\xc5\xb8\xae") }
 };
 
 const sTypeName FrRankingDlg::s_aTermType[] = {
-	{ 0, K2L_Compatibility("\275\303\301\3605") }
+	{ 0,
+     K2L_Compatibility("\xbd\xc3\xc1\xf0"
+						  "5") }
 };
 
 const sTypeName FrRankingDlg::s_aSearchType[] = {
-	{ 0, K2L_Compatibility("\264\320\263\327\300\323") },
-	{ 1, K2L_Compatibility("\274\370\300\247")         }
+	{ 0, K2L_Compatibility("\xb4\xd0\xb3\xd7\xc0\xd3") },
+	{ 1, K2L_Compatibility("\xbc\xf8\xc0\xa7")         }
 };
 
 long GetRealCourseType(long course)
@@ -423,9 +425,9 @@ void FrRankingDlg::UpdateUserInfo()
 	gdi->SetTextStyle(1);
 	char text[32];
 	if (m_userInfo.record[0].rank <= 0)
-		sprintf(text, K2L_Compatibility("- \300\247"));
+		sprintf(text, K2L_Compatibility("- \xc0\xa7"));
 	else
-		sprintf(text, K2L_Compatibility("%d \300\247"),
+		sprintf(text, K2L_Compatibility("%d \xc0\xa7"),
 			m_userInfo.record[0].rank);
 	m_pUserRankEdit->SetLine(1, text, 0xffffffff, false, 0);
 	gdi->SetTextStyle(0);
@@ -536,13 +538,13 @@ void FrRankingDlg::SetListItemInfo(FrListItem* item)
 	}
 	else if ((int)info->value > 9999999999i64)
 		gdi->PrintText(WPoint(item->pos.x + 310, item->pos.y), 2,
-			K2L_Compatibility("\261\342\267\317\276\370\300\275"), NULL);
+			K2L_Compatibility("\xb1\xe2\xb7\xcf\xbe\xf8\xc0\xbd"), NULL);
 	else if (s_iRankType == 2 && s_iSubType == 2)
 		gdi->PrintText(WPoint(item->pos.x + 310, item->pos.y), 2,
 			MakeStr("%.1f", (float)(int)info->value * 0.1f), NULL);
 	else if (s_iRankType == 2 && s_iSubType == 4)
 		gdi->PrintText(WPoint(item->pos.x + 310, item->pos.y), 2,
-			MakeStr(K2L_Compatibility("%d \270\270y"),
+			MakeStr(K2L_Compatibility("%d \xb8\xb8y"),
 				(int)info->value / 10000),
 			NULL);
 	else
@@ -576,12 +578,12 @@ void FrRankingDlg::DrawUserInfoLine(int index, int row, WPoint& pos)
 	if (rank == 0 || rank >= 10000 || m_userInfo.record[index].value == 0)
 		rankText = "- ";
 	else
-		rankText = MakeStr(K2L_Compatibility("%d\300\247"), rank);
+		rankText = MakeStr(K2L_Compatibility("%d\xc0\xa7"), rank);
 	gdi->SetTextColor(0xffffffff, 0xffffffff);
 	gdi->PrintText(WPoint(pos.x + 100, pos.y + row * 15), 2, rankText, NULL);
 	if (m_userInfo.record[index].value > 99999999)
 		gdi->PrintText(WPoint(pos.x + 195, pos.y + row * 15), 2,
-			K2L_Compatibility("\261\342\267\317\276\370\300\275"), NULL);
+			K2L_Compatibility("\xb1\xe2\xb7\xcf\xbe\xf8\xc0\xbd"), NULL);
 	else
 		gdi->PrintText(WPoint(pos.x + 195, pos.y + row * 15), 2,
 			MakeStr("%d", m_userInfo.record[index].value), NULL);
@@ -861,7 +863,7 @@ void FrRankingDlg::SendRequestSearchUser(const char* text)
 	{
 		OnNotify(
 			K2L_Compatibility(
-				"\303\243\300\273 \264\353\273\363\300\273 \300\324\267\302\307\330\301\326\275\312\275\303\277\300."),
+				"\xc3\xa3\xc0\xbb \xb4\xeb\xbb\xf3\xc0\xbb \xc0\xd4\xb7\xc2\xc7\xd8\xc1\xd6\xbd\xca\xbd\xc3\xbf\xc0."),
 			2);
 		return;
 	}
@@ -869,7 +871,7 @@ void FrRankingDlg::SendRequestSearchUser(const char* text)
 	{
 		OnNotify(
 			K2L_Compatibility(
-				"\306\257\274\366\261\342\310\243 ' ; \042 \264\302 \300\324\267\302\307\322 \274\366 \276\370\275\300\264\317\264\331."),
+				"\xc6\xaf\xbc\xf6\xb1\xe2\xc8\xa3 ' ; \042 \xb4\xc2 \xc0\xd4\xb7\xc2\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9."),
 			2);
 		return;
 	}
@@ -882,7 +884,7 @@ void FrRankingDlg::SendRequestSearchUser(const char* text)
 		{
 			OnNotify(
 				K2L_Compatibility(
-					"\274\375\300\332\260\241 \276\306\264\317\260\305\263\252 \260\252\300\314 \263\312\271\253 \300\333\275\300\264\317\264\331."),
+					"\xbc\xfd\xc0\xda\xb0\xa1 \xbe\xc6\xb4\xcf\xb0\xc5\xb3\xaa \xb0\xaa\xc0\xcc \xb3\xca\xb9\xab \xc0\xdb\xbd\xc0\xb4\xcf\xb4\xd9."),
 				2);
 			return;
 		}
@@ -890,7 +892,7 @@ void FrRankingDlg::SendRequestSearchUser(const char* text)
 		{
 			OnNotify(
 				K2L_Compatibility(
-					"\303\243\264\302 \274\370\300\247\300\307 \260\252\300\314 \263\312\271\253 \305\256\264\317\264\331."),
+					"\xc3\xa3\xb4\xc2 \xbc\xf8\xc0\xa7\xc0\xc7 \xb0\xaa\xc0\xcc \xb3\xca\xb9\xab \xc5\xae\xb4\xcf\xb4\xd9."),
 				2);
 			return;
 		}
@@ -985,7 +987,7 @@ void FrRankingDlg::OnRankList_PrevPageBtnUp()
 	else
 	{
 		SetBottomMsg(K2L_Compatibility(
-			"\264\365 \300\314\273\363 \267\251\305\267 \261\342\267\317\300\314 \276\370\275\300\264\317\264\331."));
+			"\xb4\xf5 \xc0\xcc\xbb\xf3 \xb7\xa9\xc5\xb7 \xb1\xe2\xb7\xcf\xc0\xcc \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9."));
 	}
 }
 
@@ -1805,7 +1807,7 @@ void FrRankingDlg::OnGhostBtnUp()
 	form->SetTimeLimit(5.f);
 	form->SetMessage(
 		K2L_Compatibility(
-			"\274\255\272\361\275\272 \301\330\272\361 \301\337\300\324\264\317\264\331."),
+			"\xbc\xad\xba\xf1\xbd\xba \xc1\xd8\xba\xf1 \xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9."),
 		false);
 	form->Open(NULL, 3);
 }

@@ -258,10 +258,10 @@ void FrLevelupItemForm::SetItemInfo()
 	m_pItemExplane->MoveWindow(WPoint(rect.x + 50.0f, rect.y + 15.0f));
 	if (ItemManager()->GetCouponKind(s_levelUpGift[m_level].tid) == 1)
 		SetDesc(
-			"     \310\271\265\346 \276\306\300\314\305\333\300\272 \304\355\306\371\307\324\277\241\274\255 \310\256\300\316\307\317\274\274\277\344.");
+			"     \xc8\xb9\xb5\xe6 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xba \xc4\xed\xc6\xf9\xc7\xd4\xbf\xa1\xbc\xad \xc8\xae\xc0\xce\xc7\xcf\xbc\xbc\xbf\xe4.");
 	else
 		SetDesc(
-			"     \310\271\265\346 \276\306\300\314\305\333\300\272 \274\261\271\260\307\324\277\241\274\255 \310\256\300\316\307\317\274\274\277\344.");
+			"     \xc8\xb9\xb5\xe6 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xba \xbc\xb1\xb9\xb0\xc7\xd4\xbf\xa1\xbc\xad \xc8\xae\xc0\xce\xc7\xcf\xbc\xbc\xbf\xe4.");
 }
 
 void FrLevelupItemForm::OnProc(const float delta)

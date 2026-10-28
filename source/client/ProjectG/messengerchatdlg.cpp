@@ -144,13 +144,13 @@ bool FrMessengerChatDlg::OnChatInputEnterKey(int param)
 				if (buddy->IsBlock)
 				{
 					AddChatLine(buddy->NickName,
-						"\302\367\264\334\273\363\264\353\277\315\264\302 \264\353\310\255\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331");
+						"\xc2\xf7\xb4\xdc\xbb\xf3\xb4\xeb\xbf\xcd\xb4\xc2 \xb4\xeb\xc8\xad\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9");
 					return false;
 				}
 				if (!buddy->IsLogOn)
 				{
 					AddChatLine(buddy->NickName,
-						"\270\336\275\303\301\366\270\246 \300\374\264\336\307\322 \274\366 \276\370\275\300\264\317\264\331");
+						"\xb8\xde\xbd\xc3\xc1\xf6\xb8\xa6 \xc0\xfc\xb4\xde\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9");
 					return false;
 				}
 				Doc()->m_chatManager.Filtering(text);

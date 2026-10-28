@@ -411,7 +411,7 @@ void FrUserListDlg::OnInviteBtnUp()
 		{
 			if (Doc()->IsInviteMode())
 				AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-					(int)"\303\312\264\353 \277\344\303\273\301\337\277\241 \300\326\275\300\264\317\264\331. \300\341\275\303\310\304 \264\331\275\303 \300\314\277\353\307\317\274\274\277\344.",
+					(int)"\xc3\xca\xb4\xeb \xbf\xe4\xc3\xbb\xc1\xdf\xbf\xa1 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9. \xc0\xe1\xbd\xc3\xc8\xc4 \xb4\xd9\xbd\xc3 \xc0\xcc\xbf\xeb\xc7\xcf\xbc\xbc\xbf\xe4.",
 					0xff000000, 0, 0, 0);
 			else
 			{
@@ -422,7 +422,7 @@ void FrUserListDlg::OnInviteBtnUp()
 						g_pFresh->GetManager(), this, "wait", NULL);
 					m_pInviteDelayDlg->SetMessage(
 						MakeStr(
-							"%s\264\324\277\241\260\324 \303\312\264\353 \270\336\275\303\301\366\270\246 \272\270\263\302\275\300\264\317\264\331",
+							"%s\xb4\xd4\xbf\xa1\xb0\xd4 \xc3\xca\xb4\xeb \xb8\xde\xbd\xc3\xc1\xf6\xb8\xa6 \xba\xb8\xb3\xc2\xbd\xc0\xb4\xcf\xb4\xd9",
 							(*it).second.sNick),
 						false);
 					m_pInviteDelayDlg->Open(NULL, 0);

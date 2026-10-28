@@ -116,44 +116,44 @@ void CIntrusion::DenyAnlaysis(eIntrusionDenyCode code)
 		m_pDlg =
 			CreateForm<FrForm>(g_pFresh->GetManager(), this, "IntrusionDeny");
 		m_pDlg->SetCaption(
-			"30\300\316 \264\353\310\270 \260\324\300\323\301\337 \300\324\300\345");
+			"30\xc0\xce \xb4\xeb\xc8\xb8 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5");
 		m_pDlg->SetDesc(
-			" \241\330 \260\324\300\323\301\337 \300\324\300\345 \260\341\260\372");
+			" \xa1\xd8 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5 \xb0\xe1\xb0\xfa");
 		switch (code)
 		{
 		case INTRUSION_DENY_CROWDED:
 			m_pDlg->SetMessage(
-				"\300\316\277\370\300\314 \260\241\265\346 \302\367\274\255 \271\346\277\241 \300\324\300\345 \307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xc0\xce\xbf\xf8\xc0\xcc \xb0\xa1\xb5\xe6 \xc2\xf7\xbc\xad \xb9\xe6\xbf\xa1 \xc0\xd4\xc0\xe5 \xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		case INTRUSION_DENY_LATE:
 			m_pDlg->SetMessage(
-				"\260\324\300\323 \275\303\300\333 \310\304 5\272\320\300\314 \301\366\263\255 \271\346\277\241\264\302 \300\324\300\345 \307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xb0\xd4\xc0\xd3 \xbd\xc3\xc0\xdb \xc8\xc4 5\xba\xd0\xc0\xcc \xc1\xf6\xb3\xad \xb9\xe6\xbf\xa1\xb4\xc2 \xc0\xd4\xc0\xe5 \xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		case INTRUSION_DENY_PRIVATE:
 			m_pDlg->SetMessage(
-				"\272\361\260\370\260\263 \271\346\277\241\264\302 \260\324\300\323\301\337 \300\324\300\345 \307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xba\xf1\xb0\xf8\xb0\xb3 \xb9\xe6\xbf\xa1\xb4\xc2 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5 \xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		case INTRUSION_DENY_RECENT:
 			m_pDlg->SetMessage(
-				"\300\314\300\374\277\241 \260\324\300\323\301\337 \300\324\300\345\307\321 \261\342\267\317\300\314 \300\326\276\356\274\255 \264\347\272\320\260\243 \300\324\300\345\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xc0\xcc\xc0\xfc\xbf\xa1 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5\xc7\xd1 \xb1\xe2\xb7\xcf\xc0\xcc \xc0\xd6\xbe\xee\xbc\xad \xb4\xe7\xba\xd0\xb0\xa3 \xc0\xd4\xc0\xe5\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		case INTRUSION_DENY_CLOSED:
 			m_pDlg->SetMessage(
-				"\307\366\300\347 \260\324\300\323\301\337 \300\324\300\345\300\314 \272\322\260\241\264\311\307\321 \271\346\300\324\264\317\264\331.",
+				"\xc7\xf6\xc0\xe7 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5\xc0\xcc \xba\xd2\xb0\xa1\xb4\xc9\xc7\xd1 \xb9\xe6\xc0\xd4\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		case INTRUSION_DENY_PLAYED:
 			m_pDlg->SetMessage(
-				"\307\330\264\347 \271\346\277\241\274\255 \307\303\267\271\300\314\307\321 \261\342\267\317\300\314 \300\326\276\356\274\255 \260\324\300\323\301\337 \300\324\300\345\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xc7\xd8\xb4\xe7 \xb9\xe6\xbf\xa1\xbc\xad \xc7\xc3\xb7\xb9\xc0\xcc\xc7\xd1 \xb1\xe2\xb7\xcf\xc0\xcc \xc0\xd6\xbe\xee\xbc\xad \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		case INTRUSION_DENY_KICKED:
 			m_pDlg->SetMessage(
-				"\307\330\264\347 \271\346\277\241\274\255 \260\255\301\246 \305\360\300\345\264\347\307\321 \261\342\267\317\300\314 \300\326\276\356\274\255 \300\324\300\345\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xc7\xd8\xb4\xe7 \xb9\xe6\xbf\xa1\xbc\xad \xb0\xad\xc1\xa6 \xc5\xf0\xc0\xe5\xb4\xe7\xc7\xd1 \xb1\xe2\xb7\xcf\xc0\xcc \xc0\xd6\xbe\xee\xbc\xad \xc0\xd4\xc0\xe5\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			break;
 		}
@@ -447,13 +447,13 @@ void CIntrusion::PacketAnalysis(WReceivedPacket& packet)
 			m_pDlg = CreateForm<FrForm>(g_pFresh->GetManager(), this,
 				"IntrusionAlarm");
 			m_pDlg->SetCaption(
-				"30\300\316 \264\353\310\270 \260\324\300\323\301\337 \300\324\300\345 \310\256\300\316");
+				"30\xc0\xce \xb4\xeb\xc8\xb8 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5 \xc8\xae\xc0\xce");
 			m_pDlg->SetDesc(
-				" \241\330 '\277\271'\270\246 \264\251\270\243\270\351 \301\357\275\303 \260\324\300\323\300\314 \275\303\300\333\265\313\264\317\264\331.");
+				" \xa1\xd8 '\xbf\xb9'\xb8\xa6 \xb4\xa9\xb8\xa3\xb8\xe9 \xc1\xef\xbd\xc3 \xb0\xd4\xc0\xd3\xc0\xcc \xbd\xc3\xc0\xdb\xb5\xcb\xb4\xcf\xb4\xd9.");
 			sInfoTime info;
 			GetInfoTime(&info, passed, limit);
 			const char* message = MakeStr(
-				"\307\330\264\347 \260\324\300\323\300\272 \260\324\300\323 \275\303\300\333 \310\304\012\\c0xffff0000\\c'%2d\272\320%2d\303\312'\\c0xff000000\\c\260\241 \301\366\263\265\260\355 \\c0xffff0000\\c'%2d\272\320%2d\303\312'\\c0xff000000\\c\260\241\012\263\262\276\306 \300\326\275\300\264\317\264\331.\012\012\301\370\307\340\301\337\300\316 \271\346\277\241 \300\324\300\345\307\317\275\303\260\332\275\300\264\317\261\356?",
+				"\xc7\xd8\xb4\xe7 \xb0\xd4\xc0\xd3\xc0\xba \xb0\xd4\xc0\xd3 \xbd\xc3\xc0\xdb \xc8\xc4\012\\c0xffff0000\\c'%2d\xba\xd0%2d\xc3\xca'\\c0xff000000\\c\xb0\xa1 \xc1\xf6\xb3\xb5\xb0\xed \\c0xffff0000\\c'%2d\xba\xd0%2d\xc3\xca'\\c0xff000000\\c\xb0\xa1\012\xb3\xb2\xbe\xc6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.\012\012\xc1\xf8\xc7\xe0\xc1\xdf\xc0\xce \xb9\xe6\xbf\xa1 \xc0\xd4\xc0\xe5\xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 				info.passMin, info.passSec, info.remainMin, info.remainSec);
 			m_pDlg->SetMessage(message, false);
 			m_pDlg->Open((FRESH_PFN_RESULT)&CIntrusion::OnAlarmDlgResult, 1);
@@ -464,7 +464,7 @@ void CIntrusion::PacketAnalysis(WReceivedPacket& packet)
 			std::string nick = packet.DecodeStr();
 			CChatMsg::Instance()->AddChatMsg(
 				MakeStr(
-					"(\276\313\270\262) \\c0xffffffff\\c%s\\c0xffff7878\\c\264\324\300\314 \260\324\300\323\301\337\277\241 \300\324\300\345\307\317\274\314\275\300\264\317\264\331.",
+					"(\xbe\xcb\xb8\xb2) \\c0xffffffff\\c%s\\c0xffff7878\\c\xb4\xd4\xc0\xcc \xb0\xd4\xc0\xd3\xc1\xdf\xbf\xa1 \xc0\xd4\xc0\xe5\xc7\xcf\xbc\xcc\xbd\xc0\xb4\xcf\xb4\xd9.",
 					nick.c_str()),
 				0xffff7878, true, false);
 			packet.DecodeBuffer(&Doc()->m_roomInfo, sizeof(sRoomInfo));
@@ -478,7 +478,7 @@ void CIntrusion::PacketAnalysis(WReceivedPacket& packet)
 					Doc()->m_roomType = match;
 					CChatMsg::Instance()->AddChatMsg(
 						MakeStr(
-							"(\276\313\270\262) \264\353\310\270 \265\356\261\336\300\314 \\c0xffffffff\\c[ %s ]\\c0xffff7878\\c\300\270\267\316 \272\257\260\346 \265\307\276\372\275\300\264\317\264\331.",
+							"(\xbe\xcb\xb8\xb2) \xb4\xeb\xc8\xb8 \xb5\xee\xb1\xde\xc0\xcc \\c0xffffffff\\c[ %s ]\\c0xffff7878\\c\xc0\xb8\xb7\xce \xba\xaf\xb0\xe6 \xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 							info->Name),
 						0xffff7878, true, false);
 				}
@@ -507,11 +507,11 @@ void CIntrusion::PacketAnalysis(WReceivedPacket& packet)
 			m_pDlg = CreateForm<FrForm>(g_pFresh->GetManager(), this,
 				"IntrusionAlarm");
 			m_pDlg->SetCaption(
-				"30\300\316 \264\353\310\270 \260\324\300\323\301\337 \300\324\300\345");
+				"30\xc0\xce \xb4\xeb\xc8\xb8 \xb0\xd4\xc0\xd3\xc1\xdf \xc0\xd4\xc0\xe5");
 			m_pDlg->SetDesc(
-				" \241\330 '\277\271'\270\246 \264\251\270\243\270\351 \264\331\275\303 \300\324\300\345\300\273 \275\303\265\265\307\325\264\317\264\331.");
+				" \xa1\xd8 '\xbf\xb9'\xb8\xa6 \xb4\xa9\xb8\xa3\xb8\xe9 \xb4\xd9\xbd\xc3 \xc0\xd4\xc0\xe5\xc0\xbb \xbd\xc3\xb5\xb5\xc7\xd5\xb4\xcf\xb4\xd9.");
 			m_pDlg->SetMessage(
-				"\300\257\300\372\260\241 \270\271\276\306 \300\324\300\345\277\241 \275\307\306\320 \307\317\277\264\275\300\264\317\264\331. \264\331\275\303 \275\303\265\265 \307\317\275\303\260\332\275\300\264\317\261\356?",
+				"\xc0\xaf\xc0\xfa\xb0\xa1 \xb8\xb9\xbe\xc6 \xc0\xd4\xc0\xe5\xbf\xa1 \xbd\xc7\xc6\xd0 \xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9. \xb4\xd9\xbd\xc3 \xbd\xc3\xb5\xb5 \xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 				false);
 			m_pDlg->Open((FRESH_PFN_RESULT)&CIntrusion::OnDelayDlgResult, 1);
 			break;

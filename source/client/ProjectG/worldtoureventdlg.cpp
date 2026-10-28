@@ -377,7 +377,7 @@ bool FrWorldTourEventDlg::OnGiftDlgResult(int result, FrForm* form)
 		notify->SetRect(WRect(origin.x, origin.y, origin.w, origin.h));
 		notify->SetTimeLimit(12.0f);
 		notify->SetMessage(
-			"-\306\316\276\337\274\266 \305\365\276\356\270\246 \270\266\304\241\260\355 \274\366\277\265\272\271\300\273 \301\366\261\336\271\336\276\322\275\300\264\317\264\331.\012\012 -\\c0xffff0000\\c\260\346\307\260 \300\314\272\245\306\256\\c0xff000000\\c\277\241 \300\332\265\277\300\270\267\316 \300\300\270\360\265\307\276\372\275\300\264\317\264\331",
+			"-\xc6\xce\xbe\xdf\xbc\xb6 \xc5\xf5\xbe\xee\xb8\xa6 \xb8\xb6\xc4\xa1\xb0\xed \xbc\xf6\xbf\xb5\xba\xb9\xc0\xbb \xc1\xf6\xb1\xde\xb9\xde\xbe\xd2\xbd\xc0\xb4\xcf\xb4\xd9.\012\012 -\\c0xffff0000\\c\xb0\xe6\xc7\xb0 \xc0\xcc\xba\xa5\xc6\xae\\c0xff000000\\c\xbf\xa1 \xc0\xda\xb5\xbf\xc0\xb8\xb7\xce \xc0\xc0\xb8\xf0\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9",
 			false);
 		notify->Open(NULL, 0);
 	}

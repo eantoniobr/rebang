@@ -387,13 +387,13 @@ void FrQuickStartSettingDlg::OnCmbCondition1BoxInit(int param)
 	if (!matching)
 		return;
 	m_pCondition[0]->AddString(
-		"\301\266\260\307\274\263\301\244\276\310\307\324");
+		"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4");
 	std::vector<sIntrest> interests;
-	int result = matching->GetDisplayIntrests("\260\324\300\323", &interests);
+	int result = matching->GetDisplayIntrests("\xb0\xd4\xc0\xd3", &interests);
 	if (!result || interests.empty())
 	{
 		m_pCondition[0]->SetLine(1,
-			"\301\266\260\307\274\263\301\244\276\310\307\324", 0, 0, 0);
+			"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4", 0, 0, 0);
 		return;
 	}
 
@@ -401,7 +401,7 @@ void FrQuickStartSettingDlg::OnCmbCondition1BoxInit(int param)
 	for (it = interests.begin(); it != interests.end(); ++it)
 		m_pCondition[0]->AddString(it->name);
 	m_pCondition[0]->SetLine(1,
-		matching->GetNameChecked("\260\324\300\323").c_str(), 0, 0, 0);
+		matching->GetNameChecked("\xb0\xd4\xc0\xd3").c_str(), 0, 0, 0);
 }
 
 void FrQuickStartSettingDlg::OnCmbCondition2BoxInit(int param)
@@ -413,13 +413,13 @@ void FrQuickStartSettingDlg::OnCmbCondition2BoxInit(int param)
 	if (!matching)
 		return;
 	m_pCondition[1]->AddString(
-		"\301\266\260\307\274\263\301\244\276\310\307\324");
+		"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4");
 	std::vector<sIntrest> interests;
-	int result = matching->GetDisplayIntrests("\303\353\271\314", &interests);
+	int result = matching->GetDisplayIntrests("\xc3\xeb\xb9\xcc", &interests);
 	if (!result || interests.empty())
 	{
 		m_pCondition[0]->SetLine(1,
-			"\301\266\260\307\274\263\301\244\276\310\307\324", 0, 0, 0);
+			"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4", 0, 0, 0);
 		return;
 	}
 
@@ -427,7 +427,7 @@ void FrQuickStartSettingDlg::OnCmbCondition2BoxInit(int param)
 	for (it = interests.begin(); it != interests.end(); ++it)
 		m_pCondition[1]->AddString(it->name);
 	m_pCondition[1]->SetLine(1,
-		matching->GetNameChecked("\303\353\271\314").c_str(), 0, 0, 0);
+		matching->GetNameChecked("\xc3\xeb\xb9\xcc").c_str(), 0, 0, 0);
 }
 
 void FrQuickStartSettingDlg::OnCmbCondition3BoxInit(int param)
@@ -439,13 +439,13 @@ void FrQuickStartSettingDlg::OnCmbCondition3BoxInit(int param)
 	if (!matching)
 		return;
 	m_pCondition[2]->AddString(
-		"\301\266\260\307\274\263\301\244\276\310\307\324");
+		"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4");
 	std::vector<sIntrest> interests;
-	int result = matching->GetDisplayIntrests("\277\254\276\326", &interests);
+	int result = matching->GetDisplayIntrests("\xbf\xac\xbe\xd6", &interests);
 	if (!result || interests.empty())
 	{
 		m_pCondition[0]->SetLine(1,
-			"\301\266\260\307\274\263\301\244\276\310\307\324", 0, 0, 0);
+			"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4", 0, 0, 0);
 		return;
 	}
 
@@ -453,7 +453,7 @@ void FrQuickStartSettingDlg::OnCmbCondition3BoxInit(int param)
 	for (it = interests.begin(); it != interests.end(); ++it)
 		m_pCondition[2]->AddString(it->name);
 	m_pCondition[2]->SetLine(1,
-		matching->GetNameChecked("\277\254\276\326").c_str(), 0, 0, 0);
+		matching->GetNameChecked("\xbf\xac\xbe\xd6").c_str(), 0, 0, 0);
 }
 
 void FrQuickStartSettingDlg::UpdateData()
@@ -466,26 +466,26 @@ void FrQuickStartSettingDlg::UpdateData()
 			if (m_bCheck[i])
 				interests.push_back(i);
 		if (strcmp(m_pCondition[0]->GetLine(1, false),
-				"\301\266\260\307\274\263\301\244\276\310\307\324"))
+				"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4"))
 		{
 			unsigned char code = matching->GetDisplayIntrestCode(
-				"\260\324\300\323", m_pCondition[0]->GetLine(1, false));
+				"\xb0\xd4\xc0\xd3", m_pCondition[0]->GetLine(1, false));
 			if (code != 255)
 				interests.push_back(code);
 		}
 		if (strcmp(m_pCondition[1]->GetLine(1, false),
-				"\301\266\260\307\274\263\301\244\276\310\307\324"))
+				"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4"))
 		{
 			unsigned char code = matching->GetDisplayIntrestCode(
-				"\303\353\271\314", m_pCondition[1]->GetLine(1, false));
+				"\xc3\xeb\xb9\xcc", m_pCondition[1]->GetLine(1, false));
 			if (code != 255)
 				interests.push_back(code);
 		}
 		if (strcmp(m_pCondition[2]->GetLine(1, false),
-				"\301\266\260\307\274\263\301\244\276\310\307\324"))
+				"\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4"))
 		{
 			unsigned char code = matching->GetDisplayIntrestCode(
-				"\277\254\276\326", m_pCondition[2]->GetLine(1, false));
+				"\xbf\xac\xbe\xd6", m_pCondition[2]->GetLine(1, false));
 			if (code != 255)
 				interests.push_back(code);
 		}
@@ -584,7 +584,7 @@ std::string CMatchingSystem::GetNameChecked(const std::string& group)
 				return interest->name;
 		}
 	}
-	return "\301\266\260\307\274\263\301\244\276\310\307\324";
+	return "\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4";
 }
 
 int CMatchingSystem::GetDisplayIntrests(const std::string& group,

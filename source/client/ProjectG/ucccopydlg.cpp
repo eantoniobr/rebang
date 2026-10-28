@@ -125,7 +125,7 @@ void FrUccCopyDlg::OnOkBtnUp()
 	}
 	else
 		AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 35,
-			(int)"\272\271\301\246\307\322 \300\307\273\363\300\273 \274\261\305\303\307\330\301\326\274\274\277\344.",
+			(int)"\xba\xb9\xc1\xa6\xc7\xd2 \xc0\xc7\xbb\xf3\xc0\xbb \xbc\xb1\xc5\xc3\xc7\xd8\xc1\xd6\xbc\xbc\xbf\xe4.",
 			0, 0, 0, 0);
 }
 
@@ -265,7 +265,7 @@ void FrUccCopyConfirmDlg::OnEtcOwnerDraw(int param)
 		{
 			WPoint pos = WPoint(m_rect.x, m_rect.y) + WPoint(100, 28);
 			gdi->PrintText(pos, 0,
-				"\272\271\301\246\307\317\275\303\260\332\275\300\264\317\261\356?",
+				"\xba\xb9\xc1\xa6\xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 				0);
 			gdi->SetTextStyle(1);
 			gdi->PrintText(WPoint(pos.x, pos.y + 16), 0, clothes->uccName, 0);
@@ -351,6 +351,6 @@ void FrUccCopyCompletedDlg::OnEtcOwnerDraw(int param)
 	pos.x = m_rect.x + 161;
 	pos.y = m_rect.y + 50;
 	gdi->PrintText(pos, 1,
-		"\274\272\260\370\300\373\300\270\267\316 \272\271\301\246\265\307\276\372\275\300\264\317\264\331.",
+		"\xbc\xba\xb0\xf8\xc0\xfb\xc0\xb8\xb7\xce \xba\xb9\xc1\xa6\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 		0);
 }

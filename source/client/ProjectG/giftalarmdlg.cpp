@@ -206,7 +206,7 @@ void FrGiftAlarmDlg::OnGiftListOwnerDraw(int param)
 	if (!common)
 	{
 		icon = m_pArrivalMail;
-		wsprintf(name, "\306\355\301\366");
+		wsprintf(name, "\xc6\xed\xc1\xf6");
 	}
 	else
 	{
@@ -251,50 +251,50 @@ void FrGiftAlarmDlg::OnGiftListOwnerDraw(int param)
 	if (type >= 3 && type <= 5)
 	{
 		if (type == 3)
-			text = MakeStr("%d\275\303\260\243", count);
+			text = MakeStr("%d\xbd\xc3\xb0\xa3", count);
 		else if (type == 4)
-			text = MakeStr("%d\300\317", count);
+			text = MakeStr("%d\xc0\xcf", count);
 		else
-			text = MakeStr("%d\260\263\277\371", count);
+			text = MakeStr("%d\xb0\xb3\xbf\xf9", count);
 	}
 	else
 	{
 		if ((typeId >> 26) == 28)
 		{
 			if (count > 0)
-				text = MakeStr("%d\260\263", count);
+				text = MakeStr("%d\xb0\xb3", count);
 			else
 			{
 				IFF_STRUCT::sAuxPart* part = ItemManager()->FindAuxPart(typeId);
 				if (part && part->COM[0] > 0)
-					text = MakeStr("%d\260\263", part->COM[0]);
+					text = MakeStr("%d\xb0\xb3", part->COM[0]);
 			}
 		}
 		else if ((typeId >> 26) == 5)
 		{
 			if (count > 0)
-				text = MakeStr("%d\260\263", count);
+				text = MakeStr("%d\xb0\xb3", count);
 			else
 			{
 				IFF_STRUCT::sBall* ball = ItemManager()->FindBall(typeId);
 				if (ball && ball->COM[0] > 0)
-					text = MakeStr("%d\260\263", ball->COM[0]);
+					text = MakeStr("%d\xb0\xb3", ball->COM[0]);
 			}
 		}
 		else if ((typeId >> 26) == 6)
 		{
 			if (typeId == 436207632)
-				text = MakeStr("%d\306\316", count);
+				text = MakeStr("%d\xc6\xce", count);
 			else
-				text = MakeStr("%d\260\263", count);
+				text = MakeStr("%d\xb0\xb3", count);
 		}
 		else if ((typeId >> 26) == 14)
 		{
-			text = MakeStr("%d\300\317", count);
+			text = MakeStr("%d\xc0\xcf", count);
 		}
 		else if ((typeId >> 26) == 2)
 		{
-			text = MakeStr("%d\260\263", 1);
+			text = MakeStr("%d\xb0\xb3", 1);
 		}
 	}
 	if (text)
@@ -317,7 +317,7 @@ void FrGiftAlarmDlg::OnProc(const float dt)
 		if (!changed)
 			return;
 		m_pInfoMsg->SetCaption(MakeStr(
-			"\277\354\306\355\307\324\300\273 \310\256\300\316\307\317\274\274\277\344   (%d/%d)",
+			"\xbf\xec\xc6\xed\xc7\xd4\xc0\xbb \xc8\xae\xc0\xce\xc7\xcf\xbc\xbc\xbf\xe4   (%d/%d)",
 			m_drawIndex + 1, m_giftNum));
 	}
 	else
@@ -369,7 +369,7 @@ void CTreasureAlarmDlg::OnListBox_Gift_Init(int param)
 			TreasureMessage* gift = new TreasureMessage;
 			gift->typeId = typeId;
 			gift->count = quantity;
-			strncpy(gift->sender, "\306\256\267\271\301\256 \274\261\271\260",
+			strncpy(gift->sender, "\xc6\xae\xb7\xb9\xc1\xae \xbc\xb1\xb9\xb0",
 				64);
 			strncpy(gift->message, "", 128);
 			m_pGiftList->AddItem(gift);
@@ -445,39 +445,39 @@ void CTreasureAlarmDlg::OnListBox_Gift_OwnerDraw(int param)
 	if ((typeId >> 26) == 28)
 	{
 		if (gift->count > 0)
-			text = MakeStr("%d\260\263", gift->count);
+			text = MakeStr("%d\xb0\xb3", gift->count);
 		else
 		{
 			IFF_STRUCT::sAuxPart* part = ItemManager()->FindAuxPart(typeId);
 			if (part && part->COM[0] > 0)
-				text = MakeStr("%d\260\263", part->COM[0]);
+				text = MakeStr("%d\xb0\xb3", part->COM[0]);
 		}
 	}
 	else if ((typeId >> 26) == 5)
 	{
 		if (gift->count > 0)
-			text = MakeStr("%d\260\263", gift->count);
+			text = MakeStr("%d\xb0\xb3", gift->count);
 		else
 		{
 			IFF_STRUCT::sBall* ball = ItemManager()->FindBall(typeId);
 			if (ball && ball->COM[0] > 0)
-				text = MakeStr("%d\260\263", ball->COM[0]);
+				text = MakeStr("%d\xb0\xb3", ball->COM[0]);
 		}
 	}
 	else if ((typeId >> 26) == 6)
 	{
 		if (typeId == 436207632)
-			text = MakeStr("%d\306\316", gift->count);
+			text = MakeStr("%d\xc6\xce", gift->count);
 		else
-			text = MakeStr("%d\260\263", gift->count);
+			text = MakeStr("%d\xb0\xb3", gift->count);
 	}
 	else if ((typeId >> 26) == 14)
 	{
-		text = MakeStr("%d\300\317", gift->count);
+		text = MakeStr("%d\xc0\xcf", gift->count);
 	}
 	else
 	{
-		text = MakeStr("%d\260\263", 1);
+		text = MakeStr("%d\xb0\xb3", 1);
 	}
 
 	if (text)
@@ -505,7 +505,7 @@ void CTreasureAlarmDlg::OnProc(const float dt)
 		if (!changed)
 			return;
 		m_pMsg->SetCaption(
-			"\270\266\300\314\267\353\277\241\274\255 \310\256\300\316\307\317\274\274\277\344");
+			"\xb8\xb6\xc0\xcc\xb7\xeb\xbf\xa1\xbc\xad \xc8\xae\xc0\xce\xc7\xcf\xbc\xbc\xbf\xe4");
 	}
 	else
 	{

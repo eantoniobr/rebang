@@ -441,8 +441,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				{
 					MessageBox(NULL,
 						K2L_Compatibility(
-							"\300\251\265\265\277\354\301\356 98 \310\244\300\272 \300\251\265\265\277\354\301\356 2000 \300\314\273\363\300\307 \277\356\277\265\303\274\301\246\260\241 \307\312\277\344\307\325\264\317\264\331"),
-						K2L_Compatibility("\306\316\276\337"), MB_OK);
+							"\xc0\xa9\xb5\xb5\xbf\xec\xc1\xee 98 \xc8\xa4\xc0\xba \xc0\xa9\xb5\xb5\xbf\xec\xc1\xee 2000 \xc0\xcc\xbb\xf3\xc0\xc7 \xbf\xee\xbf\xb5\xc3\xbc\xc1\xa6\xb0\xa1 \xc7\xca\xbf\xe4\xc7\xd5\xb4\xcf\xb4\xd9"),
+						K2L_Compatibility("\xc6\xce\xbe\xdf"), MB_OK);
 				}
 				else
 				{
@@ -843,7 +843,7 @@ BOOL GetLastWriteTime(HANDLE hFile, char* lpszString)
 	FileTimeToSystemTime(&ftLocal, &stCreate);
 
 	wsprintf(lpszString,
-		"%d\263\342%02d\277\371%02d\300\317 %02d\275\303%02d\272\320",
+		"%d\xb3\xe2%02d\xbf\xf9%02d\xc0\xcf %02d\xbd\xc3%02d\xba\xd0",
 		stCreate.wYear, stCreate.wMonth, stCreate.wDay, stCreate.wHour,
 		stCreate.wMinute);
 
@@ -852,7 +852,7 @@ BOOL GetLastWriteTime(HANDLE hFile, char* lpszString)
 
 void SetWindowTitle(HWND hWnd)
 {
-	strcpy(window_name, K2L_Compatibility("\306\316\276\337 United(QA)"));
+	strcpy(window_name, K2L_Compatibility("\xc6\xce\xbe\xdf United(QA)"));
 	SetWindowText(hWnd, window_name);
 }
 
@@ -928,8 +928,8 @@ bool CheckRelatedDLL(HWND hWnd)
 	{
 		MessageBox(hWnd,
 			K2L_Compatibility(
-				"DirectX \260\374\267\303 \306\304\300\317\300\273 \303\243\300\273 \274\366 \276\370\275\300\264\317\264\331.\nDirectX 9.0c \300\314\273\363\300\273 \274\263\304\241 \310\304 \264\331\275\303 \275\307\307\340\307\330 \301\326\274\274\277\344."),
-			K2L_Compatibility("\306\316\276\337"), MB_OK);
+				"DirectX \xb0\xfc\xb7\xc3 \xc6\xc4\xc0\xcf\xc0\xbb \xc3\xa3\xc0\xbb \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.\nDirectX 9.0c \xc0\xcc\xbb\xf3\xc0\xbb \xbc\xb3\xc4\xa1 \xc8\xc4 \xb4\xd9\xbd\xc3 \xbd\xc7\xc7\xe0\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4."),
+			K2L_Compatibility("\xc6\xce\xbe\xdf"), MB_OK);
 		return false;
 	}
 

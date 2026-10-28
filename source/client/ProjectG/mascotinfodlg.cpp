@@ -159,57 +159,57 @@ bool FrMascotInfoDlg::OnInit()
 	if (bInfo && m_pName)
 	{
 		char text[512] = { 0 };
-		sprintf(text, "\300\314  \270\247: %s", pMascot->c.Name);
+		sprintf(text, "\xc0\xcc  \xb8\xa7: %s", pMascot->c.Name);
 		if (pMascot->ItemDropUp > 0)
 			strcat(text,
 				MakeStr(
-					"\n\276\306\300\314\305\333 \265\345\267\323\267\374 : %d%%",
+					"\n\xbe\xc6\xc0\xcc\xc5\xdb \xb5\xe5\xb7\xd3\xb7\xfc : %d%%",
 					pMascot->ItemDropUp));
 		if (pMascot->PangUp > 0)
 			strcat(text,
 				MakeStr(
-					"\n\303\337\260\241 \306\316 \310\271\265\346\267\374 : %d%%",
+					"\n\xc3\xdf\xb0\xa1 \xc6\xce \xc8\xb9\xb5\xe6\xb7\xfc : %d%%",
 					pMascot->PangUp - 100));
 		if (pMascot->ExpUp > 0)
 			strcat(text,
 				MakeStr(
-					"\n\303\337\260\241 \260\346\307\350\304\241 \310\271\265\346\267\374 : %d%%",
+					"\n\xc3\xdf\xb0\xa1 \xb0\xe6\xc7\xe8\xc4\xa1 \xc8\xb9\xb5\xe6\xb7\xfc : %d%%",
 					pMascot->ExpUp - 100));
 		if (pMascot->ItemSlot > 0)
 			strcat(text,
 				MakeStr(
-					"\n\276\306\300\314\305\333 \275\275\267\324 : %d\304\255",
+					"\n\xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4 : %d\xc4\xad",
 					pMascot->ItemSlot));
 		unsigned short days = m_mascotInfo.Remain_Date / 24;
 		unsigned short hours = m_mascotInfo.Remain_Date % 24;
-		strcat(text, "\n\263\262\300\272\275\303\260\243 : ");
+		strcat(text, "\n\xb3\xb2\xc0\xba\xbd\xc3\xb0\xa3 : ");
 		bool special = false;
 		if (IsLocalContent((localContentType_t)108))
 		{
 			if (m_mascotInfo.tid == 0x40000006)
 			{
-				strcat(text, "\271\253\301\246\307\321");
+				strcat(text, "\xb9\xab\xc1\xa6\xc7\xd1");
 				special = true;
 			}
 			if (m_mascotInfo.tid == 0x40000004)
 			{
-				strcat(text, "PC\271\346 \271\253\301\246\307\321");
+				strcat(text, "PC\xb9\xe6 \xb9\xab\xc1\xa6\xc7\xd1");
 				special = true;
 			}
 			if (m_mascotInfo.tid == 0x40000013)
 			{
-				strcat(text, "\271\253\301\246\307\321");
+				strcat(text, "\xb9\xab\xc1\xa6\xc7\xd1");
 				special = true;
 			}
 		}
 		if (!special)
 		{
 			if (days > 0)
-				strcat(text, MakeStr("%d\300\317 ", days));
+				strcat(text, MakeStr("%d\xc0\xcf ", days));
 			if (hours > 0)
-				strcat(text, MakeStr("%d\275\303\260\243", hours));
+				strcat(text, MakeStr("%d\xbd\xc3\xb0\xa3", hours));
 			if (days <= 0 && hours <= 0)
-				strcat(text, "\301\276\267\341");
+				strcat(text, "\xc1\xbe\xb7\xe1");
 		}
 		m_pName->AddText(text, false, true);
 		IFF_STRUCT::sDesc* pDesc = ItemManager()->FindDesc(pMascot->c.TypeId);
@@ -220,10 +220,10 @@ bool FrMascotInfoDlg::OnInit()
 	{
 		if (m_pName)
 			m_pName->AddText(
-				"\300\314\270\247: \272\322\270\355\n\n\267\271\272\247: \272\322\270\355",
+				"\xc0\xcc\xb8\xa7: \xba\xd2\xb8\xed\n\n\xb7\xb9\xba\xa7: \xba\xd2\xb8\xed",
 				false, true);
 		SetMessage(
-			"\272\243\300\317\277\241 \275\316\300\316 \301\244\303\274\272\322\270\355\300\307 \301\270\300\347",
+			"\xba\xa3\xc0\xcf\xbf\xa1 \xbd\xce\xc0\xce \xc1\xa4\xc3\xbc\xba\xd2\xb8\xed\xc0\xc7 \xc1\xb8\xc0\xe7",
 			false);
 	}
 	if (pMascot)
@@ -233,7 +233,7 @@ bool FrMascotInfoDlg::OnInit()
 			if (m_pLimit)
 				m_pLimit->SetVisible(true);
 			SetDesc(
-				"\267\271\272\247 \301\246\307\321\300\270\267\316 \273\347\277\353\307\322 \274\366 \276\370\275\300\264\317\264\331.");
+				"\xb7\xb9\xba\xa7 \xc1\xa6\xc7\xd1\xc0\xb8\xb7\xce \xbb\xe7\xbf\xeb\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 		}
 		if (pMascot->ShowMsg)
 		{
@@ -277,7 +277,7 @@ void FrMascotInfoDlg::OnOkBtnUp()
 		if (strlen(m_message.c_str()) > 8)
 		{
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 35,
-				(int)"\270\336\274\274\301\366 \303\326\264\353 \261\346\300\314\264\302 \277\265\271\256 8\261\333\300\332, \307\321\261\333 4\261\333\300\332 \300\324\264\317\264\331.",
+				(int)"\xb8\xde\xbc\xbc\xc1\xf6 \xc3\xd6\xb4\xeb \xb1\xe6\xc0\xcc\xb4\xc2 \xbf\xb5\xb9\xae 8\xb1\xdb\xc0\xda, \xc7\xd1\xb1\xdb 4\xb1\xdb\xc0\xda \xc0\xd4\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			return;
 		}
@@ -285,7 +285,7 @@ void FrMascotInfoDlg::OnOkBtnUp()
 	else if (strlen(m_message.c_str()) > 16)
 	{
 		AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 35,
-			(int)"\270\336\274\274\301\366 \303\326\264\353 \261\346\300\314\264\302 \277\265\271\256 16\261\333\300\332, \307\321\261\333 8\261\333\300\332 \300\324\264\317\264\331.",
+			(int)"\xb8\xde\xbc\xbc\xc1\xf6 \xc3\xd6\xb4\xeb \xb1\xe6\xc0\xcc\xb4\xc2 \xbf\xb5\xb9\xae 16\xb1\xdb\xc0\xda, \xc7\xd1\xb1\xdb 8\xb1\xdb\xc0\xda \xc0\xd4\xb4\xcf\xb4\xd9.",
 			0, 0, 0, 0);
 		return;
 	}
@@ -295,7 +295,7 @@ void FrMascotInfoDlg::OnOkBtnUp()
 	if (count > 0)
 	{
 		AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 35,
-			(int)"[']\264\302 \270\336\274\274\301\366\277\241 \273\347\277\353\307\322 \274\366 \276\370\275\300\264\317\264\331.",
+			(int)"[']\xb4\xc2 \xb8\xde\xbc\xbc\xc1\xf6\xbf\xa1 \xbb\xe7\xbf\xeb\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 			0, 0, 0, 0);
 	}
 	else
@@ -304,7 +304,7 @@ void FrMascotInfoDlg::OnOkBtnUp()
 		strcpy(text, m_message.c_str());
 		if (Doc()->m_chatManager.Filtering(text))
 			AfxGetTask()->GetActor("RealMyRoom") << MsgObject(NULL, 35,
-				(int)"\300\373\264\347\307\317\301\366\276\312\300\272 \264\334\276\356\260\241 \306\367\307\324\265\307\276\372\275\300\264\317\264\331.",
+				(int)"\xc0\xfb\xb4\xe7\xc7\xcf\xc1\xf6\xbe\xca\xc0\xba \xb4\xdc\xbe\xee\xb0\xa1 \xc6\xf7\xc7\xd4\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 		else
 		{
@@ -314,7 +314,7 @@ void FrMascotInfoDlg::OnOkBtnUp()
 			if (m_pConfirmDlg)
 			{
 				m_pConfirmDlg->SetMessage(
-					"\270\266\275\272\304\332\306\256 \270\336\274\274\301\366\270\246 \272\257\260\346 \307\317\275\303\260\332\275\300\264\317\261\356?",
+					"\xb8\xb6\xbd\xba\xc4\xda\xc6\xae \xb8\xde\xbc\xbc\xc1\xf6\xb8\xa6 \xba\xaf\xb0\xe6 \xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 					false);
 				m_pConfirmDlg->Open((FRESH_PFN_RESULT)&FrMascotInfoDlg::
 										OnChangeMsgConfirmDlgResult,

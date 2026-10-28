@@ -212,29 +212,29 @@ void FrItemInfoDlg::SetItemInfo(sTradeItem* item)
 	if (m_pName)
 	{
 		if (IsLocalContent(S4_UCC) && clothes && IsUccClothes(item->dwTid))
-			m_pName->AddText(MakeStr("\300\314\270\247: %s\012\012",
+			m_pName->AddText(MakeStr("\xc0\xcc\xb8\xa7: %s\012\012",
 								 GetUccItemName(item->dwGuid)),
 				false, true);
 		else if (IsAngelWing(common->TypeId) && !IsMannerPlayer())
 			m_pName->AddText(
 				MakeStr(
-					"\300\314\270\247: %s \\c0xffff0000\\c(\302\370\277\353\272\322\260\241)\\c0xff000000\\c\012\012",
+					"\xc0\xcc\xb8\xa7: %s \\c0xffff0000\\c(\xc2\xf8\xbf\xeb\xba\xd2\xb0\xa1)\\c0xff000000\\c\012\012",
 					common->Name),
 				false, true);
 		else
 			m_pName->AddText(
-				MakeStr("\300\314\270\247: %s\012\012", common->Name), false,
+				MakeStr("\xc0\xcc\xb8\xa7: %s\012\012", common->Name), false,
 				true);
 	}
 	if (m_pLevel && m_pName)
 	{
 		if (common->IsUnderLvl)
 			m_pName->AddText(
-				"\267\271\272\247:                \300\314\307\317\012", false,
+				"\xb7\xb9\xba\xa7:                \xc0\xcc\xc7\xcf\012", false,
 				true);
 		else
 			m_pName->AddText(
-				"\267\271\272\247:                \300\314\273\363\012", false,
+				"\xb7\xb9\xba\xa7:                \xc0\xcc\xbb\xf3\012", false,
 				true);
 		m_pLevel->SetBgImg(MakeStr("level_%03d", common->Level + 1));
 	}
@@ -261,7 +261,7 @@ void FrItemInfoDlg::SetItemInfo(sTradeItem* item)
 			case 1:
 				m_pName->AddText(
 					MakeStr(
-						"\273\347\277\353\261\342\260\243: %d\300\317 %d\275\303\260\243",
+						"\xbb\xe7\xbf\xeb\xb1\xe2\xb0\xa3: %d\xc0\xcf %d\xbd\xc3\xb0\xa3",
 						days, hours),
 					false, true);
 				break;
@@ -271,16 +271,16 @@ void FrItemInfoDlg::SetItemInfo(sTradeItem* item)
 			case 5:
 				if (expired)
 					m_pName->AddText(
-						"\\c0xffff0000\\c\273\347\277\353\261\342\260\243\\c0xff000000\\c\300\314 \\c0xffff0000\\c\270\270\267\341\\c0xff000000\\c\265\307\276\372\275\300\264\317\264\331.\012",
+						"\\c0xffff0000\\c\xbb\xe7\xbf\xeb\xb1\xe2\xb0\xa3\\c0xff000000\\c\xc0\xcc \\c0xffff0000\\c\xb8\xb8\xb7\xe1\\c0xff000000\\c\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.\012",
 						false, true);
 				else if (!days && !hours)
 					m_pName->AddText(
-						"\263\262\300\272\275\303\260\243: 1\275\303\260\243\271\314\270\270\012",
+						"\xb3\xb2\xc0\xba\xbd\xc3\xb0\xa3: 1\xbd\xc3\xb0\xa3\xb9\xcc\xb8\xb8\012",
 						false, true);
 				else
 					m_pName->AddText(
 						MakeStr(
-							"\263\262\300\272\275\303\260\243: %d\300\317 %d\275\303\260\243\012",
+							"\xb3\xb2\xc0\xba\xbd\xc3\xb0\xa3: %d\xc0\xcf %d\xbd\xc3\xb0\xa3\012",
 							days, hours),
 						false, true);
 			}

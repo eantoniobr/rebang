@@ -417,13 +417,13 @@ void FrEquipDlg::EquipItem(FrListItem* item)
 		if (Doc()->m_gameMode == 1)
 		{
 			AfxGetTask()->GetActor("Family") << MsgObject(NULL, 35,
-				(int)"\300\345\302\370\307\317\301\366 \276\312\300\272 \303\244 \310\277\267\302\300\273 \271\337\310\326\307\317\264\302 \276\306\300\314\305\333\300\324\264\317\264\331",
+				(int)"\xc0\xe5\xc2\xf8\xc7\xcf\xc1\xf6 \xbe\xca\xc0\xba \xc3\xa4 \xc8\xbf\xb7\xc2\xc0\xbb \xb9\xdf\xc8\xd6\xc7\xcf\xb4\xc2 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 		}
 		else
 		{
 			AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-				(int)"\300\345\302\370\307\317\301\366 \276\312\300\272 \303\244 \310\277\267\302\300\273 \271\337\310\326\307\317\264\302 \276\306\300\314\305\333\300\324\264\317\264\331",
+				(int)"\xc0\xe5\xc2\xf8\xc7\xcf\xc1\xf6 \xbe\xca\xc0\xba \xc3\xa4 \xc8\xbf\xb7\xc2\xc0\xbb \xb9\xdf\xc8\xd6\xc7\xcf\xb4\xc2 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 		}
 	}
@@ -454,13 +454,13 @@ void FrEquipDlg::EquipItem(FrListItem* item)
 			if (Doc()->m_gameMode == 1)
 			{
 				AfxGetTask()->GetActor("Family") << MsgObject(NULL, 35,
-					(int)"\264\365 \300\314\273\363 \300\345\302\370\307\322 \274\366 \276\370\275\300\264\317\264\331",
+					(int)"\xb4\xf5 \xc0\xcc\xbb\xf3 \xc0\xe5\xc2\xf8\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9",
 					0, 0, 0, 0);
 			}
 			else
 			{
 				AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-					(int)"\264\365 \300\314\273\363 \300\345\302\370\307\322 \274\366 \276\370\275\300\264\317\264\331",
+					(int)"\xb4\xf5 \xc0\xcc\xbb\xf3 \xc0\xe5\xc2\xf8\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9",
 					0, 0, 0, 0);
 			}
 		}
@@ -535,13 +535,13 @@ void FrEquipDlg::OpenInformation(unsigned long typeId)
 				if (common->IsUnderLvl)
 					name->AddText(
 						MakeStr(
-							"\300\314\270\247: %s\012\012\267\271\272\247:                \300\314\307\317",
+							"\xc0\xcc\xb8\xa7: %s\012\012\xb7\xb9\xba\xa7:                \xc0\xcc\xc7\xcf",
 							common->Name),
 						false, true);
 				else
 					name->AddText(
 						MakeStr(
-							"\300\314\270\247: %s\012\012\267\271\272\247:                \300\314\273\363",
+							"\xc0\xcc\xb8\xa7: %s\012\012\xb7\xb9\xba\xa7:                \xc0\xcc\xbb\xf3",
 							common->Name),
 						false, true);
 				level->SetBgImg(MakeStr("level_%03d", common->Level + 1));
@@ -561,7 +561,7 @@ void FrEquipDlg::OpenInformation(unsigned long typeId)
 					case 1:
 						name->AddText(
 							MakeStr(
-								"\273\347\277\353\261\342\260\243: %d\300\317 %d\275\303\260\243",
+								"\xbb\xe7\xbf\xeb\xb1\xe2\xb0\xa3: %d\xc0\xcf %d\xbd\xc3\xb0\xa3",
 								days, hours),
 							false, true);
 						break;
@@ -572,16 +572,16 @@ void FrEquipDlg::OpenInformation(unsigned long typeId)
 					{
 						if (it->Expired)
 							name->AddText(
-								"\\c0xffff0000\\c\273\347\277\353\261\342\260\243\\c0xff000000\\c\300\314 \\c0xffff0000\\c\270\270\267\341\\c0xff000000\\c\265\307\276\372\275\300\264\317\264\331.\012",
+								"\\c0xffff0000\\c\xbb\xe7\xbf\xeb\xb1\xe2\xb0\xa3\\c0xff000000\\c\xc0\xcc \\c0xffff0000\\c\xb8\xb8\xb7\xe1\\c0xff000000\\c\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.\012",
 								false, true);
 						else if (!days && !hours)
 							name->AddText(
-								"\263\262\300\272\275\303\260\243: 1\275\303\260\243\271\314\270\270\012",
+								"\xb3\xb2\xc0\xba\xbd\xc3\xb0\xa3: 1\xbd\xc3\xb0\xa3\xb9\xcc\xb8\xb8\012",
 								false, true);
 						else
 							name->AddText(
 								MakeStr(
-									"\263\262\300\272\275\303\260\243: %d\300\317 %d\275\303\260\243\012",
+									"\xb3\xb2\xc0\xba\xbd\xc3\xb0\xa3: %d\xc0\xcf %d\xbd\xc3\xb0\xa3\012",
 									days, hours),
 								false, true);
 					}
@@ -597,10 +597,10 @@ void FrEquipDlg::OpenInformation(unsigned long typeId)
 			name = DYNAMIC_CAST(FrEdit, form->FindChildByName("name"));
 			if (name)
 				name->AddText(
-					"\300\314\270\247: \272\322\270\355\012\012\267\271\272\247: \272\322\270\355",
+					"\xc0\xcc\xb8\xa7: \xba\xd2\xb8\xed\012\012\xb7\xb9\xba\xa7: \xba\xd2\xb8\xed",
 					false, true);
 			form->SetMessage(
-				"\272\243\300\317\277\241 \275\316\300\316 \301\244\303\274\272\322\270\355\300\307 \301\270\300\347",
+				"\xba\xa3\xc0\xcf\xbf\xa1 \xbd\xce\xc0\xce \xc1\xa4\xc3\xbc\xba\xd2\xb8\xed\xc0\xc7 \xc1\xb8\xc0\xe7",
 				false);
 		}
 		form->Open(NULL, 3);

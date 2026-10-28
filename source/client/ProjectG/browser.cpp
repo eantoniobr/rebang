@@ -235,7 +235,7 @@ void CBrowser::Process(float elapsed)
 		m_hWndBrowser = m_view.Create(m_hWndParent, rc, "about:blank",
 			m_dwStyle | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS |
 				WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU);
-		m_view.SetWindowText("팡야");
+		m_view.SetWindowText("\xc6\xce\xbe\xdf");
 
 		RECT rcView;
 		m_view.GetWindowRect(&rcView);
@@ -357,7 +357,7 @@ void CBrowser::PrepareOpen(const char* url, const char* bgImage,
 	m_bOpen = true;
 	m_url = url;
 	m_dwOpenTime = GetTickCount();
-	SetWaitMsg("로딩 중입니다...");
+	SetWaitMsg("\xb7\xce\xb5\xf9 \xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9...");
 }
 
 void CBrowser::Open(const char* url, bool bResetScreenSize, bool bWindowed)

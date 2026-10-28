@@ -59,9 +59,9 @@ void FrAwardDlg::OnGoldStaticInit(int param)
 			text->SetVisible(false);
 		if (Doc()->m_golfGame.gameType == 6)
 			text->SetCaption(
-				"\261\346\265\345\261\342\277\251\265\265 1\300\247 :");
+				"\xb1\xe6\xb5\xe5\xb1\xe2\xbf\xa9\xb5\xb5 1\xc0\xa7 :");
 		else if (Doc()->m_golfGame.gameType == 10)
-			text->SetCaption("1\300\247 :");
+			text->SetCaption("1\xc0\xa7 :");
 	}
 }
 
@@ -93,9 +93,9 @@ void FrAwardDlg::OnSilverStaticInit(int param)
 			text->SetVisible(false);
 		if (Doc()->m_golfGame.gameType == 6)
 			text->SetCaption(
-				"\261\346\265\345\261\342\277\251\265\265 2\300\247 :");
+				"\xb1\xe6\xb5\xe5\xb1\xe2\xbf\xa9\xb5\xb5 2\xc0\xa7 :");
 		else if (Doc()->m_golfGame.gameType == 10)
-			text->SetCaption("2\300\247 :");
+			text->SetCaption("2\xc0\xa7 :");
 	}
 }
 
@@ -127,9 +127,9 @@ void FrAwardDlg::OnBronzeStaticInit(int param)
 			text->SetVisible(false);
 		if (Doc()->m_golfGame.gameType == 6)
 			text->SetCaption(
-				"\261\346\265\345\261\342\277\251\265\265 3\300\247 :");
+				"\xb1\xe6\xb5\xe5\xb1\xe2\xbf\xa9\xb5\xb5 3\xc0\xa7 :");
 		else if (Doc()->m_golfGame.gameType == 10)
-			text->SetCaption("3\300\247 :");
+			text->SetCaption("3\xc0\xa7 :");
 	}
 }
 

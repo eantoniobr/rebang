@@ -51,89 +51,89 @@ struct QuestText
 	const char* message;
 };
 static QuestText questTexts[14] = {
-	{ 0,  false, K2L_Compatibility("\305\254\267\264\274\261\305\303"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+	{ 0,  false, K2L_Compatibility("\xc5\xac\xb7\xb4\xbc\xb1\xc5\xc3"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\270\360\270\247\301\366\261\342 \270\305\273\347\277\243 \261\342\303\312\260\241 \306\260\306\260\307\330\276\337 \307\317\264\302 \271\375! \306\316\276\337\300\307 \261\342\272\273\260\372 \305\254\267\264 \274\261\305\303 \271\346\271\375\300\273 \276\313\276\306\272\270\300\332!"),
+			"\xb8\xf0\xb8\xa7\xc1\xf6\xb1\xe2 \xb8\xc5\xbb\xe7\xbf\xa3 \xb1\xe2\xc3\xca\xb0\xa1 \xc6\xb0\xc6\xb0\xc7\xd8\xbe\xdf \xc7\xcf\xb4\xc2 \xb9\xfd! \xc6\xce\xbe\xdf\xc0\xc7 \xb1\xe2\xba\xbb\xb0\xfa \xc5\xac\xb7\xb4 \xbc\xb1\xc5\xc3 \xb9\xe6\xb9\xfd\xc0\xbb \xbe\xcb\xbe\xc6\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\307\245\275\303\265\310 \260\367\277\241 \263\253\307\317\301\366\301\241\012\277\305\261\342\261\342")                                         },
-	{ 1,  false, K2L_Compatibility("\305\270\261\270\271\346\271\375"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc7\xa5\xbd\xc3\xb5\xc8 \xb0\xf7\xbf\xa1 \xb3\xab\xc7\xcf\xc1\xf6\xc1\xa1\012\xbf\xc5\xb1\xe2\xb1\xe2")                                         },
+	{ 1,  false, K2L_Compatibility("\xc5\xb8\xb1\xb8\xb9\xe6\xb9\xfd"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\306\316\276\337! \270\332\301\370 \274\246\300\273 \307\317\264\302 \271\346\271\375\277\241 \264\353\307\330 \276\313\276\306\272\270\300\332!"),
+			"\xc6\xce\xbe\xdf! \xb8\xda\xc1\xf8 \xbc\xa6\xc0\xbb \xc7\xcf\xb4\xc2 \xb9\xe6\xb9\xfd\xbf\xa1 \xb4\xeb\xc7\xd8 \xbe\xcb\xbe\xc6\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\307\245\275\303\265\310 \260\367\300\270\267\316\012\274\246 \303\304\272\270\261\342")                                                         },
-	{ 2,  false, K2L_Compatibility("\306\316\276\337\260\324\300\314\301\366"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc7\xa5\xbd\xc3\xb5\xc8 \xb0\xf7\xc0\xb8\xb7\xce\012\xbc\xa6 \xc3\xc4\xba\xb8\xb1\xe2")                                                         },
+	{ 2,  false, K2L_Compatibility("\xc6\xce\xbe\xdf\xb0\xd4\xc0\xcc\xc1\xf6"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\264\365 \270\326\270\256! \264\365 \260\255\307\317\260\324! \306\316\276\337\304\336\272\270\260\324\300\314\301\366\270\246 \273\347\277\353\307\317\277\251 \306\304\277\366\274\246\300\273 \303\304\272\270\300\332!"),
+			"\xb4\xf5 \xb8\xd6\xb8\xae! \xb4\xf5 \xb0\xad\xc7\xcf\xb0\xd4! \xc6\xce\xbe\xdf\xc4\xde\xba\xb8\xb0\xd4\xc0\xcc\xc1\xf6\xb8\xa6 \xbb\xe7\xbf\xeb\xc7\xcf\xbf\xa9 \xc6\xc4\xbf\xf6\xbc\xa6\xc0\xbb \xc3\xc4\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\306\316\276\337\304\336\272\270\260\324\300\314\301\366\270\246\012\273\347\277\353\307\317\277\251 \306\304\277\366\274\246 \304\241\261\342") },
-	{ 3,  false, K2L_Compatibility("\306\333\306\303\300\307 \261\342\272\273"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc6\xce\xbe\xdf\xc4\xde\xba\xb8\xb0\xd4\xc0\xcc\xc1\xf6\xb8\xa6\012\xbb\xe7\xbf\xeb\xc7\xcf\xbf\xa9 \xc6\xc4\xbf\xf6\xbc\xa6 \xc4\xa1\xb1\xe2") },
+	{ 3,  false, K2L_Compatibility("\xc6\xdb\xc6\xc3\xc0\xc7 \xb1\xe2\xba\xbb"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\310\246\300\307 \270\266\271\253\270\256! \306\333\306\303\277\241 \264\353\307\330 \271\350\277\366\272\270\300\332"),
-     K2L_Compatibility("\306\333\306\303 \271\350\277\354\261\342")																						   },
-	{ 4,  false, K2L_Compatibility("\276\306\300\314\305\333\273\347\277\353"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc8\xa6\xc0\xc7 \xb8\xb6\xb9\xab\xb8\xae! \xc6\xdb\xc6\xc3\xbf\xa1 \xb4\xeb\xc7\xd8 \xb9\xe8\xbf\xf6\xba\xb8\xc0\xda"),
+     K2L_Compatibility("\xc6\xdb\xc6\xc3 \xb9\xe8\xbf\xec\xb1\xe2")																						   },
+	{ 4,  false, K2L_Compatibility("\xbe\xc6\xc0\xcc\xc5\xdb\xbb\xe7\xbf\xeb"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\276\321, \300\314\267\261 \275\305\261\342\307\321 \276\306\300\314\305\333\300\314? \276\306\300\314\305\333 \273\347\277\353\271\375\300\273 \276\313\276\306\272\270\300\332!"),
+			"\xbe\xd1, \xc0\xcc\xb7\xb1 \xbd\xc5\xb1\xe2\xc7\xd1 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xcc? \xbe\xc6\xc0\xcc\xc5\xdb \xbb\xe7\xbf\xeb\xb9\xfd\xc0\xbb \xbe\xcb\xbe\xc6\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\276\306\300\314\305\333 \273\347\277\353\300\270\267\316\012\306\304\277\366\274\246 \304\241\261\342")                                         },
-	{ 5,  false, K2L_Compatibility("\301\366\270\351\274\323\274\272"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xbe\xc6\xc0\xcc\xc5\xdb \xbb\xe7\xbf\xeb\xc0\xb8\xb7\xce\012\xc6\xc4\xbf\xf6\xbc\xa6 \xc4\xa1\xb1\xe2")                                         },
+	{ 5,  false, K2L_Compatibility("\xc1\xf6\xb8\xe9\xbc\xd3\xbc\xba"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\307\256\271\347, \270\360\267\241\271\347, \271\331\264\331, \277\254\270\370... \264\331\276\347\307\321 \301\366\270\351\277\241 \264\353\307\330 \260\370\272\316\307\317\300\332!"),
+			"\xc7\xae\xb9\xe7, \xb8\xf0\xb7\xa1\xb9\xe7, \xb9\xd9\xb4\xd9, \xbf\xac\xb8\xf8... \xb4\xd9\xbe\xe7\xc7\xd1 \xc1\xf6\xb8\xe9\xbf\xa1 \xb4\xeb\xc7\xd8 \xb0\xf8\xba\xce\xc7\xcf\xc0\xda!"),
      K2L_Compatibility(
-			"\304\373\301\356\267\316 \276\313\276\306\272\270\264\302\012\301\366\270\351\300\307 \274\323\274\272")                                         },
-	{ 6,  false, K2L_Compatibility("\275\272\304\332\276\356\260\350\273\352"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc4\xfb\xc1\xee\xb7\xce \xbe\xcb\xbe\xc6\xba\xb8\xb4\xc2\012\xc1\xf6\xb8\xe9\xc0\xc7 \xbc\xd3\xbc\xba")                                         },
+	{ 6,  false, K2L_Compatibility("\xbd\xba\xc4\xda\xbe\xee\xb0\xe8\xbb\xea"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\276\313\275\366\264\336\275\366? \306\316\276\337\300\307 \301\241\274\366 \260\350\273\352\271\375\300\273 \276\313\276\306\272\270\300\332!"),
+			"\xbe\xcb\xbd\xf6\xb4\xde\xbd\xf6? \xc6\xce\xbe\xdf\xc0\xc7 \xc1\xa1\xbc\xf6 \xb0\xe8\xbb\xea\xb9\xfd\xc0\xbb \xbe\xcb\xbe\xc6\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\304\373\301\356\267\316 \276\313\276\306\272\270\264\302\012\306\316\276\337\300\307 \301\241\274\366")                                         },
+			"\xc4\xfb\xc1\xee\xb7\xce \xbe\xcb\xbe\xc6\xba\xb8\xb4\xc2\012\xc6\xce\xbe\xdf\xc0\xc7 \xc1\xa1\xbc\xf6")                                         },
 	{ 7,  false,
      K2L_Compatibility(
-			"4\310\246\277\241\274\255 \310\246\300\316\307\317\261\342"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"4\xc8\xa6\xbf\xa1\xbc\xad \xc8\xa6\xc0\xce\xc7\xcf\xb1\xe2"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\303\312\272\270 \264\353\305\273\303\342! \301\366\261\335\261\356\301\366 \271\350\277\356 \270\360\265\347 \260\315\300\273 \300\300\277\353\307\317\277\251 \275\307\275\300 \265\265\300\374!"),
+			"\xc3\xca\xba\xb8 \xb4\xeb\xc5\xbb\xc3\xe2! \xc1\xf6\xb1\xdd\xb1\xee\xc1\xf6 \xb9\xe8\xbf\xee \xb8\xf0\xb5\xe7 \xb0\xcd\xc0\xbb \xc0\xc0\xbf\xeb\xc7\xcf\xbf\xa9 \xbd\xc7\xbd\xc0 \xb5\xb5\xc0\xfc!"),
      K2L_Compatibility(
-			"\306\304 4\310\246\277\241\274\255\012Par\300\314\273\363 \261\342\267\317\307\317\261\342")                                                     },
+			"\xc6\xc4 4\xc8\xa6\xbf\xa1\xbc\xad\012Par\xc0\xcc\xbb\xf3 \xb1\xe2\xb7\xcf\xc7\xcf\xb1\xe2")                                                     },
 	{ 8,  false,
-     K2L_Compatibility("\260\370 \277\305\261\342\261\342"),                     K2L_Compatibility("\272\300\264\331\270\256"), K2L_Compatibility("\265\265\300\372\310\367 \274\246\300\273 \304\245 \274\366 \276\370\264\302 \273\363\310\262\300\314\266\363\270\351? \260\370\277\305\261\342\261\342 \261\342\264\311\300\273 \271\350\277\366\272\270\300\332!"),
+     K2L_Compatibility("\xb0\xf8 \xbf\xc5\xb1\xe2\xb1\xe2"),                     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"), K2L_Compatibility("\xb5\xb5\xc0\xfa\xc8\xf7 \xbc\xa6\xc0\xbb \xc4\xa5 \xbc\xf6 \xbe\xf8\xb4\xc2 \xbb\xf3\xc8\xb2\xc0\xcc\xb6\xf3\xb8\xe9? \xb0\xf8\xbf\xc5\xb1\xe2\xb1\xe2 \xb1\xe2\xb4\xc9\xc0\xbb \xb9\xe8\xbf\xf6\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\260\370\277\305\261\342\261\342 \261\342\264\311 \276\313\276\306\272\270\261\342")                                                             },
-	{ 9,  false, K2L_Compatibility("\260\370 \261\342\277\357\261\342"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xb0\xf8\xbf\xc5\xb1\xe2\xb1\xe2 \xb1\xe2\xb4\xc9 \xbe\xcb\xbe\xc6\xba\xb8\xb1\xe2")                                                             },
+	{ 9,  false, K2L_Compatibility("\xb0\xf8 \xb1\xe2\xbf\xef\xb1\xe2"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\301\366\270\351\300\307 \261\342\277\357\261\342\270\246 \300\320\260\355 \264\365\277\355 \301\244\261\263\307\321 \274\246\277\241 \265\265\300\374\307\317\300\332!"),
+			"\xc1\xf6\xb8\xe9\xc0\xc7 \xb1\xe2\xbf\xef\xb1\xe2\xb8\xa6 \xc0\xd0\xb0\xed \xb4\xf5\xbf\xed \xc1\xa4\xb1\xb3\xc7\xd1 \xbc\xa6\xbf\xa1 \xb5\xb5\xc0\xfc\xc7\xcf\xc0\xda!"),
      K2L_Compatibility(
-			"\301\366\270\351\300\307 \261\342\277\357\261\342\270\246 \300\320\264\302 \271\375")                                                            },
-	{ 10, false, K2L_Compatibility("\271\331\266\367 \300\320\261\342"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc1\xf6\xb8\xe9\xc0\xc7 \xb1\xe2\xbf\xef\xb1\xe2\xb8\xa6 \xc0\xd0\xb4\xc2 \xb9\xfd")                                                            },
+	{ 10, false, K2L_Compatibility("\xb9\xd9\xb6\xf7 \xc0\xd0\xb1\xe2"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\271\331\266\367\300\273 \300\320\260\355 \260\370\300\307 \261\313\300\373\300\273 \277\271\303\370\307\317\266\363!"),
+			"\xb9\xd9\xb6\xf7\xc0\xbb \xc0\xd0\xb0\xed \xb0\xf8\xc0\xc7 \xb1\xcb\xc0\xfb\xc0\xbb \xbf\xb9\xc3\xf8\xc7\xcf\xb6\xf3!"),
      K2L_Compatibility(
-			"\271\331\266\367\300\307 \274\274\261\342\277\315 \271\346\307\342 \276\313\276\306\272\270\261\342")                                            },
-	{ 11, false, K2L_Compatibility("\305\270\301\241\300\314\265\277"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xb9\xd9\xb6\xf7\xc0\xc7 \xbc\xbc\xb1\xe2\xbf\xcd \xb9\xe6\xc7\xe2 \xbe\xcb\xbe\xc6\xba\xb8\xb1\xe2")                                            },
+	{ 11, false, K2L_Compatibility("\xc5\xb8\xc1\xa1\xc0\xcc\xb5\xbf"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\260\370\300\307 \305\270\301\241\300\273 \301\266\300\375\307\317\277\251 \261\313\300\373\300\307 \260\242\265\265\270\246 \271\331\262\343\272\270\300\332!"),
+			"\xb0\xf8\xc0\xc7 \xc5\xb8\xc1\xa1\xc0\xbb \xc1\xb6\xc0\xfd\xc7\xcf\xbf\xa9 \xb1\xcb\xc0\xfb\xc0\xc7 \xb0\xa2\xb5\xb5\xb8\xa6 \xb9\xd9\xb2\xe3\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\260\370\300\307 \305\270\301\241 \301\266\300\375\307\317\261\342")                                                                             },
-	{ 12, false, K2L_Compatibility("\306\304\277\366\275\272\307\311"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xb0\xf8\xc0\xc7 \xc5\xb8\xc1\xa1 \xc1\xb6\xc0\xfd\xc7\xcf\xb1\xe2")                                                                             },
+	{ 12, false, K2L_Compatibility("\xc6\xc4\xbf\xf6\xbd\xba\xc7\xc9"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\260\255\267\302\307\321 \275\272\307\311! \306\304\277\366\275\272\307\311\277\241 \264\353\307\330 \276\313\276\306\272\270\300\332."),
+			"\xb0\xad\xb7\xc2\xc7\xd1 \xbd\xba\xc7\xc9! \xc6\xc4\xbf\xf6\xbd\xba\xc7\xc9\xbf\xa1 \xb4\xeb\xc7\xd8 \xbe\xcb\xbe\xc6\xba\xb8\xc0\xda."),
      K2L_Compatibility(
-			"\306\304\277\366 \275\272\307\311 \274\246 \300\315\310\367\261\342")                                                                            },
-	{ 13, false, K2L_Compatibility("\306\304\277\366\304\277\272\352"),
-     K2L_Compatibility("\272\300\264\331\270\256"),
+			"\xc6\xc4\xbf\xf6 \xbd\xba\xc7\xc9 \xbc\xa6 \xc0\xcd\xc8\xf7\xb1\xe2")                                                                            },
+	{ 13, false, K2L_Compatibility("\xc6\xc4\xbf\xf6\xc4\xbf\xba\xea"),
+     K2L_Compatibility("\xba\xc0\xb4\xd9\xb8\xae"),
      K2L_Compatibility(
-			"\260\305\264\353\307\321 \300\345\276\326\271\260\265\265 \277\344\270\256\301\266\270\256 \272\361\304\321\260\241\264\302 \306\304\277\366 \304\277\272\352\274\246\300\273 \271\350\277\366\272\270\300\332!"),
+			"\xb0\xc5\xb4\xeb\xc7\xd1 \xc0\xe5\xbe\xd6\xb9\xb0\xb5\xb5 \xbf\xe4\xb8\xae\xc1\xb6\xb8\xae \xba\xf1\xc4\xd1\xb0\xa1\xb4\xc2 \xc6\xc4\xbf\xf6 \xc4\xbf\xba\xea\xbc\xa6\xc0\xbb \xb9\xe8\xbf\xf6\xba\xb8\xc0\xda!"),
      K2L_Compatibility(
-			"\300\345\276\326\271\260\300\273 \307\307\307\330 \270\361\307\245\301\366\301\241\300\270\267\316 \260\370 \272\270\263\273\261\342")           },
+			"\xc0\xe5\xbe\xd6\xb9\xb0\xc0\xbb \xc7\xc7\xc7\xd8 \xb8\xf1\xc7\xa5\xc1\xf6\xc1\xa1\xc0\xb8\xb7\xce \xb0\xf8 \xba\xb8\xb3\xbb\xb1\xe2")           },
 };
 
 IMPLEMENT_ACTOR(FrQuestInfoDlg, FrForm)
@@ -534,7 +534,7 @@ void FrQuestGift::OnGiftListLBtnDown()
 				m_pNotify =
 					CreateForm<FrForm>(g_pFresh->GetManager(), this, "notify");
 				m_pNotify->SetMessage(
-					"\274\261\305\303\307\321 \274\261\271\260\300\273 \277\344\303\273\307\317\277\264\275\300\264\317\264\331.",
+					"\xbc\xb1\xc5\xc3\xc7\xd1 \xbc\xb1\xb9\xb0\xc0\xbb \xbf\xe4\xc3\xbb\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 					false);
 
 				m_pNotify->Open((FRESH_PFN_RESULT)&FrQuestGift::OnNotifyResult,

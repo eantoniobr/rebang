@@ -245,20 +245,20 @@ void FrApproachResultDlg::OnLeftAreaOwnerDraw(int)
 				int space = device->SetSpace(0);
 				device->SetTextStyle(1);
 				device->Print(WPoint(area.x + 210.0f, area.y + 56.0f), 0,
-					"\274\370    \300\247");
+					"\xbc\xf8    \xc0\xa7");
 				if (!Doc()->IsCurrentMissionBlind() ||
 					(Doc()->IsCurrentMissionBlind() &&
 						data->dwGUID == Doc()->m_myInfo.info.dwGuid))
 				{
 					device->Print(WPoint(area.x + 210.0f, area.y + 93.0f), 0,
-						"\264\353 \310\255 \270\355");
+						"\xb4\xeb \xc8\xad \xb8\xed");
 					device->Print(WPoint(area.x + 210.0f, area.y + 118.0f), 0,
-						"\263\262\300\272\260\305\270\256");
+						"\xb3\xb2\xc0\xba\xb0\xc5\xb8\xae");
 					device->Print(WPoint(area.x + 210.0f, area.y + 143.0f), 0,
-						"\263\262\300\272\275\303\260\243");
+						"\xb3\xb2\xc0\xba\xbd\xc3\xb0\xa3");
 				}
 				device->Print(WPoint(area.x + 210.0f, area.y + 170.0f), 0,
-					"\310\271\265\346\272\270\273\363");
+					"\xc8\xb9\xb5\xe6\xba\xb8\xbb\xf3");
 				device->SetTextStyle(0);
 				memcpy(rank, "\0", 2);
 				memset(rank + 2, 0, 2);
@@ -286,7 +286,7 @@ void FrApproachResultDlg::OnLeftAreaOwnerDraw(int)
 						device->Print(WPoint(area.x + 280.0f, area.y + 118.0f),
 							0, "%d.%d y", distance / 10, distance % 10);
 						device->Print(WPoint(area.x + 280.0f, area.y + 143.0f),
-							0, "%d.%03d \303\312", time / 1000, time % 1000);
+							0, "%d.%03d \xc3\xca", time / 1000, time % 1000);
 					}
 				}
 				int boxes =
@@ -641,7 +641,7 @@ void FrApproachResultDlg::ShowPet()
 							!m_pPartTidList->IsComboValid())
 							m_pPartTidList->SetDefaultTids();
 						char motion[64] = "\0";
-						strcpy(motion, "1\265\356\270\360\274\307");
+						strcpy(motion, "1\xb5\xee\xb8\xf0\xbc\xc7");
 						m_pExhibition->SetModel(*m_pPartTidList,
 							it->second.info.charInfo.tidAuxParts, motion, 0.0f,
 							0);
@@ -821,7 +821,7 @@ void FrApproachEndDlg::OnListOwnerDraw(int param)
 						device->Print(WPoint(base.x + 152.0f, y), 0, "%d.%d y",
 							distance / 10, distance % 10);
 						device->Print(WPoint(base.x + 212.0f, y), 0,
-							"%d.%03d\303\312", time / 1000, time % 1000);
+							"%d.%03d\xc3\xca", time / 1000, time % 1000);
 					}
 					device->Print(WPoint(base.x + 320.0f, y), 2, "%d",
 						data->dwPrizeCount + data->byRankPrize +

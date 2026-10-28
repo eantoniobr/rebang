@@ -16,9 +16,9 @@ extern Fresh* g_pFresh;
 namespace
 {
 	std::string g_cadieMessage(
-		"\134cN\134c\304\253\265\360\277\241\300\307 \270\266\271\375\273\363\300\332\267\316 \277\300\275\305\260\311 \310\257\277\265\307\325\264\317\264\331.\012\276\306\267\241\277\241\264\302 \307\330\264\347 \276\306\300\314\305\333\300\273 \270\270\265\351 \274\366 \300\326\264\302 \267\271\275\303\307\307\260\241 \300\326\275\300\264\317\264\331.\012\267\271\275\303\307\307\270\246 \265\373\266\363\274\255 \307\330\264\347 \276\306\300\314\305\333\300\273 \270\270\265\351\276\356 \272\270\274\274\277\344.\134cN\134c");
+		"\134cN\134c\xc4\xab\xb5\xf0\xbf\xa1\xc0\xc7 \xb8\xb6\xb9\xfd\xbb\xf3\xc0\xda\xb7\xce \xbf\xc0\xbd\xc5\xb0\xc9 \xc8\xaf\xbf\xb5\xc7\xd5\xb4\xcf\xb4\xd9.\012\xbe\xc6\xb7\xa1\xbf\xa1\xb4\xc2 \xc7\xd8\xb4\xe7 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb8\xb8\xb5\xe9 \xbc\xf6 \xc0\xd6\xb4\xc2 \xb7\xb9\xbd\xc3\xc7\xc7\xb0\xa1 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.\012\xb7\xb9\xbd\xc3\xc7\xc7\xb8\xa6 \xb5\xfb\xb6\xf3\xbc\xad \xc7\xd8\xb4\xe7 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb8\xb8\xb5\xe9\xbe\xee \xba\xb8\xbc\xbc\xbf\xe4.\134cN\134c");
 	std::string g_cadieEventMessage(
-		"\134cN\134c\304\253\265\360\277\241\300\307 \270\266\271\375\273\363\300\332\267\316 \277\300\275\305\260\311 \310\257\277\265\307\325\264\317\264\331.\012\271\337\267\273\305\270\300\316\265\245\300\314 \300\314\272\245\306\256\260\241 \301\370\307\340\301\337\300\324\264\317\264\331.\012\300\314\272\245\306\256 \261\342\260\243 \265\277\276\310\300\272 \134c0xffff0000\134c\263\262\274\272 \300\257\300\372\134c0xff000000\134c\270\270 \301\266\307\325\300\314 \260\241\264\311\307\325\264\317\264\331.\134cN\134c");
+		"\134cN\134c\xc4\xab\xb5\xf0\xbf\xa1\xc0\xc7 \xb8\xb6\xb9\xfd\xbb\xf3\xc0\xda\xb7\xce \xbf\xc0\xbd\xc5\xb0\xc9 \xc8\xaf\xbf\xb5\xc7\xd5\xb4\xcf\xb4\xd9.\012\xb9\xdf\xb7\xbb\xc5\xb8\xc0\xce\xb5\xa5\xc0\xcc \xc0\xcc\xba\xa5\xc6\xae\xb0\xa1 \xc1\xf8\xc7\xe0\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9.\012\xc0\xcc\xba\xa5\xc6\xae \xb1\xe2\xb0\xa3 \xb5\xbf\xbe\xc8\xc0\xba \134c0xffff0000\134c\xb3\xb2\xbc\xba \xc0\xaf\xc0\xfa\134c0xff000000\134c\xb8\xb8 \xc1\xb6\xc7\xd5\xc0\xcc \xb0\xa1\xb4\xc9\xc7\xd5\xb4\xcf\xb4\xd9.\134cN\134c");
 }
 
 IMPLEMENT_OBJECT(FrRecycleDlg, FrForm)
@@ -530,7 +530,7 @@ void FrRecycleDlg::OnMixBnUp()
 		notice->SetRect(WRect(rect.x, rect.y, rect.w, rect.h));
 		notice->SetTimeLimit(12.0f);
 		notice->SetMessage(
-			"\307\366\300\347 \276\306\300\314\305\333\300\307 \272\270\300\257\260\263\274\366\260\241 20,000\260\263\300\314\271\307\267\316 \276\306\300\314\305\333\300\273 \301\266\307\325 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+			"\xc7\xf6\xc0\xe7 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xc7 \xba\xb8\xc0\xaf\xb0\xb3\xbc\xf6\xb0\xa1 20,000\xb0\xb3\xc0\xcc\xb9\xc7\xb7\xce \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xc1\xb6\xc7\xd5 \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 			false);
 		notice->Open(NULL, 0);
 		return;
@@ -546,10 +546,10 @@ void FrRecycleDlg::OnMixBnUp()
 		switch (rand() % 2)
 		{
 		case 0:
-			strcpy(motion, "\310\246\300\316");
+			strcpy(motion, "\xc8\xa6\xc0\xce");
 			break;
 		case 1:
-			strcpy(motion, "\310\246\300\316\277\370");
+			strcpy(motion, "\xc8\xa6\xc0\xce\xbf\xf8");
 			break;
 		}
 		m_pExhibition->SetMotion(motion, false, 0.0f);
@@ -1543,7 +1543,7 @@ void FrRecycleDlg::SetResultRecycleItem(bool success,
 			if (!set)
 			{
 				AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 0x23,
-					(int)"\301\270\300\347\307\317\301\366 \276\312\300\272 \276\306\300\314\305\333\300\324\264\317\264\331.",
+					(int)"\xc1\xb8\xc0\xe7\xc7\xcf\xc1\xf6 \xbe\xca\xc0\xba \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xd4\xb4\xcf\xb4\xd9.",
 					0, 0, 0, 0));
 			}
 			else
@@ -1551,7 +1551,7 @@ void FrRecycleDlg::SetResultRecycleItem(bool success,
 				int count = set->nElems;
 				if (count != items.size())
 					AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 0x23,
-						(int)"\301\266\260\307\300\314 \277\303\271\331\270\243\301\366 \276\312\275\300\264\317\264\331.",
+						(int)"\xc1\xb6\xb0\xc7\xc0\xcc \xbf\xc3\xb9\xd9\xb8\xa3\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9.",
 						0, 0, 0, 0));
 				else
 				{
@@ -1569,7 +1569,7 @@ void FrRecycleDlg::SetResultRecycleItem(bool success,
 						{
 							AfxGetTask()->SendMsgToMainActor(MsgObject(NULL,
 								0x23,
-								(int)"\301\266\260\307\300\314 \277\303\271\331\270\243\301\366 \276\312\275\300\264\317\264\331.",
+								(int)"\xc1\xb6\xb0\xc7\xc0\xcc \xbf\xc3\xb9\xd9\xb8\xa3\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9.",
 								0, 0, 0, 0));
 							break;
 						}
@@ -1591,7 +1591,7 @@ void FrRecycleDlg::SetResultRecycleItem(bool success,
 			else
 			{
 				AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 0x23,
-					(int)"\301\266\260\307\300\314 \277\303\271\331\270\243\301\366 \276\312\275\300\264\317\264\331.",
+					(int)"\xc1\xb6\xb0\xc7\xc0\xcc \xbf\xc3\xb9\xd9\xb8\xa3\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0, 0, 0, 0));
 			}
 		}
@@ -1614,7 +1614,7 @@ void FrRecycleDlg::SetResultRecycleItem(bool success,
 	SetDataTotalItem(m_selRecycleIndex);
 	SetMaxEnableRecycle(m_selRecycleIndex);
 	g_audio->PlaySfx(
-		"\276\306\300\314\305\333\310\271\265\346(\267\271\276\356)", NULL, 0,
+		"\xbe\xc6\xc0\xcc\xc5\xdb\xc8\xb9\xb5\xe6(\xb7\xb9\xbe\xee)", NULL, 0,
 		NULL, NULL, 0.5f, 200.0f);
 	if (m_selRecycleIndex >= 0)
 	{
@@ -2491,17 +2491,17 @@ void FrSelectPartDlg::OnOwnerDrawListBox(int param)
 static const char* MakeStatusString(int stat, int value, int slot)
 {
 	FrWndManager* pManager = g_pFresh->GetManager();
-	const char* names[] = { "\306\304\277\366", "\304\301\306\256\267\321",
-		"\301\244\310\256\265\265", "\275\272\307\311", "\304\277\272\352" };
+	const char* names[] = { "\xc6\xc4\xbf\xf6", "\xc4\xc1\xc6\xae\xb7\xd1",
+		"\xc1\xa4\xc8\xae\xb5\xb5", "\xbd\xba\xc7\xc9", "\xc4\xbf\xba\xea" };
 	if (value)
 	{
 		if (slot)
 			return MakeStr("%s+%d/%s+%d", names[stat], value,
-				"\275\275\267\324", slot);
+				"\xbd\xbd\xb7\xd4", slot);
 		return MakeStr("%s+%d", names[stat], value);
 	}
 	if (slot)
-		return MakeStr("%s%s+%d", names[stat], "\275\275\267\324", slot);
+		return MakeStr("%s%s+%d", names[stat], "\xbd\xbd\xb7\xd4", slot);
 	return "";
 }
 

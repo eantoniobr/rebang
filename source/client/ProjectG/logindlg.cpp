@@ -118,7 +118,7 @@ unsigned __stdcall HttpGetNtreevUserAuthKey(void* param)
 				FrForm* notify = CreateForm<FrForm>(g_pFresh->GetManager(),
 					NULL, "notify", NULL);
 				notify->SetMessage(
-					"\267\316\261\327\300\316 \300\316\301\365 \275\303\260\243 \303\312\260\372. \264\331\275\303 \275\303\265\265 \307\317\274\274\277\344.",
+					"\xb7\xce\xb1\xd7\xc0\xce \xc0\xce\xc1\xf5 \xbd\xc3\xb0\xa3 \xc3\xca\xb0\xfa. \xb4\xd9\xbd\xc3 \xbd\xc3\xb5\xb5 \xc7\xcf\xbc\xbc\xbf\xe4.",
 					false);
 			}
 		}
@@ -143,7 +143,7 @@ unsigned __stdcall HttpGetNtreevUserAuthKey(void* param)
 	else
 	{
 		AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 35,
-			(int)"\300\245\274\255\272\361\275\272 \300\316\301\365\277\241 \275\307\306\320\307\317\277\264\275\300\264\317\264\331.",
+			(int)"\xc0\xa5\xbc\xad\xba\xf1\xbd\xba \xc0\xce\xc1\xf5\xbf\xa1 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 			0, 0, 0, 0));
 		if (dlg)
 			dlg->EnableLoginControls(true);
@@ -196,7 +196,7 @@ unsigned __stdcall HttpGetNhnUserAuthKey(void* param)
 				FrForm* notify = CreateForm<FrForm>(g_pFresh->GetManager(),
 					NULL, "notify", NULL);
 				notify->SetMessage(
-					"\267\316\261\327\300\316 \300\316\301\365 \275\303\260\243 \303\312\260\372. \264\331\275\303 \275\303\265\265 \307\317\274\274\277\344.",
+					"\xb7\xce\xb1\xd7\xc0\xce \xc0\xce\xc1\xf5 \xbd\xc3\xb0\xa3 \xc3\xca\xb0\xfa. \xb4\xd9\xbd\xc3 \xbd\xc3\xb5\xb5 \xc7\xcf\xbc\xbc\xbf\xe4.",
 					false);
 			}
 		}
@@ -221,7 +221,7 @@ unsigned __stdcall HttpGetNhnUserAuthKey(void* param)
 	else
 	{
 		AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 35,
-			(int)"\300\245\274\255\272\361\275\272 \300\316\301\365\277\241 \275\307\306\320\307\317\277\264\275\300\264\317\264\331.",
+			(int)"\xc0\xa5\xbc\xad\xba\xf1\xbd\xba \xc0\xce\xc1\xf5\xbf\xa1 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 			0, 0, 0, 0));
 		if (dlg)
 			dlg->EnableLoginControls(true);
@@ -241,7 +241,7 @@ void FrLoginDlg::BeginClientLogin()
 		{
 			if (m_pView)
 				m_pView->AddLine(
-					"\276\306\300\314\265\360\270\246 \263\326\276\356\301\326\274\274\277\344.",
+					"\xbe\xc6\xc0\xcc\xb5\xf0\xb8\xa6 \xb3\xd6\xbe\xee\xc1\xd6\xbc\xbc\xbf\xe4.",
 					0, 0);
 			if (m_pId)
 				m_pId->SetKeyFocus(true);
@@ -257,7 +257,7 @@ void FrLoginDlg::BeginClientLogin()
 		{
 			if (m_pView)
 				m_pView->AddLine(
-					"\272\361\271\320\271\370\310\243\270\246 \300\324\267\302\307\330\301\326\274\274\277\344.",
+					"\xba\xf1\xb9\xd0\xb9\xf8\xc8\xa3\xb8\xa6 \xc0\xd4\xb7\xc2\xc7\xd8\xc1\xd6\xbc\xbc\xbf\xe4.",
 					0, 0);
 			if (m_pPassword)
 				m_pPassword->SetKeyFocus(true);
@@ -268,9 +268,9 @@ void FrLoginDlg::BeginClientLogin()
 	if (valid.bInvalid && m_pView)
 	{
 		m_pView->AddLine(
-			"\276\306\300\314\265\360\264\302 \277\265\271\256\300\332\277\315 \274\375\300\332, '_'\270\270 \273\347\277\353\307\317\275\307 \274\366 ",
+			"\xbe\xc6\xc0\xcc\xb5\xf0\xb4\xc2 \xbf\xb5\xb9\xae\xc0\xda\xbf\xcd \xbc\xfd\xc0\xda, '_'\xb8\xb8 \xbb\xe7\xbf\xeb\xc7\xcf\xbd\xc7 \xbc\xf6 ",
 			0, 0);
-		m_pView->AddLine("\300\326\275\300\264\317\264\331.", 0, 0);
+		m_pView->AddLine("\xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.", 0, 0);
 	}
 	else
 	{
@@ -282,10 +282,10 @@ void FrLoginDlg::BeginClientLogin()
 			if (m_pView)
 			{
 				m_pView->AddLine(
-					"\267\316\261\327\300\316\277\241 \300\345\276\326\260\241 \271\337\273\375\307\337\275\300\264\317\264\331. \264\331\275\303 \275\303\265\265 \307\330\301\326\274\274\277\344.",
+					"\xb7\xce\xb1\xd7\xc0\xce\xbf\xa1 \xc0\xe5\xbe\xd6\xb0\xa1 \xb9\xdf\xbb\xfd\xc7\xdf\xbd\xc0\xb4\xcf\xb4\xd9. \xb4\xd9\xbd\xc3 \xbd\xc3\xb5\xb5 \xc7\xd8\xc1\xd6\xbc\xbc\xbf\xe4.",
 					0, 0);
 				m_pView->AddLine(
-					"\271\256\301\246\260\241 \301\366\274\323 \265\307\270\351 \260\263\271\337\306\300\277\241 \271\256\300\307 \271\331\266\370\264\317\264\331.",
+					"\xb9\xae\xc1\xa6\xb0\xa1 \xc1\xf6\xbc\xd3 \xb5\xc7\xb8\xe9 \xb0\xb3\xb9\xdf\xc6\xc0\xbf\xa1 \xb9\xae\xc0\xc7 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.",
 					0, 0);
 			}
 			delete param;
@@ -318,7 +318,7 @@ void FrLoginDlg::BeginConnect()
 	Doc()->m_password = m_passwd;
 	NET()->Init(WNetworkSystem::NET_MAX);
 	if (m_pView)
-		m_pView->AddLine(MakeStr("%s \301\242\274\323 \301\337...|", LOGINID()),
+		m_pView->AddLine(MakeStr("%s \xc1\xa2\xbc\xd3 \xc1\xdf...|", LOGINID()),
 			0, 0);
 	m_connState = (eLoginState)1;
 	NET()->SendMessage(WNetworkSystem::NET_LOGIN, (NetworkUnit::eEvent)0);
@@ -337,7 +337,7 @@ void FrLoginDlg::Login()
 			}
 			else if (m_pView)
 				m_pView->AddLine(
-					"\267\316\261\327\300\316 \275\303\275\272\305\333 \301\244\272\361\301\337\300\324\264\317\264\331.",
+					"\xb7\xce\xb1\xd7\xc0\xce \xbd\xc3\xbd\xba\xc5\xdb \xc1\xa4\xba\xf1\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9.",
 					0, 0);
 		}
 		else
@@ -445,7 +445,7 @@ void FrLoginDlg::OnProc(float delta)
 				if (m_pView)
 				{
 					m_pView->AddLine(
-						"\267\316\261\327\300\316 \274\255\271\366\277\241 \301\242\274\323 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+						"\xb7\xce\xb1\xd7\xc0\xce \xbc\xad\xb9\xf6\xbf\xa1 \xc1\xa2\xbc\xd3 \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 						0, 0);
 					EnableLoginControls(true);
 				}
@@ -455,10 +455,10 @@ void FrLoginDlg::OnProc(float delta)
 		case 4:
 			if (m_pView)
 			{
-				m_pView->AddLine("\267\316\261\327\300\316 \274\272\260\370.",
+				m_pView->AddLine("\xb7\xce\xb1\xd7\xc0\xce \xbc\xba\xb0\xf8.",
 					0, 0);
 				m_pView->AddLine(
-					"\274\255\271\366\270\256\275\272\306\256\270\246 \271\336\260\355 \300\326\275\300\264\317\264\331.",
+					"\xbc\xad\xb9\xf6\xb8\xae\xbd\xba\xc6\xae\xb8\xa6 \xb9\xde\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0, 0);
 			}
 			if (m_pAutoId->GetStatus() == FrButton::PRESSED)
@@ -470,7 +470,7 @@ void FrLoginDlg::OnProc(float delta)
 		case 6:
 			EnableLoginControls(true);
 			ResetInput(
-				"\276\306\300\314\265\360\260\241 \300\337\270\370\265\307\276\372\275\300\264\317\264\331.");
+				"\xbe\xc6\xc0\xcc\xb5\xf0\xb0\xa1 \xc0\xdf\xb8\xf8\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.");
 			break;
 		case 8:
 		{
@@ -490,7 +490,7 @@ void FrLoginDlg::OnProc(float delta)
 					if (dlg)
 					{
 						dlg->SetMessage(
-							"\307\366\300\347 \276\306\300\314\265\360\260\241 \273\347\277\353\301\337\300\324\264\317\264\331.\012\300\314\300\374 \301\242\274\323\300\273 \301\276\267\341\307\317\275\303\260\332\275\300\264\317\261\356?",
+							"\xc7\xf6\xc0\xe7 \xbe\xc6\xc0\xcc\xb5\xf0\xb0\xa1 \xbb\xe7\xbf\xeb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9.\012\xc0\xcc\xc0\xfc \xc1\xa2\xbc\xd3\xc0\xbb \xc1\xbe\xb7\xe1\xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 							false);
 						dlg->Open(
 							(FRESH_PFN_RESULT)&FrLoginDlg::OnDisconPrevSession,
@@ -505,7 +505,7 @@ void FrLoginDlg::OnProc(float delta)
 				if (dlg)
 				{
 					dlg->SetMessage(
-						"\307\366\300\347 \276\306\300\314\265\360\260\241 \273\347\277\353\301\337\300\324\264\317\264\331.\012\300\314\300\374 \301\242\274\323\300\273 \301\276\267\341\307\317\275\303\260\332\275\300\264\317\261\356?",
+						"\xc7\xf6\xc0\xe7 \xbe\xc6\xc0\xcc\xb5\xf0\xb0\xa1 \xbb\xe7\xbf\xeb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9.\012\xc0\xcc\xc0\xfc \xc1\xa2\xbc\xd3\xc0\xbb \xc1\xbe\xb7\xe1\xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 						false);
 					dlg->Open(
 						(FRESH_PFN_RESULT)&FrLoginDlg::OnDisconPrevSession, 0);
@@ -519,10 +519,10 @@ void FrLoginDlg::OnProc(float delta)
 			if (m_pView)
 			{
 				m_pView->AddLine(
-					"\276\306\300\314\265\360\263\252 \272\361\271\320\271\370\310\243\260\241 \300\337\270\370 \300\324\267\302\265\307\276\372\275\300\264\317\264\331.",
+					"\xbe\xc6\xc0\xcc\xb5\xf0\xb3\xaa \xba\xf1\xb9\xd0\xb9\xf8\xc8\xa3\xb0\xa1 \xc0\xdf\xb8\xf8 \xc0\xd4\xb7\xc2\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0, 0);
 				m_pView->AddLine(
-					"\\c0xffff0000,0xffffffff\\c'Caps Lock'\\c0xff000000,0xffffffff\\c \305\260\260\241 \264\255\267\257\301\256 \300\326\264\302\301\366 \310\256\300\316\307\330\272\270\274\274\277\344.",
+					"\\c0xffff0000,0xffffffff\\c'Caps Lock'\\c0xff000000,0xffffffff\\c \xc5\xb0\xb0\xa1 \xb4\xad\xb7\xaf\xc1\xae \xc0\xd6\xb4\xc2\xc1\xf6 \xc8\xae\xc0\xce\xc7\xd8\xba\xb8\xbc\xbc\xbf\xe4.",
 					0, 0);
 				m_connState = (eLoginState)5;
 				if (m_failCount > 4)
@@ -535,23 +535,23 @@ void FrLoginDlg::OnProc(float delta)
 		case 12:
 			EnableLoginControls(true);
 			ResetInput(
-				"\274\255\271\366\271\256\301\246\267\316 \267\316\261\327\300\316 \307\322\274\366 \276\370\275\300\264\317\264\331.");
+				"\xbc\xad\xb9\xf6\xb9\xae\xc1\xa6\xb7\xce \xb7\xce\xb1\xd7\xc0\xce \xc7\xd2\xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 			m_connState = (eLoginState)5;
 			break;
 		case 16:
 			EnableLoginControls(true);
 			m_pView->AddLine(
-				"\260\241\300\324\265\310 \301\326\271\316 \271\370\310\243\260\241 \277\303\271\331\270\243\301\366 \276\312\275\300\264\317\264\331.",
+				"\xb0\xa1\xc0\xd4\xb5\xc8 \xc1\xd6\xb9\xce \xb9\xf8\xc8\xa3\xb0\xa1 \xbf\xc3\xb9\xd9\xb8\xa3\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0);
 			m_pView->AddLine(
-				"\\c0xffff0000,0xffffffff\\c'\260\355\260\264 \301\366\277\370'\\c0xff000000,0xffffffff\\c \300\307 \270\336\300\317 \271\256\300\307\270\246 \271\331\266\370\264\317\264\331.",
+				"\\c0xffff0000,0xffffffff\\c'\xb0\xed\xb0\xb4 \xc1\xf6\xbf\xf8'\\c0xff000000,0xffffffff\\c \xc0\xc7 \xb8\xde\xc0\xcf \xb9\xae\xc0\xc7\xb8\xa6 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.",
 				0, 0);
 			m_connState = (eLoginState)5;
 			break;
 		case 23:
 			EnableLoginControls(true);
 			ResetInput(
-				"\260\350\301\244 \300\314\300\374\300\314 \265\307\276\356 \301\242\274\323\307\322 \274\366 \276\370\275\300\264\317\264\331.");
+				"\xb0\xe8\xc1\xa4 \xc0\xcc\xc0\xfc\xc0\xcc \xb5\xc7\xbe\xee \xc1\xa2\xbc\xd3\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 			break;
 		case 9:
 		case 10:
@@ -562,7 +562,7 @@ void FrLoginDlg::OnProc(float delta)
 									 Doc()->m_chatModeName.c_str()),
 					0, true);
 				m_pView->AddText(
-					"\\c0xff000000,0xffffffff\\c\260\355\260\264 \301\366\277\370 \274\276\305\315\267\316 \271\256\300\307 \271\331\266\370\264\317\264\331.",
+					"\\c0xff000000,0xffffffff\\c\xb0\xed\xb0\xb4 \xc1\xf6\xbf\xf8 \xbc\xbe\xc5\xcd\xb7\xce \xb9\xae\xc0\xc7 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.",
 					0, true);
 				m_connState = (eLoginState)5;
 			}
@@ -570,17 +570,17 @@ void FrLoginDlg::OnProc(float delta)
 		case 17:
 			EnableLoginControls(true);
 			ResetInput(
-				"\310\270\277\370\300\273 \305\273\305\360\307\321 \276\306\300\314\265\360\300\324\264\317\264\331.");
+				"\xc8\xb8\xbf\xf8\xc0\xbb \xc5\xbb\xc5\xf0\xc7\xd1 \xbe\xc6\xc0\xcc\xb5\xf0\xc0\xd4\xb4\xcf\xb4\xd9.");
 			break;
 		case 15:
 			EnableLoginControls(true);
 			if (m_pView)
 			{
 				m_pView->AddText(
-					"(\276\313\270\262)-----------------------------------", 0,
+					"(\xbe\xcb\xb8\xb2)-----------------------------------", 0,
 					true);
 				m_pView->AddText(
-					"\\c0xffff0000,0xffffffff\\c\270\270 14\274\274 \271\314\270\270\\c0xffffffff,0xff000000\\c\300\307 \310\270\277\370\300\272 \\c0xffff0000,0xffffffff\\c\272\316\270\360\264\324\300\307 \265\277\300\307\\c0xffffffff,0xff000000\\c\260\241 \307\312\277\344\307\325\264\317\264\331. \307\366\300\347 \272\316\270\360\264\324 \265\277\300\307 \260\241\300\324\300\314 \265\307\276\356 \300\326\301\366 \276\312\275\300\264\317\264\331. \\c0xffff0000,0xffffffff\\c\306\316\276\337 \310\250\306\344\300\314\301\366\\c0xffffffff,0xff000000\\c\277\241 \267\316\261\327\300\316\307\321 \310\304 \\c0xffff0000,0xffffffff\\c\272\316\270\360\265\277\300\307\274\255 \300\347\271\337\274\333\\c0xffffffff,0xff000000\\c\300\273 \264\251\270\243\270\351 \272\316\270\360\264\324\265\277\300\307 \275\305\303\273\300\314 \300\314\267\347\276\356\301\366\260\355 \271\331\267\316 \260\324\300\323\300\314 \260\241\264\311\307\325\264\317\264\331.",
+					"\\c0xffff0000,0xffffffff\\c\xb8\xb8 14\xbc\xbc \xb9\xcc\xb8\xb8\\c0xffffffff,0xff000000\\c\xc0\xc7 \xc8\xb8\xbf\xf8\xc0\xba \\c0xffff0000,0xffffffff\\c\xba\xce\xb8\xf0\xb4\xd4\xc0\xc7 \xb5\xbf\xc0\xc7\\c0xffffffff,0xff000000\\c\xb0\xa1 \xc7\xca\xbf\xe4\xc7\xd5\xb4\xcf\xb4\xd9. \xc7\xf6\xc0\xe7 \xba\xce\xb8\xf0\xb4\xd4 \xb5\xbf\xc0\xc7 \xb0\xa1\xc0\xd4\xc0\xcc \xb5\xc7\xbe\xee \xc0\xd6\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9. \\c0xffff0000,0xffffffff\\c\xc6\xce\xbe\xdf \xc8\xa8\xc6\xe4\xc0\xcc\xc1\xf6\\c0xffffffff,0xff000000\\c\xbf\xa1 \xb7\xce\xb1\xd7\xc0\xce\xc7\xd1 \xc8\xc4 \\c0xffff0000,0xffffffff\\c\xba\xce\xb8\xf0\xb5\xbf\xc0\xc7\xbc\xad \xc0\xe7\xb9\xdf\xbc\xdb\\c0xffffffff,0xff000000\\c\xc0\xbb \xb4\xa9\xb8\xa3\xb8\xe9 \xba\xce\xb8\xf0\xb4\xd4\xb5\xbf\xc0\xc7 \xbd\xc5\xc3\xbb\xc0\xcc \xc0\xcc\xb7\xe7\xbe\xee\xc1\xf6\xb0\xed \xb9\xd9\xb7\xce \xb0\xd4\xc0\xd3\xc0\xcc \xb0\xa1\xb4\xc9\xc7\xd5\xb4\xcf\xb4\xd9.",
 					0, true);
 				m_pView->AddText("----------------------------------------", 0,
 					true);
@@ -592,13 +592,13 @@ void FrLoginDlg::OnProc(float delta)
 			if (m_pView)
 			{
 				m_pView->AddText(
-					"(\276\313\270\262)----------------------------------", 0,
+					"(\xbe\xcb\xb8\xb2)----------------------------------", 0,
 					true);
 				m_pView->AddText(
-					"\\c0xffff0000,0xffffffff\\c\270\270 14\274\274 \271\314\270\270\\c0xffffffff,0xff000000\\c\300\307 \310\270\277\370\300\272 \\c0xffff0000,0xffffffff\\c\272\316\270\360\264\324\300\307 \265\277\300\307\\c0xffffffff,0xff000000\\c\260\241 \307\312\277\344\307\325\264\317\264\331. \272\316\270\360\264\324 \265\277\300\307\274\255\260\241 \276\306\301\367 \275\302\300\316\265\307\301\366 \276\312\300\272 \273\363\305\302\300\324\264\317\264\331.",
+					"\\c0xffff0000,0xffffffff\\c\xb8\xb8 14\xbc\xbc \xb9\xcc\xb8\xb8\\c0xffffffff,0xff000000\\c\xc0\xc7 \xc8\xb8\xbf\xf8\xc0\xba \\c0xffff0000,0xffffffff\\c\xba\xce\xb8\xf0\xb4\xd4\xc0\xc7 \xb5\xbf\xc0\xc7\\c0xffffffff,0xff000000\\c\xb0\xa1 \xc7\xca\xbf\xe4\xc7\xd5\xb4\xcf\xb4\xd9. \xba\xce\xb8\xf0\xb4\xd4 \xb5\xbf\xc0\xc7\xbc\xad\xb0\xa1 \xbe\xc6\xc1\xf7 \xbd\xc2\xc0\xce\xb5\xc7\xc1\xf6 \xbe\xca\xc0\xba \xbb\xf3\xc5\xc2\xc0\xd4\xb4\xcf\xb4\xd9.",
 					0, true);
 				m_pView->AddText(
-					"\012\\c0xff0000ff,0xffffffff\\c\306\316\276\337 \310\250\306\344\300\314\301\366\277\241 \271\346\271\256\307\317\277\251 \271\256\300\307\307\317\275\303\261\342 \271\331\266\370\264\317\264\331.\\c0xffffffff,0xff000000\\c",
+					"\012\\c0xff0000ff,0xffffffff\\c\xc6\xce\xbe\xdf \xc8\xa8\xc6\xe4\xc0\xcc\xc1\xf6\xbf\xa1 \xb9\xe6\xb9\xae\xc7\xcf\xbf\xa9 \xb9\xae\xc0\xc7\xc7\xcf\xbd\xc3\xb1\xe2 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.\\c0xffffffff,0xff000000\\c",
 					0, true);
 				m_pView->AddText("---------------------------------------", 0,
 					true);
@@ -610,14 +610,14 @@ void FrLoginDlg::OnProc(float delta)
 			if (m_pView)
 			{
 				m_pView->AddLine(
-					"\272\361\271\320\271\370\310\243\260\241 5\310\270 \300\337\270\370 \300\324\267\302\265\307\276\356",
+					"\xba\xf1\xb9\xd0\xb9\xf8\xc8\xa3\xb0\xa1 5\xc8\xb8 \xc0\xdf\xb8\xf8 \xc0\xd4\xb7\xc2\xb5\xc7\xbe\xee",
 					0, 0);
 				m_pView->AddLine(
-					"1\275\303\260\243\265\277\276\310 \274\255\271\366\277\241 \301\242\274\323\307\322 \274\366 \276\370\275\300\264\317\264\331!",
+					"1\xbd\xc3\xb0\xa3\xb5\xbf\xbe\xc8 \xbc\xad\xb9\xf6\xbf\xa1 \xc1\xa2\xbc\xd3\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9!",
 					0, 0);
 				m_pView->AddLine("------------------------------------", 0, 0);
 				m_pView->AddLine(
-					"====== \306\316\276\337\270\246 \301\276\267\341\307\317\260\332\275\300\264\317\264\331. ======",
+					"====== \xc6\xce\xbe\xdf\xb8\xa6 \xc1\xbe\xb7\xe1\xc7\xcf\xb0\xda\xbd\xc0\xb4\xcf\xb4\xd9. ======",
 					0, 0);
 				m_pView->AddLine("------------------------------------", 0, 0);
 			}
@@ -627,7 +627,7 @@ void FrLoginDlg::OnProc(float delta)
 		case 18:
 			EnableLoginControls(true);
 			ResetInput(
-				"\300\324\300\345 \300\332\260\335\300\273 \271\336\300\272 \300\257\300\372\270\270 \301\242\274\323\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+				"\xc0\xd4\xc0\xe5 \xc0\xda\xb0\xdd\xc0\xbb \xb9\xde\xc0\xba \xc0\xaf\xc0\xfa\xb8\xb8 \xc1\xa2\xbc\xd3\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 			break;
 		case 13:
 			EnableLoginControls(true);
@@ -638,7 +638,7 @@ void FrLoginDlg::OnProc(float delta)
 			EnableLoginControls(true);
 			if (m_pView)
 				m_pView->AddLine(
-					"\301\241\260\313\300\270\267\316 \300\316\307\330 \267\316\261\327\300\316 \301\337\301\366 \265\307\276\372\275\300\264\317\264\331.",
+					"\xc1\xa1\xb0\xcb\xc0\xb8\xb7\xce \xc0\xce\xc7\xd8 \xb7\xce\xb1\xd7\xc0\xce \xc1\xdf\xc1\xf6 \xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0, 0);
 			ResetInput(NULL);
 			break;
@@ -646,7 +646,7 @@ void FrLoginDlg::OnProc(float delta)
 			EnableLoginControls(true);
 			if (m_pView)
 				m_pView->AddLine(
-					"\260\355\260\264\274\276\305\315 1:1 \271\256\300\307\267\316 \301\242\274\366 \272\316\305\271\265\345\270\263\264\317\264\331.",
+					"\xb0\xed\xb0\xb4\xbc\xbe\xc5\xcd 1:1 \xb9\xae\xc0\xc7\xb7\xce \xc1\xa2\xbc\xf6 \xba\xce\xc5\xb9\xb5\xe5\xb8\xb3\xb4\xcf\xb4\xd9.",
 					0, 0);
 			ResetInput(NULL);
 			break;
@@ -662,15 +662,15 @@ void FrLoginDlg::OnProc(float delta)
 		case 22:
 			EnableLoginControls(true);
 			ResetInput(
-				"\300\316\301\365\300\314 \277\317\267\341\265\307\301\366 \276\312\276\322\275\300\264\317\264\331.\265\356\267\317 \270\336\300\317\300\273 \310\256\300\316\307\330 \301\326\275\312\275\303\277\300.");
+				"\xc0\xce\xc1\xf5\xc0\xcc \xbf\xcf\xb7\xe1\xb5\xc7\xc1\xf6 \xbe\xca\xbe\xd2\xbd\xc0\xb4\xcf\xb4\xd9.\xb5\xee\xb7\xcf \xb8\xde\xc0\xcf\xc0\xbb \xc8\xae\xc0\xce\xc7\xd8 \xc1\xd6\xbd\xca\xbd\xc3\xbf\xc0.");
 			break;
 		case 21:
 			EnableLoginControls(true);
 			m_pView->AddText(
-				"\300\324\300\345\261\307\300\314 \276\370\276\356\274\255 \267\316\261\327\300\316 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+				"\xc0\xd4\xc0\xe5\xb1\xc7\xc0\xcc \xbe\xf8\xbe\xee\xbc\xad \xb7\xce\xb1\xd7\xc0\xce \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, true);
 			m_pView->AddText(
-				"\306\316\276\337 \310\250\306\344\300\314\301\366\277\241\274\255 \271\253\267\341 \300\324\300\345\261\307\300\273 \271\337\261\336 \271\336\300\270\275\307 \274\366 \300\326\275\300\264\317\264\331.",
+				"\xc6\xce\xbe\xdf \xc8\xa8\xc6\xe4\xc0\xcc\xc1\xf6\xbf\xa1\xbc\xad \xb9\xab\xb7\xe1 \xc0\xd4\xc0\xe5\xb1\xc7\xc0\xbb \xb9\xdf\xb1\xde \xb9\xde\xc0\xb8\xbd\xc7 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, true);
 			m_connState = (eLoginState)5;
 			break;
@@ -681,10 +681,10 @@ void FrLoginDlg::OnProc(float delta)
 				if (m_pView)
 				{
 					m_pView->AddText(
-						"\300\337\270\370\265\310 \300\257\300\372\301\244\272\270\270\246 \300\320\276\372\275\300\264\317\264\331.",
+						"\xc0\xdf\xb8\xf8\xb5\xc8 \xc0\xaf\xc0\xfa\xc1\xa4\xba\xb8\xb8\xa6 \xc0\xd0\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 						0, true);
 					m_pView->AddText(
-						"\300\347 \267\316\261\327\300\316\307\317\275\303\260\305\263\252, \260\355\260\264 \301\366\277\370 \274\276\305\315\267\316 \271\256\300\307 \271\331\266\370\264\317\264\331.",
+						"\xc0\xe7 \xb7\xce\xb1\xd7\xc0\xce\xc7\xcf\xbd\xc3\xb0\xc5\xb3\xaa, \xb0\xed\xb0\xb4 \xc1\xf6\xbf\xf8 \xbc\xbe\xc5\xcd\xb7\xce \xb9\xae\xc0\xc7 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.",
 						0, true);
 				}
 				ResetInput(NULL);
@@ -695,7 +695,7 @@ void FrLoginDlg::OnProc(float delta)
 			EnableLoginControls(true);
 			if (m_pView)
 				m_pView->AddText(
-					"CBT\261\342\260\243\300\272 \275\305\261\324\265\356\267\317\300\273 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+					"CBT\xb1\xe2\xb0\xa3\xc0\xba \xbd\xc5\xb1\xd4\xb5\xee\xb7\xcf\xc0\xbb \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0, true);
 			ResetInput(NULL);
 			m_connState = (eLoginState)5;
@@ -771,7 +771,7 @@ void FrLoginDlg::OnViewInit(int param)
 	m_pView = DYNAMIC_CAST(FrEdit, (FrWnd*)param);
 	if (m_pView)
 		m_pView->AddText(
-			"\306\316\276\337\300\307 \274\274\260\350\277\241 \277\300\275\305 \260\315\300\273 \310\257\277\265\307\325\264\317\264\331",
+			"\xc6\xce\xbe\xdf\xc0\xc7 \xbc\xbc\xb0\xe8\xbf\xa1 \xbf\xc0\xbd\xc5 \xb0\xcd\xc0\xbb \xc8\xaf\xbf\xb5\xc7\xd5\xb4\xcf\xb4\xd9",
 			0, true);
 }
 
@@ -814,7 +814,7 @@ void FrLoginDlg::OnJoinBtnUp()
 	if (dlg)
 	{
 		dlg->SetMessage(
-			"\306\316\276\337 \276\306\300\314\265\360\270\246 \270\270\265\345\275\303\260\332\275\300\264\317\261\356?",
+			"\xc6\xce\xbe\xdf \xbe\xc6\xc0\xcc\xb5\xf0\xb8\xa6 \xb8\xb8\xb5\xe5\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 			false);
 		dlg->Open((FRESH_PFN_RESULT)&FrLoginDlg::OnJoinDlgResult, 0);
 	}
@@ -827,7 +827,7 @@ void FrLoginDlg::OnFindBtnUp()
 	if (dlg)
 	{
 		dlg->SetMessage(
-			"\306\316\276\337 \276\306\300\314\265\360, \272\361\271\320\271\370\310\243\270\246 \303\243\300\270\275\303\260\332\275\300\264\317\261\356?",
+			"\xc6\xce\xbe\xdf \xbe\xc6\xc0\xcc\xb5\xf0, \xba\xf1\xb9\xd0\xb9\xf8\xc8\xa3\xb8\xa6 \xc3\xa3\xc0\xb8\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 			false);
 		dlg->Open((FRESH_PFN_RESULT)&FrLoginDlg::OnFindDlgResult, 0);
 	}
@@ -852,7 +852,7 @@ void FrLoginDlg::ResetInput(const char* text)
 bool FrLoginDlg::OnInit()
 {
 	CProjectG::Instance()->m_bMsnOffline = false;
-	SetMessage("\305\327\275\272\306\256 \261\270\271\256", false);
+	SetMessage("\xc5\xd7\xbd\xba\xc6\xae \xb1\xb8\xb9\xae", false);
 	return true;
 }
 
@@ -885,7 +885,7 @@ void FrLoginDlg::OnLoginNoticeInit(int param)
 {
 	FrEdit* wnd = DYNAMIC_CAST(FrEdit, (FrWnd*)param);
 	wnd->AddText(
-		"\241\330\301\337\277\344 : \307\321\272\373\274\322\307\301\306\256 \306\316\276\337 \310\270\277\370\300\314\275\305\260\241\277\344?\012\306\316\276\337 \310\250\306\344\300\314\301\366\277\241\274\255 \271\335\265\345\275\303 \310\270\277\370 \301\244\272\270 \300\314\300\374 \275\305\303\273\300\273 \307\317\275\305 \310\304\277\241 \267\316\261\327\300\316\307\317\274\305\276\337 \301\244\273\363\300\373\300\316 \260\324\300\323\300\314 \260\241\264\311\307\325\264\317\264\331.",
+		"\xa1\xd8\xc1\xdf\xbf\xe4 : \xc7\xd1\xba\xfb\xbc\xd2\xc7\xc1\xc6\xae \xc6\xce\xbe\xdf \xc8\xb8\xbf\xf8\xc0\xcc\xbd\xc5\xb0\xa1\xbf\xe4?\012\xc6\xce\xbe\xdf \xc8\xa8\xc6\xe4\xc0\xcc\xc1\xf6\xbf\xa1\xbc\xad \xb9\xdd\xb5\xe5\xbd\xc3 \xc8\xb8\xbf\xf8 \xc1\xa4\xba\xb8 \xc0\xcc\xc0\xfc \xbd\xc5\xc3\xbb\xc0\xbb \xc7\xcf\xbd\xc5 \xc8\xc4\xbf\xa1 \xb7\xce\xb1\xd7\xc0\xce\xc7\xcf\xbc\xc5\xbe\xdf \xc1\xa4\xbb\xf3\xc0\xfb\xc0\xce \xb0\xd4\xc0\xd3\xc0\xcc \xb0\xa1\xb4\xc9\xc7\xd5\xb4\xcf\xb4\xd9.",
 		0, true);
 }
 

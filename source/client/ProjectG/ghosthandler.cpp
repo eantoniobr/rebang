@@ -110,29 +110,29 @@ bool CGhostLoader::LoadFromFile(const std::string& name)
 namespace
 {
 	const char* const NOTIFY_MSG_SERVICE_STOP = K2L_Compatibility(
-		"\260\355\275\272\306\256 \274\255\272\361\275\272 \301\241\260\313\301\337\300\324\264\317\264\331. \300\314\277\353\277\241 \272\322\306\355\300\273 \265\345\267\301\274\255 \301\313\274\333\307\325\264\317\264\331.");
+		"\xb0\xed\xbd\xba\xc6\xae \xbc\xad\xba\xf1\xbd\xba \xc1\xa1\xb0\xcb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9. \xc0\xcc\xbf\xeb\xbf\xa1 \xba\xd2\xc6\xed\xc0\xbb \xb5\xe5\xb7\xc1\xbc\xad \xc1\xcb\xbc\xdb\xc7\xd5\xb4\xcf\xb4\xd9.");
 	const char* const RECORD_DLG_LOADING_FAIL = K2L_Compatibility(
-		"\267\316\265\371\277\241 \275\307\306\320\307\317\277\264\275\300\264\317\264\331.");
+		"\xb7\xce\xb5\xf9\xbf\xa1 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.");
 	const char* const CANNOT_UNDERSTAND_MSG = K2L_Compatibility(
-		"\264\324\300\307 \260\355\275\272\306\256\260\241 \276\356\270\256\265\325\300\375\307\330 \307\325\264\317\264\331.");
+		"\xb4\xd4\xc0\xc7 \xb0\xed\xbd\xba\xc6\xae\xb0\xa1 \xbe\xee\xb8\xae\xb5\xd5\xc0\xfd\xc7\xd8 \xc7\xd5\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_GHOST_NOSAVE = K2L_Compatibility(
-		"\307\366\300\347 \300\257\300\372\277\241\260\324 \300\372\300\345\265\310 \260\355\275\272\306\256\260\241 \276\370\275\300\264\317\264\331.");
+		"\xc7\xf6\xc0\xe7 \xc0\xaf\xc0\xfa\xbf\xa1\xb0\xd4 \xc0\xfa\xc0\xe5\xb5\xc8 \xb0\xed\xbd\xba\xc6\xae\xb0\xa1 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_GHOST_NODATA = K2L_Compatibility(
-		"\260\355\275\272\306\256 \265\245\300\314\305\315\260\241 \301\270\300\347 \307\317\301\366 \276\312\275\300\264\317\264\331.");
+		"\xb0\xed\xbd\xba\xc6\xae \xb5\xa5\xc0\xcc\xc5\xcd\xb0\xa1 \xc1\xb8\xc0\xe7 \xc7\xcf\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_GHOST_SAVED = K2L_Compatibility(
-		"\260\355\275\272\306\256 \265\245\300\314\305\315\260\241 \260\273\275\305\265\307\276\372\275\300\264\317\264\331.");
+		"\xb0\xed\xbd\xba\xc6\xae \xb5\xa5\xc0\xcc\xc5\xcd\xb0\xa1 \xb0\xbb\xbd\xc5\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_UNKNOWN_ERROR = K2L_Compatibility(
-		"\275\303\275\272\305\333 \301\241\260\313\301\337\300\324\264\317\264\331.");
+		"\xbd\xc3\xbd\xba\xc5\xdb \xc1\xa1\xb0\xcb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_DATA_ERROR = K2L_Compatibility(
-		"\274\325\273\363\265\310 \265\245\300\314\305\315\260\241 \271\337\260\337\265\307\276\356 \264\365\300\314\273\363 \260\324\300\323\300\273 \301\370\307\340\307\322 \274\366 \276\370\275\300\264\317\264\331.");
+		"\xbc\xd5\xbb\xf3\xb5\xc8 \xb5\xa5\xc0\xcc\xc5\xcd\xb0\xa1 \xb9\xdf\xb0\xdf\xb5\xc7\xbe\xee \xb4\xf5\xc0\xcc\xbb\xf3 \xb0\xd4\xc0\xd3\xc0\xbb \xc1\xf8\xc7\xe0\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_NETWAIT_OVER = K2L_Compatibility(
-		"\274\255\271\366\277\241 \277\344\303\273\300\314 \270\271\275\300\264\317\264\331. \300\341\275\303 \310\304 \264\331\275\303 \300\314\277\353\307\330 \301\326\274\274\277\344.");
+		"\xbc\xad\xb9\xf6\xbf\xa1 \xbf\xe4\xc3\xbb\xc0\xcc \xb8\xb9\xbd\xc0\xb4\xcf\xb4\xd9. \xc0\xe1\xbd\xc3 \xc8\xc4 \xb4\xd9\xbd\xc3 \xc0\xcc\xbf\xeb\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.");
 	const char* const GHOST_ROOM_JOIN_WELCOME = K2L_Compatibility(
-		"(\276\313\270\262)\134c0xffffffff\134c%s\134c0xffff7878\134c\264\324\300\314 \300\324\300\345\307\317\274\314\275\300\264\317\264\331.");
+		"(\xbe\xcb\xb8\xb2)\134c0xffffffff\134c%s\134c0xffff7878\134c\xb4\xd4\xc0\xcc \xc0\xd4\xc0\xe5\xc7\xcf\xbc\xcc\xbd\xc0\xb4\xcf\xb4\xd9.");
 	const char* const NOTIFY_MSG_DISABLE_GAME = K2L_Compatibility(
-		"\274\325\273\363\265\310 \265\245\300\314\305\315\277\315\264\302 \300\347\264\353\260\341 \307\317\275\307 \274\366 \276\370\275\300\264\317\264\331. \264\331\270\245 \260\355\275\272\306\256\277\315 \264\353\300\374\307\330\301\326\274\274\277\344.");
+		"\xbc\xd5\xbb\xf3\xb5\xc8 \xb5\xa5\xc0\xcc\xc5\xcd\xbf\xcd\xb4\xc2 \xc0\xe7\xb4\xeb\xb0\xe1 \xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9. \xb4\xd9\xb8\xa5 \xb0\xed\xbd\xba\xc6\xae\xbf\xcd \xb4\xeb\xc0\xfc\xc7\xd8\xc1\xd6\xbc\xbc\xbf\xe4.");
 	const char* const NOTIFY_MSG_NOT_DEFINED = K2L_Compatibility(
-		"\301\244\300\307\265\310 \277\300\267\371 \270\336\274\274\301\366\260\241 \276\370\275\300\264\317\264\331.");
+		"\xc1\xa4\xc0\xc7\xb5\xc8 \xbf\xc0\xb7\xf9 \xb8\xde\xbc\xbc\xc1\xf6\xb0\xa1 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 
 	class CEventGhostXmlFile
 	{

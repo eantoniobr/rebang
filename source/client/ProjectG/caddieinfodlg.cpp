@@ -159,7 +159,7 @@ bool FrCaddieInfoDlg::OnInit()
 	if (bInfo && m_pName)
 	{
 		char text[256];
-		sprintf(text, "\300\314  \270\247: %s", pCaddie->c.Name);
+		sprintf(text, "\xc0\xcc  \xb8\xa7: %s", pCaddie->c.Name);
 		unsigned char level;
 		if ((level = m_caddieInfo.Level) <= 3 && pCaddie->c.InStock != 5)
 		{
@@ -170,7 +170,7 @@ bool FrCaddieInfoDlg::OnInit()
 				currentExp = m_caddieInfo.Exp;
 			}
 			strcat(text,
-				MakeStr("\n\267\271  \272\247: %d / %d ( %d / %d )", level + 1,
+				MakeStr("\n\xb7\xb9  \xba\xa7: %d / %d ( %d / %d )", level + 1,
 					4, currentExp, exp));
 		}
 		if (m_caddieInfo.Rent_flag && pCaddie->MonthlyFee > 0)
@@ -178,10 +178,10 @@ bool FrCaddieInfoDlg::OnInit()
 			if (m_caddieInfo.Remain_Date > 0)
 				strcat(text,
 					MakeStr(
-						"\n\263\262\300\272 \260\355\277\353\261\342\260\243: %d\300\317",
+						"\n\xb3\xb2\xc0\xba \xb0\xed\xbf\xeb\xb1\xe2\xb0\xa3: %d\xc0\xcf",
 						m_caddieInfo.Remain_Date));
 			else
-				strcat(text, "\n\310\336\260\241\301\337");
+				strcat(text, "\n\xc8\xde\xb0\xa1\xc1\xdf");
 		}
 		if (m_caddieInfo.tidPart & 0x1fff)
 		{
@@ -189,17 +189,17 @@ bool FrCaddieInfoDlg::OnInit()
 				ItemManager()->FindCadItem(m_caddieInfo.tidPart);
 			strcat(text,
 				MakeStr(
-					"\n\276\367\261\327\267\271\300\314\265\345: \\c0xffff0000\\c%s\\c0xff000000\\c",
+					"\n\xbe\xf7\xb1\xd7\xb7\xb9\xc0\xcc\xb5\xe5: \\c0xffff0000\\c%s\\c0xff000000\\c",
 					pPart->c.Name));
 			if (m_caddieInfo.Remain_Partdate > 24)
 				strcat(text,
 					MakeStr(
-						"\n\304\263\265\360\262\331\271\314\261\342 \263\262\300\272 \261\342\260\243: \\c0xffff0000\\c%d\300\317\\c0xff000000\\c",
+						"\n\xc4\xb3\xb5\xf0\xb2\xd9\xb9\xcc\xb1\xe2 \xb3\xb2\xc0\xba \xb1\xe2\xb0\xa3: \\c0xffff0000\\c%d\xc0\xcf\\c0xff000000\\c",
 						m_caddieInfo.Remain_Partdate / 24));
 			else
 				strcat(text,
 					MakeStr(
-						"\n\304\263\265\360\262\331\271\314\261\342 \263\262\300\272 \261\342\260\243: \\c0xffff0000\\c%d\275\303\260\243\\c0xff000000\\c",
+						"\n\xc4\xb3\xb5\xf0\xb2\xd9\xb9\xcc\xb1\xe2 \xb3\xb2\xc0\xba \xb1\xe2\xb0\xa3: \\c0xffff0000\\c%d\xbd\xc3\xb0\xa3\\c0xff000000\\c",
 						m_caddieInfo.Remain_Partdate));
 			if (m_caddieInfo.Rent_flag && pCaddie->MonthlyFee > 0 &&
 				m_caddieInfo.Remain_Date > 0)
@@ -219,7 +219,7 @@ bool FrCaddieInfoDlg::OnInit()
 		else
 			SetMessage(
 				MakeStr(
-					"\307\366\300\347 \304\263\265\360\264\302 \310\336\260\241\301\337\300\314\271\307\267\316 \304\263\265\360 \262\331\271\314\261\342\270\246 \307\322 \274\366 \276\370\275\300\264\317\264\331. %d \306\316\300\273 \301\366\261\336\307\317\277\251 \304\263\265\360\270\246 \310\336\260\241\272\271\261\315\275\303\305\260\275\303\260\332\275\300\264\317\261\356?",
+					"\xc7\xf6\xc0\xe7 \xc4\xb3\xb5\xf0\xb4\xc2 \xc8\xde\xb0\xa1\xc1\xdf\xc0\xcc\xb9\xc7\xb7\xce \xc4\xb3\xb5\xf0 \xb2\xd9\xb9\xcc\xb1\xe2\xb8\xa6 \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9. %d \xc6\xce\xc0\xbb \xc1\xf6\xb1\xde\xc7\xcf\xbf\xa9 \xc4\xb3\xb5\xf0\xb8\xa6 \xc8\xde\xb0\xa1\xba\xb9\xb1\xcd\xbd\xc3\xc5\xb0\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 					pCaddie->MonthlyFee),
 				false);
 	}
@@ -227,10 +227,10 @@ bool FrCaddieInfoDlg::OnInit()
 	{
 		if (m_pName)
 			m_pName->AddText(
-				"\300\314\270\247: \272\322\270\355\n\n\267\271\272\247: \272\322\270\355",
+				"\xc0\xcc\xb8\xa7: \xba\xd2\xb8\xed\n\n\xb7\xb9\xba\xa7: \xba\xd2\xb8\xed",
 				false, true);
 		SetMessage(
-			"\272\243\300\317\277\241 \275\316\300\316 \301\244\303\274\272\322\270\355\300\307 \301\270\300\347",
+			"\xba\xa3\xc0\xcf\xbf\xa1 \xbd\xce\xc0\xce \xc1\xa4\xc3\xbc\xba\xd2\xb8\xed\xc0\xc7 \xc1\xb8\xc0\xe7",
 			false);
 	}
 	if (pCaddie)
@@ -249,10 +249,10 @@ bool FrCaddieInfoDlg::OnInit()
 			pCaddie->MonthlyFee > 0 && m_pCaddieFee)
 		{
 			char fee[64];
-			sprintf(fee, "%d \306\316", pCaddie->MonthlyFee);
+			sprintf(fee, "%d \xc6\xce", pCaddie->MonthlyFee);
 			m_pCaddieFee->SetLine(1, fee, 0, 0, false);
 			SetDesc(
-				"'\301\366\261\336' \271\366\306\260\300\273 \264\255\267\257 \304\263\265\360\270\246 \300\347\260\355\277\353 \307\322 \274\366 \300\326\275\300\264\317\264\331.");
+				"'\xc1\xf6\xb1\xde' \xb9\xf6\xc6\xb0\xc0\xbb \xb4\xad\xb7\xaf \xc4\xb3\xb5\xf0\xb8\xa6 \xc0\xe7\xb0\xed\xbf\xeb \xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 		}
 		else
 			HideContractControls();
@@ -261,7 +261,7 @@ bool FrCaddieInfoDlg::OnInit()
 			if (m_pLimit)
 				m_pLimit->SetVisible(true);
 			SetDesc(
-				"\267\271\272\247 \301\246\307\321\300\270\267\316 \273\347\277\353\307\322 \274\366 \276\370\264\302 \304\263\265\360\300\324\264\317\264\331.");
+				"\xb7\xb9\xba\xa7 \xc1\xa6\xc7\xd1\xc0\xb8\xb7\xce \xbb\xe7\xbf\xeb\xc7\xd2 \xbc\xf6 \xbe\xf8\xb4\xc2 \xc4\xb3\xb5\xf0\xc0\xd4\xb4\xcf\xb4\xd9.");
 		}
 	}
 	return true;
@@ -359,7 +359,7 @@ void FrCaddieInfoDlg::OnSignUpBtnUp()
 		m_pContractDlg = CreateForm<FrForm>(g_pFresh->GetManager(), this,
 			"cad_contract", NULL);
 	m_pContractDlg->SetMessage(
-		"\304\263\265\360\270\246 \300\347\260\355\277\353\307\317\270\351 \276\306\267\241\277\315 \260\260\300\314 \261\335\276\327\300\314 \\c0xffff0000\\c\260\250\274\322\\c0xff000000\\c\307\325\264\317\264\331.\n\n\304\263\265\360\270\246 \\c0xffff0000\\c\307\321\264\336\260\243 \\c0xff000000\\c\300\347\260\355\277\353 \307\317\275\303\260\332\275\300\264\317\261\356?",
+		"\xc4\xb3\xb5\xf0\xb8\xa6 \xc0\xe7\xb0\xed\xbf\xeb\xc7\xcf\xb8\xe9 \xbe\xc6\xb7\xa1\xbf\xcd \xb0\xb0\xc0\xcc \xb1\xdd\xbe\xd7\xc0\xcc \\c0xffff0000\\c\xb0\xa8\xbc\xd2\\c0xff000000\\c\xc7\xd5\xb4\xcf\xb4\xd9.\n\n\xc4\xb3\xb5\xf0\xb8\xa6 \\c0xffff0000\\c\xc7\xd1\xb4\xde\xb0\xa3 \\c0xff000000\\c\xc0\xe7\xb0\xed\xbf\xeb \xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 		false);
 	pFee =
 		DYNAMIC_CAST(FrStatic, (FrWnd*)m_pContractDlg->FindChildByName("fee"));

@@ -564,22 +564,22 @@ void CProjectG::LoadKeyLayout()
 		int type;
 	};
 	KeyBinding bindings[] = {
-		{ "\273\363", 6 },
-		{ "\307\317", 7 },
-		{ "\301\302", 4 },
-		{ "\277\354", 5 },
-		{ "\273\363", 87 },
-		{ "\307\317", 83 },
-		{ "\301\302", 65 },
-		{ "\277\354", 68 },
+		{ "\xbb\xf3", 6 },
+		{ "\xc7\xcf", 7 },
+		{ "\xc1\xc2", 4 },
+		{ "\xbf\xec", 5 },
+		{ "\xbb\xf3", 87 },
+		{ "\xc7\xcf", 83 },
+		{ "\xc1\xc2", 65 },
+		{ "\xbf\xec", 68 },
 		{ "LSHIFT", 129, 1 },
 		{ "RSHIFT", 130, 1 },
-		{ "\275\272\306\344\300\314\275\272\271\331", 32 },
+		{ "\xbd\xba\xc6\xe4\xc0\xcc\xbd\xba\xb9\xd9", 32 },
 		{ "PAGE_DOWN", 3, 1 },
 		{ "PAD_PLUS", 140 },
 		{ "PAGE_UP", 2, 1 },
 		{ "PAD_MINUS", 136 },
-		{ "\265\360\271\366\261\327\305\260", 8 },
+		{ "\xb5\xf0\xb9\xf6\xb1\xd7\xc5\xb0", 8 },
 		{ "HOME", 12 },
 		{ "END", 26 },
 		{ "PAD_0", 144 },
@@ -603,14 +603,14 @@ void CProjectG::LoadKeyLayout()
 		{ "PAD_9", 135 },
 		{ "NUM_9", 57 },
 		{ "ITEMSLOT", 73 },
-		{ "\301\244\301\366", 80 },
+		{ "\xc1\xa4\xc1\xf6", 80 },
 		{ "LALT", 28, 1 },
 		{ "RALT", 29, 1 },
 		{ "LCONTROL", 30 },
 		{ "RCONTROL", 31 },
 		{ "TAB", 9, 1 },
 		{ "FASTFORWARD", 32 },
-		{ "\305\327\275\272\306\256", 84 },
+		{ "\xc5\xd7\xbd\xba\xc6\xae", 84 },
 		{ "PARAM_UPDATE", 85 },
 		{ "CONSOLE", 10, 1 },
 		{ "F15", 102, 1 },
@@ -640,8 +640,9 @@ void CProjectG::LoadKeyLayout()
 		{ "BALL_TRACE", 71 },
 		{ "PARTICLE_1", 46 },
 		{ "PARTICLE_2", 44 },
-		{ "\270\305\305\251\267\316\303\242", 96 },
-		{ "\301\244\301\3662", 86 },
+		{ "\xb8\xc5\xc5\xa9\xb7\xce\xc3\xa2", 96 },
+		{ "\xc1\xa4\xc1\xf6"
+		  "2", 86 },
 		{ "EMOTICON", 69 },
 		{ "BANISH", 1, 1 },
 		{ "RANK", 81 },
@@ -652,8 +653,8 @@ void CProjectG::LoadKeyLayout()
 		{ "PLAYER_INFO", 147, 0, 0 },
 		{ "CALIPERS_RIGHT", 88 },
 		{ "CALIPERS_LEFT", 90 },
-		{ "\260\355\274\323", 78 },
-		{ "\300\372\274\323", 66 },
+		{ "\xb0\xed\xbc\xd3", 78 },
+		{ "\xc0\xfa\xbc\xd3", 66 },
 		{ "UNDO", 90 },
 		{ "REDO", 89 },
 		{ "FLIP", 70 },
@@ -669,14 +670,15 @@ void CProjectG::LoadKeyLayout()
 	g_input->ExcludeKey("BALL_TRACE");
 	g_input->ExcludeKey("PARAM_UPDATE");
 	g_input->ExcludeKey("FPS_SHOT");
-	g_input->ExcludeKey("\305\327\275\272\306\256");
-	g_input->ExcludeKey("\265\360\271\366\261\327\305\260");
+	g_input->ExcludeKey("\xc5\xd7\xbd\xba\xc6\xae");
+	g_input->ExcludeKey("\xb5\xf0\xb9\xf6\xb1\xd7\xc5\xb0");
 	g_input->ExcludeKey("PARTICLE_1");
 	g_input->ExcludeKey("PARTICLE_2");
-	g_input->ExcludeKey("\301\244\301\366");
-	g_input->ExcludeKey("\301\244\301\3662");
-	g_input->ExcludeKey("\260\355\274\323");
-	g_input->ExcludeKey("\300\372\274\323");
+	g_input->ExcludeKey("\xc1\xa4\xc1\xf6");
+	g_input->ExcludeKey("\xc1\xa4\xc1\xf6"
+						"2");
+	g_input->ExcludeKey("\xb0\xed\xbc\xd3");
+	g_input->ExcludeKey("\xc0\xfa\xbc\xd3");
 }
 
 int MainLoop()
@@ -716,14 +718,14 @@ void CProjectG::CheckScreenShot()
 			if (!freeSpace)
 			{
 				CChatMsg::Instance()->AddChatMsg(
-					"\307\317\265\345\300\307 \277\353\267\256\300\273 \303\274\305\251 \307\322 \274\366 \276\370\300\270\271\307\267\316 \265\277\277\265\273\363 \306\304\300\317\300\273 \273\375\274\272 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+					"\xc7\xcf\xb5\xe5\xc0\xc7 \xbf\xeb\xb7\xae\xc0\xbb \xc3\xbc\xc5\xa9 \xc7\xd2 \xbc\xf6 \xbe\xf8\xc0\xb8\xb9\xc7\xb7\xce \xb5\xbf\xbf\xb5\xbb\xf3 \xc6\xc4\xc0\xcf\xc0\xbb \xbb\xfd\xbc\xba \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0xffff7878, true, false);
 				return;
 			}
 			if (freeSpace < 0x40000000)
 			{
 				CChatMsg::Instance()->AddChatMsg(
-					"\307\317\265\345\300\307 \277\353\267\256\300\314 \272\316\301\267\307\317\277\251 avi\306\304\300\317\300\273 \273\375\274\272\307\322 \274\366 \276\370\275\300\264\317\264\331.",
+					"\xc7\xcf\xb5\xe5\xc0\xc7 \xbf\xeb\xb7\xae\xc0\xcc \xba\xce\xc1\xb7\xc7\xcf\xbf\xa9 avi\xc6\xc4\xc0\xcf\xc0\xbb \xbb\xfd\xbc\xba\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 					0xffff7878, true, false);
 				return;
 			}
@@ -758,7 +760,7 @@ void CProjectG::CheckScreenShot()
 			strcat(suffix, "G");
 			strcat(description, "(GUI");
 			if (!m_bHidePI)
-				strcat(description, "\301\246\260\305)");
+				strcat(description, "\xc1\xa6\xb0\xc5)");
 		}
 		if (m_bHidePI)
 		{
@@ -768,7 +770,7 @@ void CProjectG::CheckScreenShot()
 			else
 				strcat(description, "(");
 			strcat(description,
-				"\260\263\300\316\301\244\272\270\301\246\260\305)");
+				"\xb0\xb3\xc0\xce\xc1\xa4\xba\xb8\xc1\xa6\xb0\xc5)");
 		}
 		m_bHideGUI = false;
 		m_bHidePI = false;
@@ -803,7 +805,7 @@ void CProjectG::CheckScreenShot()
 				if (m_avi.Open(filename, width, height, fps, g_hwnd))
 				{
 					g_input->SetFakeInput(
-						"\275\272\306\344\300\314\275\272\271\331", false);
+						"\xbd\xba\xc6\xe4\xc0\xcc\xbd\xba\xb9\xd9", false);
 					SetFPS((float)fps);
 					m_flag.Enable(2);
 					m_mainFlags.Enable(0x22);
@@ -852,11 +854,11 @@ void CProjectG::CheckScreenShot()
 			}
 			if (SaveScreenShot(filename))
 				sprintf(captureMessage,
-					"\310\255\270\351%s\300\314 %s\277\241 \300\372\300\345\265\307\276\372\275\300\264\317\264\331.",
+					"\xc8\xad\xb8\xe9%s\xc0\xcc %s\xbf\xa1 \xc0\xfa\xc0\xe5\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 					description, filename);
 			else
 				sprintf(captureMessage,
-					"\275\272\305\251\270\260\274\246 \300\372\300\345\300\314 \275\307\306\320 \307\337\275\300\264\317\264\331.");
+					"\xbd\xba\xc5\xa9\xb8\xb0\xbc\xa6 \xc0\xfa\xc0\xe5\xc0\xcc \xbd\xc7\xc6\xd0 \xc7\xdf\xbd\xc0\xb4\xcf\xb4\xd9.");
 			captureMessageTime = timeGetTime();
 		}
 	}
@@ -889,7 +891,7 @@ void CProjectG::OpenDisconDlg(const char* text, bool gameServer)
 	}
 	else
 	{
-		MessageBox(NULL, text, "\276\313\270\262", 0);
+		MessageBox(NULL, text, "\xbe\xcb\xb8\xb2", 0);
 		if (gameServer == true)
 			OnGameServerResult(1, NULL);
 		else
@@ -1111,10 +1113,10 @@ void CProjectG::Draw()
 			graphics->SetTextColor(0xffff0000, 0xffffffff);
 			if (Doc()->m_replayPlayType == 1)
 				graphics->Print(WPoint(300, g_view->GetHeight() - 40), 0,
-					"\270\256\307\303\267\271\300\314\260\241 \300\372\300\345\265\307\276\372\275\300\264\317\264\331.(\274\246)");
+					"\xb8\xae\xc7\xc3\xb7\xb9\xc0\xcc\xb0\xa1 \xc0\xfa\xc0\xe5\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.(\xbc\xa6)");
 			else if (Doc()->m_replayPlayType == 2)
 				graphics->Print(WPoint(300, g_view->GetHeight() - 40), 0,
-					"\270\256\307\303\267\271\300\314\260\241 \300\372\300\345\265\307\276\372\275\300\264\317\264\331.");
+					"\xb8\xae\xc7\xc3\xb7\xb9\xc0\xcc\xb0\xa1 \xc0\xfa\xc0\xe5\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.");
 			graphics->SetTextStyle(0);
 		}
 	}
@@ -1191,9 +1193,9 @@ long __stdcall CProjectG::WinProc(HWND hwnd, unsigned int message,
 			std::string filename = (const char*)lParam;
 			MessageBox(NULL,
 				MakeStr(
-					"%s\306\304\300\317\277\241 \274\325\273\363\300\314 \271\337\260\337\265\307\276\372\275\300\264\317\264\331. \264\331\275\303 \275\307\307\340\307\330 \301\326\274\274\277\344.",
+					"%s\xc6\xc4\xc0\xcf\xbf\xa1 \xbc\xd5\xbb\xf3\xc0\xcc \xb9\xdf\xb0\xdf\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9. \xb4\xd9\xbd\xc3 \xbd\xc7\xc7\xe0\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.",
 					filename.c_str()),
-				"\306\316\276\337\277\241\267\257", MB_ICONEXCLAMATION);
+				"\xc6\xce\xbe\xdf\xbf\xa1\xb7\xaf", MB_ICONEXCLAMATION);
 			PostQuitMessage(0);
 		}
 		break;
@@ -1304,7 +1306,7 @@ NextServer:;
 		else
 		{
 			OpenDisconDlg(
-				"\260\324\300\323 \274\255\271\366\277\315 \277\254\260\341\300\314 \262\367\276\356\301\263\275\300\264\317\264\331.",
+				"\xb0\xd4\xc0\xd3 \xbc\xad\xb9\xf6\xbf\xcd \xbf\xac\xb0\xe1\xc0\xcc \xb2\xf7\xbe\xee\xc1\xb3\xbd\xc0\xb4\xcf\xb4\xd9.",
 				true);
 			return 1;
 		}
@@ -1359,7 +1361,7 @@ NextServer:;
 		{
 			NET()->GetSocket(WNetworkSystem::NET_LOGIN)->m_bConnected = false;
 			OpenDisconDlg(
-				"\267\316\261\327\300\316 \274\255\271\366\277\315 \277\254\260\341\300\314 \262\367\276\356\301\263\275\300\264\317\264\331.",
+				"\xb7\xce\xb1\xd7\xc0\xce \xbc\xad\xb9\xf6\xbf\xcd \xbf\xac\xb0\xe1\xc0\xcc \xb2\xf7\xbe\xee\xc1\xb3\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 			return 0;
 		}
@@ -1368,7 +1370,7 @@ NextServer:;
 			if (NET()->GetSocket(WNetworkSystem::NET_LOGIN) &&
 				!NET()->GetSocket(WNetworkSystem::NET_LOGIN)->TryRead())
 				OpenDisconDlg(
-					"\267\316\261\327\300\316 \274\255\271\366\277\315 \277\254\260\341\300\314 \262\367\276\356\301\263\275\300\264\317\264\331.",
+					"\xb7\xce\xb1\xd7\xc0\xce \xbc\xad\xb9\xf6\xbf\xcd \xbf\xac\xb0\xe1\xc0\xcc \xb2\xf7\xbe\xee\xc1\xb3\xbd\xc0\xb4\xcf\xb4\xd9.",
 					false);
 		}
 		else if (WSAGETSELECTEVENT(lParam) == FD_WRITE)
@@ -1379,7 +1381,7 @@ NextServer:;
 		}
 		else if (WSAGETSELECTEVENT(lParam) == FD_CLOSE)
 			OpenDisconDlg(
-				"\267\316\261\327\300\316 \274\255\271\366\277\315 \277\254\260\341\300\314 \262\367\276\356\301\263\275\300\264\317\264\331.",
+				"\xb7\xce\xb1\xd7\xc0\xce \xbc\xad\xb9\xf6\xbf\xcd \xbf\xac\xb0\xe1\xc0\xcc \xb2\xf7\xbe\xee\xc1\xb3\xbd\xc0\xb4\xcf\xb4\xd9.",
 				false);
 		return 0;
 	case WM_USER + 14:
@@ -1527,7 +1529,7 @@ bool CProjectG::SetVideoDevice()
 	if (!video)
 	{
 		MessageBox(g_hwnd,
-			"\264\331\300\275\260\372 \260\260\300\272 \271\256\301\246\267\316 \275\307\307\340\307\322 \274\366 \276\370\275\300\264\317\264\331.\012\012* DirectX 9.0c \300\314\273\363\300\314 \274\263\304\241 \265\307\301\366 \276\312\276\322\260\305\263\252\012* \265\360\275\272\307\303\267\271\300\314 \276\356\264\360\305\315(\272\361\265\360\277\300\304\253\265\345)\300\307 \265\345\266\363\300\314\271\366\260\241 \303\326\275\305 \271\366\300\374\300\314 \276\306\264\317\260\305\263\252\012* \265\360\275\272\307\303\267\271\300\314 \276\356\264\360\305\315(\272\361\265\360\277\300\304\253\265\345)\300\307 \274\272\264\311\277\241 \271\256\301\246\260\241 \300\326\275\300\264\317\264\331.\012\012\306\316\276\337 \275\307\307\340\275\303 \263\252\277\300\264\302 \303\271 \310\255\270\351\277\241\274\255 [\275\307\307\340\271\256\301\246\272\270\260\355]\270\246 \264\255\267\257 \304\304\307\273\305\315 \301\244\272\270\270\246 \265\356\267\317\307\317\275\305 \310\304,  \012\306\316\276\337 \310\250\306\344\300\314\301\366\300\307 [\260\355\260\264\301\366\277\370->FAQ]\270\246 \300\320\276\356\272\270\275\303\261\342 \271\331\266\370\264\317\264\331.",
+			"\xb4\xd9\xc0\xbd\xb0\xfa \xb0\xb0\xc0\xba \xb9\xae\xc1\xa6\xb7\xce \xbd\xc7\xc7\xe0\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.\012\012* DirectX 9.0c \xc0\xcc\xbb\xf3\xc0\xcc \xbc\xb3\xc4\xa1 \xb5\xc7\xc1\xf6 \xbe\xca\xbe\xd2\xb0\xc5\xb3\xaa\012* \xb5\xf0\xbd\xba\xc7\xc3\xb7\xb9\xc0\xcc \xbe\xee\xb4\xf0\xc5\xcd(\xba\xf1\xb5\xf0\xbf\xc0\xc4\xab\xb5\xe5)\xc0\xc7 \xb5\xe5\xb6\xf3\xc0\xcc\xb9\xf6\xb0\xa1 \xc3\xd6\xbd\xc5 \xb9\xf6\xc0\xfc\xc0\xcc \xbe\xc6\xb4\xcf\xb0\xc5\xb3\xaa\012* \xb5\xf0\xbd\xba\xc7\xc3\xb7\xb9\xc0\xcc \xbe\xee\xb4\xf0\xc5\xcd(\xba\xf1\xb5\xf0\xbf\xc0\xc4\xab\xb5\xe5)\xc0\xc7 \xbc\xba\xb4\xc9\xbf\xa1 \xb9\xae\xc1\xa6\xb0\xa1 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.\012\012\xc6\xce\xbe\xdf \xbd\xc7\xc7\xe0\xbd\xc3 \xb3\xaa\xbf\xc0\xb4\xc2 \xc3\xb9 \xc8\xad\xb8\xe9\xbf\xa1\xbc\xad [\xbd\xc7\xc7\xe0\xb9\xae\xc1\xa6\xba\xb8\xb0\xed]\xb8\xa6 \xb4\xad\xb7\xaf \xc4\xc4\xc7\xbb\xc5\xcd \xc1\xa4\xba\xb8\xb8\xa6 \xb5\xee\xb7\xcf\xc7\xcf\xbd\xc5 \xc8\xc4,  \012\xc6\xce\xbe\xdf \xc8\xa8\xc6\xe4\xc0\xcc\xc1\xf6\xc0\xc7 [\xb0\xed\xb0\xb4\xc1\xf6\xbf\xf8->FAQ]\xb8\xa6 \xc0\xd0\xbe\xee\xba\xb8\xbd\xc3\xb1\xe2 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.",
 			caption, MB_ICONERROR);
 		return false;
 	}

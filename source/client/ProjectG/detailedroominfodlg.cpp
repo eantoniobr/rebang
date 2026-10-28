@@ -195,12 +195,12 @@ void FrDtRoomDlg::OnGameDescInit(int param)
 		typeName = Doc()->m_gameTypeInfo[Doc()->m_roomDetail.gameType].name;
 		break;
 	}
-	sprintf(text, "\260\324\300\323\305\270\300\324 : %s%s", typeName,
-		Doc()->m_roomDetail.gameType == 5 ? "\306\300\300\374" : "");
+	sprintf(text, "\xb0\xd4\xc0\xd3\xc5\xb8\xc0\xd4 : %s%s", typeName,
+		Doc()->m_roomDetail.gameType == 5 ? "\xc6\xc0\xc0\xfc" : "");
 	m_pGameDesc->SetLine(1, text, 0, false, 0);
 	if (Doc()->m_roomDetail.map == 255)
 	{
-		const char* source = "\304\332\275\272 : RANDOM";
+		const char* source = "\xc4\xda\xbd\xba : RANDOM";
 		int i = 0;
 		do
 		{
@@ -213,10 +213,10 @@ void FrDtRoomDlg::OnGameDescInit(int param)
 		IFF_STRUCT::sCourse* course = Doc()->m_itemManager.FindCourse(
 			(map <= 127 || map == 253 ? map : map - 128) | 0x28000000);
 		if (course)
-			sprintf(text, "\304\332\275\272 : %s", course->c.Name);
+			sprintf(text, "\xc4\xda\xbd\xba : %s", course->c.Name);
 		else
 		{
-			const char* source = "\304\332\275\272 : \270\360\270\247";
+			const char* source = "\xc4\xda\xbd\xba : \xb8\xf0\xb8\xa7";
 			int i = 0;
 			do
 			{
@@ -228,11 +228,11 @@ void FrDtRoomDlg::OnGameDescInit(int param)
 	if (Doc()->m_roomDetail.holeOrder == 2 ||
 		Doc()->m_roomDetail.holeOrder == 3)
 		sprintf(text,
-			"\275\303\300\333\310\246 : \267\243\264\375 \310\246 / \310\246 \274\366 : %d \310\246",
+			"\xbd\xc3\xc0\xdb\xc8\xa6 : \xb7\xa3\xb4\xfd \xc8\xa6 / \xc8\xa6 \xbc\xf6 : %d \xc8\xa6",
 			Doc()->m_roomDetail.holes);
 	else
 		sprintf(text,
-			"\275\303\300\333\310\246 : %d \310\246 / \310\246 \274\366 : %d \310\246",
+			"\xbd\xc3\xc0\xdb\xc8\xa6 : %d \xc8\xa6 / \xc8\xa6 \xbc\xf6 : %d \xc8\xa6",
 			Doc()->m_roomDetail.holeOrder ? 10 : 1, Doc()->m_roomDetail.holes);
 	m_pGameDesc->SetLine(3, text, 0, false, 0);
 	if (Doc()->m_roomDetail.gameType == 2)
@@ -250,7 +250,7 @@ void FrDtRoomDlg::OnGameDescInit(int param)
 			if (Doc()->m_roomDetail.gameType == 10)
 				goto strokeTime;
 			sprintf(text,
-				"\260\324\300\323\301\246\307\321\275\303\260\243 : %d \272\320",
+				"\xb0\xd4\xc0\xd3\xc1\xa6\xc7\xd1\xbd\xc3\xb0\xa3 : %d \xba\xd0",
 				Doc()->m_roomDetail.gameTime / 60000);
 			break;
 		default:
@@ -258,7 +258,7 @@ strokeTime:
 			if (!Doc()->m_roomDetail.gameTime)
 			{
 				const char* source =
-					"\305\270\261\270\301\246\307\321\275\303\260\243 : \276\370\300\275";
+					"\xc5\xb8\xb1\xb8\xc1\xa6\xc7\xd1\xbd\xc3\xb0\xa3 : \xbe\xf8\xc0\xbd";
 				int i = 0;
 				do
 				{
@@ -267,7 +267,7 @@ strokeTime:
 			}
 			else
 				sprintf(text,
-					"\305\270\261\270\301\246\307\321\275\303\260\243 : %d \303\312",
+					"\xc5\xb8\xb1\xb8\xc1\xa6\xc7\xd1\xbd\xc3\xb0\xa3 : %d \xc3\xca",
 					Doc()->m_roomDetail.gameTime / 1000);
 			break;
 		}
@@ -297,7 +297,7 @@ void FrDtRoomDlg::OnJoinBtnUp()
 			if (m_roomInfo.nUserNum == m_roomInfo.nUserLimit)
 			{
 				AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-					(int)"\301\244\277\370\300\314 \303\312\260\372 \265\307\276\372\275\300\264\317\264\331",
+					(int)"\xc1\xa4\xbf\xf8\xc0\xcc \xc3\xca\xb0\xfa \xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9",
 					0, 0, 0, 0);
 				return;
 			}
@@ -310,7 +310,7 @@ void FrDtRoomDlg::OnJoinBtnUp()
 					it->second.gender > 1)
 				{
 					AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-						(int)"\260\255\301\246 \301\276\267\341\300\262\300\314 \263\364\300\272 \300\257\300\372\264\302 30\300\316 \306\300\300\374 \260\324\300\323\300\273 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+						(int)"\xb0\xad\xc1\xa6 \xc1\xbe\xb7\xe1\xc0\xb2\xc0\xcc \xb3\xf4\xc0\xba \xc0\xaf\xc0\xfa\xb4\xc2 30\xc0\xce \xc6\xc0\xc0\xfc \xb0\xd4\xc0\xd3\xc0\xbb \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 						0, 0, 0, 0);
 					return;
 				}
@@ -324,7 +324,7 @@ void FrDtRoomDlg::OnJoinBtnUp()
 			if (!guild)
 			{
 				text =
-					"\261\346\265\345\277\241 \260\241\300\324\307\317\274\305\276\337 \261\346\265\345\264\353\300\374\300\314 \260\241\264\311\307\325\264\317\264\331.";
+					"\xb1\xe6\xb5\xe5\xbf\xa1 \xb0\xa1\xc0\xd4\xc7\xcf\xbc\xc5\xbe\xdf \xb1\xe6\xb5\xe5\xb4\xeb\xc0\xfc\xc0\xcc \xb0\xa1\xb4\xc9\xc7\xd5\xb4\xcf\xb4\xd9.";
 				denied = true;
 			}
 			if (m_roomInfo.GuildInfo.nGuildID[0] != guild &&
@@ -333,7 +333,7 @@ void FrDtRoomDlg::OnJoinBtnUp()
 				m_roomInfo.GuildInfo.nGuildID[1])
 			{
 				text =
-					"\305\270\261\346\265\345\300\307 \264\353\300\374\300\324\264\317\264\331.";
+					"\xc5\xb8\xb1\xe6\xb5\xe5\xc0\xc7 \xb4\xeb\xc0\xfc\xc0\xd4\xb4\xcf\xb4\xd9.";
 				denied = true;
 			}
 			if (denied)
@@ -370,7 +370,7 @@ void FrDtRoomDlg::OnJoinBtnUp()
 	else
 	{
 		AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-			(int)"\260\324\300\323 \301\370\307\340\301\337\300\316 \271\346\300\324\264\317\264\331",
+			(int)"\xb0\xd4\xc0\xd3 \xc1\xf8\xc7\xe0\xc1\xdf\xc0\xce \xb9\xe6\xc0\xd4\xb4\xcf\xb4\xd9",
 			0, 0, 0, 0);
 	}
 }
@@ -414,14 +414,14 @@ void FrDtRoomDlg::OnGalleryBtnUp()
 		else
 		{
 			AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-				(int)"\301\244\277\370\300\314 \303\312\260\372 \265\307\276\372\275\300\264\317\264\331",
+				(int)"\xc1\xa4\xbf\xf8\xc0\xcc \xc3\xca\xb0\xfa \xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 		}
 	}
 	else
 	{
 		AfxGetTask()->GetActor("Lobby") << MsgObject(NULL, 35,
-			(int)"\260\324\300\323 \301\370\307\340\301\337\300\316 \271\346\300\324\264\317\264\331",
+			(int)"\xb0\xd4\xc0\xd3 \xc1\xf8\xc7\xe0\xc1\xdf\xc0\xce \xb9\xe6\xc0\xd4\xb4\xcf\xb4\xd9",
 			0, 0, 0, 0);
 	}
 }
@@ -662,13 +662,13 @@ void FrDtRoomDlg::OnUserListOwnerDraw(int param)
 	sRoomUserInfo* current = user;
 	if (current->hole == 0)
 		gdi->Print(WPoint(item->pos.x + 207.0f, item->pos.y + 7.0f), 1,
-			info.bSleep ? "\300\341\274\366\301\337"
-						: "\264\353\261\342\301\337");
+			info.bSleep ? "\xc0\xe1\xbc\xf6\xc1\xdf"
+						: "\xb4\xeb\xb1\xe2\xc1\xdf");
 	else if (current->hole == 19)
 		gdi->Print(WPoint(item->pos.x + 207.0f, item->pos.y + 7.0f), 1, "End");
 	else
 		gdi->Print(WPoint(item->pos.x + 207.0f, item->pos.y + 7.0f), 1,
-			"%d \310\246", current->hole);
+			"%d \xc8\xa6", current->hole);
 }
 
 void FrDtRoomDlg::OnUserListLBtnDown()

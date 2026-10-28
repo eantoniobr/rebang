@@ -149,7 +149,7 @@ class FrAutoConnect : public FrForm
 		FrForm::OnProc(delta);
 		if (m_pStaticMsg)
 			m_pStaticMsg->SetCaption(MakeStr(
-				"\274\255\271\366\277\241 \301\242\274\323\307\317\260\355 \300\326\275\300\264\317\264\331. %c",
+				"\xbc\xad\xb9\xf6\xbf\xa1 \xc1\xa2\xbc\xd3\xc7\xcf\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9. %c",
 				32));
 		if (m_state != 2)
 		{
@@ -164,7 +164,7 @@ class FrAutoConnect : public FrForm
 					if (IS_KINDOF(FrServerDlg, server))
 					{
 						server->OnNotify(
-							"\274\255\271\366\277\241 \301\242\274\323\307\322 \274\366 \276\370\275\300\264\317\264\331.",
+							"\xbc\xad\xb9\xf6\xbf\xa1 \xc1\xa2\xbc\xd3\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 							2);
 						server->FailedToConnectServer();
 					}
@@ -391,13 +391,13 @@ bool FrServerDlg::OnInit()
 			unsigned int days = Doc()->GetTimeBlock() / 24;
 			unsigned int hours = Doc()->GetTimeBlock() % 24;
 			if (days > 0)
-				time += MakeStr("%d\300\317 ", days);
+				time += MakeStr("%d\xc0\xcf ", days);
 			if (hours > 0)
-				time += MakeStr("%d\275\303\260\243 ", hours);
+				time += MakeStr("%d\xbd\xc3\xb0\xa3 ", hours);
 			if (Doc()->GetFlagBlock() & 4)
 			{
 				message = MakeStr(
-					"\\c0xffff0000\\c\260\263\300\316 \273\363\301\241 \272\355\267\260");
+					"\\c0xffff0000\\c\xb0\xb3\xc0\xce \xbb\xf3\xc1\xa1 \xba\xed\xb7\xb0");
 				blocked = true;
 			}
 			if (Doc()->GetFlagBlock() & 8)
@@ -406,7 +406,7 @@ bool FrServerDlg::OnInit()
 					message += MakeStr(", ");
 				else
 					message = MakeStr("\\c0xffff0000\\c");
-				message += MakeStr("\303\244\306\303 \272\355\267\260");
+				message += MakeStr("\xc3\xa4\xc6\xc3 \xba\xed\xb7\xb0");
 				blocked = true;
 			}
 			if (Doc()->GetFlagBlock() & 16)
@@ -415,7 +415,7 @@ bool FrServerDlg::OnInit()
 					message += MakeStr(", ");
 				else
 					message = MakeStr("\\c0xffff0000\\c");
-				message += MakeStr("\300\374\261\244\306\307 \272\355\267\260");
+				message += MakeStr("\xc0\xfc\xb1\xa4\xc6\xc7 \xba\xed\xb7\xb0");
 				blocked = true;
 			}
 			if (Doc()->GetFlagBlock() & 128)
@@ -425,14 +425,14 @@ bool FrServerDlg::OnInit()
 				else
 					message = MakeStr("\\c0xffff0000\\c");
 				message += MakeStr(
-					"\306\355\301\366\276\262\261\342 \272\355\267\260");
+					"\xc6\xed\xc1\xf6\xbe\xb2\xb1\xe2 \xba\xed\xb7\xb0");
 				blocked = true;
 			}
 			message += MakeStr(
-				"\\c0xff000000\\c \273\363\305\302\300\324\264\317\264\331. \272\355\267\260 \307\330\301\246\275\303\260\243\261\356\301\366 %s\263\262\276\322\275\300\264\317\264\331.\012\012",
+				"\\c0xff000000\\c \xbb\xf3\xc5\xc2\xc0\xd4\xb4\xcf\xb4\xd9. \xba\xed\xb7\xb0 \xc7\xd8\xc1\xa6\xbd\xc3\xb0\xa3\xb1\xee\xc1\xf6 %s\xb3\xb2\xbe\xd2\xbd\xc0\xb4\xcf\xb4\xd9.\012\012",
 				time.c_str());
 			message += MakeStr(
-				"\260\355\260\264\274\276\305\315\267\316 \271\256\300\307\307\317\277\251 \301\326\275\303\261\342 \271\331\266\370\264\317\264\331.");
+				"\xb0\xed\xb0\xb4\xbc\xbe\xc5\xcd\xb7\xce \xb9\xae\xc0\xc7\xc7\xcf\xbf\xa9 \xc1\xd6\xbd\xc3\xb1\xe2 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.");
 			if (blocked)
 				AfxGetTask()->GetActor("Lobby")
 					<< MsgObject(NULL, 35, (int)message.c_str(), 0, 0, 0, 0);
@@ -484,17 +484,17 @@ void FrServerDlg::OnProc(const float delta)
 		break;
 	case 14:
 		SetLoginMessage(
-			"\300\324\300\345 \300\332\260\335\300\273 \271\336\300\272 \300\257\300\372\270\270 \301\242\274\323\307\322 \274\366 \300\326\264\302 \274\255\271\366\300\324\264\317\264\331.");
+			"\xc0\xd4\xc0\xe5 \xc0\xda\xb0\xdd\xc0\xbb \xb9\xde\xc0\xba \xc0\xaf\xc0\xfa\xb8\xb8 \xc1\xa2\xbc\xd3\xc7\xd2 \xbc\xf6 \xc0\xd6\xb4\xc2 \xbc\xad\xb9\xf6\xc0\xd4\xb4\xcf\xb4\xd9.");
 		FailedToConnectServer();
 		break;
 	case 15:
 		SetLoginMessage(
-			"\300\324\300\345 \301\246\307\321 \275\303\260\243\300\314 \301\366\263\252\274\255 \274\255\271\366\301\242\274\323\300\273 \307\322 \274\366 \276\370\275\300\264\317\264\331.");
+			"\xc0\xd4\xc0\xe5 \xc1\xa6\xc7\xd1 \xbd\xc3\xb0\xa3\xc0\xcc \xc1\xf6\xb3\xaa\xbc\xad \xbc\xad\xb9\xf6\xc1\xa2\xbc\xd3\xc0\xbb \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 		FailedToConnectServer();
 		break;
 	case 16:
 		SetLoginMessage(
-			"\264\353\310\270 \302\374\260\241\300\332\260\241 \276\306\264\317\266\363\274\255 \274\255\271\366\301\242\274\323\300\273 \307\322 \274\366 \276\370\275\300\264\317\264\331.");
+			"\xb4\xeb\xc8\xb8 \xc2\xfc\xb0\xa1\xc0\xda\xb0\xa1 \xbe\xc6\xb4\xcf\xb6\xf3\xbc\xad \xbc\xad\xb9\xf6\xc1\xa2\xbc\xd3\xc0\xbb \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 		FailedToConnectServer();
 		break;
 	case 20:
@@ -506,22 +506,22 @@ void FrServerDlg::OnProc(const float delta)
 		break;
 	case 9:
 		SetLoginMessage(
-			"\273\347\277\353\261\335\301\366\265\310 \276\306\300\314\265\360\300\324\264\317\264\331. \260\355\260\264\301\366\277\370\274\276\305\315\267\316 \271\256\300\307\272\316\305\271\265\345\270\263\264\317\264\331.");
+			"\xbb\xe7\xbf\xeb\xb1\xdd\xc1\xf6\xb5\xc8 \xbe\xc6\xc0\xcc\xb5\xf0\xc0\xd4\xb4\xcf\xb4\xd9. \xb0\xed\xb0\xb4\xc1\xf6\xbf\xf8\xbc\xbe\xc5\xcd\xb7\xce \xb9\xae\xc0\xc7\xba\xce\xc5\xb9\xb5\xe5\xb8\xb3\xb4\xcf\xb4\xd9.");
 		FailedToConnectServer();
 		break;
 	case 18:
 		SetLoginMessage(
-			"\260\350\301\244 \300\314\300\374\300\314 \265\307\276\356 \301\242\274\323\307\322 \274\366 \276\370\275\300\264\317\264\331.");
+			"\xb0\xe8\xc1\xa4 \xc0\xcc\xc0\xfc\xc0\xcc \xb5\xc7\xbe\xee \xc1\xa2\xbc\xd3\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 		FailedToConnectServer();
 		break;
 	case 8:
 		SetLoginMessage(
-			"\277\265\261\270\300\373\300\270\267\316 \273\347\277\353\261\335\301\366\265\310 \276\306\300\314\265\360\300\324\264\317\264\331. \260\355\260\264\301\366\277\370\274\276\305\315\267\316 \271\256\300\307\271\331\266\370\264\317\264\331.");
+			"\xbf\xb5\xb1\xb8\xc0\xfb\xc0\xb8\xb7\xce \xbb\xe7\xbf\xeb\xb1\xdd\xc1\xf6\xb5\xc8 \xbe\xc6\xc0\xcc\xb5\xf0\xc0\xd4\xb4\xcf\xb4\xd9. \xb0\xed\xb0\xb4\xc1\xf6\xbf\xf8\xbc\xbe\xc5\xcd\xb7\xce \xb9\xae\xc0\xc7\xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.");
 		FailedToConnectServer();
 		break;
 	case 19:
 		SetLoginMessage(
-			"\307\366\300\347 \274\255\271\366\277\241 \301\242\274\323\307\317\261\342 \276\356\267\301\277\356 \273\363\305\302\300\324\264\317\264\331. \300\341\275\303 \310\304\277\241 \264\331\275\303 \301\242\274\323\307\330 \301\326\274\274\277\344.");
+			"\xc7\xf6\xc0\xe7 \xbc\xad\xb9\xf6\xbf\xa1 \xc1\xa2\xbc\xd3\xc7\xcf\xb1\xe2 \xbe\xee\xb7\xc1\xbf\xee \xbb\xf3\xc5\xc2\xc0\xd4\xb4\xcf\xb4\xd9. \xc0\xe1\xbd\xc3 \xc8\xc4\xbf\xa1 \xb4\xd9\xbd\xc3 \xc1\xa2\xbc\xd3\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.");
 		FailedToConnectServer();
 		break;
 	}
@@ -669,7 +669,7 @@ void FrServerDlg::BuildServerList()
 		{
 			if (!Doc()->m_myInfo.info.IsIdentity(4))
 				continue;
-			strcat((*it).name, " [\270\301\305\344]");
+			strcat((*it).name, " [\xb8\xc1\xc5\xe4]");
 		}
 		m_pServerList->AddItem(&*it);
 		++count;
@@ -724,26 +724,27 @@ void FrServerDlg::OnServerListBtnDown()
 			if (Doc()->m_myInfo.stat.Level > 5)
 			{
 				SetLoginMessageAlert(
-					"\267\347\305\260 \267\271\272\247\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xb7\xe7\xc5\xb0 \xb7\xb9\xba\xa7\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if (!Doc()->m_myInfo.stat.Level)
 			{
 				SetLoginMessageAlert(
-					"\267\347\305\260F \267\271\272\247\300\272 \300\324\300\345\307\322 \274\366 \276\370\275\300\264\317\264\331.");
+					"\xb7\xe7\xc5\xb0"
+					"F \xb7\xb9\xba\xa7\xc0\xba \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 		}
 		if ((server->property & 4) && Doc()->m_myInfo.stat.Level < 6)
 		{
 			SetLoginMessageAlert(
-				"\272\361\261\342\263\312 \267\271\272\247\300\314\273\363 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+				"\xba\xf1\xb1\xe2\xb3\xca \xb7\xb9\xba\xa7\xc0\xcc\xbb\xf3 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 			return;
 		}
 		if ((server->property & 8) && !Doc()->m_pcBang)
 		{
 			SetLoginMessageAlert(MakeStr(
-				"\270\270%d\274\274 \300\314\273\363\270\270 \300\324\300\345\307\322 \274\366 \300\326\264\302 \274\272\300\316\274\255\271\366\300\324\264\317\264\331.",
+				"\xb8\xb8%d\xbc\xbc \xc0\xcc\xbb\xf3\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xb4\xc2 \xbc\xba\xc0\xce\xbc\xad\xb9\xf6\xc0\xd4\xb4\xcf\xb4\xd9.",
 				19));
 			return;
 		}
@@ -766,7 +767,7 @@ void FrServerDlg::OnServerListBtnDown()
 	else
 	{
 		SetLoginMessageAlert(
-			"\274\255\271\366\277\241 \301\246\307\321 \300\316\277\370\300\314 \270\360\265\316 \303\241\275\300\264\317\264\331.");
+			"\xbc\xad\xb9\xf6\xbf\xa1 \xc1\xa6\xc7\xd1 \xc0\xce\xbf\xf8\xc0\xcc \xb8\xf0\xb5\xce \xc3\xa1\xbd\xc0\xb4\xcf\xb4\xd9.");
 		m_reconnectDelay = 1.0f;
 	}
 	Doc()->m_sendGiftList.clear();
@@ -966,13 +967,13 @@ void FrServerDlg::OnChannelListBtnDown()
 			if ((float)Doc()->m_myInfo.stat.dwNoMannerGameCount / games >= 0.4f)
 			{
 				SetLoginMessageAlert(
-					"\260\255\301\246\301\276\267\341\267\374\300\314 40%\300\314\273\363\300\316 \300\257\300\372\264\302 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xb0\xad\xc1\xa6\xc1\xbe\xb7\xe1\xb7\xfc\xc0\xcc 40%\xc0\xcc\xbb\xf3\xc0\xce \xc0\xaf\xc0\xfa\xb4\xc2 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x800) && Doc()->m_myInfo.stat.Level > 10)
 			{
 				SetLoginMessageAlert(
-					"\267\347\305\260/\272\361\261\342\263\312\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xb7\xe7\xc5\xb0/\xba\xf1\xb1\xe2\xb3\xca\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x1000) &&
@@ -980,13 +981,13 @@ void FrServerDlg::OnChannelListBtnDown()
 					Doc()->m_myInfo.stat.Level > 20))
 			{
 				SetLoginMessageAlert(
-					"\301\326\264\317\276\356/\275\303\264\317\276\356\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xc1\xd6\xb4\xcf\xbe\xee/\xbd\xc3\xb4\xcf\xbe\xee\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x2000) && Doc()->m_myInfo.stat.Level < 21)
 			{
 				SetLoginMessageAlert(
-					"\276\306\270\266\303\337\276\356\300\314\273\363 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xbe\xc6\xb8\xb6\xc3\xdf\xbe\xee\xc0\xcc\xbb\xf3 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 		}
@@ -995,7 +996,7 @@ void FrServerDlg::OnChannelListBtnDown()
 			if ((channel->Type & 0x800) && Doc()->m_myInfo.stat.Level > 5)
 			{
 				SetLoginMessageAlert(
-					"\267\347\305\260\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xb7\xe7\xc5\xb0\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x1000) &&
@@ -1003,7 +1004,7 @@ void FrServerDlg::OnChannelListBtnDown()
 					Doc()->m_myInfo.stat.Level > 15))
 			{
 				SetLoginMessageAlert(
-					"\272\361\261\342\263\312/\301\326\264\317\276\356\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xba\xf1\xb1\xe2\xb3\xca/\xc1\xd6\xb4\xcf\xbe\xee\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x2000) &&
@@ -1011,25 +1012,25 @@ void FrServerDlg::OnChannelListBtnDown()
 					Doc()->m_myInfo.stat.Level > 20))
 			{
 				SetLoginMessageAlert(
-					"\301\326\264\317\276\356/\275\303\264\317\276\356\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xc1\xd6\xb4\xcf\xbe\xee/\xbd\xc3\xb4\xcf\xbe\xee\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x80) && Doc()->m_myInfo.stat.Level < 6)
 			{
 				SetLoginMessageAlert(
-					"\272\361\261\342\263\312 \300\314\273\363 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xba\xf1\xb1\xe2\xb3\xca \xc0\xcc\xbb\xf3 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x200) && Doc()->m_myInfo.stat.Level > 15)
 			{
 				SetLoginMessageAlert(
-					"\301\326\264\317\276\356 \300\314\307\317\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xc1\xd6\xb4\xcf\xbe\xee \xc0\xcc\xc7\xcf\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 			if ((channel->Type & 0x400) && Doc()->m_myInfo.stat.Level < 11)
 			{
 				SetLoginMessageAlert(
-					"\301\326\264\317\276\356 \300\314\273\363\270\270 \300\324\300\345\307\322 \274\366 \300\326\275\300\264\317\264\331.");
+					"\xc1\xd6\xb4\xcf\xbe\xee \xc0\xcc\xbb\xf3\xb8\xb8 \xc0\xd4\xc0\xe5\xc7\xd2 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.");
 				return;
 			}
 		}
@@ -1105,8 +1106,8 @@ void FrServerDlg::DrawChannelButton(const WPoint& point,
 	FrGraphicInterface* graphic = g_pFresh->GetManager()->GetGDI();
 	graphic->DrawTexture(image, WRect(point, image->Width(), image->Height()),
 		0xffffffff, 0);
-	if (!_stricmp(channel->Name, "\267\347\305\260") ||
-		!_stricmp(channel->Name, "\267\347\305\260\303\244\263\316"))
+	if (!_stricmp(channel->Name, "\xb7\xe7\xc5\xb0") ||
+		!_stricmp(channel->Name, "\xb7\xe7\xc5\xb0\xc3\xa4\xb3\xce"))
 		graphic->DrawTexture(m_pImgNew,
 			WRect(point, m_pImgNew->Width(), m_pImgNew->Height()), 0xffffffff,
 			0);

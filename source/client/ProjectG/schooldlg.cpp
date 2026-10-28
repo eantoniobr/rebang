@@ -6,8 +6,8 @@
 
 extern Fresh* g_pFresh;
 
-std::string szJpSchoolType[] = { "\301\337\307\320", "\260\355\261\263",
-	"\264\334\264\353", "\264\353\307\320" };
+std::string szJpSchoolType[] = { "\xc1\xdf\xc7\xd0", "\xb0\xed\xb1\xb3",
+	"\xb4\xdc\xb4\xeb", "\xb4\xeb\xc7\xd0" };
 
 IMPLEMENT_OBJECT(FrSchoolDlg, FrForm)
 
@@ -114,7 +114,7 @@ void FrSchoolDlg::OnSearchBtnUp()
 					m_schoolName = "";
 					m_pSchool->ClearList();
 					m_pSchool->SetLine(1,
-						"\301\273\264\365 \300\332\274\274\307\317\260\324 \263\326\276\356\301\326\274\274\277\344",
+						"\xc1\xbb\xb4\xf5 \xc0\xda\xbc\xbc\xc7\xcf\xb0\xd4 \xb3\xd6\xbe\xee\xc1\xd6\xbc\xbc\xbf\xe4",
 						0, false, 0);
 					break;
 				}
@@ -123,7 +123,7 @@ void FrSchoolDlg::OnSearchBtnUp()
 		CloseCFile(file);
 		if (!m_pSchool->GetLineNum())
 			m_pSchool->SetLine(1,
-				"\270\361\267\317\277\241\274\255 \303\243\300\273 \274\366 \276\370\275\300\264\317\264\331",
+				"\xb8\xf1\xb7\xcf\xbf\xa1\xbc\xad \xc3\xa3\xc0\xbb \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, false, 0);
 	}
 }

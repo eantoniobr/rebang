@@ -417,7 +417,7 @@ void CWinnerNotice::GetEventNumfromXml(TiXmlDocument& doc, std::string& out,
 	else
 		element = doc.FirstChildElement("PARAMS")->FirstChildElement("TIMES");
 	const char* number = element ? element->FirstChild()->Value() : NULL;
-	sprintf(buffer, "%s \302\367\274\366 \300\314\272\245\306\256",
+	sprintf(buffer, "%s \xc2\xf7\xbc\xf6 \xc0\xcc\xba\xa5\xc6\xae",
 		number ? number : "0");
 	out = buffer;
 }
@@ -444,10 +444,10 @@ void CWinnerNotice::GetDaynTimefromXml(TiXmlDocument& doc, std::string& out,
 	switch (flag)
 	{
 	case EVENT_DAY:
-		sprintf(buffer, "%d \277\371 %d \300\317", month, day);
+		sprintf(buffer, "%d \xbf\xf9 %d \xc0\xcf", month, day);
 		break;
 	case EVENT_TIME:
-		sprintf(buffer, "%02d\275\303%02d\272\320", hour, minute);
+		sprintf(buffer, "%02d\xbd\xc3%02d\xba\xd0", hour, minute);
 		break;
 	}
 	out = buffer;
@@ -482,7 +482,7 @@ void CWinnerNotice::GetItemCountfromXml(TiXmlDocument& doc, std::string& out)
 	char buffer[100] = { 0 };
 	if (atoi(type->FirstChild()->Value()) == 436207632)
 	{
-		sprintf(buffer, "(%d \306\316)", atoi(qty->FirstChild()->Value()));
+		sprintf(buffer, "(%d \xc6\xce)", atoi(qty->FirstChild()->Value()));
 		out = buffer;
 	}
 	else if (atoi(qty->FirstChild()->Value()) > 1)

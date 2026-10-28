@@ -143,7 +143,7 @@ void FrOfflineTradeFinishEditDlg::OnTradeItemListOwnerDraw(int param)
 		{
 			WPoint pos = WPoint(182, 7) + draw->pos;
 			graphic->Print(WPoint(pos), 2,
-				"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324 \261\270\270\305");
+				"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4 \xb1\xb8\xb8\xc5");
 		}
 		if (draw->underCursor && (m_buyBtn[0].rect + draw->pos).IsInRect(mouse))
 		{
@@ -180,7 +180,7 @@ void FrOfflineTradeFinishEditDlg::OnTradeItemListOwnerDraw(int param)
 					WPoint pos =
 						WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 						draw->pos + WPoint(55, 6);
-					graphic->Print(WPoint(pos), 2, "%d\300\317",
+					graphic->Print(WPoint(pos), 2, "%d\xc0\xcf",
 						hours / 24 + 1);
 				}
 				else
@@ -188,7 +188,7 @@ void FrOfflineTradeFinishEditDlg::OnTradeItemListOwnerDraw(int param)
 					WPoint pos =
 						WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 						draw->pos + WPoint(55, 6);
-					graphic->Print(WPoint(pos), 2, "%d\275\303", hours);
+					graphic->Print(WPoint(pos), 2, "%d\xbd\xc3", hours);
 				}
 				graphic->SetTextColor(0xff000000, 0xffffffff);
 			}
@@ -200,7 +200,7 @@ void FrOfflineTradeFinishEditDlg::OnTradeItemListOwnerDraw(int param)
 						WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 						draw->pos + WPoint(55, 6);
 					graphic->Print(WPoint(pos), 2,
-						"\261\342\260\243\270\270\267\341");
+						"\xb1\xe2\xb0\xa3\xb8\xb8\xb7\xe1");
 				}
 				graphic->SetTextColor(0xff000000, 0xffffffff);
 			}
@@ -231,7 +231,7 @@ void FrOfflineTradeFinishEditDlg::OnTradeItemListOwnerDraw(int param)
 			{
 				WPoint pos = WPoint(182, 7) + draw->pos;
 				graphic->Print(WPoint(pos), 2,
-					"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324");
+					"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4");
 			}
 			if (draw->underCursor &&
 				(m_uploadBtn[0].rect + draw->pos).IsInRect(mouse))
@@ -1422,14 +1422,14 @@ void COfflineShopEditDlg::OnTradeItemListOwnerDraw(int param)
 	}
 	if (slot->IsValid == 1 && slot->itemData.dwTid == 0)
 		graphic->Print(WPoint(draw->pos.x + 10, draw->pos.y + 13), 0,
-			"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324");
+			"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4");
 	if (slot->IsValid == 0 && slot->itemData.dwTid == 0)
 		graphic->Print(WPoint(draw->pos.x + 10, draw->pos.y + 13), 0,
-			"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324 \261\270\270\305  ");
+			"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4 \xb1\xb8\xb8\xc5  ");
 	else if (slot->itemData.dwTid == 0x4800581f ||
 		slot->itemData.dwTid == 0x4800601e)
 		graphic->Print(WPoint(draw->pos.x + 10, draw->pos.y + 13), 0,
-			"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324");
+			"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4");
 	else
 	{
 		if (!slot->itemData.dwTid)
@@ -1448,9 +1448,9 @@ void COfflineShopEditDlg::OnTradeItemListOwnerDraw(int param)
 		char price[32] = { 0 };
 		MakePriceStrA(price, slot->itemData.i64Price);
 		if (slot->itemData.iNum == 1)
-			MakeStr("%s\306\316", price);
+			MakeStr("%s\xc6\xce", price);
 		else
-			MakeStr("\260\263\264\347%s\306\316", price);
+			MakeStr("\xb0\xb3\xb4\xe7%s\xc6\xce", price);
 		graphic->Print(WPoint(draw->pos.x + 10, draw->pos.y + 13), 0, "%s",
 			common->Name);
 	}
@@ -1595,7 +1595,7 @@ void COfflineShopEditDlg::OnTradeMyItemOkBnUp()
 		FrForm* notify =
 			CreateForm<FrForm>(g_pFresh->GetManager(), this, "notify");
 		notify->SetMessage(
-			"\307\366\300\347 \301\370\277\255\264\353\300\307 \301\244\272\270\260\241 \300\317\304\241\307\317\301\366 \276\312\275\300\264\317\264\331. \265\356\267\317 \275\307\306\320\300\324\264\317\264\331.",
+			"\xc7\xf6\xc0\xe7 \xc1\xf8\xbf\xad\xb4\xeb\xc0\xc7 \xc1\xa4\xba\xb8\xb0\xa1 \xc0\xcf\xc4\xa1\xc7\xcf\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9. \xb5\xee\xb7\xcf \xbd\xc7\xc6\xd0\xc0\xd4\xb4\xcf\xb4\xd9.",
 			false);
 		notify->Open(NULL, FrESCAPE | FrENTER);
 		m_selectUID = 0;
@@ -1930,7 +1930,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 		{
 			WPoint pos = WPoint(182, 7) + draw->pos;
 			graphic->Print(WPoint(pos), 2,
-				"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324 \261\270\270\305");
+				"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4 \xb1\xb8\xb8\xc5");
 		}
 		if (draw->underCursor && (m_buyBtn[0].rect + draw->pos).IsInRect(mouse))
 		{
@@ -1969,7 +1969,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 						WPoint pos = WPoint(m_tradeState[2].rect.x,
 										 m_tradeState[2].rect.y) +
 							draw->pos + WPoint(55, 6);
-						graphic->Print(WPoint(pos), 2, "%d\300\317",
+						graphic->Print(WPoint(pos), 2, "%d\xc0\xcf",
 							hours / 24 + 1);
 					}
 					else
@@ -1977,7 +1977,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 						WPoint pos = WPoint(m_tradeState[2].rect.x,
 										 m_tradeState[2].rect.y) +
 							draw->pos + WPoint(55, 6);
-						graphic->Print(WPoint(pos), 2, "%d\300\317",
+						graphic->Print(WPoint(pos), 2, "%d\xc0\xcf",
 							hours / 24);
 					}
 				}
@@ -1986,7 +1986,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 					WPoint pos =
 						WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 						draw->pos + WPoint(55, 6);
-					graphic->Print(WPoint(pos), 2, "%d\275\303", hours);
+					graphic->Print(WPoint(pos), 2, "%d\xbd\xc3", hours);
 				}
 				graphic->SetTextColor(0xff000000, 0xffffffff);
 			}
@@ -1998,7 +1998,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 						WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 						draw->pos + WPoint(55, 6);
 					graphic->Print(WPoint(pos), 2,
-						"\261\342\260\243\270\270\267\341");
+						"\xb1\xe2\xb0\xa3\xb8\xb8\xb7\xe1");
 				}
 				graphic->SetTextColor(0xff000000, 0xffffffff);
 			}
@@ -2029,7 +2029,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 			{
 				WPoint pos = WPoint(182, 7) + draw->pos;
 				graphic->Print(WPoint(pos), 2,
-					"\273\363\301\241 \276\306\300\314\305\333 \275\275\267\324");
+					"\xbb\xf3\xc1\xa1 \xbe\xc6\xc0\xcc\xc5\xdb \xbd\xbd\xb7\xd4");
 			}
 			if (draw->underCursor &&
 				(m_uploadBtn[0].rect + draw->pos).IsInRect(mouse))
@@ -2145,7 +2145,7 @@ void COfflineShopDlg::OnTradeItemListLClick()
 				FrRET_OK | FrRET_CANCEL);
 			dlg->SetFadeout(false);
 			dlg->SetMessage(
-				"\276\306\300\314\305\333 \265\356\267\317\300\273 \307\317\275\303\260\332\275\300\264\317\261\356?",
+				"\xbe\xc6\xc0\xcc\xc5\xdb \xb5\xee\xb7\xcf\xc0\xbb \xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 				false);
 		}
 		return;
@@ -2190,7 +2190,7 @@ bool COfflineShopDlg::OnOfflineShopEditDlgCreateResult(int result, FrForm* form)
 			FrForm* notify =
 				CreateForm<FrForm>(g_pFresh->GetManager(), this, "notify");
 			notify->SetMessage(
-				"\274\261\305\303\307\321 \275\275\267\324\300\307 \301\244\272\270\260\241 \276\370\275\300\264\317\264\331. \306\355\301\375 \275\307\306\320\300\324\264\317\264\331.",
+				"\xbc\xb1\xc5\xc3\xc7\xd1 \xbd\xbd\xb7\xd4\xc0\xc7 \xc1\xa4\xba\xb8\xb0\xa1 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9. \xc6\xed\xc1\xfd \xbd\xc7\xc6\xd0\xc0\xd4\xb4\xcf\xb4\xd9.",
 				false);
 			notify->Open(NULL, FrESCAPE | FrENTER);
 			return true;
@@ -2369,7 +2369,7 @@ void COfflineShopVisitorDlg::OnTradeItemListOwnerDraw(int param)
 						WPoint pos = WPoint(m_tradeState[2].rect.x,
 										 m_tradeState[2].rect.y) +
 							draw->pos + WPoint(55, 6);
-						graphic->Print(WPoint(pos), 2, "%d\300\317",
+						graphic->Print(WPoint(pos), 2, "%d\xc0\xcf",
 							hours / 24 + 1);
 					}
 					else
@@ -2377,7 +2377,7 @@ void COfflineShopVisitorDlg::OnTradeItemListOwnerDraw(int param)
 						WPoint pos = WPoint(m_tradeState[2].rect.x,
 										 m_tradeState[2].rect.y) +
 							draw->pos + WPoint(55, 6);
-						graphic->Print(WPoint(pos), 2, "%d\300\317",
+						graphic->Print(WPoint(pos), 2, "%d\xc0\xcf",
 							hours / 24);
 					}
 				}
@@ -2386,7 +2386,7 @@ void COfflineShopVisitorDlg::OnTradeItemListOwnerDraw(int param)
 					WPoint pos =
 						WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 						draw->pos + WPoint(55, 6);
-					graphic->Print(WPoint(pos), 2, "%d\275\303", hours);
+					graphic->Print(WPoint(pos), 2, "%d\xbd\xc3", hours);
 				}
 			}
 			if (draw->underCursor &&
@@ -2410,7 +2410,7 @@ void COfflineShopVisitorDlg::OnTradeItemListOwnerDraw(int param)
 					WPoint(m_tradeState[2].rect.x, m_tradeState[2].rect.y) +
 					draw->pos + WPoint(55, 6);
 				graphic->Print(WPoint(pos), 2,
-					"\261\270\270\305 \272\322\260\241");
+					"\xb1\xb8\xb8\xc5 \xba\xd2\xb0\xa1");
 			}
 		}
 	}
@@ -2557,7 +2557,7 @@ void COfflineBuyDlg::OnOkBnUp()
 				form->SetRect(WRect(rect.x, rect.y, rect.w, rect.h));
 				form->SetTimeLimit(12.f);
 				form->SetMessage(
-					"\307\366\300\347 \276\306\300\314\305\333\300\307 \272\270\300\257\260\263\274\366\260\241 20,000\260\263\300\314\271\307\267\316 \276\306\300\314\305\333\300\273 \261\270\300\324 \266\307\264\302 \277\305\261\346 \274\366 \276\370\275\300\264\317\264\331.",
+					"\xc7\xf6\xc0\xe7 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xc7 \xba\xb8\xc0\xaf\xb0\xb3\xbc\xf6\xb0\xa1 20,000\xb0\xb3\xc0\xcc\xb9\xc7\xb7\xce \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb1\xb8\xc0\xd4 \xb6\xc7\xb4\xc2 \xbf\xc5\xb1\xe6 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 					false);
 				form->Open(NULL, 0);
 			}
@@ -2566,7 +2566,7 @@ void COfflineBuyDlg::OnOkBnUp()
 				FrForm* form = CreateForm<FrForm>(g_pFresh->GetManager(), this,
 					"notify_okcancel");
 				form->SetMessage(
-					"\\c0xffff0000\\c\301\244\270\273 \261\270\300\324\307\317\275\303\260\332\275\300\264\317\261\356?",
+					"\\c0xffff0000\\c\xc1\xa4\xb8\xbb \xb1\xb8\xc0\xd4\xc7\xcf\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
 					false);
 				form->Open((FRESH_PFN_RESULT)&COfflineBuyDlg::OnConfirmResult,
 					FrESCAPE | FrENTER);

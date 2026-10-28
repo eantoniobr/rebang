@@ -504,7 +504,7 @@ WBoneSet* WPuppet::GetFreeBoneSetList(bool flag)
 void WPuppet::SetDefaultFaceAnimation(void)
 {
 	w_face_animation* anim = new w_face_animation;
-	strcpy(anim->name, "\261\342\272\273");
+	strcpy(anim->name, "\xb1\xe2\xba\xbb");
 	anim->texHandle = 0;
 	anim->tu = 0.0f;
 	anim->tv = 0.0f;
@@ -1317,7 +1317,7 @@ void WPuppet::ApplyFaceAnimation(char* name, float time)
 	}
 	else
 	{
-		w_face_animation* anim = m_fanimList.Find("\261\342\272\273");
+		w_face_animation* anim = m_fanimList.Find("\xb1\xe2\xba\xbb");
 		if (anim == 0)
 			return;
 		w_mesh** list = anim->mesh;

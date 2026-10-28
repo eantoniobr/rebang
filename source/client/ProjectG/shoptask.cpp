@@ -128,7 +128,7 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			}
 			GetActor("Shop") << MsgObject(NULL, 577,
 				(int)MakeStr(
-					"\301\244\273\363\300\373\300\270\267\316 \261\270\270\305\260\241 \277\317\267\341\265\307\276\372\275\300\264\317\264\331.\012\272\270\263\312\275\272 %s %d\260\263\270\246 \271\336\300\270\274\314\275\300\264\317\264\331.",
+					"\xc1\xa4\xbb\xf3\xc0\xfb\xc0\xb8\xb7\xce \xb1\xb8\xb8\xc5\xb0\xa1 \xbf\xcf\xb7\xe1\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.\012\xba\xb8\xb3\xca\xbd\xba %s %d\xb0\xb3\xb8\xa6 \xb9\xde\xc0\xb8\xbc\xcc\xbd\xc0\xb4\xcf\xb4\xd9.",
 					Doc()->m_itemManager.GetItemName(tid), result),
 				0, 0, 0, 0);
 		}
@@ -138,7 +138,7 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			Doc()->m_bonusCash = packet.Decode8();
 			Doc()->RefreshAllCookie();
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\301\244\273\363\300\373\300\270\267\316 \261\270\270\305\260\241 \277\317\267\341\265\307\276\372\275\300\264\317\264\331.",
+				(int)"\xc1\xa4\xbb\xf3\xc0\xfb\xc0\xb8\xb7\xce \xb1\xb8\xb8\xc5\xb0\xa1 \xbf\xcf\xb7\xe1\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			if (IS_KINDOF(CShopTask, AfxGetTask()))
 			{
@@ -149,19 +149,19 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			break;
 		case 2:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\272\270\300\257\307\317\260\355 \300\326\264\302 \306\316\300\314 \272\316\301\267\307\325\264\317\264\331",
+				(int)"\xba\xb8\xc0\xaf\xc7\xcf\xb0\xed \xc0\xd6\xb4\xc2 \xc6\xce\xc0\xcc \xba\xce\xc1\xb7\xc7\xd5\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 3:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\337\270\370\265\310 \273\363\307\260 \304\332\265\345\300\324\264\317\264\331",
+				(int)"\xc0\xdf\xb8\xf8\xb5\xc8 \xbb\xf3\xc7\xb0 \xc4\xda\xb5\xe5\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 1:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\261\270\270\305\260\241 \275\307\306\320\307\317\277\264\275\300\264\317\264\331",
+				(int)"\xb1\xb8\xb8\xc5\xb0\xa1 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
@@ -171,25 +171,25 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 		case 0x26:
 		case 0x27:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\314\271\314 \261\270\270\305\307\321 \271\260\260\307\300\324\264\317\264\331.",
+				(int)"\xc0\xcc\xb9\xcc \xb1\xb8\xb8\xc5\xc7\xd1 \xb9\xb0\xb0\xc7\xc0\xd4\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x28:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\314\271\314 \277\354\306\355\307\324\277\241 \260\241\301\366\260\355 \300\326\275\300\264\317\264\331.",
+				(int)"\xc0\xcc\xb9\xcc \xbf\xec\xc6\xed\xc7\xd4\xbf\xa1 \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x29:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\301\366\261\335 \306\307\270\305\301\337\300\316 \273\363\307\260\300\324\264\317\264\331. \306\307\270\305 \277\317\267\341\265\310 \265\332\277\241 \261\270\300\324\307\317\275\307 \274\366 \300\326\275\300\264\317\264\331.",
+				(int)"\xc1\xf6\xb1\xdd \xc6\xc7\xb8\xc5\xc1\xdf\xc0\xce \xbb\xf3\xc7\xb0\xc0\xd4\xb4\xcf\xb4\xd9. \xc6\xc7\xb8\xc5 \xbf\xcf\xb7\xe1\xb5\xc8 \xb5\xda\xbf\xa1 \xb1\xb8\xc0\xd4\xc7\xcf\xbd\xc7 \xbc\xf6 \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2B:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\314\271\314 \265\271\307\307\264\317\300\307 \272\361\271\320\261\335\260\355\277\241 \260\241\301\366\260\355 \300\326\275\300\264\317\264\331.",
+				(int)"\xc0\xcc\xb9\xcc \xb5\xb9\xc7\xc7\xb4\xcf\xc0\xc7 \xba\xf1\xb9\xd0\xb1\xdd\xb0\xed\xbf\xa1 \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
@@ -199,7 +199,7 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			packet.DecodeBuffer(&time, sizeof(time));
 			Doc()->SetServerTime(time);
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\306\307\270\305\261\342\260\243\300\273 \310\256\300\316\307\330 \301\326\274\274\277\344.",
+				(int)"\xc6\xc7\xb8\xc5\xb1\xe2\xb0\xa3\xc0\xbb \xc8\xae\xc0\xce\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.",
 				0, 0, 0, 0);
 			break;
 		}
@@ -210,81 +210,81 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			packet.DecodeBuffer(&time, sizeof(time));
 			Doc()->SetServerTime(time);
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\276\306\300\314\305\333\300\307 \261\342\260\243\300\273 \310\256\300\316\307\330 \301\326\274\274\277\344.",
+				(int)"\xbe\xc6\xc0\xcc\xc5\xdb\xc0\xc7 \xb1\xe2\xb0\xa3\xc0\xbb \xc8\xae\xc0\xce\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.",
 				0, 0, 0, 0);
 			break;
 		}
 
 		case 0x10:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\261\342\260\243\301\246 \276\306\300\314\305\333\300\273 \273\347\277\353\301\337\300\324\264\317\264\331",
+				(int)"\xb1\xe2\xb0\xa3\xc1\xa6 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xbb\xe7\xbf\xeb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x11:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\260\271\274\366\301\246 \276\306\300\314\305\333\300\273 \273\347\277\353\301\337\300\324\264\317\264\331",
+				(int)"\xb0\xb9\xbc\xf6\xc1\xa6 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xbb\xe7\xbf\xeb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x15:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\307\321\271\370\277\241 \263\312\271\253 \270\271\300\272 \276\306\300\314\305\333\300\273 \261\270\300\324\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xc7\xd1\xb9\xf8\xbf\xa1 \xb3\xca\xb9\xab \xb8\xb9\xc0\xba \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb1\xb8\xc0\xd4\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x17:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\272\270\300\257\307\317\260\355 \300\326\264\302 \304\355\305\260\260\241 \272\316\301\267\307\325\264\317\264\331.",
+				(int)"\xba\xb8\xc0\xaf\xc7\xcf\xb0\xed \xc0\xd6\xb4\xc2 \xc4\xed\xc5\xb0\xb0\xa1 \xba\xce\xc1\xb7\xc7\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x18:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\304\355\305\260\270\246 \276\367\265\245\300\314\306\256\307\317\264\302\265\245 \275\307\306\320\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xc4\xed\xc5\xb0\xb8\xa6 \xbe\xf7\xb5\xa5\xc0\xcc\xc6\xae\xc7\xcf\xb4\xc2\xb5\xa5 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x12:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\276\306\300\314\305\333\300\273 \264\365 \300\314\273\363 \261\270\300\324\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb4\xf5 \xc0\xcc\xbb\xf3 \xb1\xb8\xc0\xd4\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x23:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\301\241\300\314 \310\245\300\342\307\317\277\251 \301\366\261\335\300\272 \261\270\300\324\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331. \300\341\275\303 \310\304 \300\314\277\353\307\330\301\326\275\303\261\342 \271\331\266\370\264\317\264\331.",
+				(int)"\xbb\xf3\xc1\xa1\xc0\xcc \xc8\xa5\xc0\xe2\xc7\xcf\xbf\xa9 \xc1\xf6\xb1\xdd\xc0\xba \xb1\xb8\xc0\xd4\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9. \xc0\xe1\xbd\xc3 \xc8\xc4 \xc0\xcc\xbf\xeb\xc7\xd8\xc1\xd6\xbd\xc3\xb1\xe2 \xb9\xd9\xb6\xf8\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x13:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\306\307\270\305\307\317\264\302 \276\306\300\314\305\333\300\314 \276\306\264\325\264\317\264\331.",
+				(int)"\xc6\xc7\xb8\xc5\xc7\xcf\xb4\xc2 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xcc \xbe\xc6\xb4\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2E:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\303\244\263\316\270\265\274\255\272\361\275\272\260\241 \301\276\267\341\265\307\276\356 \264\365\300\314\273\363 \261\270\270\305\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xc3\xa4\xb3\xce\xb8\xb5\xbc\xad\xba\xf1\xbd\xba\xb0\xa1 \xc1\xbe\xb7\xe1\xb5\xc7\xbe\xee \xb4\xf5\xc0\xcc\xbb\xf3 \xb1\xb8\xb8\xc5\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x22:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\314 \276\306\300\314\305\333\300\273 \264\365 \300\314\273\363 \272\270\300\257\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xc0\xcc \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb4\xf5 \xc0\xcc\xbb\xf3 \xba\xb8\xc0\xaf\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2C:
 		case 0x2D:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\307\366\300\347 \267\271\272\247\267\316\264\302 \261\270\300\324\307\322 \274\366 \276\370\275\300\264\317\264\331",
+				(int)"\xc7\xf6\xc0\xe7 \xb7\xb9\xba\xa7\xb7\xce\xb4\xc2 \xb1\xb8\xc0\xd4\xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x35:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\307\366\300\347 \270\360\265\347 \304\263\275\254\277\241 \264\353\307\321 \301\266\310\270 \271\327 \273\347\277\353\300\314 \301\244\301\366\265\307\276\356 \300\326\275\300\264\317\264\331.",
+				(int)"\xc7\xf6\xc0\xe7 \xb8\xf0\xb5\xe7 \xc4\xb3\xbd\xac\xbf\xa1 \xb4\xeb\xc7\xd1 \xc1\xb6\xc8\xb8 \xb9\xd7 \xbb\xe7\xbf\xeb\xc0\xcc \xc1\xa4\xc1\xf6\xb5\xc7\xbe\xee \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 		}
@@ -299,7 +299,7 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			Doc()->m_bonusCash = packet.Decode8();
 			Doc()->RefreshAllCookie();
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\307\317\261\342\260\241 \277\317\267\341\265\307\276\372\275\300\264\317\264\331",
+				(int)"\xbc\xb1\xb9\xb0\xc7\xcf\xb1\xe2\xb0\xa1 \xbf\xcf\xb7\xe1\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			if (IsLocalContent((localContentType_t)96))
 			{
@@ -325,19 +325,19 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			break;
 		case 2:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\261\335\276\327\300\314 \272\316\301\267\307\325\264\317\264\331",
+				(int)"\xb1\xdd\xbe\xd7\xc0\xcc \xba\xce\xc1\xb7\xc7\xd5\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 3:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\337\270\370\265\310 \273\363\307\260 \304\332\265\345\300\324\264\317\264\331",
+				(int)"\xc0\xdf\xb8\xf8\xb5\xc8 \xbb\xf3\xc7\xb0 \xc4\xda\xb5\xe5\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 1:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\307\317\261\342\260\241 \275\307\306\320\307\317\277\264\275\300\264\317\264\331",
+				(int)"\xbc\xb1\xb9\xb0\xc7\xcf\xb1\xe2\xb0\xa1 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
@@ -347,37 +347,37 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 		case 0x26:
 		case 0x27:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\314 \300\314\271\314 \276\306\300\314\305\333\300\273 \260\241\301\366\260\355 \300\326\275\300\264\317\264\331",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xcc \xc0\xcc\xb9\xcc \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x28:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\314 \300\314\271\314 \277\354\306\355\307\324\277\241 \260\241\301\366\260\355 \300\326\275\300\264\317\264\331.",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xcc \xc0\xcc\xb9\xcc \xbf\xec\xc6\xed\xc7\xd4\xbf\xa1 \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x29:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\314 \307\366\300\347 \306\307\270\305\301\337\300\316 \273\363\307\260\300\324\264\317\264\331. \306\307\270\305 \277\317\267\341\265\310 \265\332\277\241 \274\261\271\260\307\317\261\342\260\241 \260\241\264\311\307\325\264\317\264\331.",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xcc \xc7\xf6\xc0\xe7 \xc6\xc7\xb8\xc5\xc1\xdf\xc0\xce \xbb\xf3\xc7\xb0\xc0\xd4\xb4\xcf\xb4\xd9. \xc6\xc7\xb8\xc5 \xbf\xcf\xb7\xe1\xb5\xc8 \xb5\xda\xbf\xa1 \xbc\xb1\xb9\xb0\xc7\xcf\xb1\xe2\xb0\xa1 \xb0\xa1\xb4\xc9\xc7\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2B:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\314\271\314 \265\271\307\307\264\317\300\307 \272\361\271\320\261\335\260\355\277\241 \260\241\301\366\260\355 \300\326\275\300\264\317\264\331.",
+				(int)"\xc0\xcc\xb9\xcc \xb5\xb9\xc7\xc7\xb4\xcf\xc0\xc7 \xba\xf1\xb9\xd0\xb1\xdd\xb0\xed\xbf\xa1 \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 8:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\307\317\261\342\270\246 \307\322 \274\366 \276\370\264\302 \260\350\301\244\300\324\264\317\264\331.",
+				(int)"\xbc\xb1\xb9\xb0\xc7\xcf\xb1\xe2\xb8\xa6 \xc7\xd2 \xbc\xf6 \xbe\xf8\xb4\xc2 \xb0\xe8\xc1\xa4\xc0\xd4\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 7:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\301\326\271\316\271\370\310\243\260\241 \300\337\270\370 \300\324\267\302\265\307\276\372\275\300\264\317\264\331",
+				(int)"\xc1\xd6\xb9\xce\xb9\xf8\xc8\xa3\xb0\xa1 \xc0\xdf\xb8\xf8 \xc0\xd4\xb7\xc2\xb5\xc7\xbe\xfa\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
@@ -387,7 +387,7 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			packet.DecodeBuffer(&time, sizeof(time));
 			Doc()->SetServerTime(time);
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\306\307\270\305\261\342\260\243\300\273 \310\256\300\316\307\330 \301\326\274\274\277\344.",
+				(int)"\xc6\xc7\xb8\xc5\xb1\xe2\xb0\xa3\xc0\xbb \xc8\xae\xc0\xce\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.",
 				0, 0, 0, 0);
 			break;
 		}
@@ -398,140 +398,140 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			packet.DecodeBuffer(&time, sizeof(time));
 			Doc()->SetServerTime(time);
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\276\306\300\314\305\333\300\307 \261\342\260\243\300\273 \310\256\300\316\307\330 \301\326\274\274\277\344.",
+				(int)"\xbe\xc6\xc0\xcc\xc5\xdb\xc0\xc7 \xb1\xe2\xb0\xa3\xc0\xbb \xc8\xae\xc0\xce\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4.",
 				0, 0, 0, 0);
 			break;
 		}
 
 		case 0xC:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\277\241\260\324 \307\330\264\347 \304\263\265\360\260\241 \276\370\275\300\264\317\264\331",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xbf\xa1\xb0\xd4 \xc7\xd8\xb4\xe7 \xc4\xb3\xb5\xf0\xb0\xa1 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0xE:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\277\241\260\324 \307\330\264\347 \304\263\270\257\305\315\260\241 \276\370\275\300\264\317\264\331",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xbf\xa1\xb0\xd4 \xc7\xd8\xb4\xe7 \xc4\xb3\xb8\xaf\xc5\xcd\xb0\xa1 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x10:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\314 \261\342\260\243\301\246 \276\306\300\314\305\333\300\273 \273\347\277\353\301\337\300\324\264\317\264\331",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xcc \xb1\xe2\xb0\xa3\xc1\xa6 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xbb\xe7\xbf\xeb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x11:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\314 \260\271\274\366\301\246 \276\306\300\314\305\333\300\273 \273\347\277\353\301\337\300\324\264\317\264\331",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xcc \xb0\xb9\xbc\xf6\xc1\xa6 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xbb\xe7\xbf\xeb\xc1\xdf\xc0\xd4\xb4\xcf\xb4\xd9",
 				0, 0, 0, 0);
 			break;
 
 		case 0x12:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\276\306\300\314\305\333 \272\270\300\257 \307\321\265\265\270\246 \303\312\260\372\307\325\264\317\264\331.",
+				(int)"\xbe\xc6\xc0\xcc\xc5\xdb \xba\xb8\xc0\xaf \xc7\xd1\xb5\xb5\xb8\xa6 \xc3\xca\xb0\xfa\xc7\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x15:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\307\321\271\370\277\241 \263\312\271\253 \270\271\300\272 \276\306\300\314\305\333\300\273 \261\270\300\324\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xc7\xd1\xb9\xf8\xbf\xa1 \xb3\xca\xb9\xab \xb8\xb9\xc0\xba \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xbb \xb1\xb8\xc0\xd4\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x17:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\272\270\300\257\307\317\260\355 \300\326\264\302 \304\355\305\260\260\241 \272\316\301\267\307\325\264\317\264\331.",
+				(int)"\xba\xb8\xc0\xaf\xc7\xcf\xb0\xed \xc0\xd6\xb4\xc2 \xc4\xed\xc5\xb0\xb0\xa1 \xba\xce\xc1\xb7\xc7\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x18:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\304\355\305\260\301\244\272\270\270\246 \276\367\265\245\300\314\306\256\307\317\301\366 \270\370\307\337\275\300\264\317\264\331.",
+				(int)"\xc4\xed\xc5\xb0\xc1\xa4\xba\xb8\xb8\xa6 \xbe\xf7\xb5\xa5\xc0\xcc\xc6\xae\xc7\xcf\xc1\xf6 \xb8\xf8\xc7\xdf\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x1C:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\261\270\300\324\307\317\275\305 \274\261\271\260\300\273 \300\372\300\345\307\317\301\366 \270\370\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xb1\xb8\xc0\xd4\xc7\xcf\xbd\xc5 \xbc\xb1\xb9\xb0\xc0\xbb \xc0\xfa\xc0\xe5\xc7\xcf\xc1\xf6 \xb8\xf8\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x1E:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\307 \301\244\272\270\270\246 \301\266\310\270\307\317\264\302\265\245 \275\307\306\320\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xc7 \xc1\xa4\xba\xb8\xb8\xa6 \xc1\xb6\xc8\xb8\xc7\xcf\xb4\xc2\xb5\xa5 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x1F:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\261\270\300\324\307\317\267\301\260\355 \307\317\264\302 \276\306\300\314\305\333\300\314 \276\370\275\300\264\317\264\331.",
+				(int)"\xb1\xb8\xc0\xd4\xc7\xcf\xb7\xc1\xb0\xed \xc7\xcf\xb4\xc2 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xcc \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x20:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\305\303\307\317\275\305 \304\355\306\371\300\273 \273\347\277\353\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331..",
+				(int)"\xbc\xb1\xc5\xc3\xc7\xcf\xbd\xc5 \xc4\xed\xc6\xf9\xc0\xbb \xbb\xe7\xbf\xeb\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9..",
 				0, 0, 0, 0);
 			break;
 
 		case 0x21:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\273\363\264\353\271\346\300\307 \274\261\271\260\307\324\300\314 \260\241\265\346 \302\367 \264\365 \300\314\273\363 \274\261\271\260\300\273 \307\317\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xbb\xf3\xb4\xeb\xb9\xe6\xc0\xc7 \xbc\xb1\xb9\xb0\xc7\xd4\xc0\xcc \xb0\xa1\xb5\xe6 \xc2\xf7 \xb4\xf5 \xc0\xcc\xbb\xf3 \xbc\xb1\xb9\xb0\xc0\xbb \xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x13:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\306\307\270\305\307\317\264\302 \276\306\300\314\305\333\300\314 \276\306\264\325\264\317\264\331.",
+				(int)"\xc6\xc7\xb8\xc5\xc7\xcf\xb4\xc2 \xbe\xc6\xc0\xcc\xc5\xdb\xc0\xcc \xbe\xc6\xb4\xd5\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x19:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\304\355\305\260\270\246 \260\241\301\366\260\355 \300\326\264\331\264\302 \301\244\272\270\270\246 \303\243\300\273 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xc4\xed\xc5\xb0\xb8\xa6 \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xb4\xd9\xb4\xc2 \xc1\xa4\xba\xb8\xb8\xa6 \xc3\xa3\xc0\xbb \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2E:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\303\244\263\316\270\265\274\255\272\361\275\272\260\241 \301\276\267\341\265\307\276\356 \264\365\300\314\273\363 \261\270\270\305\307\317\275\307 \274\366 \276\370\275\300\264\317\264\331..",
+				(int)"\xc3\xa4\xb3\xce\xb8\xb5\xbc\xad\xba\xf1\xbd\xba\xb0\xa1 \xc1\xbe\xb7\xe1\xb5\xc7\xbe\xee \xb4\xf5\xc0\xcc\xbb\xf3 \xb1\xb8\xb8\xc5\xc7\xcf\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9..",
 				0, 0, 0, 0);
 			break;
 
 		case 0x22:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\300\273 \307\317\267\301\264\302 \300\257\300\372\264\302 \300\314 \274\261\271\260\300\273 \271\336\300\270\275\307 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xbc\xb1\xb9\xb0\xc0\xbb \xc7\xcf\xb7\xc1\xb4\xc2 \xc0\xaf\xc0\xfa\xb4\xc2 \xc0\xcc \xbc\xb1\xb9\xb0\xc0\xbb \xb9\xde\xc0\xb8\xbd\xc7 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2C:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\300\273 \271\336\264\302 \300\257\300\372\300\307 \267\271\272\247\300\314 \263\267\276\306 \274\261\271\260\307\322\274\366\260\241 \276\370\275\300\264\317\264\331.",
+				(int)"\xbc\xb1\xb9\xb0\xc0\xbb \xb9\xde\xb4\xc2 \xc0\xaf\xc0\xfa\xc0\xc7 \xb7\xb9\xba\xa7\xc0\xcc \xb3\xb7\xbe\xc6 \xbc\xb1\xb9\xb0\xc7\xd2\xbc\xf6\xb0\xa1 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x2D:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\300\273 \271\336\264\302 \300\257\300\372\300\307 \267\271\272\247\300\314 \263\364\276\306 \274\261\271\260 \307\322 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xbc\xb1\xb9\xb0\xc0\xbb \xb9\xde\xb4\xc2 \xc0\xaf\xc0\xfa\xc0\xc7 \xb7\xb9\xba\xa7\xc0\xcc \xb3\xf4\xbe\xc6 \xbc\xb1\xb9\xb0 \xc7\xd2 \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x34:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\300\332\261\342 \300\332\275\305\277\241\260\324\264\302 \274\261\271\260\300\273 \272\270\263\276 \274\366 \276\370\275\300\264\317\264\331.",
+				(int)"\xc0\xda\xb1\xe2 \xc0\xda\xbd\xc5\xbf\xa1\xb0\xd4\xb4\xc2 \xbc\xb1\xb9\xb0\xc0\xbb \xba\xb8\xb3\xbe \xbc\xf6 \xbe\xf8\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 
 		case 0x33:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\274\261\271\260\307\322 \300\257\300\372\300\307 \301\244\272\270\270\246 \303\243\301\366 \270\370\307\337\275\300\264\317\264\331. \264\331\275\303 \275\303\265\265\307\330 \301\326\274\274\277\344",
+				(int)"\xbc\xb1\xb9\xb0\xc7\xd2 \xc0\xaf\xc0\xfa\xc0\xc7 \xc1\xa4\xba\xb8\xb8\xa6 \xc3\xa3\xc1\xf6 \xb8\xf8\xc7\xdf\xbd\xc0\xb4\xcf\xb4\xd9. \xb4\xd9\xbd\xc3 \xbd\xc3\xb5\xb5\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4",
 				0, 0, 0, 0);
 			break;
 
 		case 0x35:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\307\366\300\347 \270\360\265\347 \304\263\275\254\277\241 \264\353\307\321 \301\266\310\270 \271\327 \273\347\277\353\300\314 \301\244\301\366\265\307\276\356 \300\326\275\300\264\317\264\331.",
+				(int)"\xc7\xf6\xc0\xe7 \xb8\xf0\xb5\xe7 \xc4\xb3\xbd\xac\xbf\xa1 \xb4\xeb\xc7\xd1 \xc1\xb6\xc8\xb8 \xb9\xd7 \xbb\xe7\xbf\xeb\xc0\xcc \xc1\xa4\xc1\xf6\xb5\xc7\xbe\xee \xc0\xd6\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 		}
@@ -588,23 +588,23 @@ int CShopTask::OnPacket(WReceivedPacket& packet)
 			Doc()->AddCaddie(&caddie);
 			Doc()->m_myInfo.userEquip.guidCaddie = newId;
 			AfxGetTask()->GetActor("Shop") << MsgObject(NULL, 591,
-				(int)"\276\367\261\327\267\271\300\314\265\345\270\246 \274\272\260\370\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xbe\xf7\xb1\xd7\xb7\xb9\xc0\xcc\xb5\xe5\xb8\xa6 \xbc\xba\xb0\xf8\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				caddie.tid, 0, 0, 0);
 		}
 		break;
 		case 1:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\307\330\264\347 \304\263\265\360\270\246 \260\241\301\366\260\355 \300\326\301\366 \276\312\275\300\264\317\264\331.",
+				(int)"\xc7\xd8\xb4\xe7 \xc4\xb3\xb5\xf0\xb8\xa6 \xb0\xa1\xc1\xf6\xb0\xed \xc0\xd6\xc1\xf6 \xbe\xca\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 		case 2:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\276\367\261\327\267\271\300\314\265\345\270\246 \275\307\306\320\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xbe\xf7\xb1\xd7\xb7\xb9\xc0\xcc\xb5\xe5\xb8\xa6 \xbd\xc7\xc6\xd0\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 		case 3:
 			GetActor("Shop") << MsgObject(NULL, 35,
-				(int)"\276\313\274\366\276\370\264\302 \277\300\267\371\260\241 \271\337\273\375\307\317\277\264\275\300\264\317\264\331.",
+				(int)"\xbe\xcb\xbc\xf6\xbe\xf8\xb4\xc2 \xbf\xc0\xb7\xf9\xb0\xa1 \xb9\xdf\xbb\xfd\xc7\xcf\xbf\xb4\xbd\xc0\xb4\xcf\xb4\xd9.",
 				0, 0, 0, 0);
 			break;
 		}

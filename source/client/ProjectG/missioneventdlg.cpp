@@ -163,7 +163,7 @@ void FrMissionEventDlg::OnLButtonDownDayGiftButton()
 {
 	if (m_pMissionEvent->GetDayGiftFlag() == true)
 		AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 35,
-			(int)"\300\314\271\314 \300\317\300\317\271\314\274\307 \274\261\271\260\300\273 \271\336\276\322\275\300\264\317\264\331.",
+			(int)"\xc0\xcc\xb9\xcc \xc0\xcf\xc0\xcf\xb9\xcc\xbc\xc7 \xbc\xb1\xb9\xb0\xc0\xbb \xb9\xde\xbe\xd2\xbd\xc0\xb4\xcf\xb4\xd9.",
 			0, 0, 0, 0));
 	else
 		RequestGift(1);
@@ -180,7 +180,7 @@ void FrMissionEventDlg::OnLButtonDownTermGiftButton()
 {
 	if (m_pMissionEvent->GetTermGiftFlag() == true)
 		AfxGetTask()->SendMsgToMainActor(MsgObject(NULL, 35,
-			(int)"\300\314\271\314 \261\342\260\243\271\314\274\307 \274\261\271\260\300\273 \271\336\276\322\275\300\264\317\264\331.",
+			(int)"\xc0\xcc\xb9\xcc \xb1\xe2\xb0\xa3\xb9\xcc\xbc\xc7 \xbc\xb1\xb9\xb0\xc0\xbb \xb9\xde\xbe\xd2\xbd\xc0\xb4\xcf\xb4\xd9.",
 			0, 0, 0, 0));
 	else
 		RequestGift(2);
