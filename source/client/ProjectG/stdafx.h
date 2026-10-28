@@ -52,6 +52,7 @@ ILFILLX2
 #include "bitmap.h"
 #include "wavi.h"
 #include "wpuppet.h"
+#include "wmathutil.inl"
 #include "wview.h"
 ILNUM_WF0
 #include "wfont.h"

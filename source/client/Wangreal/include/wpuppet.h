@@ -212,12 +212,12 @@ public:
 	WVector GetDeltaVec(char* name, float time);
 	WVector GetDeltaVec(char* name, float from, float to);
 	bool CheckFrameData(int first, int last, int& from, int& to);
-	float GetAnimationLength();
-	unsigned int GetFrameCount();
+	float GetAnimationLength() { return m_aniLen; }
+	unsigned int GetFrameCount() { return m_framenum; }
 	char* GetFrameData(int);
 	float GetFrameDataTime(int index) { return m_frame[index].num / 30.0f; }
 	bool GetFrameCheck(int);
-	WMatrix& GetMatrix();
+	WMatrix& GetMatrix() { return m_mat; }
 	float GetCamFOV(char* name, WBoneSet* set);
 	const WMatrix& GetCamMatrix(char* name);
 	void CalcBound(Waabb* box, bool flag);

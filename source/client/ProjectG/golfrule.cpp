@@ -12943,7 +12943,7 @@ CUTIN_SENT:
 			shot.shotTime = GOLFDOC()->m_shotTime;
 		}
 
-		shot.frame = GetPVS().m_frame;
+		shot.frame = GetPVS().GetFrame();
 		SendMsg(this, "Player", 272, (int)&shot.angle, 0, 0, 0);
 		shot.clubIndex = GolfClub().GetIndex();
 		shot.randomPower = GolfClub().GetRandomPower();

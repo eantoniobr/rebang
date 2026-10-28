@@ -33,6 +33,7 @@ class WPolySoup : public WResource
 	friend class CGolfBg;
 	friend class CAmbientSound;
 	friend class CNPC;
+	friend class CQuadTree;
 
 public:
 	WPolySoup(CGolfDoc* pDoc);

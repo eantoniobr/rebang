@@ -56,6 +56,7 @@
 #include "../../shared/s5/sharedutilities.h"
 #include "setitemdlg.h"
 #include "quadtree.h"
+ILNUM_QT
 #include "logininfo.h"
 #include "uccclothes.h"
 #include "userinfoform.h"

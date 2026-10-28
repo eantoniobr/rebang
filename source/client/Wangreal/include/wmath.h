@@ -166,7 +166,10 @@ public:
 	WVector center;
 	WVector extend[3];
 
+	Wobb(const WMatrix& mat);
+
 	void operator*=(const WVector& scale);
+	void operator+=(const WVector& vector);
 	Wobb& operator=(const WMatrix& mat);
 	Wobb& operator=(const Wobb& obb);
 	Wobb& operator=(const Waabb& box);
@@ -382,7 +385,13 @@ public:
 		max.Reset();
 	}
 	void Default();
-	bool IsInclude(const Waabb& box) const;
+	bool IsInclude(const Waabb& box) const
+	{
+		if (box.min.x >= min.x && box.max.x <= max.x && box.min.y >= min.y &&
+			box.max.y <= max.y && box.min.z >= min.z && box.max.z <= max.z)
+			return true;
+		return false;
+	}
 	bool IsInclude(const WVector& vector) const
 	{
 		if (min.x <= vector.x && vector.x <= max.x && min.y <= vector.y &&
@@ -419,6 +428,11 @@ public:
 		return center;
 	}
 };
+
+inline Wobb::Wobb(const WMatrix& mat)
+{
+	*this = mat;
+}
 
 int WisEqual(const WVector& left, const WVector& right, float epsilon);
 Waabb operator+(const Waabb& box, const WVector& vector);
@@ -461,4 +475,3 @@ float WVectorLen(const WVector& vector);
 WVector RotVec(const WVector& vector, const WMatrix& matrix);
 
 #include "wmath.inl"
-#include "wmathutil.inl"

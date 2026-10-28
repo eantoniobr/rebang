@@ -43,6 +43,8 @@ public:
 	float GetBarSpeed() { return m_pClub->barSpeed; }
 	unsigned char GetType() { return m_pClub->type; }
 	char* GetName() { return m_pClub->name; }
+	float GetCurve() { return m_pClub->curve; }
+	float GetSpin() { return m_pClub->spin; }
 	float GetLie(const char* name = NULL);
 	void SetApproachMode();
 	void SetPowerShot(int type) { m_powerShot = type; }

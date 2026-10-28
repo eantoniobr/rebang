@@ -1131,7 +1131,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/quadtree.obj",
+    {
+      "path": "source/client/ProjectG/quadtree.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     "source/client/ProjectG/shadow.obj",
     {
       "path": "source/client/ProjectG/fxbox.cpp",

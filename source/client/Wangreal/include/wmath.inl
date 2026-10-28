@@ -535,6 +535,17 @@ inline int operator&(const Waabb& left, const Waabb& right)
 	return 1;
 }
 
+inline Waabb operator+(const Waabb& box, const WVector& vector)
+{
+	Waabb result = box;
+	for (int i = 0; i < 3; i++)
+	{
+		result.max.p[i] += vector.p[i];
+		result.min.p[i] += vector.p[i];
+	}
+	return result;
+}
+
 #ifndef WANGREAL_DEVICE
 inline Waabb ExpandAABB(const Waabb& a, const Waabb& b)
 {
@@ -544,6 +555,29 @@ inline Waabb ExpandAABB(const Waabb& a, const Waabb& b)
 			Max(a.max.z, b.max.z)));
 }
 #endif
+
+inline void Wobb::operator*=(const WVector& scale)
+{
+	extend[0] *= scale.x;
+	extend[1] *= scale.y;
+	extend[2] *= scale.z;
+}
+
+inline void Wobb::operator+=(const WVector& vector)
+{
+	center.x += vector.x;
+	center.y += vector.y;
+	center.z += vector.z;
+}
+
+inline Wobb& Wobb::operator=(const WMatrix& mat)
+{
+	center = mat.pivot;
+	extend[0] = mat.xa;
+	extend[1] = mat.ya;
+	extend[2] = mat.za;
+	return *this;
+}
 
 inline Wobb& Wobb::operator=(const Wobb& obb)
 {
