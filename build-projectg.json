@@ -462,7 +462,11 @@
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
     "source/client/ProjectG/ts_parser.obj",
-    "source/client/ProjectG/tutorial.obj",
+    {
+      "path": "source/client/ProjectG/tutorial.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/questinfodlg.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
