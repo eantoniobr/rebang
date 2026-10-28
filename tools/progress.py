@@ -353,13 +353,8 @@ def render_graph(rows: list[dict[str, str]]) -> str:
         ]
         upper, lower = [], []
         for index, time in enumerate(times):
-            if index:
-                upper.append(f"{x_of(time):.1f},{y_of(tops[index - 1]):.1f}")
-                lower.append(f"{x_of(time):.1f},{y_of(floors[index - 1]):.1f}")
             upper.append(f"{x_of(time):.1f},{y_of(tops[index]):.1f}")
             lower.append(f"{x_of(time):.1f},{y_of(floors[index]):.1f}")
-        upper.append(f"{x_of(end):.1f},{y_of(tops[-1]):.1f}")
-        lower.append(f"{x_of(end):.1f},{y_of(floors[-1]):.1f}")
         points = " ".join(upper + lower[::-1])
         out.append(f'<polygon points="{points}" fill="{color}" />')
         floors = tops
