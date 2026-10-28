@@ -131,10 +131,12 @@ eWindowsVersion GetWindowsVersion()
 	}
 	return version;
 }
+
 IDirect3D9* fnWD3D_Create()
 {
 	return Direct3DCreate9(D3D_SDK_VERSION);
 }
+
 HRESULT fnWD3DDevice_GetRenderTarget(IDirect3DDevice9* dev, DWORD rtIdx,
 	IDirect3DSurface9** surf)
 {
@@ -155,18 +157,21 @@ HRESULT fnWD3DDevice_CreateTexture(IDirect3DDevice9* dev, UINT width,
 	return dev->CreateTexture(width, height, levels, usage, format, pool,
 		texture, shared);
 }
+
 HRESULT fnWD3DDevice_CreateVertexBuffer(IDirect3DDevice9* dev, UINT size,
 	DWORD usage, DWORD fvf, D3DPOOL pool, IDirect3DVertexBuffer9** buffer,
 	HANDLE* shared)
 {
 	return dev->CreateVertexBuffer(size, usage, fvf, pool, buffer, shared);
 }
+
 HRESULT fnWD3DDevice_CreateIndexBuffer(IDirect3DDevice9* dev, UINT size,
 	DWORD usage, D3DFORMAT format, D3DPOOL pool, IDirect3DIndexBuffer9** buffer,
 	HANDLE* shared)
 {
 	return dev->CreateIndexBuffer(size, usage, format, pool, buffer, shared);
 }
+
 HRESULT fnWD3DDevice_SetStreamSource(IDirect3DDevice9* dev, UINT strmNo,
 	IDirect3DVertexBuffer9* vb, UINT offset, UINT stride)
 {
@@ -716,6 +721,7 @@ int WSplashD3D::GetWidth()
 {
 	return m_iSrcWidth;
 }
+
 int WSplashD3D::GetHeight()
 {
 	return m_iSrcHeight;

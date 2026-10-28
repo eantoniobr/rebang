@@ -635,6 +635,7 @@ void CTaskMain::OnUnderBar_BackUp()
 
 	OnBarHoverOff(0);
 }
+
 void CTaskMain::OnUnderBar_FrontInit(int param)
 {
 	m_pUnderBarFront = DYNAMIC_CAST(FrButton, (FrWnd*)param);
@@ -1107,6 +1108,7 @@ void CTaskMain::OnUnderBar_TabBtnUp()
 	}
 	OnBarHoverOff(0);
 }
+
 void CTaskMain::TurnOnUnderTabBar()
 {
 	if (m_bUnderTabOn)
@@ -1560,6 +1562,7 @@ void CTaskMain::ProcessOverBar()
 		}
 	}
 }
+
 void CTaskMain::SendSubSelectionPacket(PANGYA_ITEM_GROUP group)
 {
 	CloseAllSubSelection();
@@ -2240,6 +2243,7 @@ void CTaskMain::OnOverBar_MascotOwnerDraw(int param)
 
 	_DrawSelection(m_pOverBarMascot, rect, TOOLTIP_MASCOT, pGDI);
 }
+
 void CTaskMain::OnOverBar_CharSelInit(int param)
 {
 	m_pOverBarCharSel = DYNAMIC_CAST(FrViewer, (FrWnd*)param);
@@ -2604,6 +2608,7 @@ void CTaskMain::OnOverBar_ClubSelOwnerDraw(int param)
 		}
 	}
 }
+
 void CTaskMain::OnOverBar_AztecSelInit(int param)
 {
 	m_pOverBarAztecSel = DYNAMIC_CAST(FrViewer, (FrWnd*)param);
@@ -2985,6 +2990,7 @@ void CTaskMain::OnOverBar_PangCookieInit(int param)
 		m_pPangCookieBmp[3] = g_pFresh->GetBitmap("pang_bar_frame_han");
 	}
 }
+
 void CTaskMain::OnOverBar_PangCookieOwnerDraw(int param)
 {
 	if (CProjectG::Instance()->HidePrivacy())
@@ -4639,6 +4645,7 @@ void CTaskMain::HandleMsgCommon(const MsgObject& msg)
 		break;
 	}
 }
+
 bool CTaskMain::CompletedMission_Result(int result, FrForm* pForm)
 {
 	for (int i = 0; i < 5; i++)

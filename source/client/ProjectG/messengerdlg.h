@@ -19,6 +19,7 @@ namespace MSN
 {
 	enum eStatusType;
 }
+
 enum eConnectStatus;
 
 struct sMsnChat

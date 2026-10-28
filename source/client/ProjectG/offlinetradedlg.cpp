@@ -2105,6 +2105,7 @@ void COfflineShopDlg::OnTradeItemListOwnerDraw(int param)
 		}
 	}
 }
+
 void COfflineShopDlg::OnToolTipOnwerDraw(int param)
 {
 	CIconToolTip::GetInstance()->Render();

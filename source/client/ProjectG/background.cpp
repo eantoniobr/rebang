@@ -99,6 +99,7 @@ void CBackGround::Draw(unsigned long color)
 	if (m_pSplash)
 		m_pSplash->Draw(color);
 }
+
 void CBackGround::Draw(const WPoint* pos, const WRect* rect,
 	unsigned long color)
 {

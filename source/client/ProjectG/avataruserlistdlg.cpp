@@ -98,8 +98,10 @@ void FrAvatarUserListDlg::OnUserListOwnerDraw(int param)
 				MakeStr("level_%03d", pSlot->level + 1));
 	}
 	else
+	{
 		pIcon = g_pFresh->GetManager()->GetBitmap("LEVELS",
 			MakeStr("level_%03d", pSlot->level + 1));
+	}
 
 	if (pIcon)
 	{
@@ -175,10 +177,11 @@ void FrAvatarUserListDlg::UpdateUserList()
 				}
 			}
 		}
-
 		else if (!(bool)(Doc()->m_myInfo.info.dwIdentity & 4) &&
 			((*it).dwIdentity & 0x14))
+		{
 			continue;
+		}
 
 		m_pUserList->AddItem(&(*it));
 	}

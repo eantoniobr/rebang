@@ -48,6 +48,7 @@ FrFinalRankDlg::FrFinalRankDlg()
 		}
 	}
 }
+
 void FrFinalRankDlg::OnRankLeftInit(int param)
 
 {
@@ -62,6 +63,7 @@ void FrFinalRankDlg::OnRankLeftInit(int param)
 
 	m_pRankLeft->SortItem(FinalRankCompare);
 }
+
 void FrFinalRankDlg::OnRankLeftOwnerDraw(int param)
 
 {
@@ -126,6 +128,7 @@ void FrFinalRankDlg::OnRankLeftOwnerDraw(int param)
 
 	pGDI->SetSpace(space);
 }
+
 void FrFinalRankDlg::OnRankRightInit(int param)
 
 {
@@ -140,6 +143,7 @@ void FrFinalRankDlg::OnRankRightInit(int param)
 
 	m_pRankRight->SortItem(FinalRankCompare);
 }
+
 void FrFinalRankDlg::OnRankRightOwnerDraw(int param)
 
 {
@@ -204,6 +208,7 @@ void FrFinalRankDlg::OnRankRightOwnerDraw(int param)
 
 	pGDI->SetSpace(space);
 }
+
 bool FinalRankCompare(const void* a, const void* b)
 
 {

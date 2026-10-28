@@ -366,10 +366,12 @@ const char* FrEmoticon::GetIconName(int index)
 {
 	return m_Emoticons[index]->Name.c_str();
 }
+
 int FrEmoticon::GetIconNum()
 {
 	return m_Emoticons.size();
 }
+
 void FrEmoticon::GetAlias(std::string (*buffer)[2], int index)
 {
 	if (strlen(m_Emoticons[index]->Alias[0].c_str()))

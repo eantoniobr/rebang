@@ -115,6 +115,7 @@ void CTalkBox::SetText(const char* text, float time)
 		m_time = time;
 	}
 }
+
 void CTalkBox::Process(float elapsed)
 {
 	m_time -= elapsed;

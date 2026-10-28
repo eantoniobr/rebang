@@ -14,6 +14,7 @@ extern "C" char* __cdecl WVersion()
 {
 	return "Oct 21 2011";
 }
+
 extern "C" char* __cdecl WDeviceName()
 {
 	return "DIrectX8";
@@ -49,6 +50,7 @@ void __fastcall AddVideoDevice(WVideoDev* video)
 {
 	vidList += video;
 }
+
 void __fastcall AddInputDevice(WInputDev* input)
 {
 	inpList += input;

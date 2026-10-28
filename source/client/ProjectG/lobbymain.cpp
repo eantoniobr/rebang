@@ -3104,6 +3104,7 @@ void CLobbyMain::AnimateWebEventButton(float dt)
 void CLobbyMain::OnDisplay()
 {
 }
+
 void CLobbyMain::HandleMsg(const MsgObject& msg)
 {
 	switch (msg.message)
@@ -5199,6 +5200,7 @@ void CLobbyMain::HandleMsg(const MsgObject& msg)
 		HandleMsgCommon(msg);
 	}
 }
+
 void CLobbyMain::_RefreshUccClothes(sSlotInfo* pSlot, unsigned long tid,
 	const char* uccIndex)
 {
@@ -5967,6 +5969,7 @@ void CLobbyMain::OnToppage_Halloween2007EvenDown()
 	m_pHalloweenEventDlg->Open(
 		(FRESH_PFN_RESULT)&CLobbyMain::OnHalloweenEventDlgResult, 0x11);
 }
+
 void CLobbyMain::OnToppage_Christmas2007EventInit(int param)
 {
 	m_pToppageChristmas2007Event = DYNAMIC_CAST(FrButton, (FrWnd*)param);
@@ -6816,6 +6819,7 @@ bool CLobbyMain::OnPCBangDlgResult(int result, FrForm* form)
 
 	return true;
 }
+
 bool CLobbyMain::OnCreateInfoResult(int result, FrForm* form)
 {
 	return true;
@@ -7906,6 +7910,7 @@ void CLobbyMain::MakeRoomUserList()
 		break;
 	}
 }
+
 void CLobbyMain::RemakeTeam(bool bRemake)
 {
 	if (m_pRoomUser == NULL)
@@ -9115,6 +9120,7 @@ void CLobbyMain::OnRoomList_Init(int param)
 	m_roomSort = (roomSort_t)6;
 	m_bRoomSortRev = false;
 }
+
 void CLobbyMain::OnRoomList_Finish()
 {
 	m_pOverBarTitle->SetBgImg("title_roomlist");
@@ -11708,6 +11714,7 @@ void CLobbyMain::OnGameRoom_RoomUserOwnerDraw(int param)
 			pSlot->sNick, -1.0f, 0xffffffff);
 	}
 }
+
 void CLobbyMain::OnGameRoom_RoomUserLBtnUp()
 {
 	if (m_pRoomUser == NULL)
@@ -12426,6 +12433,7 @@ void CLobbyMain::OnGameRoom_EquipItemInit(int param)
 {
 	m_pEquipItem = DYNAMIC_CAST(FrViewer, param);
 }
+
 void CLobbyMain::OnGameRoom_EquipItemDown()
 {
 	InitControlsSelectedUserInfo();
@@ -13159,6 +13167,7 @@ void CLobbyMain::OnGameRoom_StartBtnUp()
 		EnableSettingButton(m_bReady);
 	}
 }
+
 void CLobbyMain::OnGameRoom_ReadyInit(int param)
 {
 	m_pReady = DYNAMIC_CAST(FrButton, (FrWnd*)param);
@@ -13816,6 +13825,7 @@ void CLobbyMain::OnGameRoomExt_RoomUserOwnerDraw(int param)
 				(float)m_pKickBmp->Width(), (float)m_pKickBmp->Height()),
 			pItem->underCursor ? 0xffffffff : 0x80ffffff, 0);
 }
+
 void CLobbyMain::OnGameRoomExt_CountdownInit(int param)
 {
 	m_pCountdown = DYNAMIC_CAST(FrArea, (FrWnd*)param);
@@ -14306,6 +14316,7 @@ void CLobbyMain::OnGameRoomExtRes_RoomUserRankOwnerDraw(int param)
 
 	pGDI->SetSpace(space);
 }
+
 void CLobbyMain::OnGameRoomExtRes_RoomUserRankLBtnUp()
 {
 	FrListItem* item = m_pRoomUserRank->GetItemUnderCursor();

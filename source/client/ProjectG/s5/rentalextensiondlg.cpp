@@ -110,7 +110,6 @@ namespace S5
 						pExtension->EnableToolTip(true);
 					}
 				}
-
 				else if (MyPang() < pPart->RentalPrice)
 				{
 					pExtension->Enable(false);

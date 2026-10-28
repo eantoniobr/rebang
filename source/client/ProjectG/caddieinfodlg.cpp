@@ -310,6 +310,7 @@ void FrCaddieInfoDlg::OnOkBtnUp()
 	SendCaddieWarningCheckOption();
 	Close(FrOK, true);
 }
+
 void FrCaddieInfoDlg::OnCancelBtnUp()
 {
 	SendCaddieWarningCheckOption();

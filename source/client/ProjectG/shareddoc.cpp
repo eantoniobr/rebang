@@ -114,6 +114,7 @@ CSharedDoc::~CSharedDoc()
 	ClearRivalVars(false);
 	UccManager()->Clear();
 }
+
 void CSharedDoc::ClearAll()
 {
 	ClearCommonVars();
@@ -507,6 +508,7 @@ void CSharedDoc::ClearRealEquip()
 {
 	memset(&m_realEquip, 0, sizeof(m_realEquip));
 }
+
 void CSharedDoc::InitGameType()
 {
 	m_gameTypeInfo[GAME_TYPE_STROKE].maxPlayer = 4;
@@ -2199,6 +2201,7 @@ int CSharedDoc::IsControlServerService(int service)
 {
 	return m_controlServerService & service;
 }
+
 void CSharedDoc::InitTradeData()
 {
 	m_stateTrade = STATE_TRADE_INIT;
@@ -2688,6 +2691,7 @@ void CSharedDoc::SetSecurityKey(unsigned short key)
 {
 	Doc()->m_securityKey = key;
 }
+
 void CSharedDoc::RefreshItemListFromGuidList(unsigned char mode)
 {
 	std::list<sItemInfo>::iterator it;

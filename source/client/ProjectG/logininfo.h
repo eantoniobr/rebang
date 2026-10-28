@@ -310,6 +310,7 @@ inline const char* LOGINID()
 {
 	return LOGININFO()->Id();
 }
+
 inline unsigned long AUTHUID()
 {
 	return LOGININFO()->AuthUid();
@@ -319,10 +320,12 @@ inline const char* LOGINPW()
 {
 	return LOGININFO()->Passwd();
 }
+
 inline bool IsWebLogin()
 {
 	return LOGININFO()->IsWebLogin() ? true : false;
 }
+
 inline int IsPcBang()
 {
 	return LOGININFO()->IsPcBang();

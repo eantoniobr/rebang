@@ -108,6 +108,7 @@ void WAVIEncoder::Write(Bitmap* bitmap)
 		delete image;
 	}
 }
+
 void WAVIEncoder::WriteAVI(Bitmap* bitmap)
 {
 	AVIStreamWrite(m_psCompressed, m_cur_frame, 1, bitmap->vram,

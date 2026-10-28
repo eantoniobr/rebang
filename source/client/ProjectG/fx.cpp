@@ -586,7 +586,6 @@ bool CFxRunDust::Process(float elapsed)
 		m_ground->SetActive(false, false);
 		m_water->SetActive(false, false);
 	}
-
 	else
 	{
 		CFxSequence* seq;
@@ -596,7 +595,6 @@ bool CFxRunDust::Process(float elapsed)
 			m_water->SetActive(true, false);
 			seq = m_water;
 		}
-
 		else
 		{
 			m_ground->SetActive(true, false);
@@ -684,7 +682,6 @@ bool CFxCobra::Process(float elapsed)
 			m_seq[2]->SetActive(false, false);
 		}
 	}
-
 	else
 	{
 		if (m_ball.m_vel.Magnitude() > 1.f)
@@ -950,7 +947,6 @@ CFxClubImpact::CFxClubImpact(CPvsFxBox& box, CGolfBall& ball,
 		m_fxBox.AddSequence(seq);
 		seq->Pos() = m_ball.PreData(0)->pos;
 	}
-
 	else
 	{
 		sprintf(filename, "%s_%s_impact.spr", club->c.Icon,
@@ -1192,9 +1188,10 @@ bool CFxBoosterWarp::Process(float elapsed)
 			m_seq[0]->SetActive(false, false);
 			m_seq[1]->SetActive(false, false);
 		}
-
 		else
+		{
 			m_seq[0]->Pos() = m_ball.m_pos;
+		}
 	}
 
 	return true;

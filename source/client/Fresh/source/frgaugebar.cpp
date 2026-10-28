@@ -11,6 +11,7 @@ IObject* FrGaugeBarMakeInstance()
 {
 	return new FrGaugeBar;
 }
+
 struct __sFrGaugeBar
 {
 	__sFrGaugeBar()
@@ -202,6 +203,7 @@ IObject* FrGaugeBarExMakeInstance()
 {
 	return new FrGaugeBarEx;
 }
+
 struct __sFrGaugeBarEx
 {
 	__sFrGaugeBarEx()
@@ -435,6 +437,7 @@ IObject* FrGaugeBarImageMakeInstance()
 {
 	return new FrGaugeBarImage;
 }
+
 struct __sFrGaugeBarImage
 {
 	__sFrGaugeBarImage()

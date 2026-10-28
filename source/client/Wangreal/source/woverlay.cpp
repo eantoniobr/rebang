@@ -23,6 +23,7 @@ WOverlay::WOverlay(void)
 	  m_coordMode(0x2200)
 {
 }
+
 WOverlay::~WOverlay(void)
 {
 	if (m_texHandle)
@@ -172,6 +173,7 @@ void WOverlay::RenderWithAxis(WView* pView, const _WRECT& src,
 	DrawTextureWithAxis(pView, m_texHandle, s,
 		ConvertRect(pView, r, m_coordMode), ax, ay, rot, flag, color, mirror);
 }
+
 void WOverlay::ArcClipRender(WView* pView, const _WRECT& src, const _WRECT& dst,
 	float a0, float a1, int flag, unsigned long color)
 {

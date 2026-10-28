@@ -12,6 +12,7 @@ IObject* FrViewerMakeInstance()
 {
 	return new FrViewer;
 }
+
 struct __sFrViewer
 {
 	__sFrViewer()

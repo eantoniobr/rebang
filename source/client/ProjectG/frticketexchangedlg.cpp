@@ -26,6 +26,7 @@ FrTicketExchangeDescDlg::FrTicketExchangeDescDlg()
 	m_pDescViewer = NULL;
 	memset(m_descImage, 0, sizeof(m_descImage));
 }
+
 FrTicketExchangeDescDlg::~FrTicketExchangeDescDlg()
 {
 }

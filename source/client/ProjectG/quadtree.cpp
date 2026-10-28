@@ -6083,7 +6083,6 @@ void CQuadTree::TraceOBB_New(const WVector& from, const WVector& to,
 	{
 		trace->endpos = to;
 	}
-
 	else
 	{
 		trace->endpos = from;

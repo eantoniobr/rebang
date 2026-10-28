@@ -111,6 +111,7 @@ __int64 SumForTradeItemList(__int64 sum, const sTradeItem& item)
 {
 	return sum + item.i64Price;
 }
+
 bool CheckPackageSaleItem(const sTradeItem& item)
 {
 	switch (item.dwTid >> 26)
@@ -248,6 +249,7 @@ const char* __fastcall MakeStatusString(int index, int ability, int slots)
 	}
 	return "";
 }
+
 const char* __fastcall MakeCardStatusString(int index, int ability)
 {
 	const char* names[] = { K2L_Compatibility(
@@ -1364,6 +1366,7 @@ void FrTradeBuyDlg::OnBuyItemIconOwnerDraw()
 	break;
 	}
 }
+
 void FrTradeBuyDlg::OnBuyItemNameInit(int param)
 {
 	m_pBuyItemName = DYNAMIC_CAST(FrEdit, (FrWnd*)param);
@@ -1569,6 +1572,7 @@ void FrTradeBuyDlg::OnPurchaseListOwnerdraw(int param)
 	break;
 	}
 }
+
 bool FrTradeBuyDlg::OnInit()
 {
 	EnableDrag(false);
@@ -1701,6 +1705,7 @@ void FrTradeBuyDlg::SetBuyItem(sTradeItem* item)
 		}
 	}
 }
+
 void FrTradeBuyDlg::SetBuyItemList()
 {
 	const std::list<sTradeItem>* list = Doc()->GetListTradeItem();
@@ -3407,6 +3412,7 @@ void FrTradeEditDlg::SetTradeMyItem(sTradeItem* item)
 		}
 	}
 }
+
 void FrTradeEditDlg::AddListTradeItem(sTradeItem* item)
 {
 	if (!item || !m_pSelectItem)
@@ -3544,6 +3550,7 @@ void FrTradeEditDlg::DrawPang()
 	m_pPangFont->Print(g_view, pos.x + 130.f - width, pos.y + 483.f, text, 0,
 		0xffffffff, NULL);
 }
+
 void FrTradeEditDlg::DrawItem(WPoint pos, sTradeItem* item, unsigned char state)
 {
 	if (!item)
@@ -3633,6 +3640,7 @@ void FrTradeEditDlg::DrawItem(WPoint pos, sTradeItem* item, unsigned char state)
 	break;
 	}
 }
+
 void FrTradeEditDlg::SetControlsButton(bool open, bool close)
 {
 	m_pOpenBn->Enable(open);
@@ -3705,6 +3713,7 @@ void FrTradeEditDlg::UpdateTradeTitle()
 	const char* title = Doc()->GetTradeTitle();
 	m_pTitle->SetLine(1, title, 0, false, 0);
 }
+
 void FrTradeEditDlg::UpdateTradeTitleEdit()
 {
 	if (!m_pTitleEdit)

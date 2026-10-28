@@ -94,6 +94,7 @@ bool FxInterpreter::ParseFxName(const char** str, char* name,
 	type = eET_NONE;
 	return false;
 }
+
 int FxInterpreter::ParseBoundingBoxScript_fx(WPuppet* pet, eScripFormat format)
 {
 	bool bAttached = false;
@@ -125,6 +126,7 @@ int FxInterpreter::ParseBoundingBoxScript_fx(WPuppet* pet, eScripFormat format)
 
 	return -1;
 }
+
 int FxInterpreter::ParseCharBoundingBoxScript_fx(WPuppet* pet,
 	eScripFormat format)
 {

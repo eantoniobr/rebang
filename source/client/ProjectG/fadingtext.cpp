@@ -21,6 +21,7 @@ CFadingText::CFadingText()
 CFadingText::~CFadingText()
 {
 }
+
 void CFadingText::Print(const char* text, float time, FrWnd* pWnd, float x,
 	float y, eFadeType type, unsigned long color)
 {

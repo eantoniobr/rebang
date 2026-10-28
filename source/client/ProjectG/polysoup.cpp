@@ -1267,6 +1267,7 @@ void WPolySoup::xBuildTnLBuffers()
 		m_staticPetGrp.Build(m_model, m_modelNum);
 	}
 }
+
 unsigned char WPolySoup::OverlapCamera(int index)
 {
 	if (m_model[index]->flag & 8)
@@ -2716,6 +2717,7 @@ void WPolySoup::ReloadBasePet()
 	WSingleton<CSceneManager>::Instance()->SetPuppet(m_baseModel->name,
 		m_baseModel->pet);
 }
+
 void WPolySoup::PlaceHoleCup()
 {
 	int i;

@@ -30,6 +30,7 @@ FrEmoticonDlg::FrEmoticonDlg()
 FrEmoticonDlg::~FrEmoticonDlg()
 {
 }
+
 void FrEmoticonDlg::OnOK()
 
 {

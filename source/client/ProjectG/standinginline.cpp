@@ -49,6 +49,7 @@ void CStandingInLine::OnView_TotalInit(int param)
 		m_pViewTotal->SetRect(WRect(rect.x, rect.y, rect.w + 91.0f, rect.h));
 	}
 }
+
 void CStandingInLine::OnView_TotalOwnerDraw(int param)
 {
 	FrGraphicInterface* gdi = g_pFresh->GetManager()->GetGDI();
@@ -79,6 +80,7 @@ void CStandingInLine::OnArrayListInit(int param)
 		}
 	}
 }
+
 void CStandingInLine::OnArrayListOwnerDraw(int param)
 {
 	FrListItem* pItem = (FrListItem*)param;
@@ -110,6 +112,7 @@ void CStandingInLine::OnArrayListBtnDown()
 
 	FrForm::OnOK();
 }
+
 void CStandingInLine::OnArrayListRBtnDown()
 {
 	FrForm::OnCancel();

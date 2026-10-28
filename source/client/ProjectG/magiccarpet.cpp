@@ -78,18 +78,15 @@ void CMagicCarpetHelper::HandleMsg(const MsgObject& msg)
 	switch (msg.message)
 	{
 	case 640:
-
 		PlaySfxMagicCarpetBoundSound();
 		break;
 
 	case 638:
-
 		m_bAutoVolume = true;
 		m_bVolumeDown = true;
 		break;
 
 	case 639:
-
 		m_bVolumeDown = false;
 		break;
 	}
@@ -112,9 +109,10 @@ void CMagicCarpetHelper::PlaySfxMagicCarpetBoundSound()
 
 			g_audio->PlaySfx(MakeStr("magic_melody%d", melody3));
 	}
-
 	else
+	{
 		g_audio->PlaySfx("magic_bounce");
+	}
 
 	bool bLong1 = g_audio->IsPlaying("magicharp_goal_long1");
 
@@ -123,16 +121,12 @@ void CMagicCarpetHelper::PlaySfxMagicCarpetBoundSound()
 
 	if (bLong1 || bShort1 || bShort2)
 		return;
+
 	int r = rand() % 50;
 	if (r == 1)
-
 		g_audio->PlaySfx("magicharp_goal_long1");
-
 	else if (r == 2)
-
 		g_audio->PlaySfx("magicharp_goal_short1");
-
 	else if (r == 3)
-
 		g_audio->PlaySfx("magicharp_goal_short2");
 }

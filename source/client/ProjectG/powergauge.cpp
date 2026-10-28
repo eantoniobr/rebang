@@ -185,6 +185,7 @@ float CPowerGauge::GetAddCardArea()
 		return area;
 	}
 }
+
 float CPowerGauge::GetLuckyNecklaceArea()
 {
 	IFF_STRUCT::sItem* pItem = ItemManager()->FindItem(0x1a000006);
@@ -210,6 +211,7 @@ bool CPowerGauge::IsEquipSpecialAuxPart(unsigned long typeId)
 		return true;
 	return false;
 }
+
 float CPowerGauge::GetAddAuxPartArea()
 {
 	float area = 0.0f;

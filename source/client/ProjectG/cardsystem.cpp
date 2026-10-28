@@ -15,6 +15,7 @@ CCardManager::CCardManager()
 	m_bSPCardAlarm = false;
 	m_windColor = 0;
 }
+
 CCardManager::~CCardManager()
 {
 }
@@ -332,6 +333,7 @@ float CCardManager::GetSpecialCardPangyaZoneUp()
 {
 	return m_periodPangyaZone[m_playerIndex] * 0.5f;
 }
+
 float CCardManager::GetSpecialClearBonusProb(unsigned char course)
 {
 	if (course > 19 || course != m_specialClearBonusCourse)

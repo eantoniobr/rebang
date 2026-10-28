@@ -24,6 +24,7 @@ CAniOverlay::~CAniOverlay()
 		m_pOverlay = NULL;
 	}
 }
+
 void CAniOverlay::Render(float x, float y, int frame, int mode, int color,
 	float scale)
 {

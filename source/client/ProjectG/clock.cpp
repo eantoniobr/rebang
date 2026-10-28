@@ -41,7 +41,6 @@ void CClock::OnProcess(float delta)
 
 			g_audio->PlaySfx("approach_bell");
 		}
-
 		else if (g_CurrentTime > Doc()->m_approachStartTime +
 				Doc()->m_golfGame.gameTimeLimit - 10000)
 		{

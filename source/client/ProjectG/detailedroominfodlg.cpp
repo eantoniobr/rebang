@@ -31,6 +31,7 @@ static bool CompareIdDesc(const void* left, const void* right)
 	bool result = strcmp(ia->second.sNick, ib->second.sNick) < 0;
 	return result;
 }
+
 static bool CompareStatusDesc(const void* left, const void* right)
 {
 	sRoomUserInfo* a = (sRoomUserInfo*)left;
@@ -41,6 +42,7 @@ static bool CompareStatusDesc(const void* left, const void* right)
 		return false;
 	return CompareIdDesc(left, right);
 }
+
 static bool CompareLevelAsc(const void* left, const void* right)
 {
 	const sRoomUserInfo* a = (const sRoomUserInfo*)left;
@@ -76,6 +78,7 @@ static bool CompareIdAsc(const void* left, const void* right)
 	bool result = strcmp(ia->second.sNick, ib->second.sNick) >= 0;
 	return result;
 }
+
 static bool CompareStatusAsc(const void* left, const void* right)
 {
 	sRoomUserInfo* a = (sRoomUserInfo*)left;
@@ -86,6 +89,7 @@ static bool CompareStatusAsc(const void* left, const void* right)
 		return true;
 	return CompareIdDesc(left, right);
 }
+
 static bool CompareLevelDesc(const void* left, const void* right)
 {
 	// HACK
@@ -109,6 +113,7 @@ static bool CompareLevelDesc(const void* left, const void* right)
 	}
 	return CompareIdDesc(left, right);
 }
+
 IMPLEMENT_OBJECT(FrDtRoomDlg, FrForm)
 
 BEGIN_FRESH_MSGMAP(FrDtRoomDlg, FrForm)

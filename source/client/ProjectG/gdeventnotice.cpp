@@ -31,6 +31,7 @@ void CGDEventNotice::Initialize(TiXmlNode* pNode)
 		pChild = pChild->NextSibling("row");
 	}
 }
+
 const char* CGDEventNotice::GetText(int key)
 {
 	std::map<int, std::string>::iterator it = m_textMap.find(key);

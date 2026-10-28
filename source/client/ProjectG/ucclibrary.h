@@ -15,6 +15,7 @@ namespace IFF_STRUCT
 {
 	struct sPart;
 }
+
 namespace ranktype
 {
 	struct sRankUserInfo;

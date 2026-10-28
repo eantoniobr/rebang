@@ -76,6 +76,7 @@ float WTitleFontEx::GetFontH() const
 {
 	return (float)m_pFont->GetFontInfo()->fonth;
 }
+
 float WTitleFontEx::GetFontW() const
 {
 	return (float)m_pFont->GetFontInfo()->fontw;

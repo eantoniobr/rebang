@@ -520,6 +520,7 @@ void FrCheckoutDlg::SetPrice(int num)
 	if (m_pNum)
 		m_pNum->SetLine(1, MakeStr("%d", m_num), 0, false, 0);
 }
+
 bool FrCheckoutDlg::OnChargeResult(int result, FrForm*)
 {
 	if (result == 1)
@@ -1588,6 +1589,7 @@ void FrCheckoutDlg::OnCartOwnerDraw(int param)
 			m_miniBtn[6].rect + WPoint(draw->pos.x, draw->pos.y + 10.0f);
 	}
 }
+
 void FrCheckoutDlg::OnPriceInit(int param)
 {
 	m_pPrice = DYNAMIC_CAST(FrEdit, param);

@@ -1014,6 +1014,7 @@ void ntHolesEventDlg::OnGaugeOwnerDraw()
 ntMightyMACEventDlg::ntMightyMACEventDlg()
 {
 }
+
 ntMightyMACEventDlg::~ntMightyMACEventDlg()
 {
 }

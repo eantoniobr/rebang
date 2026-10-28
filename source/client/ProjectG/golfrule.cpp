@@ -3574,6 +3574,7 @@ void CGolfRule::DoDrive(float delta)
 			ChangeGameMode(0x80);
 	}
 }
+
 static const int s_clearBonus[20] = { 20, 50, 55, 80, 65, 24, 50, 70, 40, 55,
 	40, 20, 0, 80, 20, 20, 40, 40, 0, 40 };
 
@@ -4974,6 +4975,7 @@ void CGolfRule::DispatchMatchItems()
 		}
 	}
 }
+
 bool IsMyTurn(bool bTeam);
 extern Fresh* g_pFresh;
 
@@ -9071,6 +9073,7 @@ void CGolfRule::DoFlyBall_Stopped(float delta)
 
 	CCameraWork::Instance()->Process(delta, 0.0f);
 }
+
 extern "C" _CRTIMP int __cdecl mkdir(const char* dirname);
 extern int g_last_screen_width;
 extern int g_last_screen_height;
@@ -9562,6 +9565,7 @@ void CGolfRule::DoDebugCamera(float delta)
 
 	g_camera = MakeCameraMatrix(m_cameraPos, m_cameraTarget);
 }
+
 bool IsMyTurn(bool check);
 
 void CGolfRule::DoStand(float delta)
@@ -10969,6 +10973,7 @@ void CGolfRule::CheckNetMsgWait_Recv(char* msg)
 	if (m_netMsgSend && !strcmpi(m_netMsgSend, msg))
 		g_iRecvPacketGR = g_iRecvPacketType;
 }
+
 void CGolfRule::DoToDefaultCamera(float delta)
 {
 	if (OnlinePlay() && !m_bSendFinishShot && Doc()->GetPlayingMode() == 1)
@@ -11573,6 +11578,7 @@ bool CGolfRule::SetTurnChangeEvent()
 
 	return bResult;
 }
+
 void CGolfRule::CorrectShotResult()
 {
 	if (PLAYER(GOLFDOC()->m_currentPlayer)->state == 3 ||
@@ -11766,6 +11772,7 @@ WMatrix CGolfRule::BankCamera(float angle)
 {
 	return RotMat(angle, 2) * g_camera;
 }
+
 bool IsMyTurn(bool bCheck);
 
 void CGolfRule::Replay(bool bAuto)
@@ -13091,6 +13098,7 @@ void CGolfRule::ChangeTurn()
 
 	GOLFDOC()->m_bReplay = false;
 }
+
 void CGolfRule::GetWinningPrize(int rank)
 {
 	AddPrize(rank);
@@ -13959,6 +13967,7 @@ void CGolfRule::PlayBGM()
 	else
 		SetConstantBGM(m_bgmList[m_bgm].c_str(), false, true);
 }
+
 int CGolfRule::HoleReplay2()
 {
 	return 0;

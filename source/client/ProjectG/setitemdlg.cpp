@@ -99,11 +99,14 @@ void FrSetItemDlg::SetSetItem(unsigned long typeId)
 						0, true);
 				}
 				else
+				{
 					m_pName->AddText("\n", 0, true);
+				}
 			}
-
 			else
+			{
 				m_pName->AddText("\n", 0, true);
+			}
 		}
 	}
 }
@@ -181,7 +184,9 @@ void FrSetItemDlg::OnComponentOwnerDraw(int param)
 			pDevice->SetTextColor(0xffff0000, 0xffffffff);
 		}
 		else
+		{
 			pDevice->Print(WPoint(dest.Right() + 5.0f, pItem->pos.y + 34.0f), 0,
 				"\xc0\xcc\xbb\xf3");
+		}
 	}
 }

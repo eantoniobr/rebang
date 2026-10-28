@@ -66,9 +66,11 @@ bool FrCardBoxDlg::OnInit()
 void FrCardBoxDlg::OnOK()
 {
 }
+
 void FrCardBoxDlg::OnCancel()
 {
 }
+
 void FrCardBoxDlg::OnCloseBtnUp()
 {
 	FrForm::OnCancel();

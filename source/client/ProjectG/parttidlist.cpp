@@ -82,7 +82,6 @@ bool CPartTidList::SetTids(unsigned long charTid, unsigned char hairColor,
 	{
 		tids[9] = 0x8152400;
 	}
-
 	else if (charType == 8)
 	{
 		tids[19] = 0x8226400;
