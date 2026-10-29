@@ -169,7 +169,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/fontinfo.obj",
+    {
+      "path": "source/client/ProjectG/fontinfo.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/ground_info.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

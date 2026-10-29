@@ -827,7 +827,7 @@ void CItemWindow::ResetUiPosition()
 
 	if (m_pWindow)
 	{
-		m_clip.x = BAR_START - 75;
+		m_clip.x = s_barStart - 75;
 		m_clip.y = y - 25;
 		m_clip.w = (float)m_pWindow->GetWidth();
 		m_clip.h = (float)m_pWindow->GetHeight();

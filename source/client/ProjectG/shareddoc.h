@@ -396,6 +396,8 @@ public:
 	void SetHaveHalloweenItem(bool bHave) { m_bHaveHalloweenItem = bHave; }
 	void SetWearHalloweenItem(bool bWear) { m_bWearHalloweenItem = bWear; }
 	bool IsHaveHalloweenItem() { return m_bHaveHalloweenItem; }
+	unsigned long GetFlagAbilityItem() { return m_flagAbilityItem; }
+	unsigned char GetNumBonusPangItem() { return m_numBonusPangItem; }
 	bool IsWearHalloweenItem() { return m_bWearHalloweenItem; }
 	eReplayModeType GetPlayingMode() { return m_playingMode; }
 	void SetPlayingMode(eReplayModeType mode) { m_playingMode = mode; }

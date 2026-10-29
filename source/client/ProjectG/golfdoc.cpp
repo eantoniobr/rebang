@@ -998,14 +998,14 @@ const sProperty& CPropertyInfo::GetProperty(int index)
 
 void sBar::Reset()
 {
-	center = BAR_START;
-	power = BAR_START;
-	impact = BAR_START;
-	gauge = BAR_GAUGE_START;
-	gaugeStep = BAR_GAUGE_START;
+	center = s_barStart;
+	power = s_barStart;
+	impact = s_barStart;
+	gauge = s_barGaugeStart;
+	gaugeStep = s_barGaugeStart;
 	bFullPower = false;
 	dir = 0;
-	calipers = BAR_START;
+	calipers = s_barStart;
 }
 
 void CGolfDoc::SetApproachMissionDesc(const char* desc)

@@ -31,9 +31,9 @@ void CRival::Shot()
 {
 	if (WisEqual(m_power, 1.f, g_EPSILON))
 		GOLFDOC()->m_bar.bFullPower = true;
-	GOLFDOC()->m_bar.power = BAR_LEN * m_power + BAR_START;
+	GOLFDOC()->m_bar.power = s_powerBarWidth * m_power + s_barStart;
 	GOLFDOC()->m_bar.impact = Random(-10.f, 10.f) + GOLFDOC()->m_bar.center;
-	float offset = Abs(GOLFDOC()->m_bar.impact - BAR_START);
+	float offset = Abs(GOLFDOC()->m_bar.impact - s_barStart);
 	if (offset < 2.f)
 		GOLFDOC()->m_bar.grade = 4;
 	else if (offset < GolfClub().GetNarrowAccuracy())

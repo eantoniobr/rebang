@@ -15,6 +15,7 @@ class CGimmickContainer;
 class GroundItemMan : public NetSyncActor, public CRenderFuncPtr
 {
 	friend class GroundItem;
+	friend class CPangInfo;
 
 public:
 	static const WRTTI m_RTTI;

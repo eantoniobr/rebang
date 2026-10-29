@@ -1987,7 +1987,8 @@ void CTutorial::PushMacroShot()
 		MakeStr("%d %.1f %.1f %.1f", 3, 128.0f, 88.0f, 0.5f), 0, 1);
 	PushMacro(MACRO_ENABLE_SELECT, NULL, -1, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 10, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 10,
+			(int)s_barStart),
 		-1, 1);
 	PushMacro(MACRO_SENDMSG, MakeStr("GolfRule %d %d", 138, &m_screenX), 0, 1);
 	PushMacro(MACRO_SENDMSG, MakeStr("GolfRule %d 1", 136), 0, 1);
@@ -2111,7 +2112,8 @@ void CTutorial::PushMacroGauge()
 	PushMacro(MACRO_BLOCK_INPUT, "0", 0, 1);
 	PushMacro(MACRO_SHOW_CURSOR, "0", 0, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 30, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 30,
+			(int)s_barStart),
 		-1, 1);
 	PushMacro(MACRO_KEY_PRESS, NULL, 0, 1);
 	PushMacro(MACRO_KEY, "\xbd\xba\xc6\xe4\xc0\xcc\xbd\xba\xb9\xd9", -1, 1);
@@ -2139,7 +2141,7 @@ void CTutorial::PushMacroGauge()
 	PushMacro(MACRO_SHOW_CURSOR, "0", 0, 1);
 	PushMacro(MACRO_SENDMSG, MakeStr("Player %d", 285), 2000, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 5, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 5, (int)s_barStart),
 		-1, 1);
 	PushMacro(MACRO_KEY_PRESS, NULL, 0, 1);
 	PushMacro(MACRO_KEY, "\xbd\xba\xc6\xe4\xc0\xcc\xbd\xba\xb9\xd9", -1, 1);
@@ -2300,7 +2302,8 @@ void CTutorial::PushMacroItemUse()
 	PushMacro(MACRO_BLOCK_INPUT, "0", 0, 1);
 	PushMacro(MACRO_SHOW_CURSOR, "0", 0, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 30, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 30,
+			(int)s_barStart),
 		-1, 1);
 	PushMacro(MACRO_KEY_PRESS, NULL, 0, 1);
 	PushMacro(MACRO_KEY, "\xbd\xba\xc6\xe4\xc0\xcc\xbd\xba\xb9\xd9", -1, 1);
@@ -2494,7 +2497,8 @@ void CTutorial::PushMacroWindReading()
 	PushMacro(MACRO_ENABLE_SELECT, 0, -1, 1);
 
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 30, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 30,
+			(int)s_barStart),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);
@@ -2725,8 +2729,8 @@ void CTutorial::PushMacroBallSlope()
 	PushMacro(MACRO_OVERLAY_HIDE, MakeStr("%d", 0), 300, 1);
 
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 30,
-			(int)BAR_START + 3),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 30,
+			(int)s_barStart + 3),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);
@@ -2761,8 +2765,8 @@ void CTutorial::PushMacroBallSlope()
 	PushMacro(MACRO_OVERLAY_HIDE, MakeStr("%d", 0), 300, 1);
 
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d", 135, (int)BAR_END - 30,
-			(int)BAR_START - 5),
+		MakeStr("GolfRule %d 1 %d %d", 135, (int)s_barEnd - 30,
+			(int)s_barStart - 5),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);
@@ -3009,7 +3013,8 @@ void CTutorial::PushMacroPowerSpin()
 
 	PushMacro(MACRO_POWER, "310", 0, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d ", 135, (int)BAR_END - 10, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d ", 135, (int)s_barEnd - 10,
+			(int)s_barStart),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);
@@ -3113,7 +3118,8 @@ void CTutorial::PushMacroPowerSpin()
 
 	PushMacro(MACRO_POWER, "310", 0, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d ", 135, (int)BAR_END - 10, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d ", 135, (int)s_barEnd - 10,
+			(int)s_barStart),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);
@@ -3258,7 +3264,8 @@ void CTutorial::PushMacroPowerCurve()
 
 	PushMacro(MACRO_POWER, "310", 0, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d ", 135, (int)BAR_END - 10, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d ", 135, (int)s_barEnd - 10,
+			(int)s_barStart),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);
@@ -3358,7 +3365,8 @@ void CTutorial::PushMacroPowerCurve()
 
 	PushMacro(MACRO_POWER, "310", 0, 1);
 	PushMacro(MACRO_SENDMSG,
-		MakeStr("GolfRule %d 1 %d %d ", 135, (int)BAR_END - 10, (int)BAR_START),
+		MakeStr("GolfRule %d 1 %d %d ", 135, (int)s_barEnd - 10,
+			(int)s_barStart),
 		-1, 1);
 
 	PushMacro(MACRO_KEY_PRESS, 0, 0, 1);

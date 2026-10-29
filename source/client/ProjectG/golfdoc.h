@@ -156,12 +156,13 @@ private:
 	std::map<int, sRiver> m_river;
 };
 
-const float BAR_GAUGE_START = 105.0f;
+const float s_barGaugeStart = 105.0f;
 ILNUM_GDH
-const float BAR_END = 500.0f;
-const float BAR_START = 140.0f;
-static float BAR_LEN = BAR_END - BAR_START;
-static float BAR_CENTER = (BAR_START + BAR_END) / 2;
+const float s_barEnd = 500.0f;
+static const float s_barTextY = 8.0f;
+const float s_barStart = 140.0f;
+static float s_powerBarWidth = s_barEnd - s_barStart;
+static float s_barCenter = (s_barStart + s_barEnd) / 2;
 
 struct sBar
 {
@@ -176,7 +177,7 @@ struct sBar
 	float calipers;
 
 	void Reset();
-	float Persent() const { return (power - BAR_START) / BAR_LEN; }
+	float Persent() const { return (power - s_barStart) / s_powerBarWidth; }
 	float Delta() const { return impact - center; }
 };
 

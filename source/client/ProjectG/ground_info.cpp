@@ -17,7 +17,7 @@ CBase::CBase()
 	: m_ball(NULL), m_ringTexture(0), m_numberTexture(0)
 {
 	m_y = COption::Instance()->gGetBar_Y() + 4;
-	m_x = BAR_START - 82;
+	m_x = s_barStart - 82;
 	Load();
 	m_ringTexture = g_resrcmng->LoadTexture("{condition_line.png", 0, 0, 0);
 	m_numberTexture = g_resrcmng->LoadTexture("[font_conditoin.jpg", 0, 0, 0);

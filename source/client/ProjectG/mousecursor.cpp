@@ -873,7 +873,7 @@ int CMouseCursor::GameCheck()
 	{
 		if (GolfClub().GetType() != 3)
 		{
-			if (IsInclude(BAR_START - 5, barY - 6, 377, 31))
+			if (IsInclude(s_barStart - 5, barY - 6, 377, 31))
 			{
 				if (!IsMyTurn(false))
 					return UNSELECT;
@@ -883,7 +883,7 @@ int CMouseCursor::GameCheck()
 		}
 		else
 		{
-			if (IsInclude(BAR_START - 5, barY - 17, 377, 42))
+			if (IsInclude(s_barStart - 5, barY - 17, 377, 42))
 			{
 				if (!IsMyTurn(false))
 					return UNSELECT;

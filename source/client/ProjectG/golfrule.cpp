@@ -225,7 +225,7 @@ namespace
 			return pDoc->GetBar().Delta() > 0.0f ? 1 : -1;
 
 		case 2:
-			return pDoc->GetBar().impact > BAR_START ? 2 : -2;
+			return pDoc->GetBar().impact > s_barStart ? 2 : -2;
 
 		case 0:
 		case 1:
@@ -254,12 +254,12 @@ namespace
 				float ratio;
 				if (diff > 0.0f)
 					ratio = diff /
-						(GolfClub().GetNarrowAccuracy() + BAR_START -
+						(GolfClub().GetNarrowAccuracy() + s_barStart -
 							pDoc->GetBar().center);
 				else
 					ratio = diff /
 						(pDoc->GetBar().center -
-							(BAR_START - GolfClub().GetNarrowAccuracy()));
+							(s_barStart - GolfClub().GetNarrowAccuracy()));
 
 				return sqrtf(
 					GetPVS().GetMaxPowerOnGround() * (1.0f - Abs(ratio)) +
@@ -268,7 +268,7 @@ namespace
 
 			case 2:
 			{
-				float ratio = (Abs(pDoc->GetBar().impact - BAR_START) -
+				float ratio = (Abs(pDoc->GetBar().impact - s_barStart) -
 								  GolfClub().GetNarrowAccuracy()) /
 					(GolfClub().GetWideAccuracy() -
 						GolfClub().GetNarrowAccuracy());
@@ -329,12 +329,12 @@ namespace
 			float ratio;
 			if (diff > 0.0f)
 				ratio = diff /
-					(GolfClub().GetNarrowAccuracy() + BAR_START -
+					(GolfClub().GetNarrowAccuracy() + s_barStart -
 						pDoc->GetBar().center);
 			else
 				ratio = diff /
 					(pDoc->GetBar().center -
-						(BAR_START - GolfClub().GetNarrowAccuracy()));
+						(s_barStart - GolfClub().GetNarrowAccuracy()));
 
 			pitch -= curve * (20.0f * g_DEGTORAD);
 
@@ -345,7 +345,7 @@ namespace
 
 		if (GOLFDOC()->GetBar().grade == 2)
 		{
-			float ratio = (Abs(GOLFDOC()->GetBar().impact - BAR_START) -
+			float ratio = (Abs(GOLFDOC()->GetBar().impact - s_barStart) -
 							  GolfClub().GetNarrowAccuracy()) /
 				(GolfClub().GetWideAccuracy() - GolfClub().GetNarrowAccuracy());
 
@@ -356,7 +356,7 @@ namespace
 				spin = 0.0f;
 			}
 
-			if (GOLFDOC()->GetBar().impact > BAR_START)
+			if (GOLFDOC()->GetBar().impact > s_barStart)
 			{
 				curve *= -1.0f;
 				pitch -= ratio * (10.0f * g_DEGTORAD);
@@ -3996,7 +3996,7 @@ void CGolfRule::HandleMsg(const MsgObject& msg)
 		GOLFDOC()->GetBar().gauge = shot.minClick;
 		GOLFDOC()->GetBar().grade = shot.accuracy;
 		GOLFDOC()->GetBar().bFullPower =
-			WisEqual(GOLFDOC()->GetBar().power, BAR_END, 1e-5f) != 0;
+			WisEqual(GOLFDOC()->GetBar().power, s_barEnd, 1e-5f) != 0;
 		GOLFDOC()->GetBar().center = shot.center;
 		GOLFDOC()->m_shotTime = shot.shotTime;
 		if (GetShotTimeLimit())
@@ -9733,7 +9733,7 @@ void CGolfRule::DoPowerGauge(float delta)
 		float accuracy =
 			GolfClub().GetType() == 3 ? 10.0f : GolfClub().GetNarrowAccuracy();
 		if (GOLFDOC()->m_shotPhase == 1 && bClick &&
-			GOLFDOC()->GetBar().gauge < BAR_START + accuracy)
+			GOLFDOC()->GetBar().gauge < s_barStart + accuracy)
 		{
 			CancelShot();
 			return;
@@ -9898,8 +9898,8 @@ void CGolfRule::DoApproachNextHole(float delta)
 void CGolfRule::CommandBox()
 {
 	if (GOLFDOC()->m_shotPhase < 2 ||
-		GOLFDOC()->GetBar().gauge > BAR_LEN * 0.5f + BAR_START ||
-		GOLFDOC()->GetBar().power < BAR_LEN * 0.8f + BAR_START ||
+		GOLFDOC()->GetBar().gauge > s_powerBarWidth * 0.5f + s_barStart ||
+		GOLFDOC()->GetBar().power < s_powerBarWidth * 0.8f + s_barStart ||
 		(GOLFDOC()->m_commandList.size() > 0 &&
 			GOLFDOC()->m_commandList.back() & 0x70))
 		return;
@@ -9993,7 +9993,7 @@ bool CGolfRule::GetBarCondition()
 
 	GOLFDOC()->GetBar().dir = 0;
 
-	float diff = Abs(GOLFDOC()->GetBar().impact - BAR_START);
+	float diff = Abs(GOLFDOC()->GetBar().impact - s_barStart);
 	float area = CPowerGauge::Instance()->GetPangYaArea();
 
 	bool bHalf = false;
@@ -10283,7 +10283,7 @@ void CGolfRule::DriveGauge(float delta, bool bAuto)
 	{
 		if (COption::Instance()->dGetClickSystem())
 		{
-			float persent = Min((GOLFDOC()->GetBar().gauge - BAR_GAUGE_START) *
+			float persent = Min((GOLFDOC()->GetBar().gauge - s_barGaugeStart) *
 					0.0025316456f,
 				0.5f);
 			speed *= persent * persent * 2.0f + 0.5f;
@@ -10330,13 +10330,13 @@ void CGolfRule::DriveGauge(float delta, bool bAuto)
 		case 1:
 			GOLFDOC()->m_shotPhase++;
 
-			if (GOLFDOC()->GetBar().calipers > BAR_START)
+			if (GOLFDOC()->GetBar().calipers > s_barStart)
 			{
 				GOLFDOC()->GetBar().gaugeStep = GOLFDOC()->GetBar().calipers;
 				GOLFDOC()->GetBar().gauge = GOLFDOC()->GetBar().calipers;
 
 				GOLFDOC()->GetBar().dir =
-					WisEqual(GOLFDOC()->GetBar().calipers, BAR_END, g_EPSILON)
+					WisEqual(GOLFDOC()->GetBar().calipers, s_barEnd, g_EPSILON)
 					? 0
 					: -1;
 			}
@@ -10381,7 +10381,7 @@ void CGolfRule::DriveGauge(float delta, bool bAuto)
 				GOLFDOC()->GetBar().impact = GOLFDOC()->GetBar().gaugeStep;
 				GOLFDOC()->GetBar().dir = 0;
 
-				float diff = Abs(GOLFDOC()->GetBar().impact - BAR_START);
+				float diff = Abs(GOLFDOC()->GetBar().impact - s_barStart);
 				float area = CPowerGauge::Instance()->GetPangYaArea();
 
 				if (Abs(GOLFDOC()->GetBar().impact -
@@ -10561,16 +10561,16 @@ void CGolfRule::DriveGauge(float delta, bool bAuto)
 	case -1:
 		GOLFDOC()->GetBar().gauge -= speed * delta;
 
-		if (GOLFDOC()->GetBar().gauge < BAR_GAUGE_START)
+		if (GOLFDOC()->GetBar().gauge < s_barGaugeStart)
 			CancelShot();
 		break;
 
 	case 1:
 		GOLFDOC()->GetBar().gauge += speed * delta;
 
-		if (GOLFDOC()->GetBar().gauge > BAR_END)
+		if (GOLFDOC()->GetBar().gauge > s_barEnd)
 		{
-			GOLFDOC()->GetBar().gauge = BAR_END;
+			GOLFDOC()->GetBar().gauge = s_barEnd;
 			m_timer = 0.0f;
 
 			GOLFDOC()->GetBar().dir = 0;
@@ -10602,7 +10602,7 @@ void CGolfRule::PuttingGauge(float delta, bool bAuto)
 {
 	float speed = GolfClub().GetBarSpeed();
 
-	float persent = (GOLFDOC()->GetBar().gauge - BAR_START) / BAR_LEN;
+	float persent = (GOLFDOC()->GetBar().gauge - s_barStart) / s_powerBarWidth;
 	speed = speed * (persent * persent + 1.0f) * 0.5f;
 
 	if (bAuto)
@@ -10610,11 +10610,11 @@ void CGolfRule::PuttingGauge(float delta, bool bAuto)
 		switch (GOLFDOC()->m_shotPhase)
 		{
 		case 1:
-			if (GOLFDOC()->GetBar().calipers > BAR_START)
+			if (GOLFDOC()->GetBar().calipers > s_barStart)
 			{
 				GOLFDOC()->GetBar().gaugeStep = GOLFDOC()->GetBar().calipers;
 				GOLFDOC()->GetBar().gauge = GOLFDOC()->GetBar().calipers;
-				if (WisEqual(GOLFDOC()->GetBar().calipers, BAR_END, g_EPSILON))
+				if (WisEqual(GOLFDOC()->GetBar().calipers, s_barEnd, g_EPSILON))
 					GOLFDOC()->GetBar().dir = 0;
 			}
 
@@ -10639,9 +10639,9 @@ void CGolfRule::PuttingGauge(float delta, bool bAuto)
 	case 1:
 		GOLFDOC()->GetBar().gauge += speed * delta;
 
-		if (GOLFDOC()->GetBar().gauge > BAR_END)
+		if (GOLFDOC()->GetBar().gauge > s_barEnd)
 		{
-			GOLFDOC()->GetBar().gauge = BAR_END;
+			GOLFDOC()->GetBar().gauge = s_barEnd;
 			GOLFDOC()->GetBar().dir = 0;
 			m_timer = 0.0f;
 		}
@@ -13086,7 +13086,7 @@ void CGolfRule::ChangeTurn()
 	GOLFDOC()->m_shotPhase = 0;
 	GOLFDOC()->GetBar().Reset();
 	GOLFDOC()->GetBar().gauge =
-		GolfClub().GetType() == 3 ? BAR_START : BAR_GAUGE_START;
+		GolfClub().GetType() == 3 ? s_barStart : s_barGaugeStart;
 	GOLFDOC()->GetBar().gaugeStep = GOLFDOC()->GetBar().gauge;
 
 	GolfBall().SetHoleIn(FALSE);
@@ -13318,9 +13318,9 @@ void CGolfRule::CancelShot()
 	m_bRemoteClick = false;
 	GOLFDOC()->m_shotPhase = 0;
 	GOLFDOC()->m_bar.gauge =
-		GolfClub().GetType() == 3 ? BAR_START : BAR_GAUGE_START;
+		GolfClub().GetType() == 3 ? s_barStart : s_barGaugeStart;
 	GOLFDOC()->m_bar.gaugeStep = GOLFDOC()->m_bar.gauge;
-	GOLFDOC()->m_bar.power = BAR_START;
+	GOLFDOC()->m_bar.power = s_barStart;
 	GOLFDOC()->m_bar.dir = 0;
 	GOLFDOC()->m_bar.bFullPower = false;
 
@@ -13950,7 +13950,7 @@ void CGolfRule::SendReportError(unsigned char error)
 void CGolfRule::ResetUiPos_Board()
 {
 	WRect rect = m_pOnelineBtn->GetRect();
-	rect.x = g_view->GetWidth() - BAR_START;
+	rect.x = g_view->GetWidth() - s_barStart;
 	m_pOnelineBtn->SetRect(rect);
 
 	rect = m_pOnelineView->GetRect();

@@ -3309,7 +3309,7 @@ float CalcPowerBarPosition()
 
 	diff.y = 0.0f;
 	if (diff.Magnitude() > range)
-		return BAR_END;
+		return s_barEnd;
 
 	char buf[32] = { 0 };
 	sPlayerData* pPlayer = PLAYER(GOLFDOC()->m_currentPlayer);
@@ -3326,7 +3326,7 @@ float CalcPowerBarPosition()
 	float value = (float)atof(buf);
 	value *= 3.2f;
 
-	return (value / range) * BAR_LEN + BAR_START;
+	return (value / range) * s_powerBarWidth + s_barStart;
 }
 
 void PerformPowerBarSetting()

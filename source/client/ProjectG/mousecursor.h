@@ -17,6 +17,11 @@ public:
 	void Store();
 	void SetBoundArea(WRect* bound);
 	void SetCamMode(bool mode);
+	void SetHoleCup(float x, float y)
+	{
+		m_holecup.x = x;
+		m_holecup.y = y;
+	}
 	float RayTrace4Ground();
 
 	enum

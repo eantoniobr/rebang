@@ -94,6 +94,6 @@ void CEffectOverlay::Display()
 {
 	if (!m_bActive)
 		return;
-	m_pAniOverlay->Render(BAR_START, COption::Instance()->gGetBar_Y() - 8.0f,
+	m_pAniOverlay->Render(s_barStart, COption::Instance()->gGetBar_Y() - 8.0f,
 		m_frame, 0x800000, 0xffffffff, 1.0f);
 }

@@ -26,7 +26,7 @@ CSpin::CSpin()
 void CSpin::OnPreLoadInit()
 {
 	m_centerY = COption::Instance()->gGetBar_Y() + 4.0f;
-	m_centerX = BAR_START - 82.0f;
+	m_centerX = s_barStart - 82.0f;
 }
 
 void CSpin::Reset()
