@@ -136,10 +136,6 @@ public:
 	static const WMatrixPtrList& GetOrginalMatrixPtrList(
 		const std::string& name);
 
-	__forceinline const WSphere& GetBoundSphere() const
-	{
-		return m_boundSphere;
-	}
 	void LockBoneSetPos(unsigned char);
 	unsigned char GetBoneSetPos() const;
 
@@ -224,6 +220,10 @@ public:
 	void CalcBound(bool reset, WPuppet* puppet, bool mode, char* name,
 		Waabb* box);
 	const Waabb& GetBoundBox() { return m_bound; }
+	__forceinline const WSphere& GetBoundSphere() const
+	{
+		return m_boundSphere;
+	}
 	void UpdateBound(bool transform, bool flag);
 	void UpdateBSphere();
 	Waabb GetTransformedBoundBox() const;

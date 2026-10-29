@@ -291,7 +291,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/petbody.obj",
+    {
+      "path": "source/client/ProjectG/petbody.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/ambientsound.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",

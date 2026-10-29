@@ -17,12 +17,10 @@ struct LightSet
 		ambient2 = 0xffffff;
 		nearOne.x = nearOne.y = nearOne.z = 0.0f;
 	}
-#ifdef WANGREAL_DEVICE
 	void operator=(const LightSet& other)
 	{
 		memcpy(this, &other, sizeof(LightSet));
 	}
-#endif
 };
 
 struct WxBatchState

@@ -171,6 +171,20 @@ inline WMatrix RotMat(float angle, char direct)
 		return WMatrix(c, 0.0f, s, 0.0f, 1.0f, 0.0f, -s, 0.0f, c);
 	}
 }
+
+inline WMatrix RotMat(const WVector& axis, float angle)
+{
+	float c = cosf(angle);
+	float s = sinf(angle);
+	WVector v = axis;
+	v.Normalize();
+	float t = 1.0f - c;
+
+	return WMatrix(v.x * v.x * t + c, v.x * v.y * t - v.z * s,
+		v.x * v.z * t + v.y * s, v.x * v.y * t + v.z * s, v.y * v.y * t + c,
+		v.y * v.z * t - v.x * s, v.x * v.z * t - v.y * s,
+		v.y * v.z * t + v.x * s, v.z * v.z * t + c);
+}
 #endif
 
 inline WVector RotVec(const WVector& vector, const WMatrix& matrix)

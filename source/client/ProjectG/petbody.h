@@ -18,6 +18,16 @@ public:
 		BODY_ROOT_POS = 2,
 	};
 
+	enum eFlag
+	{
+		FLAG_DELTA_VALID = 0x1,
+		FLAG_MOVE = 0x2,
+		FLAG_PLAY = 0x4,
+		FLAG_UPDATE = 0x10,
+		FLAG_LOOKUP = 0x20,
+		FLAG_HIDE = 0x2000,
+	};
+
 	struct ScriptHandle
 	{
 		const char* name;
@@ -109,21 +119,7 @@ protected:
 	float m_flightHeight;
 	float m_flightSpeed;
 	float m_leanAngle;
-	union
-	{
-		unsigned int m_flags;
-		struct
-		{
-			unsigned int m_bDeltaValid : 1;
-			unsigned int m_bMove : 1;
-			unsigned int m_bPlay : 1;
-			unsigned int m_bDormant3 : 1;
-			unsigned int m_bUpdate : 1;
-			unsigned int m_bLookUp : 1;
-			unsigned int m_dormant6 : 7;
-			unsigned int m_bHide : 1;
-		};
-	};
+	WFlags m_flags;
 	WList<ScriptHandle*> m_scriptHandle;
 	std::vector<sLightSet> m_localLight;
 	bool m_bLocalLight;

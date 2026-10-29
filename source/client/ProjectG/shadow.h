@@ -8,6 +8,7 @@ public:
 	virtual ~CShadowManager();
 
 	void UpdateLight(const char* lightName, LightSet& light);
+	void AddCastPet_New(const char* recvName, bool flag, WPuppet* pet);
 	void Enable(bool bEnable);
 	void SetActive(bool bActive);
 
