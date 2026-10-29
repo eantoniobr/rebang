@@ -7,6 +7,8 @@ class FrUserInfoForm;
 
 class CUserInfo : public WSingleton<CUserInfo>, public FrCmdTarget
 {
+	friend class FrUserInfoForm;
+
 public:
 	CUserInfo();
 	virtual ~CUserInfo();

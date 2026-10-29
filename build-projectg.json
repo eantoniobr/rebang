@@ -902,7 +902,11 @@
       "pch": "source/client/ProjectG/stdafx.cpp",
       "extra_flags": ["/FIstdafx.h", "/Zd"]
     },
-    "source/client/ProjectG/user_info.obj",
+    {
+      "path": "source/client/ProjectG/user_info.cpp",
+      "pch": "source/client/ProjectG/stdafx.cpp",
+      "extra_flags": ["/FIstdafx.h", "/Zd"]
+    },
     {
       "path": "source/client/ProjectG/winnernotice.cpp",
       "pch": "source/client/ProjectG/stdafx.cpp",
